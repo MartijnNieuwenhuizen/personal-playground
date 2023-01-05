@@ -1,0 +1,147 @@
+/* stylelint-disable value-keyword-case */
+$system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$sans-serif: "Poppins", $system-font;
+$serif: Georgia, "Times New Roman", serif;
+
+$light: 300;
+$semi-bold: 600;
+
+@mixin numeric-font {
+    font-family: $system-font;
+}
+@mixin regular-font {
+    font-family: $sans-serif;
+}
+
+@mixin light {
+    font-weight: $light;
+}
+@mixin semi-bold {
+    font-weight: $semi-bold;
+}
+
+/**
+ * Expressive headings
+ */
+@mixin expressive-heading-1 {
+    @include semi-bold;
+    font-size: rem(36);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(74);
+    }
+}
+@mixin expressive-heading-2 {
+    @include semi-bold;
+    font-size: rem(36);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(66);
+    }
+}
+@mixin expressive-heading-3 {
+    @include semi-bold;
+    font-size: rem(36);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(58);
+    }
+}
+@mixin expressive-heading-4 {
+    @include semi-bold;
+    font-size: rem(29);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(46);
+    }
+}
+@mixin expressive-heading-5 {
+    @include semi-bold;
+    font-size: rem(29);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(36);
+    }
+}
+@mixin expressive-heading-6 {
+    @include semi-bold;
+    font-size: rem(29);
+    line-height: 1.2;
+
+    @include bp-min(medium) {
+        font-size: rem(32);
+    }
+}
+
+/**
+ * Large
+ */
+@mixin large-type {
+    @include light;
+    font-size: rem(18);
+    line-height: 1.85;
+
+    @include bp-min(medium) {
+        font-size: rem(24);
+        line-height: 1.7;
+    }
+}
+
+/**
+ * UI Heading
+ */
+@mixin ui-heading-1 {
+    @include semi-bold;
+    font-size: rem(24);
+    line-height: 1.7;
+
+    @include bp-min(medium) {
+        font-size: rem(29);
+        line-height: 1.2;
+    }
+}
+
+/**
+ * Subheading
+ */
+@mixin subheading-1 {
+    @include semi-bold;
+    font-size: rem(18);
+    line-height: 1.85;
+
+    @include bp-min(medium) {
+        font-size: rem(24);
+        line-height: 1.7;
+    }
+}
+@mixin subheading-2 {
+    @include semi-bold;
+    font-size: rem(16);
+    line-height: 2;
+
+    @include bp-min(medium) {
+        font-size: rem(18);
+        line-height: 1.85;
+    }
+}
+
+/**
+ * Body
+ */
+@mixin body-1 {
+    @include light;
+    font-size: rem(16);
+    line-height: 2;
+}
+@mixin body-2 {
+    @include light;
+    font-size: rem(14);
+    line-height: 1.2;
+}

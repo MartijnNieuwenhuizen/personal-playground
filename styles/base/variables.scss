@@ -1,0 +1,31 @@
+/**
+ * Border Radius
+ */
+$border-radius-small-screens: 36px;
+$border-radius-large-screens: 72px;
+
+/**
+ * Box shadow
+ */
+$box-shadow: 0 -20px 50px rgba($black, 0.1);
+
+/**
+ * Tap sizes
+ */
+$tap-size-small: 32px;
+$tap-size: 44px;
+$tap-size-large: 48px;
+
+/**
+ * Line widths
+ */
+$line-width-thin: 1px;
+$line-width-regular: 2px;
+$line-width-thick: 5px;
+
+/**
+ * Site header global variables
+ */
+$nav-switch: small; // Breakpoint
+$nav-height-mobile: 60px;
+$nav-height-desktop: 100px;

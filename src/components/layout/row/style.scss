@@ -1,0 +1,32 @@
+@import '../../../../styles/base.scss';
+
+.row {
+	--row-small: 1vw;
+	--row-medium: 2.5vw;
+	--row-large: 6vw;
+	--row-huge: 7.5vw;
+}
+
+.row[data-size='small'] {
+	--row-size: var(--row-small);
+}
+.row[data-size='medium'] {
+	--row-size: var(--row-medium);
+}
+.row[data-size='large'] {
+	--row-size: var(--row-large);
+}
+.row[data-size='huge'] {
+	--row-size: var(--row-huge);
+}
+
+.row[data-area='both'] {
+	padding-top: calc(var(--row-size) + 2rem);
+	padding-bottom: calc(var(--row-size) + 2rem);
+}
+.row[data-area='top'] {
+	padding-top: calc(var(--row-size) + 2rem);
+}
+.row[data-area='bottom'] {
+	padding-bottom: calc(var(--row-size) + 2rem);
+}

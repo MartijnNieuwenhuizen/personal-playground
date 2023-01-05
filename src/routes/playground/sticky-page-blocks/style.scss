@@ -1,0 +1,50 @@
+@import '../../../../styles/base.scss';
+
+.sticky-page__sticky-container {
+	position: relative;
+}
+
+.sticky-page-block {
+	--lemon-chiffon: #fbf8ccff;
+	--champagne-pink: #fde4cfff;
+	--baby-pink: #ffcfd2ff;
+	--pink-lavender: #f1c0e8ff;
+	--mauve: #cfbaf0ff;
+	--baby-blue-eyes: #a3c4f3ff;
+	--non-photo-blue: #90dbf4ff;
+	--electric-blue: #8eecf5ff;
+	--magic-mint: #98f5e1ff;
+	--granny-smith-apple: #b9fbc0ff;
+
+	border-radius: 50px;
+	position: sticky;
+	top: 0;
+	font-size: 150%;
+}
+.sticky-page-block:nth-of-type(1) {
+	background-color: var(--lemon-chiffon);
+}
+.sticky-page-block:nth-of-type(2) {
+	background-color: var(--champagne-pink);
+}
+.sticky-page-block:nth-of-type(3) {
+	background-color: var(--baby-pink);
+}
+.sticky-page-block:nth-of-type(4) {
+	background-color: var(--pink-lavender);
+}
+.sticky-page-block:nth-of-type(5) {
+	background-color: var(--mauve);
+}
+.sticky-page-block:nth-of-type(6) {
+	background-color: var(--baby-blue-eyes);
+}
+.sticky-page-block:nth-of-type(7) {
+	background-color: var(--non-photo-blue);
+}
+.sticky-page-block:nth-of-type(8) {
+	background-color: var(--magic-mint);
+}
+.sticky-page-block:nth-of-type(9) {
+	background-color: var(--granny-smith-apple);
+}

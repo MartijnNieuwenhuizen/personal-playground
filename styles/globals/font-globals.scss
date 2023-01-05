@@ -1,0 +1,30 @@
+@import "../base.scss";
+
+html {
+    @include regular-font;
+    @include font-smoothing(true);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    @include regular-font;
+    @include body-1;
+}
+
+h1 {
+    @include ui-heading-1;
+}
+h2 {
+    @include subheading-1;
+}
+h3 {
+    @include subheading-2;
+}
+p {
+    margin-top: 0;
+}
+em,
+strong {
+    font-weight: $semi-bold;
+    font-style: normal;
+}

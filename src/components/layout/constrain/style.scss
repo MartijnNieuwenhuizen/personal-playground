@@ -1,0 +1,38 @@
+@import '../../../../styles/base.scss';
+
+.constrain {
+	@if ((var(--size) != full)) {
+		max-width: calc(#{var(--size)} + (#{gap(8)} * 2));
+	}
+
+	@include bp-min(medium) {
+		@if ((var(--size) != full)) {
+			max-width: calc(#{var(--size)} + (#{gap(13)} * 2));
+		}
+	}
+}
+
+.constrain[data-size='tiny'] {
+	--size-name: 'tiny';
+	--size: #{constrain('tiny')};
+}
+.constrain[data-size='small'] {
+	--size-name: 'small';
+	--size: #{constrain('small')};
+}
+.constrain[data-size='small-medium'] {
+	--size-name: 'small';
+	--size: #{constrain('small')};
+}
+.constrain[data-size='medium'] {
+	--size-name: 'medium';
+	--size: #{constrain('medium')};
+}
+.constrain[data-size='large'] {
+	--size-name: 'large';
+	--size: #{constrain('large')};
+}
+.constrain[data-size='full'] {
+	--size-name: 'full';
+	--size: #{constrain('full')};
+}

@@ -1,0 +1,76 @@
+/* stylelint-disable selector-max-universal */
+
+/*
+ * Gaps.
+ * The space between elements.
+ */
+$gaps: (
+	1: rem(4),
+	2: rem(8),
+	3: rem(12),
+	4: rem(16),
+	5: rem(20),
+	6: rem(24),
+	7: rem(28),
+	8: rem(32),
+	9: rem(36),
+	10: rem(48),
+	11: rem(64),
+	12: rem(72),
+	13: rem(88),
+	14: rem(96),
+	15: rem(120)
+);
+
+@function gap($size) {
+	@return map-get($gaps, $size);
+}
+
+/*
+ * Constrains.
+ * The maximum size of elements.
+ */
+$constrains: (
+	tiny: rem(395),
+	small: rem(612),
+	small-medium: rem(829),
+	medium: rem(979),
+	large: rem(1264)
+);
+@function constrain($size) {
+	@return map-get($constrains, $size);
+}
+@mixin constrain($size) {
+	max-width: constrain($size);
+}
+
+/*
+ * Z-index
+ * Usage: z-index: z(skiplink);
+ */
+$z-index: (
+	skiplink: 10000,
+	just-above: 1,
+	behind-popup: 1,
+	pull-back: -1,
+	site-header: 90,
+	site-header-logo: 110,
+	backdrop: 80,
+	menu-overlay: 100
+);
+
+// Off grid alignment
+@mixin off-grid-parent-medium {
+	@include block(small-medium);
+	> * {
+		@include constrain(small);
+		margin-left: auto;
+	}
+}
+@mixin off-grid-parent-large {
+	@include block(large);
+	> * {
+		@include constrain(small-medium);
+		margin-left: auto;
+	}
+}
