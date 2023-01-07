@@ -1,22 +1,12 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Block from '../../../components/layout/block/index.svelte';
 	import Row from '../../../components/layout/row/index.svelte';
 	import Constrain from '../../../components/layout/constrain/index.svelte';
+	import StickyPageBlock from '../../../components/modules/StickyPageBlock/index.svelte';
 	import Page from '../../../components/layout/page/index.svelte';
 
-	let section1: any;
-	let section2: any;
-	let section3: any;
-	let section4: any;
-	let section5: any;
-	let section6: any;
-	let section7: any;
-	let section8: any;
-	let section9: any;
-
 	const title = 'This is a sticky page block';
-	const parag = `<p>
+	const text = `<p>
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
 of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
 a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
@@ -39,37 +29,6 @@ interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
 also reproduced in their exact original form, accompanied by English versions from the 1914
 translation by H. Rackham.
 </p>`;
-
-	onMount(() => {
-		const sections = [
-			section1,
-			section2,
-			section3,
-			section4,
-			section5,
-			section6,
-			section7,
-			section8,
-			section9
-		];
-
-		const handleResize = () => {
-			sections.forEach((section) => {
-				const { height } = section.getBoundingClientRect();
-				const windowHeight = window.innerHeight;
-
-				section.style.top =
-					height > windowHeight ? `${Math.round(windowHeight - height)}px` : `0px`;
-			});
-		};
-
-		handleResize();
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	});
 </script>
 
 <Block size="medium">
@@ -100,37 +59,14 @@ translation by H. Rackham.
 </Block>
 
 <div class="sticky-page__sticky-container">
-	<section class="sticky-page-block">
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block">
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block">
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
+	<StickyPageBlock enhanceStickiness={false} theme="#fbf8ccff" {title} {text} />
+	<StickyPageBlock enhanceStickiness={false} theme="#f1c0e8ff" {title} {text} />
+	<StickyPageBlock enhanceStickiness={false} theme="#a3c4f3ff" {title} {text} />
+	<StickyPageBlock enhanceStickiness={false} theme="#98f5e1ff" {title} {text} />
 </div>
 
 <Block size="medium">
-	<Row size="medium">
+	<Row size="huge">
 		<Constrain size="small">
 			<h2>Implementation 2 (panes that stop at the bottom of the pane)</h2>
 			<p>
@@ -144,96 +80,24 @@ translation by H. Rackham.
 </Block>
 
 <div class="sticky-page__sticky-container">
-	<section class="sticky-page-block" bind:this={section1}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section2}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section3}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section4}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section5}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section6}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section7}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section8}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
-	<section class="sticky-page-block" bind:this={section9}>
-		<Row size="medium">
-			<Block size="medium">
-				<h2>{title}</h2>
-
-				<div>{@html parag}</div>
-			</Block>
-		</Row>
-	</section>
+	<StickyPageBlock theme="#fbf8ccff" {title} {text} />
+	<StickyPageBlock theme="#ffcfd2ff" {title} {text} />
+	<StickyPageBlock theme="#f1c0e8ff" {title} {text} />
+	<StickyPageBlock theme="#cfbaf0ff" {title} {text} />
+	<StickyPageBlock theme="#a3c4f3ff" {title} {text} />
+	<StickyPageBlock theme="#90dbf4ff" {title} {text} />
+	<StickyPageBlock theme="#8eecf5ff" {title} {text} />
+	<StickyPageBlock theme="#98f5e1ff" {title} {text} />
 </div>
 
 <Block size="medium">
-	<Row size="medium">
+	<Row size="huge">
 		<Constrain size="small">
 			<h2>Conclusion</h2>
 			<p>
 				Solution 2 is way more resilient for any type of content than solution one. It requires just
 				a hint of JS and can be used as Progressive Enhanced solution as long as you only apply the
-				`position: sticky;` with JS as well. If you know a 100% CSS solution, let me know!
+				<code>position: sticky;</code> with JS as well. If you know a 100% CSS solution, let me know!
 			</p>
 		</Constrain>
 	</Row>

@@ -1,0 +1,57 @@
+@import '../../../../styles/base.scss';
+
+.sticky-page-block {
+	position: relative;
+	border-radius: 50px;
+	font-size: 150%;
+	background-color: var(--background-color);
+}
+
+.sticky-page-block[data-stickiness-enabled='true'] {
+	position: sticky;
+	top: 0;
+}
+
+.sticky-page-block__ruler {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: gap(12);
+	width: gap(12);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #e8e74c;
+}
+.sticky-page-block__ruler-item {
+	position: relative;
+}
+.sticky-page-block__ruler-item::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 20%;
+	height: 4px;
+	background-color: #dd220e;
+}
+.sticky-page-block__ruler-item:nth-of-type(1) {
+}
+.sticky-page-block__ruler-item:nth-of-type(2) {
+}
+.sticky-page-block__ruler-item:nth-of-type(3) {
+}
+.sticky-page-block__ruler-item:nth-of-type(4) {
+}
+.sticky-page-block__ruler-item:nth-of-type(5) {
+}
+.sticky-page-block__ruler-item:nth-of-type(6) {
+}
+.sticky-page-block__ruler-item:nth-of-type(7) {
+}
+.sticky-page-block__ruler-item:nth-of-type(8) {
+}
+.sticky-page-block__ruler-item:nth-of-type(9) {
+}
+.sticky-page-block__ruler-item:nth-of-type(10) {
+}
