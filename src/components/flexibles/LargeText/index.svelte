@@ -10,9 +10,9 @@
 	export let linkUrl: string;
 </script>
 
-<div class={'large-text'}>
-	<Block size={'medium'}>
-		<Row size={'huge'}>
+<Block size="medium">
+	<Row size="huge">
+		<div class={'large-text'}>
 			<div class={'content'}>
 				<p>{text}</p>
 			</div>
@@ -20,9 +20,9 @@
 			{#if linkUrl && linkLabel}
 				<a href={linkUrl} class={'link'}>{linkLabel}</a>
 			{/if}
-		</Row>
-	</Block>
-</div>
+		</div>
+	</Row>
+</Block>
 
 <style lang="scss">
 	@import './style.scss';

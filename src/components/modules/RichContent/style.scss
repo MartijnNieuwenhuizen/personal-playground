@@ -1,0 +1,60 @@
+/* stylelint-disable selector-max-universal */
+
+@import '../../../../styles/base.scss';
+
+.rich-content h2,
+.rich-content h3,
+.rich-content h4,
+.rich-content h5,
+.rich-content h6 {
+	margin-top: 0;
+	margin-bottom: gap(4);
+}
+.rich-content h2 {
+	@include subheading-1;
+}
+.rich-content h3,
+.rich-content h4,
+.rich-content h5,
+.rich-content h6 {
+	@include subheading-2;
+}
+.rich-content p,
+.rich-content ul,
+.rich-content ol {
+	@include body-1;
+	margin-bottom: 2em;
+}
+.rich-content img {
+	margin-bottom: 2em;
+}
+.rich-content figure {
+	margin: 0 0 2em;
+}
+.rich-content figure > img {
+	margin-bottom: 0;
+}
+.rich-content figcaption {
+	@include body-1;
+	margin-top: gap(2);
+}
+.rich-content blockquote {
+	margin-bottom: 2em;
+	margin-left: 0;
+}
+.rich-content blockquote p {
+	@include subheading-1;
+	@include light;
+}
+
+.rich-content ul {
+	padding-left: gap(2);
+}
+
+.rich-content li {
+	list-style-type: '-';
+}
+
+.rich-content > *:last-child {
+	margin-bottom: 0;
+}
