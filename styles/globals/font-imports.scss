@@ -1,18 +1,18 @@
 $light: 300;
 $semi-bold: 600;
 
-@font-face {
-    font-family: "Poppins";
-    src: url("/fonts/poppins/poppins-v20-latin-300.woff2") format("woff2"),
-        url("/fonts/poppins/poppins-v20-latin-300.woff") format("woff");
-    font-weight: $light;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: "Poppins";
+//     src: url("/fonts/poppins/poppins-v20-latin-300.woff2") format("woff2"),
+//         url("/fonts/poppins/poppins-v20-latin-300.woff") format("woff");
+//     font-weight: $light;
+//     font-style: normal;
+// }
 
-@font-face {
-    font-family: "Poppins";
-    src: url("/fonts/poppins/poppins-v20-latin-600.woff2") format("woff2"),
-        url("/fonts/poppins/poppins-v20-latin-600.woff") format("woff");
-    font-weight: $semi-bold;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: "Poppins";
+//     src: url("/fonts/poppins/poppins-v20-latin-600.woff2") format("woff2"),
+//         url("/fonts/poppins/poppins-v20-latin-600.woff") format("woff");
+//     font-weight: $semi-bold;
+//     font-style: normal;
+// }
