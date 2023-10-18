@@ -21,7 +21,8 @@
 		<SiteFooter />
 	</footer>
 
-	<div class="name-slider" aria-hidden="true">
+	<!-- @TODO: only on the homepage! -->
+	<!-- <div class="name-slider" aria-hidden="true">
 		<div class="name-slider-inner">
 			<span>Martijn Nieuwenhuizen</span>
 			<span>Martijn Nieuwenhuizen</span>
@@ -33,7 +34,7 @@
 			<span>Martijn Nieuwenhuizen</span>
 			<span>Martijn Nieuwenhuizen</span>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <style lang="scss">
@@ -67,17 +68,17 @@
 		--primary-color: #eef0ea;
 		--name-slider-height: 5rem;
 
-		overflow: hidden;
+		// overflow: hidden;
 
-		display: grid;
-		grid-template-columns: var(--name-slider-height) 1fr;
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas:
-			'header header'
-			'name-slider main'
-			'footer footer';
+		// display: grid;
+		// grid-template-columns: var(--name-slider-height) 1fr;
+		// grid-template-rows: auto 1fr auto;
+		// grid-template-areas:
+		// 	'header header'
+		// 	'name-slider main'
+		// 	'footer footer';
 
-		min-height: 100vh;
+		// min-height: 100vh;
 
 		background-color: var(--primary-color);
 	}
@@ -91,7 +92,7 @@
 		}
 	}
 	.name-slider {
-		grid-area: name-slider;
+		// grid-area: name-slider;
 		font-size: calc((var(--name-slider-height) / 100) * 90);
 		font-weight: 400;
 		line-height: 1;

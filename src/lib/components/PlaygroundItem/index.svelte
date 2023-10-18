@@ -5,9 +5,10 @@
 
 	export let title: string;
 	export let description: string;
+	export let hidePageEffect: boolean = false;
 </script>
 
-<section>
+<section data-hide-page-effect={hidePageEffect}>
 	<Block size="medium">
 		<Row size="medium">
 			<Constrain size="small">
@@ -41,5 +42,10 @@
 		section {
 			--border-radius: 60px;
 		}
+	}
+
+	section[data-hide-page-effect='true'] {
+		--border-radius: 0px;
+		--padding: 0px;
 	}
 </style>
