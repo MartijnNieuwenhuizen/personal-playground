@@ -1,11 +1,39 @@
-<script>
-	import Block from '../../components/layout/block/index.svelte';
-	import Page from '../../components/layout/page/index.svelte';
+<script type="ts">
+	import Block from '$lib/layout/block/index.svelte';
+	import Row from '$lib/layout/row/index.svelte';
+	import Constrain from '$lib/layout/constrain/index.svelte';
+
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	console.log('data: ', data);
 </script>
 
-<head><style src="./style.css"></style></head>
+<Block size="medium">
+	<Row size="medium">
+		<Constrain size="small">
+			<section>
+				<h2>Playground</h2>
+				<p>
+					Throughout the day/week, you will need to try a lot of things. And it's important to get
+					feedback as soon as possible in your workflow. This is what I use this playground for:
+					Isolated tests, ideas. Some will be nice to look at, some will be boring.
+				</p>
 
-<Page>
+				<ul>
+					{#each data.links as link}
+						<!-- content here -->
+						<li><a href={`/playground/${link}`}>{link}</a></li>
+					{/each}
+				</ul>
+				<section />
+			</section></Constrain
+		>
+	</Row>
+</Block>
+
+<!-- <Page>
 	<Block size="medium">
 		<h1>This is the playground</h1>
 		<p>
@@ -50,4 +78,4 @@
 			this page as a demo of this component implementation.
 		</p>
 	</Block>
-</Page>
+</Page> -->

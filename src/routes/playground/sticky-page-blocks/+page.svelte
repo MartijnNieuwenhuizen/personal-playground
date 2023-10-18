@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Block from '../../../components/layout/block/index.svelte';
-	import Row from '../../../components/layout/row/index.svelte';
-	import Constrain from '../../../components/layout/constrain/index.svelte';
-	import Page from '../../../components/layout/page/index.svelte';
+	import Block from '$lib/layout/block/index.svelte';
+	import Row from '$lib/layout/row/index.svelte';
+	import Constrain from '$lib/layout/constrain/index.svelte';
 
 	let section1: any;
 	let section2: any;

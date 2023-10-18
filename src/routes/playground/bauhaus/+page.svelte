@@ -1,15 +1,16 @@
 <script>
 	import Bauhaus from '$lib/components/Bauhaus/index.svelte';
+	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+
+	let title = 'Bauhaus';
+	let description = `<p>The bauhaus logo build with CSS Grid</p>`;
 </script>
 
-<article>
-	<h1>Bauhaus</h1>
-	<p>Some content here</p>
-
+<PlaygroundItem {title} {description}>
 	<div>
 		<Bauhaus />
 	</div>
-</article>
+</PlaygroundItem>
 
 <style>
 	div {

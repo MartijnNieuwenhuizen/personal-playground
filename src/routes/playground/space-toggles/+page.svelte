@@ -1,29 +1,49 @@
 <script lang="ts">
-	import Block from '../../../components/layout/block/index.svelte';
-	import Row from '../../../components/layout/row/index.svelte';
-	import Constrain from '../../../components/layout/constrain/index.svelte';
-	import Page from '../../../components/layout/page/index.svelte';
+	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
 
-	import './style.scss';
+	const title = 'Space toggles';
+	const description =
+		'Based on <a href="https://www.bram.us/2023/06/14/cyclic-dependency-space-toggles/">this article</a> by Brammus';
 </script>
 
-<Page>
-	<Block size="medium">
-		<Row size="medium">
-			<Constrain size="small">
-				<h1>Space toggles</h1>
-				<p>
-					Based on <a href="https://www.bram.us/2023/06/14/cyclic-dependency-space-toggles/"
-						>this article</a
-					> by Brammus
-				</p>
+<PlaygroundItem {title} {description}>
+	<div>
+		<input type="checkbox" id="toggle" class="space-toggles__toggle" />
+		<label for="toggle">Toggle me</label>
+		<div class="space-toggles preview-box" />
+	</div>
+</PlaygroundItem>
 
-				<div>
-					<label for="toggle">Toggle me</label>
-					<input type="checkbox" id="toggle" class="space-toggles__toggle" />
-					<div class="space-toggles preview-box" />
-				</div>
-			</Constrain>
-		</Row>
-	</Block>
-</Page>
+<style>
+	.space-toggles {
+		--level: var(--level--default);
+
+		/* prettier-ignore */
+		--level--default: var(--level,);
+		/* prettier-ignore */
+		--level--success: var(--level,);
+		/* prettier-ignore */
+		--level--warning: var(--level,);
+		/* prettier-ignore */
+		--level--error:   var(--level,);
+
+		background-color: var(--level--default, lavender) var(--level--success, palegreen)
+			var(--level--warning, khaki) var(--level--error, lightpink);
+	}
+
+	.space-toggles__toggle:checked ~ .space-toggles {
+		--level: var(--level--success);
+	}
+	.space-toggles {
+		--level: var(--level--default);
+	}
+	.space-toggles:hover {
+		--level: var(--level--warning);
+	}
+
+	.preview-box {
+		width: 5rem;
+		height: 5rem;
+		border: 1px solid black;
+	}
+</style>
