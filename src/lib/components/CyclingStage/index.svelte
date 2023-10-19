@@ -1,27 +1,31 @@
-<!-- 
-	@TODO: Add data here like the GRRR blog with the date etc. 
-	Autofill this date when the file is generated :) with the generator script.
--->
-<script>
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+<script lang="ts">
+	export let title: string;
+	export let totalDistance: number;
 
-	let title = 'Tour the france stage';
-	let description = `<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>`;
+	// create an array of 10 values based on the totalDistance.
+	// This is used to create the dots on the stage.
+	let distanceIndicators: number[] = [];
+	for (let index = 1; index <= 10; index++) {
+		distanceIndicators.push(Math.round((totalDistance / 10) * index));
+	}
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
-	<div class="container">
-		<div class="sticky">
-			<div class="stage-outline">
-				<div class="stage-scroller" />
-			</div>
-
-			<div class="runner"><span>🚴🏻</span></div>
+<div class="container">
+	<div class="sticky">
+		<h2 class="title">{title}</h2>
+		<div class="stage-outline">
+			<div class="stage-scroller" />
 		</div>
-	</div>
-</PlaygroundItem>
 
-scss
+		<ul class="distance-container">
+			{#each distanceIndicators as distanceIndicators}
+				<li>{distanceIndicators}km</li>
+			{/each}
+		</ul>
+
+		<div class="runner"><span>🚴🏻</span></div>
+	</div>
+</div>
 
 <style type="scss">
 	:global(html) {
@@ -32,6 +36,7 @@ scss
 	.container {
 		position: relative;
 		min-height: 600vh;
+		padding: 0 3rem;
 	}
 	.sticky {
 		position: sticky;
@@ -40,6 +45,11 @@ scss
 		/* Create container so we can use container-relative units */
 		container-type: size;
 		aspect-ratio: 4 / 1;
+	}
+
+	.title {
+		position: absolute;
+		top: 0;
 	}
 
 	$stage-dots: (
@@ -66,6 +76,8 @@ scss
 		(100, 51)
 	);
 
+	$foo: var(--stage-dots);
+
 	// Create a new list with percentages.
 	// Outcome: 0%, 63%, 3%, 48%, 12%, 76% etc.
 	$test: ();
@@ -84,7 +96,7 @@ scss
 		opacity: 0.5;
 		aspect-ratio: 4 / 1;
 
-		clip-path: polygon($test);
+		clip-path: polygon(var(--stage-dots));
 	}
 
 	@keyframes stage-scroller {
@@ -179,5 +191,15 @@ scss
 	.runner span {
 		display: block;
 		transform: rotateY(180deg);
+	}
+
+	.distance-container {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+
+		list-style-type: none;
 	}
 </style>
