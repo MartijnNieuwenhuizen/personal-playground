@@ -1,0 +1,65 @@
+@import '../../styles/base.scss';
+
+/**
+ * Home header
+ */
+.home-header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+.home-header h1 {
+	font-family: var(--sans-serif);
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+	margin: 0;
+}
+.home-header h1 span:first-of-type {
+	@include heading-1;
+	line-height: 1;
+}
+.home-header h1 span:last-of-type {
+	@include body-2;
+	line-height: 1;
+}
+.home-header p {
+	@include body-2;
+	margin: 0;
+	line-height: 1;
+}
+
+/**
+ * About this site
+ */
+.about-this-site h2 {
+	@include heading-2;
+	margin: 0 0 0.2em;
+}
+.about-this-site p {
+	@include body-1;
+}
+.about-this-site p > span {
+	display: block;
+}
+
+.about-this-site p > span:nth-of-type(1) span {
+	font-family: 'Lexend Deca';
+	font-weight: 900;
+}
+.about-this-site p > span:nth-of-type(2) span {
+	font-family: 'McLaren';
+	font-weight: 900;
+}
+.about-this-site p > span:nth-of-type(3) span {
+	font-family: 'Luckiest Guy';
+	font-weight: 900;
+}
+.about-this-site p > span:nth-of-type(4) span {
+	font-family: 'Nico Moji';
+	font-weight: 900;
+}
+.about-this-site p > span:nth-of-type(5) span {
+	font-family: 'Notable';
+	font-weight: 400;
+}

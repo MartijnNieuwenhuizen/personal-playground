@@ -1,30 +1,76 @@
-@import "../base.scss";
+@import '../base.scss';
+
+:root {
+	--system-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+	--serif: 'Crimson-Text', serif;
+	--sans-serif: 'Lato', var(--system-font);
+
+	// Weights
+	--font-weight-bold: bold;
+	--font-weight-normal: normal;
+
+	// Line heights
+	--line-height-label: 1;
+	--line-height-title: 1.3;
+	--line-height-read: 1.7;
+
+	// Font sizes
+	--body-1: 32px;
+	--body-2: 24px;
+	--body-3: 18px;
+	--body-4: 16px;
+	--body-5: 14px;
+
+	--heading-1: 100px;
+	--heading-2: 45px;
+	--heading-3: 31px;
+	--heading-4: 22px;
+	--heading-5: var(--font-size-base);
+	--heading-6: var(--font-size-base);
+
+	@media (min-width: 950px) {
+		--heading-1: 200px;
+		--heading-2: 64px;
+		--heading-3: 36px;
+		--heading-4: 24px;
+		--heading-5: var(--font-size-base);
+		--heading-6: var(--font-size-base);
+
+		--body-1: 36px;
+		--body-2: 24px;
+		--body-3: 18px;
+		--body-4: 16px;
+		--body-5: 14px;
+	}
+}
 
 html {
-    @include regular-font;
-    @include font-smoothing(true);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-family: var(--sans-serif);
+	@include font-smoothing(true);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 body {
-    @include regular-font;
-    @include body-1;
+	// @include regular-font;
+	@include body-3;
 }
 
 h1 {
-    @include ui-heading-1;
+	@include heading-2;
 }
 h2 {
-    @include subheading-1;
+	@include heading-3;
 }
 h3 {
-    @include subheading-2;
+	@include heading-4;
 }
 p {
-    margin-top: 0;
+	margin-top: 0;
 }
 em,
 strong {
-    font-weight: $semi-bold;
-    font-style: normal;
+	font-weight: var(--font-weight-bold);
+	font-style: normal;
 }

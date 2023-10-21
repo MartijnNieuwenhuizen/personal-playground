@@ -1,27 +1,62 @@
+<script>
+	import Block from '$lib/layout/block/index.svelte';
+	import Row from '$lib/layout/row/index.svelte';
+</script>
+
 <article>
-	<header>
-		<h1>Hi, I'm Martijn Nieuwenhuizen</h1>
-		<p>Front-end developer @ GRRR.</p>
-		<p>Current blogposts are written for GRRR and use this as my personal playground.</p>
+	<Block>
+		<Row size="small">
+			<header class="home-header">
+				<h1>
+					<span>Hi!</span>
+					<span>I'm Martijn Nieuwenhuizen</span>
+				</h1>
+				<p>Front-end developer @ GRRR.</p>
+				<!-- <p>Current blogposts are written for GRRR and use this as my personal playground.</p> -->
+			</header>
+		</Row>
+	</Block>
 
-		<h2>Some details</h2>
-		<ul>
-			<li>📍 Bergen NH</li>
-			<li>🏃🏼 Runner</li>
-			<li>🚴🏻‍♂️ Cyclist</li>
-			<li>🧑🏼‍🌾 Gardener</li>
-		</ul>
+	<Block size="medium">
+		<Row size="small">
+			<section class="about-this-site">
+				<!-- <h2>⚠️ Good to know</h2> -->
+				<h2>🚨 Good to know</h2>
 
-		<h2>Fun projects</h2>
-		<ul>
-			<li>
-				<a href="https://www.narug.nl/">Narug.nl (joke for podcast De rode lantaarn)</a>
-			</li>
-			<li>
-				<a href="#">Allotment planner (work in progress)</a>
-			</li>
-		</ul>
-	</header>
+				<p>
+					<span>This site is <span>NOT</span> beautiful,</span>
+					<span>This site is <span>NOT</span> good,</span>
+					<span>This site does <span>NOT</span> reflect my day to day work,</span>
+					<span>This site will <span>NOT</span> always be up-to-date,</span>
+					<span>But I <span>DID</span> try a lot of unnecessary, fun, dumb and cool stuff!</span>
+				</p>
+			</section>
+		</Row>
+	</Block>
+
+	<Block>
+		<Row size="small">
+			<section>
+				<h2>Some details</h2>
+				<ul>
+					<li>📍 Bergen NH</li>
+					<li>🏃🏼 Runner</li>
+					<li>🚴🏻‍♂️ Cyclist</li>
+					<li>🧑🏼‍🌾 Gardener</li>
+				</ul>
+
+				<h2>Fun projects</h2>
+				<ul>
+					<li>
+						<a href="https://www.narug.nl/">Narug.nl (joke for podcast De rode lantaarn)</a>
+					</li>
+					<li>
+						<a href="#">Allotment planner (work in progress)</a>
+					</li>
+				</ul>
+			</section>
+		</Row>
+	</Block>
 
 	<section>
 		<!-- 
@@ -89,4 +124,6 @@
 	</section>
 </article>
 
-<style></style>
+<style lang="scss">
+	@import './style.scss';
+</style>

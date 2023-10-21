@@ -1,137 +1,137 @@
-@import "../base.scss";
+@import '../base.scss';
 
 .cookie-consent {
-    z-index: 1000;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-height: 100%;
-    padding: gap(5);
-    background: $white;
-    color: $black;
-    box-shadow: 0 0 5px 0 rgba($black, 0.3);
-    transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
-    @include bp-min(tiny) {
-        right: gap(8);
-        bottom: gap(8);
-        left: auto;
-        max-width: 350px;
-    }
+	z-index: 1000;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	max-height: 100%;
+	padding: gap(5);
+	background: $white;
+	color: $black;
+	box-shadow: 0 0 5px 0 rgba($black, 0.3);
+	transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+	@include bp-min(tiny) {
+		right: gap(8);
+		bottom: gap(8);
+		left: auto;
+		max-width: 350px;
+	}
 }
-.cookie-consent[aria-hidden="true"] {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(0, 100px);
-    @include bp-min(tiny) {
-        transform: translate(100px, 0);
-    }
+.cookie-consent[aria-hidden='true'] {
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(0, 100px);
+	@include bp-min(tiny) {
+		transform: translate(100px, 0);
+	}
 }
 
 /**
  * Header
  */
 .cookie-consent__header {
-    margin-bottom: gap(6);
+	margin-bottom: gap(6);
 }
 .cookie-consent__header h1 {
-    @include subheading-2;
-    margin: 0;
-    padding-bottom: gap(2);
+	@include heading-1;
+	margin: 0;
+	padding-bottom: gap(2);
 }
 .cookie-consent__header p:last-child {
-    @include body-1;
-    margin-bottom: 0;
+	@include body-1;
+	margin-bottom: 0;
 }
 
 /**
  * Tabs
  */
 .cookie-consent__tab-list {
-    @include bare-list;
-    margin-bottom: gap(5);
+	@include bare-list;
+	margin-bottom: gap(5);
 }
 .cookie-consent__tab-list li {
-    border-top: 1px solid $grey;
+	border-top: 1px solid $grey;
 }
 .cookie-consent__tab {
-    display: flex;
-    align-items: stretch;
+	display: flex;
+	align-items: stretch;
 }
 
 /**
  * Tab option (label with input in it) & tab toggle
  */
 .cookie-consent__option {
-    @include body-1;
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-    margin: 0;
-    padding: gap(3);
-    user-select: none;
+	@include body-1;
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	margin: 0;
+	padding: gap(3);
+	user-select: none;
 }
 .cookie-consent__option input {
-    margin-right: gap(3);
-    border-radius: 0;
-    accent-color: $primary-color;
+	margin-right: gap(3);
+	border-radius: 0;
+	accent-color: $primary-color;
 }
-.cookie-consent__option:not([data-required="true"]):hover {
-    background: $grey;
+.cookie-consent__option:not([data-required='true']):hover {
+	background: $grey;
 }
 .cookie-consent__tab-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: gap(4);
-    line-height: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: gap(4);
+	line-height: 0;
 }
 .cookie-consent__tab-toggle:hover {
-    background: $grey;
+	background: $grey;
 }
 .cookie-consent__tab-toggle > svg {
-    width: 15px;
-    height: 10px;
-    fill: $black;
+	width: 15px;
+	height: 10px;
+	fill: $black;
 }
-.cookie-consent__tab-toggle[aria-selected="true"] > svg {
-    transform: scaleY(-1);
+.cookie-consent__tab-toggle[aria-selected='true'] > svg {
+	transform: scaleY(-1);
 }
 
 /**
  * Tab panel (with description)
  */
 .cookie-consent__tab-panel {
-    position: relative;
+	position: relative;
 }
-.cookie-consent__tab-panel[aria-hidden="true"] {
-    display: none;
+.cookie-consent__tab-panel[aria-hidden='true'] {
+	display: none;
 }
 .cookie-consent__tab-description {
-    @include body-1;
-    padding: 0 gap(4) gap(4);
+	@include body-1;
+	padding: 0 gap(4) gap(4);
 }
 
 /**
  * Button
  */
 .cookie-consent__button {
-    @include body-1;
-    width: 100%;
-    padding: gap(3) 0;
-    background-color: $primary-color;
-    color: $white;
-    cursor: pointer;
-    font-weight: $light;
-    line-height: 0.9;
-    text-align: center;
-    text-decoration: none;
-    border: 0;
-    appearance: none;
+	@include body-1;
+	width: 100%;
+	padding: gap(3) 0;
+	background-color: $primary-color;
+	color: $white;
+	cursor: pointer;
+	// font-weight: $light;
+	line-height: 0.9;
+	text-align: center;
+	text-decoration: none;
+	border: 0;
+	appearance: none;
 }
 .cookie-consent__button:hover,
 .cookie-consent__button:focus {
-    background-color: $primary-color;
+	background-color: $primary-color;
 }

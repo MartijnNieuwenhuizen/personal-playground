@@ -1,16 +1,11 @@
-<script>
+<script lang="ts">
+	import SiteHeader from '$lib/components/SiteHeader/index.svelte';
 	import SiteFooter from '$lib/components/SiteFooter/index.svelte';
 </script>
 
 <div class="page">
 	<header>
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/playground">Playground</a></li>
-			</ul>
-		</nav>
+		<SiteHeader />
 	</header>
 
 	<main>
@@ -21,8 +16,7 @@
 		<SiteFooter />
 	</footer>
 
-	<!-- @TODO: only on the homepage! -->
-	<!-- <div class="name-slider" aria-hidden="true">
+	<div class="name-slider" aria-hidden="true">
 		<div class="name-slider-inner">
 			<span>Martijn Nieuwenhuizen</span>
 			<span>Martijn Nieuwenhuizen</span>
@@ -34,7 +28,7 @@
 			<span>Martijn Nieuwenhuizen</span>
 			<span>Martijn Nieuwenhuizen</span>
 		</div>
-	</div> -->
+	</div>
 </div>
 
 <style lang="scss">
@@ -68,17 +62,17 @@
 		--primary-color: #eef0ea;
 		--name-slider-height: 5rem;
 
-		// overflow: hidden;
+		overflow: hidden;
 
-		// display: grid;
-		// grid-template-columns: var(--name-slider-height) 1fr;
-		// grid-template-rows: auto 1fr auto;
-		// grid-template-areas:
-		// 	'header header'
-		// 	'name-slider main'
-		// 	'footer footer';
+		display: grid;
+		grid-template-columns: var(--name-slider-height) 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			'header header'
+			'name-slider main'
+			'footer footer';
 
-		// min-height: 100vh;
+		min-height: 100vh;
 
 		background-color: var(--primary-color);
 	}
