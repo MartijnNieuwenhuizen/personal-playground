@@ -35,9 +35,11 @@
 .about-this-site h2 {
 	@include heading-2;
 	margin: 0 0 0.2em;
+	// text-align: end;
 }
 .about-this-site p {
 	@include body-1;
+	// text-align: end;
 }
 .about-this-site p > span {
 	display: block;
@@ -62,4 +64,39 @@
 .about-this-site p > span:nth-of-type(5) span {
 	font-family: 'Notable';
 	font-weight: 400;
+}
+
+@keyframes scroll-by {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+/**
+ * Details scroller
+ */
+.details-scroller {
+	overflow: hidden;
+	max-width: calc(100vw - var(--name-slider-height));
+}
+.details-scroller > div {
+	// animation: scroll-by linear forwards;
+	animation: scroll-by auto linear;
+	animation-timeline: --page-scroll;
+}
+.details-scroller ul {
+	display: flex;
+	gap: 1.5em;
+	// margin: 0;
+	// padding: 0;
+	list-style: none;
+}
+
+.details-scroller li {
+	flex-grow: 1;
+	flex-shrink: 0;
+	// white-space: nowrap;
 }

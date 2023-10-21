@@ -34,29 +34,53 @@
 		</Row>
 	</Block>
 
-	<Block>
-		<Row size="small">
-			<section>
-				<h2>Some details</h2>
-				<ul>
-					<li>📍 Bergen NH</li>
-					<li>🏃🏼 Runner</li>
-					<li>🚴🏻‍♂️ Cyclist</li>
-					<li>🧑🏼‍🌾 Gardener</li>
-				</ul>
+	<!-- <Block>
+		<Row size="small"> -->
+	<section class="details-scroller">
+		<h2 class="sr-only">More about me</h2>
+		<div>
+			<ul>
+				<li>📍 Bergen NH</li>
+				<li>🏃🏼 Runner</li>
+				<li>🚴🏻‍♂️ Cyclist</li>
+				<li>🧑🏼‍🌾 Gardener</li>
+				<li>👨🏼‍💻 Front-end developer</li>
+				<li>👨🏼‍🏫 Co-teacher</li>
+				<li>👨🏼‍🍳 Used to be a chef</li>
 
-				<h2>Fun projects</h2>
-				<ul>
-					<li>
-						<a href="https://www.narug.nl/">Narug.nl (joke for podcast De rode lantaarn)</a>
-					</li>
-					<li>
-						<a href="#">Allotment planner (work in progress)</a>
-					</li>
-				</ul>
-			</section>
-		</Row>
-	</Block>
+				<!-- Just for the effect -->
+				<li aria-hidden="true">📍 Bergen NH</li>
+				<li aria-hidden="true">🏃🏼 Runner</li>
+				<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
+				<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
+				<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
+				<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
+				<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
+
+				<li aria-hidden="true">📍 Bergen NH</li>
+				<li aria-hidden="true">🏃🏼 Runner</li>
+				<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
+				<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
+				<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
+				<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
+				<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>Fun projects</h2>
+		<ul>
+			<li>
+				<a href="https://www.narug.nl/">Narug.nl (joke for podcast De rode lantaarn)</a>
+			</li>
+			<li>
+				<a href="#">Allotment planner (work in progress)</a>
+			</li>
+		</ul>
+	</section>
+	<!-- </Row>
+	</Block> -->
 
 	<section>
 		<!-- 
