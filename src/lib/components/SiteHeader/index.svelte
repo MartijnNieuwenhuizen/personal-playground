@@ -1,12 +1,38 @@
 <script>
+	import { page } from '$app/stores';
+
+	const menuItems = [
+		{
+			url: '/',
+			label: 'Home'
+		},
+		{
+			url: '/blog',
+			label: 'Blog'
+		},
+		{
+			url: '/fun-projects',
+			label: 'Fun projects'
+		},
+		{
+			url: '/playground',
+			label: 'Playground'
+		}
+	];
 </script>
 
 <nav>
 	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/blog">Blog</a></li>
-		<li><a href="/fun-projects">Fun projects</a></li>
-		<li><a href="/playground">Playground</a></li>
+		{#each menuItems as menuItem}
+			<li>
+				<a
+					href={menuItem.url}
+					data-active={menuItem.url === '/'
+						? $page.url.pathname === menuItem.url
+						: $page.url.pathname.includes(menuItem.url)}>{menuItem.label}</a
+				>
+			</li>
+		{/each}
 	</ul>
 </nav>
 
@@ -26,7 +52,27 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
+		gap: 3rem;
 		margin: 0 auto;
+	}
+
+	a {
+		position: relative;
+		text-decoration: none;
+	}
+	a::before {
+		content: '👉';
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		transform: translateX(calc((100% + 1rem) * -1));
+		transition: opacity 0.2s, transform 0.2s;
+	}
+
+	a:hover::before,
+	a:focus::before,
+	a[data-active='true']::before {
+		opacity: 1;
+		transform: translateX(calc((100% + 0.3rem) * -1));
 	}
 </style>

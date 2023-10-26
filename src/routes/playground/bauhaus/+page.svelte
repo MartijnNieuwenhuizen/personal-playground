@@ -4,6 +4,8 @@
 
 	let title = 'Bauhaus';
 	let description = `<p>The bauhaus logo build with CSS Grid</p>`;
+
+	export let date = '2021-10-01';
 </script>
 
 <PlaygroundItem {title} {description}>

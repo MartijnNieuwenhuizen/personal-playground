@@ -1,9 +1,13 @@
 <script lang="ts">
 	import SiteHeader from '$lib/components/SiteHeader/index.svelte';
 	import SiteFooter from '$lib/components/SiteFooter/index.svelte';
+
+	export let data;
+
+	$: showNameScroller = data.showNameScroller;
 </script>
 
-<div class="page">
+<div class="page" data-show-name-scroller={showNameScroller}>
 	<header>
 		<SiteHeader />
 	</header>
@@ -16,19 +20,21 @@
 		<SiteFooter />
 	</footer>
 
-	<div class="name-slider" aria-hidden="true">
-		<div class="name-slider-inner">
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
-			<span>Martijn Nieuwenhuizen</span>
+	{#if showNameScroller}
+		<div class="name-slider" aria-hidden="true">
+			<div class="name-slider-inner">
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+				<span>Martijn Nieuwenhuizen</span>
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -39,29 +45,15 @@
 		scroll-timeline: --page-scroll;
 	}
 
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	nav {
-		padding: 1.5rem;
-	}
-	nav ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-		margin: 0 auto;
-	}
-
 	.page {
 		--primary-color: #eef0ea;
 		--name-slider-height: 5rem;
 
+		min-height: 100vh;
+		background-color: var(--primary-color);
+	}
+
+	.page[data-show-name-scroller='true'] {
 		overflow: hidden;
 
 		display: grid;
@@ -71,10 +63,6 @@
 			'header header'
 			'name-slider main'
 			'footer footer';
-
-		min-height: 100vh;
-
-		background-color: var(--primary-color);
 	}
 
 	@keyframes scroll-other-direction {
@@ -104,6 +92,8 @@
 	}
 	.name-slider span {
 		white-space: nowrap;
+		color: transparent;
+		-webkit-text-stroke: 1px black;
 	}
 	header {
 		grid-area: header;

@@ -3,7 +3,7 @@
 	import Row from '$lib/layout/row/index.svelte';
 </script>
 
-<article>
+<article class="page">
 	<Block>
 		<Row size="small">
 			<header class="home-header">
@@ -68,7 +68,7 @@
 		</div>
 	</section>
 
-	<section>
+	<!-- <section>
 		<h2>Fun projects</h2>
 		<ul>
 			<li>
@@ -78,12 +78,11 @@
 				<a href="#">Allotment planner (work in progress)</a>
 			</li>
 		</ul>
-	</section>
+	</section> -->
 	<!-- </Row>
 	</Block> -->
 
-	<section>
-		<!-- 
+	<!-- 
     A bit about me 
 
     - Name
@@ -92,13 +91,10 @@
     - Other relevant skills/jobs
 
 -->
-	</section>
 
-	<section>
+	<!-- <section>
 		<h2>Blogs I've written</h2>
-		<p>
-			<!-- Wrote for me and for GRRR -->
-		</p>
+		<p>Wrote for me and for GRRR</p>
 
 		<ol>
 			<li>
@@ -136,7 +132,7 @@
 				</a>
 			</li>
 		</ol>
-		<!-- External links and internal links -->
+		External links and internal links
 	</section>
 
 	<section>
@@ -145,7 +141,7 @@
 			<li><a href="/playground/bauhaus">Bauhaus Logo with GRRR Grid</a></li>
 			<li><a href="/playground/....">....</a></li>
 		</ol>
-	</section>
+	</section> -->
 </article>
 
 <style lang="scss">

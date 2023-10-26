@@ -33,7 +33,7 @@
  * About this site
  */
 .about-this-site h2 {
-	@include heading-2;
+	@include heading-3;
 	margin: 0 0 0.2em;
 	// text-align: end;
 }
@@ -71,7 +71,7 @@
 		transform: translateX(0);
 	}
 	to {
-		transform: translateX(-100%);
+		transform: translateX(-75%);
 	}
 }
 
@@ -98,5 +98,4 @@
 .details-scroller li {
 	flex-grow: 1;
 	flex-shrink: 0;
-	// white-space: nowrap;
 }

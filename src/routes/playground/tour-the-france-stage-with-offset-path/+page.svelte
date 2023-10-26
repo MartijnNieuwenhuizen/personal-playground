@@ -7,7 +7,17 @@
 	import CyclingStage from '$lib/components/CyclingStage/index.svelte';
 
 	let title = 'Tour the france stage';
-	let description = `<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>`;
+	let description = `
+<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>
+<h2>Learnings</h2>
+<ul>
+	<li>❌ Can you store a SCSS List in a CSS variable -> Yes <ul><li>But you cannot use it as a SCSS list, not revert it from a CSS variable to SCSS list</li></ul></li>
+	<li>✅ Can you use 1 path for both the outline of the mountains and the cyclists path <ul>
+		<li>For the runner's path: <code>offset-path: polygon(var(--stage-path))</code></li>
+		<li>For the mountains outline: <code>clip-path: polygon(var(--stage-path))</code> (this needs 2 additional points)</li>
+	</ul></li>
+</ul>
+`;
 </script>
 
 <PlaygroundItem {title} {description} hidePageEffect={true}>
