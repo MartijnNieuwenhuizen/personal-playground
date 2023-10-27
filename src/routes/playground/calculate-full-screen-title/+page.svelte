@@ -7,53 +7,76 @@
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	let titleElement: HTMLHeadElement;
-	let isDone: boolean = false;
+	let showValue: boolean = false;
 
-	function recursivelyCalculatePreciseFontSize(value: number, precision: number = 10) {
-		// Set the font size
-		customFontSize = `${value}vw`;
+	let value: number = 1;
+	let precision: number = 10;
 
-		// Wait for the font-size to be applied
-		// @TODO: Refactor this to an observer instead of a timeout
-		setTimeout(() => {
-			// If the title is too wide, we need to make it smaller
-			if (titleElement.scrollWidth > window.innerWidth) {
+	function setNewFontSize(newValue: number) {
+		customFontSize = `${newValue}vw`;
+	}
+
+	function maxThreeDecimals(value: number) {
+		return Math.round(value * 1000) / 1000;
+	}
+
+	function initializeObserver() {
+		const resizeObserver = new ResizeObserver((entries) => {
+			if (entries[0].target.scrollWidth > window.innerWidth) {
 				//Build up the precision
 				if (precision === 10) {
-					return recursivelyCalculatePreciseFontSize(value - precision, 1);
+					value = value - precision;
+					precision = 1;
+
+					return setNewFontSize(value - precision);
 				} else if (precision === 1) {
-					return recursivelyCalculatePreciseFontSize(value - precision, 0.5);
+					value = value - precision;
+					precision = 0.5;
+
+					return setNewFontSize(value - precision);
 				} else if (precision === 0.5) {
-					return recursivelyCalculatePreciseFontSize(value - precision, 0.1);
+					value = value - precision;
+					precision = 0.1;
+
+					return setNewFontSize(value - precision);
 				} else if (precision === 0.1) {
-					return recursivelyCalculatePreciseFontSize(value - precision, 0.01);
+					value = value - precision;
+					precision = 0.01;
+
+					return setNewFontSize(value - precision);
 				} else if (precision === 0.01) {
-					return recursivelyCalculatePreciseFontSize(value - precision, 0.001);
+					value = value - precision;
+					precision = 0.001;
+
+					return setNewFontSize(value - precision);
 				}
 
-				// When there's a good enough value, pick the previous version (because this one is overflowing)
-				customFontSize = `${value - precision}vw`;
-
-				// End recursion
-				isDone = true;
-				return;
+				resizeObserver.disconnect();
+				value = value - precision * 2;
+				setNewFontSize(value - precision * 2);
 			}
 
 			// If the title is too small, we need to make it bigger
-			return recursivelyCalculatePreciseFontSize(value + precision, precision);
-		}, 100);
+			value = value + precision;
+			setNewFontSize(value + precision);
+		});
+
+		resizeObserver.observe(titleElement);
 	}
 
 	function handleSubmit(event) {
-		// Reset state
-		isDone = false;
-
 		// Set values for CSS variables
 		title = event.target.title.value;
 		fontFamily = event.target.font.value;
 
 		// Start the calculation
-		recursivelyCalculatePreciseFontSize(1, 10);
+		initializeObserver();
+
+		// Reset the form
+		showValue = true;
+		value = 1;
+		precision = 10;
+		setNewFontSize(1);
 	}
 
 	function copyToClipboard() {
@@ -86,9 +109,9 @@
 				<button type="submit">Calculate</button>
 			</form>
 
-			{#if isDone}
+			{#if showValue}
 				<p>
-					Your font size should be: <strong>{customFontSize}</strong>
+					Your font size should be: <strong>{maxThreeDecimals(value)}vw</strong>
 					<button type="button" on:click={copyToClipboard}>Copy value to clipboard</button>
 				</p>
 			{/if}
