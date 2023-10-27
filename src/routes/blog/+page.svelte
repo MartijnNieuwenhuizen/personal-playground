@@ -45,14 +45,20 @@
 		max-width: 100vw;
 	}
 	h1 {
-		font-family: var(--sans-serif);
-		font-size: 49.816999999999986vw;
 		line-height: 1.2;
-		font-weight: var(--font-weight-normal);
 		margin: 0;
 		padding: 0;
 		text-align: center;
-		transform: scale(1.1) translateX(-2%);
+
+		font-family: var(--serif);
+		font-size: 61.18599999999993vw;
+		/* Pull title up based on the vw, because the font-size is based on the vw. */
+		margin-top: -10vw;
+
+		/* font-family: var(--sans-serif);
+		font-weight: var(--font-weight-normal);
+		font-size: 49.816999999999986vw;
+		transform: scale(1.1) translateX(-2%); */
 	}
 
 	a span {

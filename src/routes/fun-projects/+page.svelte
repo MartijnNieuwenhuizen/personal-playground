@@ -22,14 +22,18 @@
 	}
 
 	h1 {
-		font-family: var(--sans-serif);
-		font-size: 18.16800000000002vw;
 		line-height: 1.2;
-		font-weight: var(--font-weight-normal);
 		margin: 0;
 		padding: 0;
+		/* text-align: center; */
 
-		text-align: center;
-		transform: scale(1.05) translateX(-0.25%);
+		font-size: 21.38700000000006vw;
+		font-family: var(--serif);
+		white-space: nowrap;
+
+		/* font-size: 18.16800000000002vw;
+		font-weight: var(--font-weight-normal);
+		font-family: var(--sans-serif);
+		transform: scale(1.05) translateX(-0.25%); */
 	}
 </style>

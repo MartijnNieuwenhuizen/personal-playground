@@ -6,8 +6,6 @@
 	import Constrain from '$lib/layout/constrain/index.svelte';
 
 	export let data: PageData;
-
-	import './style.css';
 </script>
 
 <section>
@@ -88,14 +86,17 @@
 	}
 
 	h1 {
-		font-family: var(--sans-serif);
-		font-size: 19.480000000000018vw;
 		line-height: 1.2;
-		font-weight: var(--font-weight-normal);
 		margin: 0;
 		padding: 0;
-
 		text-align: center;
-		transform: scale(1.065) translateX(-0.25%);
+
+		font-family: var(--serif);
+		font-size: 22.472000000000055vw;
+
+		/* font-family: var(--sans-serif);
+		font-size: 19.480000000000018vw;
+		font-weight: var(--font-weight-normal);
+		transform: scale(1.065) translateX(-0.25%); */
 	}
 </style>
