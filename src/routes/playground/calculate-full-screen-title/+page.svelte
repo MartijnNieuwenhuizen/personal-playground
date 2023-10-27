@@ -7,20 +7,21 @@
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	let titleElement: HTMLHeadElement;
-	let allowedToCutByHalf: boolean = true;
-	let fontSizeBeforeCurrentOne: number;
 	let isDone: boolean = false;
 
-	function recursivelyCalculatePreciseFontSize(value: number, precision: number = 1) {
+	function recursivelyCalculatePreciseFontSize(value: number, precision: number = 10) {
+		// Set the font size
 		customFontSize = `${value}vw`;
-		console.log('CALLING PRECISE');
 
+		// Wait for the font-size to be applied
+		// @TODO: Refactor this to an observer instead of a timeout
 		setTimeout(() => {
+			// If the title is too wide, we need to make it smaller
 			if (titleElement.scrollWidth > window.innerWidth) {
-				console.log('titleElement.scrollWidth: ', titleElement.scrollWidth);
-				console.log('window.innerWidth: ', window.innerWidth);
-				if (precision === 1) {
-					console.log('IS 1');
+				//Build up the precision
+				if (precision === 10) {
+					return recursivelyCalculatePreciseFontSize(value - precision, 1);
+				} else if (precision === 1) {
 					return recursivelyCalculatePreciseFontSize(value - precision, 0.5);
 				} else if (precision === 0.5) {
 					return recursivelyCalculatePreciseFontSize(value - precision, 0.1);
@@ -30,50 +31,33 @@
 					return recursivelyCalculatePreciseFontSize(value - precision, 0.001);
 				}
 
+				// When there's a good enough value, pick the previous version (because this one is overflowing)
 				customFontSize = `${value - precision}vw`;
+
+				// End recursion
 				isDone = true;
-				return false;
+				return;
 			}
 
+			// If the title is too small, we need to make it bigger
 			return recursivelyCalculatePreciseFontSize(value + precision, precision);
-		}, 100);
-	}
-
-	function recursivelyCalculateRoughFontSize(value: number, cuttingByHalf: boolean = false) {
-		customFontSize = `${value}vw`;
-
-		console.log('CALLING ROUGH');
-
-		setTimeout(() => {
-			if (cuttingByHalf && !(titleElement.scrollWidth > window.innerWidth)) {
-				allowedToCutByHalf = false;
-				return recursivelyCalculateRoughFontSize(fontSizeBeforeCurrentOne, false);
-			}
-
-			if (titleElement.scrollWidth > window.innerWidth) {
-				if (allowedToCutByHalf) {
-					fontSizeBeforeCurrentOne = value;
-					return recursivelyCalculateRoughFontSize(value / 2, true);
-				} else {
-					return recursivelyCalculateRoughFontSize(value - 3);
-				}
-			} else {
-				return recursivelyCalculatePreciseFontSize(value);
-			}
 		}, 100);
 	}
 
 	function handleSubmit(event) {
 		// Reset state
 		isDone = false;
-		allowedToCutByHalf = true;
 
 		// Set values for CSS variables
 		title = event.target.title.value;
 		fontFamily = event.target.font.value;
 
 		// Start the calculation
-		recursivelyCalculateRoughFontSize(100);
+		recursivelyCalculatePreciseFontSize(1, 10);
+	}
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(customFontSize);
 	}
 
 	$: title = '';
@@ -84,7 +68,7 @@
 <PlaygroundItem {title} {description} hidePageEffect={true}>
 	<Row area="top">
 		<Block>
-			<h2>Select...</h2>
+			<h2>Select your options</h2>
 
 			<form on:submit|preventDefault={handleSubmit}>
 				<div>
@@ -103,7 +87,10 @@
 			</form>
 
 			{#if isDone}
-				<p>Your font size should be: <strong>{customFontSize}</strong></p>
+				<p>
+					Your font size should be: <strong>{customFontSize}</strong>
+					<button type="button" on:click={copyToClipboard}>Copy value to clipboard</button>
+				</p>
 			{/if}
 		</Block>
 	</Row>

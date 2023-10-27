@@ -11,7 +11,10 @@
 </script>
 
 <section>
-	<h1>Blog</h1>
+	<div class="container">
+		<h1>Blog</h1>
+	</div>
+
 	<Row size="small">
 		<Block size="medium">
 			<p>
@@ -37,13 +40,19 @@
 </section>
 
 <style>
+	.container {
+		overflow: hidden;
+		max-width: 100vw;
+	}
 	h1 {
 		font-family: var(--sans-serif);
-		font-size: var(--heading-1);
-		line-height: 1.4;
+		font-size: 49.816999999999986vw;
+		line-height: 1.2;
 		font-weight: var(--font-weight-normal);
 		margin: 0;
 		padding: 0;
+		text-align: center;
+		transform: scale(1.1) translateX(-2%);
 	}
 
 	a span {
