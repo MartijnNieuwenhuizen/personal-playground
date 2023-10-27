@@ -15,6 +15,16 @@ export const load: PageServerLoad = async () => {
 
 	const links = [
 		{
+			url: '/playground/calculate-full-screen-title',
+			label: 'Calculate full screen title',
+			date: '27-10-2023'
+		},
+		{
+			url: '/playground/full-screen-title',
+			label: 'Full screen title',
+			date: '27-10-2023'
+		},
+		{
 			url: '/playground/tour-the-france-stage-with-offset-path',
 			label: 'Tour the france stage with offset path',
 			date: '18-10-2023'

@@ -6,13 +6,15 @@
 	import Constrain from '$lib/layout/constrain/index.svelte';
 
 	export let data: PageData;
+
+	import './style.css';
 </script>
 
-<Block size="medium">
-	<Row size="medium">
-		<Constrain size="small">
-			<section>
-				<h2>Playground</h2>
+<section>
+	<h1>Playground</h1>
+	<Block size="medium">
+		<Row size="medium">
+			<Constrain size="small">
 				<p>
 					Throughout the day/week, you will need to try a lot of things. And it's important to get
 					feedback as soon as possible in your workflow. This is what I use this playground for:
@@ -25,11 +27,10 @@
 						<li><a href={link.url}>{link.date} - {link.label}</a></li>
 					{/each}
 				</ul>
-				<section />
-			</section></Constrain
-		>
-	</Row>
-</Block>
+			</Constrain>
+		</Row>
+	</Block>
+</section>
 
 <!-- <Page>
 	<Block size="medium">
