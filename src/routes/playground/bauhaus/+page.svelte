@@ -1,11 +1,9 @@
-<script>
+<script type="ts">
 	import Bauhaus from '$lib/components/Bauhaus/index.svelte';
 	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
 
 	let title = 'Bauhaus';
 	let description = `<p>The bauhaus logo build with CSS Grid</p>`;
-
-	export let date = '2021-10-01';
 </script>
 
 <PlaygroundItem {title} {description}>

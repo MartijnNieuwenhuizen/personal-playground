@@ -1,13 +1,11 @@
 <script type="ts">
+	import type { PageData } from './$types';
+
 	import Block from '$lib/layout/block/index.svelte';
 	import Row from '$lib/layout/row/index.svelte';
 	import Constrain from '$lib/layout/constrain/index.svelte';
 
-	import type { PageData } from './$types';
-
 	export let data: PageData;
-
-	console.log('data: ', data);
 </script>
 
 <Block size="medium">
@@ -24,7 +22,7 @@
 				<ul>
 					{#each data.links as link}
 						<!-- content here -->
-						<li><a href={`/playground/${link}`}>{link}</a></li>
+						<li><a href={link.url}>{link.date} - {link.label}</a></li>
 					{/each}
 				</ul>
 				<section />
