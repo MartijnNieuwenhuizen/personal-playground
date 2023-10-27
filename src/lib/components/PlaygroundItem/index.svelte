@@ -12,7 +12,7 @@
 	<Block size="medium">
 		<Row size="medium">
 			<Constrain size="small">
-				<h2 class="title">{title}</h2>
+				<h1 class="title">{title}</h1>
 				<div class="description">{@html description}</div>
 			</Constrain>
 		</Row>

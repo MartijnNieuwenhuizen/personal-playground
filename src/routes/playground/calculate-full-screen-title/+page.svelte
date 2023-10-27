@@ -3,7 +3,7 @@
 	import Block from '$lib/layout/block/index.svelte';
 	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
 
-	let title = 'Calculate the font-size for a full screen title with a specific font.';
+	let playgroundTitle = 'Calculate the font-size for a full screen title with a specific font.';
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	let titleElement: HTMLHeadElement;
@@ -88,7 +88,7 @@
 	$: customFontSize = `1vw`;
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
+<PlaygroundItem title={playgroundTitle} {description} hidePageEffect={true}>
 	<Row area="top">
 		<Block>
 			<h2>Select your options</h2>
@@ -129,6 +129,35 @@
 			</h2>
 		</div>
 	</Row>
+
+	<Row area="bottom">
+		<Block>
+			<h3>Code</h3>
+			<pre>
+			<code class="language-html"
+					>{`
+<div class="title-container">
+  <h2 class="title">{title}</h2>
+</div>
+`}</code
+				>
+			<code class="language-css"
+					>{`
+.title-container {
+  overflow: hidden;
+  max-width: 100vw;
+}
+.title {
+  font-size: ${maxThreeDecimals(value)}vw;
+  font-family: "${fontFamily}";
+  line-height: 1.2;
+  white-space: nowrap;
+}
+`}</code
+				>
+		</pre>
+		</Block>
+	</Row>
 </PlaygroundItem>
 
 <style>
@@ -141,11 +170,12 @@
 		min-height: 50ex;
 	}
 	.output {
-		font-family: var(--full-screen-tool-font-family);
-		font-size: var(--full-screen-tool-font-size);
-		line-height: 1;
+		white-space: nowrap;
 		margin: 0;
 		padding: 0;
-		white-space: nowrap;
+		font-family: var(--full-screen-tool-font-family);
+		font-size: var(--full-screen-tool-font-size);
+		text-align: center;
+		line-height: 1;
 	}
 </style>
