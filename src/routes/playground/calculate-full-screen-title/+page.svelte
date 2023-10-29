@@ -2,6 +2,7 @@
 	import Row from '$lib/layout/row/index.svelte';
 	import Block from '$lib/layout/block/index.svelte';
 	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import Code from '$lib/components/Code/index.svelte';
 
 	let playgroundTitle = 'Calculate the font-size for a full screen title with a specific font.';
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
@@ -68,6 +69,8 @@
 		// Set values for CSS variables
 		title = event.target.title.value;
 		fontFamily = event.target.font.value;
+		fontWeight = event.target.fontWeight.value;
+		letterSpacing = event.target.letterSpacing.value;
 
 		// Start the calculation
 		initializeObserver();
@@ -85,7 +88,29 @@
 
 	$: title = '';
 	$: fontFamily = '';
+	$: fontWeight = '';
+	$: letterSpacing = '';
 	$: customFontSize = `1vw`;
+
+	$: htmlCode = `<div class="title-container">
+  <h2 class="title">{title}</h2>
+</div>`;
+
+	$: cssCode = `.title-container {
+  overflow: hidden;
+  max-width: 100vw;
+}
+.title {
+  font-size: ${maxThreeDecimals(value)}vw;
+  font-family: "${fontFamily}";
+  font-weight: "${fontWeight}";
+  letter-spacing: "${letterSpacing}";
+  line-height: 1.2;
+  white-space: nowrap;
+}
+`;
+
+	$: customProperties = `--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`;
 </script>
 
 <PlaygroundItem title={playgroundTitle} {description} hidePageEffect={true}>
@@ -106,6 +131,27 @@
 						<option value="Lato">Lato</option>
 					</select>
 				</div>
+
+				<div>
+					<label for="fontWeight">Font weight</label>
+					<select name="fontWeight" id="fontWeight" value="700">
+						<option value="100">100</option>
+						<option value="200">200</option>
+						<option value="300">300</option>
+						<option value="400">400</option>
+						<option value="500">500</option>
+						<option value="600">600</option>
+						<option value="700">700</option>
+						<option value="800">800</option>
+						<option value="900">900</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="letterSpacing">Letter spacing</label>
+					<input type="text" id="letterSpacing" value="" />
+				</div>
+
 				<button type="submit">Calculate</button>
 			</form>
 
@@ -120,42 +166,19 @@
 
 	<Row area="bottom">
 		<div class="container">
-			<h2
-				class="output"
-				bind:this={titleElement}
-				style="--full-screen-tool-font-size: {customFontSize}; --full-screen-tool-font-family: {fontFamily}"
-			>
+			<h2 class="output" bind:this={titleElement} style={customProperties}>
 				{title}
 			</h2>
 		</div>
 	</Row>
 
 	<Row area="bottom">
-		<Block>
+		<Block size="medium">
 			<h3>Code</h3>
-			<pre>
-			<code class="language-html"
-					>{`
-<div class="title-container">
-  <h2 class="title">{title}</h2>
-</div>
-`}</code
-				>
-			<code class="language-css"
-					>{`
-.title-container {
-  overflow: hidden;
-  max-width: 100vw;
-}
-.title {
-  font-size: ${maxThreeDecimals(value)}vw;
-  font-family: "${fontFamily}";
-  line-height: 1.2;
-  white-space: nowrap;
-}
-`}</code
-				>
-		</pre>
+
+			<Code code={htmlCode} language="xml" />
+
+			<Code code={cssCode} language="css" />
 		</Block>
 	</Row>
 </PlaygroundItem>
@@ -167,7 +190,6 @@
 		overflow-x: auto;
 		overflow-y: visible;
 		max-width: 100vw;
-		min-height: 50ex;
 	}
 	.output {
 		white-space: nowrap;
@@ -175,6 +197,8 @@
 		padding: 0;
 		font-family: var(--full-screen-tool-font-family);
 		font-size: var(--full-screen-tool-font-size);
+		font-weight: var(--full-screen-tool-font-weight);
+		letter-spacing: var(--full-screen-tool-letter-spacing);
 		text-align: center;
 		line-height: 1;
 	}
