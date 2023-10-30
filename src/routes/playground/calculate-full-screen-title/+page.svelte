@@ -8,10 +8,17 @@
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	let titleElement: HTMLHeadElement;
+	let containerElement: HTMLDivElement;
 	let showValue: boolean = false;
 
 	let value: number = 1;
 	let precision: number = 10;
+
+	$: title = '';
+	$: fontFamily = '';
+	$: fontWeight = '';
+	$: letterSpacing = '';
+	$: customFontSize = `1vw`;
 
 	function setNewFontSize(newValue: number) {
 		customFontSize = `${newValue}vw`;
@@ -72,6 +79,27 @@
 		fontWeight = event.target.fontWeight.value;
 		letterSpacing = event.target.letterSpacing.value;
 
+		if (event.target.customFont && event.target.customFont) {
+			const fontFile = event.target.customFont.files[0];
+
+			// @TODO: Validate input
+
+			const reader = new FileReader();
+			reader.onload = function (readerEvent) {
+				if (!readerEvent.target) return;
+
+				const fontData = readerEvent.target.result;
+				titleElement.style.fontFamily = 'CustomFont';
+
+				containerElement.innerHTML = `@font-face {
+            font-family: 'CustomFont';
+            src: url("${fontData}");
+        }`;
+			};
+
+			reader.readAsDataURL(fontFile);
+		}
+
 		// Start the calculation
 		initializeObserver();
 
@@ -85,12 +113,6 @@
 	function copyToClipboard() {
 		navigator.clipboard.writeText(customFontSize);
 	}
-
-	$: title = '';
-	$: fontFamily = '';
-	$: fontWeight = '';
-	$: letterSpacing = '';
-	$: customFontSize = `1vw`;
 
 	$: htmlCode = `<div class="title-container">
   <h2 class="title">{title}</h2>
@@ -110,7 +132,13 @@
 }
 `;
 
+	$: showCustomFontInput = fontFamily === 'customFont';
+
 	$: customProperties = `--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`;
+
+	function handleFontFamilyChange(event) {
+		fontFamily = event.target.value;
+	}
 </script>
 
 <PlaygroundItem title={playgroundTitle} {description} hidePageEffect={true}>
@@ -126,11 +154,17 @@
 
 				<div>
 					<label for="font">Font</label>
-					<select name="font" id="font">
+					<select name="font" id="font" on:change={handleFontFamilyChange}>
 						<option value="Crimson-Text">Crimson-Text</option>
 						<option value="Lato">Lato</option>
+						<option value="customFont">CustomFont</option>
 					</select>
 				</div>
+
+				{#if showCustomFontInput}
+					<label for="customFont">Custom font</label>
+					<input type="file" name="customFont" id="customFont" />
+				{/if}
 
 				<div>
 					<label for="fontWeight">Font weight</label>
@@ -166,6 +200,7 @@
 
 	<Row area="bottom">
 		<div class="container">
+			<style bind:this={containerElement}></style>
 			<h2 class="output" bind:this={titleElement} style={customProperties}>
 				{title}
 			</h2>
