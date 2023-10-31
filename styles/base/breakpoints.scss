@@ -2,11 +2,11 @@
  * Breakpoints
  */
 $breakpoints: (
-    tiny: 480,
-    small: 640,
-    medium: 960,
-    large: 1280,
-    huge: 1680,
+	tiny: 480,
+	small: 640,
+	medium: 960,
+	large: 1280,
+	huge: 1680
 );
 
 /**
@@ -20,38 +20,38 @@ $breakpoints: (
  * }
  */
 @mixin bp-min($points: 0) {
-    $width: $points;
-    @if map-get($breakpoints, $points) {
-        $width: map-get($breakpoints, $points);
-    }
+	$width: $points;
+	@if map-get($breakpoints, $points) {
+		$width: map-get($breakpoints, $points);
+	}
 
-    @media (min-width: rem($width)) {
-        @content;
-    }
+	@media (min-width: rem($width)) {
+		@content;
+	}
 }
 
 @mixin bp-max($points: 0) {
-    $width: $points;
-    @if map-get($breakpoints, $points) {
-        $width: map-get($breakpoints, $points);
-    }
+	$width: $points;
+	@if map-get($breakpoints, $points) {
+		$width: map-get($breakpoints, $points);
+	}
 
-    @media (max-width: (rem($width) - 0.0625rem)) {
-        @content;
-    }
+	@media (max-width: (rem($width) - 0.0625rem)) {
+		@content;
+	}
 }
 
 @mixin bp-min-max($min-points: 0, $max-points: 0) {
-    $min-width: $min-points;
-    $max-width: $max-points;
-    @if map-get($breakpoints, $min-points) {
-        $min-width: map-get($breakpoints, $min-points);
-    }
-    @if map-get($breakpoints, $max-points) {
-        $max-width: map-get($breakpoints, $max-points);
-    }
+	$min-width: $min-points;
+	$max-width: $max-points;
+	@if map-get($breakpoints, $min-points) {
+		$min-width: map-get($breakpoints, $min-points);
+	}
+	@if map-get($breakpoints, $max-points) {
+		$max-width: map-get($breakpoints, $max-points);
+	}
 
-    @media (min-width: rem($min-width)) and (max-width: (rem($max-width) - 0.0625rem)) {
-        @content;
-    }
+	@media (min-width: rem($min-width)) and (max-width: (rem($max-width) - 0.0625rem)) {
+		@content;
+	}
 }
