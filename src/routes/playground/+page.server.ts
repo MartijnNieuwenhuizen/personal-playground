@@ -13,7 +13,20 @@ export const load: PageServerLoad = async () => {
 
 	// const links = files.filter((file) => !filesToExclude.includes(file));
 
+	// @TODO: Add Growing header text on scroll (let it explode)
+	// @TODO: Add tags to the playgrounds
+	// @TODO: Style lists
+	// @TODO: Run by default on machine
+	// @TODO: Fix autoscroll namelist on mobile
+	// @TODO: Fix emoji list -> Maybe remove text?
+	// @TODO: Deploy to Portfolio
+
 	const links = [
+		{
+			url: '/playground/scroll-timeline-with-identical-components',
+			label: 'Scroll timeline with identical components',
+			date: '30-10-2023'
+		},
 		{
 			url: '/playground/calculate-full-screen-title',
 			label: 'Calculate full screen title',
