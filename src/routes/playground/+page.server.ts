@@ -13,6 +13,7 @@ export const load: PageServerLoad = async () => {
 
 	// const links = files.filter((file) => !filesToExclude.includes(file));
 
+	// @TODO: Upgrade to latest version
 	// @TODO: Add Growing header text on scroll (let it explode)
 	// @TODO: Add tags to the playgrounds
 	// @TODO: Style lists
