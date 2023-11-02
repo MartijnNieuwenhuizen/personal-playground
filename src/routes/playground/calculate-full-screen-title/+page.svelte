@@ -141,7 +141,7 @@
 	}
 </script>
 
-<PlaygroundItem title={playgroundTitle} {description} hidePageEffect={true}>
+<PlaygroundItem title={playgroundTitle} {description}>
 	<Row area="top">
 		<Block>
 			<h2>Select your options</h2>

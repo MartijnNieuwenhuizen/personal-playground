@@ -18,7 +18,7 @@
 `;
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
+<PlaygroundItem {title} {description}>
 	<Row>
 		<Block>
 			<h2>You can find the attempts below</h2>

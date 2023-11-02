@@ -20,7 +20,7 @@
 `;
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
+<PlaygroundItem {title} {description}>
 	<div class="stage-21">
 		<CyclingStage
 			title="Tour the France 2021, stage 21 (Oyonnax - Le Grand-Bornand)"

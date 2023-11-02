@@ -9,7 +9,7 @@
 	let description = `<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>`;
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
+<PlaygroundItem {title} {description}>
 	<div class="container">
 		<div class="sticky">
 			<div class="stage-outline">

@@ -12,7 +12,7 @@
 	let description = `<p>At GRRR we have a block mixin that ensures an element has a <code>max-width</code> and will always be in the center of the screen. Sometimes, you want something to grow on the "overflow" on the left and right size of the container. So if the page is 1200px and the container is max 600px wide, one element is 600px wide and the other is 300px wide. See image.</p>`;
 </script>
 
-<PlaygroundItem {title} {description} hidePageEffect={true}>
+<PlaygroundItem {title} {description}>
 	<Block>
 		<h2>With the GRRR container (no overflow)</h2>
 	</Block>

@@ -6,7 +6,7 @@
 	let description = `<p>The bauhaus logo build with CSS Grid</p>`;
 </script>
 
-<PlaygroundItem {title} {description}>
+<PlaygroundItem {title} {description} showPageEffect={true}>
 	<div>
 		<Bauhaus />
 	</div>

@@ -6,7 +6,7 @@
 		'Based on <a href="https://www.bram.us/2023/06/14/cyclic-dependency-space-toggles/">this article</a> by Brammus';
 </script>
 
-<PlaygroundItem {title} {description}>
+<PlaygroundItem {title} {description} showPageEffect={true}>
 	<div>
 		<input type="checkbox" id="toggle" class="space-toggles__toggle" />
 		<label for="toggle">Toggle me</label>

@@ -5,10 +5,10 @@
 
 	export let title: string;
 	export let description: string;
-	export let hidePageEffect: boolean = false;
+	export let showPageEffect: boolean = false;
 </script>
 
-<section data-hide-page-effect={hidePageEffect}>
+<section data-show-page-effect={showPageEffect}>
 	<Block size="medium">
 		<Row size="medium">
 			<Constrain size="small">
@@ -25,8 +25,8 @@
 
 <style>
 	section {
-		--border-radius: 40px;
-		--padding: 40px;
+		--border-radius: 0px;
+		--padding: 0px;
 
 		height: 100%;
 		display: grid;
@@ -44,8 +44,8 @@
 		}
 	}
 
-	section[data-hide-page-effect='true'] {
-		--border-radius: 0px;
-		--padding: 0px;
+	section[data-show-page-effect='true'] {
+		--border-radius: 40px;
+		--padding: 40px;
 	}
 </style>
