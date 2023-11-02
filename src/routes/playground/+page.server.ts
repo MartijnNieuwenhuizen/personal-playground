@@ -23,6 +23,11 @@ export const load: PageServerLoad = async () => {
 
 	const links = [
 		{
+			url: '/playground/growing-header',
+			label: 'Growing header',
+			date: '02-11-2023'
+		},
+		{
 			url: '/playground/scroll-timeline-with-identical-components',
 			label: 'Scroll timeline with identical components',
 			date: '30-10-2023'

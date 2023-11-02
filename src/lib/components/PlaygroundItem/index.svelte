@@ -5,7 +5,7 @@
 
 	export let title: string;
 	export let description: string;
-	export let showPageEffect: boolean = false;
+	export let showPageEffect = false;
 </script>
 
 <section data-show-page-effect={showPageEffect}>
@@ -25,27 +25,27 @@
 
 <style>
 	section {
-		--border-radius: 0px;
-		--padding: 0px;
+		--playground-item-border-radius: 0px;
+		--playground-item-padding: 0px;
 
 		height: 100%;
 		display: grid;
 		grid-template-rows: auto 1fr;
 	}
 	.new-content-part {
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		padding: var(--padding);
+		border-radius: var(--playground-item-border-radius) var(--playground-item-border-radius) 0 0;
+		padding: var(--playground-item-padding);
 		background-color: white;
 	}
 
 	@media (min-width: 800px) {
 		section {
-			--border-radius: 60px;
+			--playground-item-border-radius: 60px;
 		}
 	}
 
-	section[data-show-page-effect='true'] {
-		--border-radius: 40px;
-		--padding: 40px;
-	}
+	/* section[data-show-page-effect='true'] {
+		--playground-item-border-radius: 40px;
+		--playground-item-padding: 40px;
+	} */
 </style>

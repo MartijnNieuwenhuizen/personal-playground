@@ -5,12 +5,13 @@ import { mkdir } from 'node:fs';
 import pascalCaseToDash from './pascal-case-to-dash.js';
 import toHumanReadableText from './to-human-readable-text.js';
 import writeFileErrorHandler from './write-file-error-handler.js';
+import capitalizeFirstLetter from './capitalize-first-letter.js';
 
 const generatePage = (componentName, showPageEffect) => {
 	return `<script lang="ts">
     import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
 
-    const title = '${toHumanReadableText(componentName)}';
+    const title = '${capitalizeFirstLetter(toHumanReadableText(componentName))}';
 	const description = 'Add a description';
 </script>
 
@@ -47,7 +48,7 @@ const addFileToServerList = (componentName) => {
 		// Create the new item.
 		const newItem = {
 			url: `/playground/${pascalCaseToDash(componentName)}`,
-			label: toHumanReadableText(componentName),
+			label: capitalizeFirstLetter(toHumanReadableText(componentName)),
 			date: new Intl.DateTimeFormat('nl-NL', {
 				year: 'numeric',
 				month: '2-digit',
