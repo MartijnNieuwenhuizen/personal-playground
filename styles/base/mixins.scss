@@ -284,3 +284,17 @@
 @mixin top-left-border-radius {
 	border-top-left-radius: var(--border-radius, #{$border-radius-large-screens});
 }
+
+/**
+* Increase the tap area of an element to the entire width & height of the element.
+*/
+@mixin expand-clickable-area {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

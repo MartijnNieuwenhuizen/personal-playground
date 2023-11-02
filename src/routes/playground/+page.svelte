@@ -1,10 +1,12 @@
 <script type="ts">
 	import type { PageData } from './$types';
 
+	import tags from './tags';
+
 	import Block from '$lib/layout/block/index.svelte';
 	import Row from '$lib/layout/row/index.svelte';
 	import Constrain from '$lib/layout/constrain/index.svelte';
-	import tags from './tags';
+	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 
 	export let data: PageData;
 
@@ -29,7 +31,7 @@
 		.sort((a, b) => b.count - a.count);
 </script>
 
-<section>
+<section data-current-tag={currentTag}>
 	<div class="container">
 		<h1>Playground</h1>
 	</div>
@@ -55,7 +57,12 @@
 							<input type="radio" name="tag" id={'all'} data-active={currentTag === 'all'} />
 							<label for={'all'}>All ({data.links.length})</label>
 							{#each enrichedTags as tag}
-								<input type="radio" name="tag" id={tag.tag} data-active={currentTag === tag.tag} />
+								<input
+									type="radio"
+									name="tag"
+									id={tag.tag}
+									data-active={currentTag === 'all' || currentTag === tag.tag}
+								/>
 								<label for={tag.tag}>{tag.label} - {tag.count}</label>
 							{/each}
 						</div>
@@ -65,24 +72,14 @@
 		</Row>
 
 		<Block size="medium">
-			<Constrain size="small">
-				<ul>
-					{#each filteredLinks as link}
-						<!-- content here -->
-						<li>
-							<a href={link.url}>
-								<span>{link.date}</span>
-								<span>{link.label}</span>
-								<span>
-									{#each link.tags as tag}
-										<span> - {tags[tag]} </span>
-									{/each}
-								</span>
-							</a>
-						</li>
-					{/each}
-				</ul>
-			</Constrain>
+			<h2 class="sr-only">Playground items</h2>
+			<ul>
+				{#each filteredLinks as link}
+					<li>
+						<PreviewForList url={link.url} title={link.label} date={link.date} />
+					</li>
+				{/each}
+			</ul>
 		</Block>
 	</Row>
 </section>
@@ -119,7 +116,6 @@
 	}
 	.overflow-list {
 		display: flex;
-		gap: 0.5rem;
 		padding: 0 var(--block-padding) 1rem var(--block-padding);
 	}
 	legend {
@@ -130,30 +126,55 @@
 		position: absolute;
 		opacity: 0;
 	}
-	input:focus + label {
-		background: var(--highlight-color);
-	}
 	label {
 		white-space: nowrap;
 		position: relative;
 		display: inline-block;
-		padding: 0.65em 1.1em 0.7em;
-		border-radius: 50px;
+		padding: 1em 1.1em;
 		font-size: 14px;
 		line-height: 1;
 		text-decoration: none;
-		background: #fff;
-		transition: background-color 0.2s;
-		transition-property: background, color, border-color, opacity, transform, width, height;
-		transition-duration: 0.2s;
-		transition-timing-function: linear;
+		border: 2px solid black;
+		margin-left: -2px;
 	}
 	label:hover {
-		background: var(--highlight-color);
 		cursor: pointer;
 	}
 
+	input[data-active='false'] + label {
+		opacity: 0.5;
+	}
 	input[data-active='true'] + label {
-		background: var(--highlight-color);
+		text-decoration: underline;
+	}
+	[data-current-tag='all'] input[data-active='true'] + label {
+		text-decoration: none;
+	}
+	.overflow-list:hover input:not([data-active='true']) + label {
+		opacity: 0.5;
+	}
+	.overflow-list:hover label:hover {
+		opacity: 1 !important;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 2rem 0 0;
+		display: grid;
+		grid-template-columns: 1fr auto;
+	}
+	li {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: 1 / -1;
+	}
+
+	ul:hover li {
+		opacity: 0.4;
+	}
+
+	ul:hover li:hover {
+		opacity: 1;
 	}
 </style>
