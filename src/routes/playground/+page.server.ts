@@ -23,6 +23,11 @@ export const load: PageServerLoad = async () => {
 
 	const links = [
 		{
+			url: '/playground/opposite-scrollbar',
+			label: 'Opposite scrollbar',
+			date: '02-11-2023'
+		},
+		{
 			url: '/playground/growing-header',
 			label: 'Growing header',
 			date: '02-11-2023'
