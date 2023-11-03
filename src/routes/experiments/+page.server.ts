@@ -24,6 +24,12 @@ export const load: PageServerLoad = async () => {
 
 	const links = [
 		{
+			url: '/experiments/rocket-progress-bar',
+			label: 'Rocket progress bar/scrollbar',
+			date: '03-11-2023',
+			tags: ['scroll-timeline', 'css']
+		},
+		{
 			url: '/experiments/opposite-scrollbar',
 			label: 'Opposite scrollbar',
 			date: '02-11-2023',

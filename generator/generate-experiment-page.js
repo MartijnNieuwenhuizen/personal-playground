@@ -52,7 +52,8 @@ const addFileToServerList = (componentName) => {
 			date: new Intl.DateTimeFormat('nl-NL', {
 				year: 'numeric',
 				month: '2-digit',
-				day: '2-digit'
+				day: '2-digit',
+				tags: []
 			}).format(new Date())
 		};
 
