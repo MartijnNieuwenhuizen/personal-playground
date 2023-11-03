@@ -3,14 +3,14 @@
 import inquirer from 'inquirer';
 
 import displayError from './display-error.js';
-import generatePlaygroundPage from './generate-playground-page.js';
+import generateExperimentPage from './generate-experiment-page.js';
 
 (async function () {
 	const inquirerPromptFactory = (prompt) => inquirer.prompt([prompt]).catch(displayError);
 
 	const { componentName } = await inquirerPromptFactory({
 		type: 'name',
-		message: "🚀 What's the name of the new play? (in PascalCase)",
+		message: "🚀 What's the name of the new experiment? (in PascalCase)",
 		name: 'componentName'
 	});
 
@@ -20,7 +20,7 @@ import generatePlaygroundPage from './generate-playground-page.js';
 		name: 'showPageEffect'
 	});
 
-	generatePlaygroundPage({ componentName, showPageEffect }).then(() => {
+	generateExperimentPage({ componentName, showPageEffect }).then(() => {
 		console.log(`🚀 Whoop Whoop, a new play has been created!`);
 	});
 })();

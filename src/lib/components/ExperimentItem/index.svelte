@@ -25,27 +25,27 @@
 
 <style>
 	section {
-		--playground-item-border-radius: 0px;
-		--playground-item-padding: 0px;
+		--experiment-item-border-radius: 0px;
+		--experiment-item-padding: 0px;
 
 		height: 100%;
 		display: grid;
 		grid-template-rows: auto 1fr;
 	}
 	.new-content-part {
-		border-radius: var(--playground-item-border-radius) var(--playground-item-border-radius) 0 0;
-		padding: var(--playground-item-padding);
+		border-radius: var(--experiment-item-border-radius) var(--experiment-item-border-radius) 0 0;
+		padding: var(--experiment-item-padding);
 		background-color: white;
 	}
 
 	@media (min-width: 800px) {
 		section {
-			--playground-item-border-radius: 60px;
+			--experiment-item-border-radius: 60px;
 		}
 	}
 
-	/* section[data-show-page-effect='true'] {
-		--playground-item-border-radius: 40px;
-		--playground-item-padding: 40px;
-	} */
+	section[data-show-page-effect='true'] {
+		--experiment-item-border-radius: 40px;
+		--experiment-item-padding: 40px;
+	}
 </style>

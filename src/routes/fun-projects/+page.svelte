@@ -1,6 +1,8 @@
 <script type="ts">
 	import Block from '$lib/layout/block/index.svelte';
 	import Row from '$lib/layout/row/index.svelte';
+	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
+	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 </script>
 
 <section>
@@ -10,7 +12,23 @@
 
 	<Row size="small">
 		<Block size="medium">
-			<p>...</p>
+			<HoverFadeList type="ol">
+				<li>
+					<PreviewForList
+						url={'https://www.narug.nl/'}
+						title={'Hoeveel dagen na rug (narug.nu)'}
+						date={'2022-2023'}
+					/>
+				</li>
+				<!-- <li>
+					<PreviewForList
+						url={''}
+						title={'Nice job for 2024 to add a view items here!'}
+						date={'2024'}
+					/>
+				</li> -->
+			</HoverFadeList>
+			<h2>Nice job for 2024 to add a view items here!</h2>
 		</Block>
 	</Row>
 </section>

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Opposite scrollbar';
 	const description = 'One that scrolls the other way, for half the time, and then back up again.';
 </script>
 
-<PlaygroundItem {title} {description} showPageEffect={true}>
+<ExperimentItem {title} {description} showPageEffect={true}>
 	<Row>
 		<Block size="small">
 			<h2>A lot of dummy content</h2>
@@ -146,7 +146,7 @@
 			</p>
 		</Block>
 	</Row>
-</PlaygroundItem>
+</ExperimentItem>
 
 <div class="opposite-scrollbar opposite-scrollbar--1" />
 <div class="opposite-scrollbar opposite-scrollbar--2" />

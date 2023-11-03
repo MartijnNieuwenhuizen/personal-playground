@@ -1,10 +1,10 @@
 <script type="ts">
 	import Row from '$lib/layout/row/index.svelte';
 	import Block from '$lib/layout/block/index.svelte';
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 	import Code from '$lib/components/Code/index.svelte';
 
-	let playgroundTitle = 'Calculate the font-size for a full screen title with a specific font.';
+	let experimentTitle = 'Calculate the font-size for a full screen title with a specific font.';
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	let titleElement: HTMLHeadElement;
@@ -141,7 +141,7 @@
 	}
 </script>
 
-<PlaygroundItem title={playgroundTitle} {description}>
+<ExperimentItem title={experimentTitle} {description}>
 	<Row area="top">
 		<Block>
 			<h2>Select your options</h2>
@@ -216,7 +216,7 @@
 			<Code code={cssCode} language="css" />
 		</Block>
 	</Row>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style>
 	.container {

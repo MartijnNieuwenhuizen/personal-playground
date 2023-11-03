@@ -7,6 +7,7 @@
 	import Row from '$lib/layout/row/index.svelte';
 	import Constrain from '$lib/layout/constrain/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
+	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
 	export let data: PageData;
 
@@ -33,7 +34,7 @@
 
 <section data-current-tag={currentTag}>
 	<div class="container">
-		<h1>Playground</h1>
+		<h1>Experiments</h1>
 	</div>
 
 	<Row size="medium">
@@ -41,7 +42,7 @@
 			<Constrain size="small">
 				<p>
 					Throughout the day/week, you will need to try a lot of things. And it's important to get
-					feedback as soon as possible in your workflow. This is what I use this playground for:
+					feedback as soon as possible in your workflow. This is what I use these experiments for:
 					Isolated tests, ideas. Some will be nice to look at, some will be boring.
 				</p>
 			</Constrain>
@@ -72,14 +73,15 @@
 		</Row>
 
 		<Block size="medium">
-			<h2 class="sr-only">Playground items</h2>
-			<ul>
+			<h2 class="sr-only">Experiments</h2>
+
+			<HoverFadeList>
 				{#each filteredLinks as link}
 					<li>
 						<PreviewForList url={link.url} title={link.label} date={link.date} />
 					</li>
 				{/each}
-			</ul>
+			</HoverFadeList>
 		</Block>
 	</Row>
 </section>
@@ -97,7 +99,7 @@
 		text-align: center;
 
 		font-family: var(--serif);
-		font-size: 22.472000000000055vw;
+		font-size: 20.982000000000056vw;
 
 		/* font-family: var(--sans-serif);
 		font-size: 19.480000000000018vw;
@@ -155,26 +157,5 @@
 	}
 	.overflow-list:hover label:hover {
 		opacity: 1 !important;
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 2rem 0 0;
-		display: grid;
-		grid-template-columns: 1fr auto;
-	}
-	li {
-		display: grid;
-		grid-template-columns: subgrid;
-		grid-column: 1 / -1;
-	}
-
-	ul:hover li {
-		opacity: 0.4;
-	}
-
-	ul:hover li:hover {
-		opacity: 1;
 	}
 </style>

@@ -1,16 +1,16 @@
 <script type="ts">
 	import Bauhaus from '$lib/components/Bauhaus/index.svelte';
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	let title = 'Bauhaus';
 	let description = `<p>The bauhaus logo build with CSS Grid</p>`;
 </script>
 
-<PlaygroundItem {title} {description} showPageEffect={true}>
+<ExperimentItem {title} {description} showPageEffect={true}>
 	<div>
 		<Bauhaus />
 	</div>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style>
 	div {

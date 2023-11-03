@@ -9,15 +9,15 @@ import capitalizeFirstLetter from './capitalize-first-letter.js';
 
 const generatePage = (componentName, showPageEffect) => {
 	return `<script lang="ts">
-    import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+    import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
     const title = '${capitalizeFirstLetter(toHumanReadableText(componentName))}';
 	const description = 'Add a description';
 </script>
 
-<PlaygroundItem {title} {description} showPageEffect={${showPageEffect}}>
+<ExperimentItem {title} {description} showPageEffect={${showPageEffect}}>
 	<h2>Code here</h2>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style>
 	h2 {
@@ -28,7 +28,7 @@ const generatePage = (componentName, showPageEffect) => {
 };
 
 const createFile = (componentName, showPageEffect) => {
-	const dir = `./src/routes/playground/${pascalCaseToDash(componentName)}`;
+	const dir = `./src/routes/experiments/${pascalCaseToDash(componentName)}`;
 
 	mkdir(dir, { recursive: false }, writeFileErrorHandler);
 
@@ -40,14 +40,14 @@ const createFile = (componentName, showPageEffect) => {
 };
 
 const addFileToServerList = (componentName) => {
-	const playgroundListFile = `./src/routes/playground/+page.server.ts`;
+	const experimentsListFile = `./src/routes/experiments/+page.server.ts`;
 
-	fs.readFile(playgroundListFile, 'utf8', (err, data) => {
+	fs.readFile(experimentsListFile, 'utf8', (err, data) => {
 		if (err) throw err;
 
 		// Create the new item.
 		const newItem = {
-			url: `/playground/${pascalCaseToDash(componentName)}`,
+			url: `/experiments/${pascalCaseToDash(componentName)}`,
 			label: capitalizeFirstLetter(toHumanReadableText(componentName)),
 			date: new Intl.DateTimeFormat('nl-NL', {
 				year: 'numeric',
@@ -69,7 +69,7 @@ const addFileToServerList = (componentName) => {
 		const updatedData = data.replace(`const links = [`, updatedLinksArrayContent);
 
 		// Write the updated JavaScript code back to the file
-		fs.writeFile(playgroundListFile, updatedData, 'utf8', (err) => {
+		fs.writeFile(experimentsListFile, updatedData, 'utf8', (err) => {
 			if (err) {
 				throw err;
 			}

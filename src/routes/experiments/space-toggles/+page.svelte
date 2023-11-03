@@ -1,18 +1,18 @@
 <script lang="ts">
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Space toggles';
 	const description =
 		'Based on <a href="https://www.bram.us/2023/06/14/cyclic-dependency-space-toggles/">this article</a> by Brammus';
 </script>
 
-<PlaygroundItem {title} {description} showPageEffect={true}>
+<ExperimentItem {title} {description} showPageEffect={true}>
 	<div>
 		<input type="checkbox" id="toggle" class="space-toggles__toggle" />
 		<label for="toggle">Toggle me</label>
 		<div class="space-toggles preview-box" />
 	</div>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style>
 	.space-toggles {

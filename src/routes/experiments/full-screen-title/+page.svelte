@@ -1,7 +1,7 @@
 <script type="ts">
 	import Row from '$lib/layout/row/index.svelte';
 	import Block from '$lib/layout/block/index.svelte';
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	let title = 'Make a full screen title';
 	let description = `
@@ -18,13 +18,13 @@
 `;
 </script>
 
-<PlaygroundItem {title} {description}>
+<ExperimentItem {title} {description}>
 	<Row>
 		<Block>
 			<h2>You can find the attempts below</h2>
 			<p>
 				But this didn't work nice, so I made a tool for this to calculate the right value for each
-				title/font pairing. You can find it here: <a href="/playground/calculate-full-screen-title"
+				title/font pairing. You can find it here: <a href="/experiments/calculate-full-screen-title"
 					>Calculate full screen title</a
 				>
 			</p>
@@ -76,7 +76,7 @@
 			0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 		</h2>
 	</Row>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style>
 	.attempt-1 {

@@ -15,8 +15,8 @@
 			label: 'Fun projects'
 		},
 		{
-			url: '/playground',
-			label: 'Playground'
+			url: '/experiments',
+			label: 'Experiments'
 		}
 	];
 </script>

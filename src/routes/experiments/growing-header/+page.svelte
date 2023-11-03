@@ -2,7 +2,7 @@
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import Code from '$lib/components/Code/index.svelte';
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Growing header';
 	const description = 'With the CSS Timeline API.';
@@ -55,7 +55,7 @@
 }`;
 </script>
 
-<PlaygroundItem {title} {description}>
+<ExperimentItem {title} {description}>
 	<div class="container">
 		<h2 class="animated-title">This title will become HUGE when you're scrolling down!</h2>
 
@@ -107,7 +107,7 @@
 			</Block>
 		</Row>
 	</div>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style type="scss">
 	@keyframes grow-on-scroll {

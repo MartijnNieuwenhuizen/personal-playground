@@ -3,7 +3,7 @@
 	Autofill this date when the file is generated :) with the generator script.
 -->
 <script>
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 	import CyclingStage from '$lib/components/CyclingStage/index.svelte';
 
 	let title = 'Tour the france stage';
@@ -20,14 +20,14 @@
 `;
 </script>
 
-<PlaygroundItem {title} {description}>
+<ExperimentItem {title} {description}>
 	<div class="stage-21">
 		<CyclingStage
 			title="Tour the France 2021, stage 21 (Oyonnax - Le Grand-Bornand)"
 			totalDistance={150}
 		/>
 	</div>
-</PlaygroundItem>
+</ExperimentItem>
 
 <style type="scss">
 	.stage-21 {

@@ -3,13 +3,13 @@
 	Autofill this date when the file is generated :) with the generator script.
 -->
 <script>
-	import PlaygroundItem from '$lib/components/PlaygroundItem/index.svelte';
+	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	let title = 'Tour the france stage';
 	let description = `<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>`;
 </script>
 
-<PlaygroundItem {title} {description}>
+<ExperimentItem {title} {description}>
 	<div class="container">
 		<div class="sticky">
 			<div class="stage-outline">
@@ -19,9 +19,7 @@
 			<div class="runner"><span>🚴🏻</span></div>
 		</div>
 	</div>
-</PlaygroundItem>
-
-scss
+</ExperimentItem>
 
 <style type="scss">
 	:global(html) {

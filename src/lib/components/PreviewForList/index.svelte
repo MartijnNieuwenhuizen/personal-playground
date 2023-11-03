@@ -8,12 +8,21 @@
 
 <div>
 	<a href={url}>
-		{#if headingType === 'h2'}<h2>{title}</h2>{/if}
-		{#if headingType === 'h3'}<h3>{title}</h3>{/if}
-		{#if headingType === 'h4'}<h4>{title}</h4>{/if}
+		{#if headingType === 'h2'}<h2>
+				{title}
+				{#if isExternal}<span>↖︎</span>{/if}
+			</h2>{/if}
+		{#if headingType === 'h3'}<h3>
+				{title}
+				{#if isExternal}<span>↖︎</span>{/if}
+			</h3>{/if}
+		{#if headingType === 'h4'}<h4>
+				{title}
+				{#if isExternal}<span>↖︎</span>{/if}
+			</h4>{/if}
 	</a>
 
-	<span>{date}</span>
+	<span class="date">{date}</span>
 </div>
 
 <style type="scss">
@@ -48,7 +57,16 @@
 		text-decoration: underline;
 	}
 
-	span {
+	.date {
 		padding: 0 1rem;
+	}
+
+	a span {
+		display: inline-block;
+		transform: rotate(90deg);
+		padding-left: 0.5rem;
+		font-size: 1rem;
+		line-height: 1;
+		vertical-align: top;
 	}
 </style>

@@ -3,7 +3,8 @@
 
 	import Block from '$lib/layout/block/index.svelte';
 	import Row from '$lib/layout/row/index.svelte';
-	import Constrain from '$lib/layout/constrain/index.svelte';
+	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
+	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
 	export let data: PageData;
 
@@ -23,18 +24,18 @@
 				>.
 			</p>
 
-			<ol>
+			<HoverFadeList type="ol">
 				{#each posts as post}
 					<li>
-						<a href={post.url}>
-							{post.date} - {post.label}
-							{#if post.external}
-								<span>↖︎</span>
-							{/if}
-						</a>
+						<PreviewForList
+							url={post.url}
+							title={post.label}
+							date={post.date}
+							isExternal={post.external}
+						/>
 					</li>
 				{/each}
-			</ol>
+			</HoverFadeList>
 		</Block>
 	</Row>
 </section>
@@ -59,10 +60,5 @@
 		font-weight: var(--font-weight-normal);
 		font-size: 49.816999999999986vw;
 		transform: scale(1.1) translateX(-2%); */
-	}
-
-	a span {
-		display: inline-block;
-		transform: rotate(90deg);
 	}
 </style>

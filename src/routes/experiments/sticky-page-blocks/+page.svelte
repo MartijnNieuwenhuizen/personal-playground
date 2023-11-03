@@ -88,7 +88,7 @@ translation by H. Rackham.
 <Block size="medium">
 	<Row size="medium" area="bottom">
 		<Constrain size="small">
-			<h2>Implementation 1 (panes with a max height of 100vh)</h2>
+			<h2>🚨 Implementation 1 (panes with a max height of 100vh)</h2>
 			<p>
 				Each pane here is `position: sticky;` and the `top` value is `0px`;. Meaning, the code
 				doesn't take the content of the pane into account. If it's higher than the viewport, the
@@ -131,7 +131,7 @@ translation by H. Rackham.
 <Block size="medium">
 	<Row size="medium">
 		<Constrain size="small">
-			<h2>Implementation 2 (panes that stop at the bottom of the pane)</h2>
+			<h2>🚨 Implementation 2 (panes that stop at the bottom of the pane)</h2>
 			<p>
 				These panes are `position: sticky;` as well. But, the `top` value for each pane is
 				calculated with JS. The calculation is: `windowHeight - elementHeight` (and then formatted
@@ -228,7 +228,7 @@ translation by H. Rackham.
 <Block size="medium">
 	<Row size="medium">
 		<Constrain size="small">
-			<h2>Conclusion</h2>
+			<h2>🚨 Conclusion</h2>
 			<p>
 				Solution 2 is way more resilient for any type of content than solution one. It requires just
 				a hint of JS and can be used as Progressive Enhanced solution as long as you only apply the
