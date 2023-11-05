@@ -52,8 +52,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: 3rem;
+		gap: 0.5rem 2rem;
 		margin: 0 auto;
+
+		@media screen and (min-width: 550px) {
+			gap: 0.5rem 3rem;
+		}
 	}
 
 	a {

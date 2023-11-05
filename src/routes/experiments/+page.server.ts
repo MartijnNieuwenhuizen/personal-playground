@@ -14,15 +14,18 @@ export const load: PageServerLoad = async () => {
 
 	// const links = files.filter((file) => !filesToExclude.includes(file));
 
-	// @TODO: Add Growing header text on scroll (let it explode)
-	// @TODO: Add tags to the experiments
-	// @TODO: Style lists
-	// @TODO: Run by default on machine
 	// @TODO: Fix autoscroll namelist on mobile
 	// @TODO: Fix emoji list -> Maybe remove text?
 	// @TODO: Deploy to Portfolio
+	// @TODO: Run by default on machine
 
 	const links = [
+		// {
+		// 	url: '/experiments/sentence-highlighter',
+		// 	label: 'Sentence highlighter',
+		// 	date: '03-11-2023',
+		// 	tags: []
+		// },
 		{
 			url: '/experiments/rocket-progress-bar',
 			label: 'Rocket progress bar/scrollbar',

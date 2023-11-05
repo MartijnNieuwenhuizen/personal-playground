@@ -38,7 +38,15 @@
 	// text-align: end;
 }
 .about-this-site p {
-	@include body-1;
+	@include body-4;
+
+	@include bp-min(450) {
+		@include body-2;
+	}
+	@include bp-min(small) {
+		@include body-1;
+	}
+
 	// text-align: end;
 }
 .about-this-site p > span {
@@ -61,6 +69,10 @@
 	font-family: 'Nico Moji';
 	font-weight: 900;
 }
+// .about-this-site p > span:nth-of-type(5) span {
+// 	font-family: 'Crimson-Text';
+// 	font-weight: 700;
+// }
 .about-this-site p > span:nth-of-type(5) span {
 	font-family: 'Notable';
 	font-weight: 400;
@@ -80,7 +92,11 @@
  */
 .details-scroller {
 	overflow: hidden;
-	max-width: calc(100vw - var(--name-slider-height));
+	max-width: 100vw;
+
+	@include bp-min(medium) {
+		max-width: calc(100vw - var(--name-slider-height));
+	}
 }
 .details-scroller > div {
 	// animation: scroll-by linear forwards;

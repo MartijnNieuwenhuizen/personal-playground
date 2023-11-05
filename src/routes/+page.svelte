@@ -27,7 +27,8 @@
 					<span>This site is <span>NOT</span> beautiful,</span>
 					<span>This site is <span>NOT</span> good,</span>
 					<span>This site does <span>NOT</span> reflect my day to day work,</span>
-					<span>This site will <span>NOT</span> always be up-to-date,</span>
+					<span>This site will <span>NOT</span> always work on any browser,</span>
+					<!-- <span>This site will <span>NOT</span> be up-to-date,</span> -->
 					<span>But I <span>DID</span> try a lot of unnecessary, fun, dumb and cool stuff!</span>
 				</p>
 			</section>

@@ -52,9 +52,9 @@ const addFileToServerList = (componentName) => {
 			date: new Intl.DateTimeFormat('nl-NL', {
 				year: 'numeric',
 				month: '2-digit',
-				day: '2-digit',
-				tags: []
-			}).format(new Date())
+				day: '2-digit'
+			}).format(new Date()),
+			tags: []
 		};
 
 		// Find the location of the links array within the JavaScript code.
