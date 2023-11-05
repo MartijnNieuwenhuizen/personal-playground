@@ -20,13 +20,23 @@
 	line-height: 1;
 }
 .home-header h1 span:last-of-type {
-	@include body-2;
+	@include body-3;
 	line-height: 1;
+
+	@include bp-min(small) {
+		@include body-2;
+		line-height: 1;
+	}
 }
 .home-header p {
-	@include body-2;
+	@include body-3;
 	margin: 0;
 	line-height: 1;
+
+	@include bp-min(small) {
+		@include body-2;
+		line-height: 1;
+	}
 }
 
 /**

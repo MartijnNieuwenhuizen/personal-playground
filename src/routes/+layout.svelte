@@ -8,18 +8,6 @@
 </script>
 
 <div class="page" data-show-name-scroller={showNameScroller}>
-	<header>
-		<SiteHeader />
-	</header>
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<SiteFooter />
-	</footer>
-
 	{#if showNameScroller}
 		<div class="name-slider" aria-hidden="true">
 			<div class="name-slider-inner">
@@ -35,9 +23,23 @@
 			</div>
 		</div>
 	{/if}
+
+	<header>
+		<SiteHeader />
+	</header>
+
+	<main>
+		<slot />
+	</main>
+
+	<footer>
+		<SiteFooter />
+	</footer>
 </div>
 
 <style lang="scss">
+	@import '../../styles/base.scss';
+
 	:global {
 		@import '../styles/globals.scss';
 	}
@@ -56,16 +58,26 @@
 	.page[data-show-name-scroller='true'] {
 		overflow: hidden;
 
-		display: grid;
-		grid-template-columns: var(--name-slider-height) 1fr;
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas:
-			'header header'
-			'name-slider main'
-			'footer footer';
+		@include bp-min(medium) {
+			display: grid;
+			grid-template-columns: var(--name-slider-height) 1fr;
+			grid-template-rows: auto 1fr auto;
+			grid-template-areas:
+				'header header'
+				'. main'
+				'footer footer';
+		}
 	}
 
-	@keyframes scroll-other-direction {
+	@keyframes scroll-other-direction-horizontal {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+	@keyframes scroll-other-direction-vertical {
 		from {
 			transform: translateY(calc(-50% - 100vh));
 		}
@@ -74,21 +86,27 @@
 		}
 	}
 	.name-slider {
-		// grid-area: name-slider;
 		font-size: calc((var(--name-slider-height) / 100) * 90);
 		font-weight: 400;
 		line-height: 1;
 
-		animation: scroll-other-direction auto linear;
+		animation: scroll-other-direction-horizontal auto linear;
 		animation-timeline: --page-scroll;
+
+		@include bp-min(medium) {
+			animation: scroll-other-direction-vertical auto linear;
+			animation-timeline: --page-scroll;
+		}
 	}
 	.name-slider-inner {
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
 
-		transform: rotate(90deg) translateY(-100%);
-		transform-origin: top left;
+		@include bp-min(medium) {
+			transform: rotate(90deg) translateY(-100%);
+			transform-origin: top left;
+		}
 	}
 	.name-slider span {
 		white-space: nowrap;

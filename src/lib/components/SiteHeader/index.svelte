@@ -37,27 +37,28 @@
 </nav>
 
 <style lang="scss">
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
 	nav {
-		padding: 1.5rem;
+		overflow-x: auto;
+		// max-width: 100vw;
+		// padding: 1.5rem;
 	}
 	nav ul {
+		list-style: none;
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
 		align-items: center;
-		justify-content: center;
 		gap: 0.5rem 2rem;
 		margin: 0 auto;
+		padding: 1rem var(--block-padding);
 
 		@media screen and (min-width: 550px) {
+			justify-content: center;
 			gap: 0.5rem 3rem;
 		}
+	}
+
+	li {
+		flex-shrink: 0;
+		flex-grow: 0;
 	}
 
 	a {
@@ -67,8 +68,8 @@
 	a::before {
 		content: '👉';
 		opacity: 0;
-		position: absolute;
-		left: 0;
+		// position: absolute;
+		// left: 0;
 		transform: translateX(calc((100% + 1rem) * -1));
 		transition: opacity 0.2s, transform 0.2s;
 	}
