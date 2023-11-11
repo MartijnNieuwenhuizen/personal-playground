@@ -3,9 +3,8 @@
 	Autofill this date when the file is generated :) with the generator script.
 -->
 <script>
-	import Block from '$lib/layout/block/index.svelte';
-	import Row from '$lib/layout/row/index.svelte';
-	import Constrain from '$lib/layout/constrain/index.svelte';
+	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/layout/Row/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	let title = 'GRRR Block mixin with CSS Grid';

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Block from '$lib/layout/block/index.svelte';
-	import Row from '$lib/layout/row/index.svelte';
-	import Constrain from '$lib/layout/constrain/index.svelte';
+	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/layout/Row/index.svelte';
+	import Constrain from '$lib/layout/Constrain/index.svelte';
 
 	export let title: string;
 	export let description: string;

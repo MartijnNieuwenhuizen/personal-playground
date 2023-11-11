@@ -43,6 +43,7 @@
 	:global {
 		@import '../styles/globals.scss';
 	}
+
 	:global(html) {
 		scroll-timeline: --page-scroll;
 	}

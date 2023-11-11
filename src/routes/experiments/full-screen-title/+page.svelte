@@ -1,6 +1,6 @@
-<script type="ts">
-	import Row from '$lib/layout/row/index.svelte';
-	import Block from '$lib/layout/block/index.svelte';
+<script lang="ts">
+	import Row from '$lib/layout/Row/index.svelte';
+	import Block from '$lib/layout/Block/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	let title = 'Make a full screen title';

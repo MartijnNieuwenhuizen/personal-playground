@@ -1,6 +1,6 @@
 <script>
-	import Block from '$lib/layout/block/index.svelte';
-	import Row from '$lib/layout/row/index.svelte';
+	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/layout/Row/index.svelte';
 </script>
 
 <article class="page">

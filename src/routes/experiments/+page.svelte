@@ -1,11 +1,11 @@
-<script type="ts">
+<script lang="ts">
 	import type { PageData } from './$types';
 
 	import tags from './tags';
 
-	import Block from '$lib/layout/block/index.svelte';
-	import Row from '$lib/layout/row/index.svelte';
-	import Constrain from '$lib/layout/constrain/index.svelte';
+	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/layout/Row/index.svelte';
+	import Constrain from '$lib/layout/Constrain/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 

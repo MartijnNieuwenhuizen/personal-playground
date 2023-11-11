@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	export let url: string;
 	export let title: string;
 	export let date: string;
