@@ -1,10 +1,13 @@
-<script lang="ts">
-	export let title: string;
-	export let totalDistance: number;
+<script>
+	/** @type {string} */
+	export let title;
+	/** @type {number} */
+	export let totalDistance;
+	/** @type {number[]} */
+	let distanceIndicators = [];
 
 	// create an array of 10 values based on the totalDistance.
 	// This is used to create the dots on the stage.
-	let distanceIndicators: number[] = [];
 	for (let index = 1; index <= 10; index++) {
 		distanceIndicators.push(Math.round((totalDistance / 10) * index));
 	}
@@ -27,7 +30,7 @@
 	</div>
 </div>
 
-<style type="scss">
+<style lang="scss">
 	:global(html) {
 		/* @TODO: Make this scoped to a component! */
 		scroll-timeline: --stage-timeline;

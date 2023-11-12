@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Row from '$lib/layout/Row/index.svelte';
 	import Block from '$lib/layout/Block/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
@@ -7,12 +7,17 @@
 	let experimentTitle = 'Calculate the font-size for a full screen title with a specific font.';
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
-	let titleElement: HTMLHeadElement;
-	let containerElement: HTMLDivElement;
-	let showValue: boolean = false;
+	/** @type {HTMLHeadElement} */
+	let titleElement;
+	/** @type {HTMLDivElement} */
+	let containerElement;
+	/** @type {boolean} */
+	let showValue = false;
 
-	let value: number = 1;
-	let precision: number = 10;
+	/** @type {number} */
+	let value = 1;
+	/** @type {number} */
+	let precision = 10;
 
 	$: title = '';
 	$: fontFamily = '';
@@ -20,11 +25,17 @@
 	$: letterSpacing = '';
 	$: customFontSize = `1vw`;
 
-	function setNewFontSize(newValue: number) {
+	/**
+	 * @param {number} newValue
+	 */
+	function setNewFontSize(newValue) {
 		customFontSize = `${newValue}vw`;
 	}
 
-	function maxThreeDecimals(value: number) {
+	/**
+	 * @param {number} value
+	 */
+	function maxThreeDecimals(value) {
 		return Math.round(value * 1000) / 1000;
 	}
 
@@ -72,7 +83,13 @@
 		resizeObserver.observe(titleElement);
 	}
 
+	/**
+	 * @TODO: Fix this type!
+	 * @param {any} event
+	 */
 	function handleSubmit(event) {
+		if (!event.target) return;
+
 		// Set values for CSS variables
 		title = event.target.title.value;
 		fontFamily = event.target.font.value;
@@ -136,7 +153,12 @@
 
 	$: customProperties = `--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`;
 
+	/**
+	 * @TODO: Fix this type!
+	 * @param {any} event
+	 */
 	function handleFontFamilyChange(event) {
+		if (!event.target) return;
 		fontFamily = event.target.value;
 	}
 </script>

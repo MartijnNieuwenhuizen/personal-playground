@@ -1,16 +1,8 @@
-<script lang="ts">
+<script>
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
-	import { onDestroy, onMount } from 'svelte';
 
 	const title = 'Arcs in css';
 	const description = 'Add a description';
-
-	onMount(() => {
-		console.log(JSON.stringify(title, null, 4));
-	});
-	onDestroy(() => {
-		console.log('onDestroy');
-	});
 </script>
 
 <ExperimentItem {title} {description} showPageEffect={true}>

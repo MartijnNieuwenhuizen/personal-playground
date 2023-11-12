@@ -1,9 +1,14 @@
-<script lang="ts">
-	export let url: string;
-	export let title: string;
-	export let date: string;
-	export let isExternal: boolean = false;
-	export let headingType: 'h2' | 'h3' | 'h4' = 'h3';
+<script>
+	/** @type {string} */
+	export let url;
+	/** @type {string} */
+	export let title;
+	/** @type {string} */
+	export let date;
+	/** @type {boolean} */
+	export let isExternal = false;
+	/** @type {'h2' | 'h3' | 'h4'} */
+	export let headingType = 'h3';
 </script>
 
 <div>
@@ -25,9 +30,7 @@
 	<span class="date">{date}</span>
 </div>
 
-<style type="scss">
-	@import '../../../../styles/base.scss';
-
+<style lang="scss">
 	div {
 		position: relative;
 		display: grid;

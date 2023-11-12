@@ -61,7 +61,7 @@
 	</Row>
 </ExperimentItem>
 
-<style type="scss">
+<style lang="scss">
 	.overflowing-content {
 		background-color: var(--primary-color);
 	}

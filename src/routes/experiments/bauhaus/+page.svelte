@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Bauhaus from '$lib/components/Bauhaus/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 

@@ -1,5 +1,6 @@
-<script lang="ts">
-	export let type: 'ol' | 'ul' = 'ul';
+<script>
+	/** @type {'ol' | 'ul'} */
+	export let type = 'ul';
 </script>
 
 {#if type === 'ol'}

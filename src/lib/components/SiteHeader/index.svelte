@@ -39,8 +39,6 @@
 <style lang="scss">
 	nav {
 		overflow-x: auto;
-		// max-width: 100vw;
-		// padding: 1.5rem;
 	}
 	nav ul {
 		list-style: none;
@@ -68,8 +66,6 @@
 	a::before {
 		content: '👉';
 		opacity: 0;
-		// position: absolute;
-		// left: 0;
 		transform: translateX(calc((100% + 1rem) * -1));
 		transition: opacity 0.2s, transform 0.2s;
 	}

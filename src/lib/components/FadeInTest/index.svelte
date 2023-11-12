@@ -2,6 +2,7 @@
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 
+	/** @type {string} */
 	export let id = '1';
 
 	$: keyFrameName = `fade-in-with-move-${id}`;

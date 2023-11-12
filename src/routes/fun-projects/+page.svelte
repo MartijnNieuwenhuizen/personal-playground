@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';

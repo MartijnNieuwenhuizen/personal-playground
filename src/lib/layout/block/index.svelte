@@ -1,5 +1,6 @@
-<script lang="ts">
-	export let size: 'tiny' | 'small' | 'small-medium' | 'medium' | 'large' | 'full' = 'large';
+<script>
+	/** @type {'tiny' | 'small' | 'small-medium' | 'medium' | 'large' | 'full'} */
+	export let size = 'large';
 </script>
 
 <div class="block" data-size={size}><slot /></div>

@@ -1,24 +1,23 @@
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
 
 	import Row from '$lib/layout/Row/index.svelte';
 	import Block from '$lib/layout/Block/index.svelte';
-	import Constrain from '$lib/layout/Constrain/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
-	import type { r } from 'vitest/dist/index-81973d31';
 
 	const title = 'Sentence highlighter';
 	const description = 'Highlight each line of text.';
 
-	let parentNode: HTMLElement | null = null;
+	/** @type {HTMLElement | null} */
+	let parentNode = null;
 
+	/** @type {boolean} */
 	let isSupported = true;
 
 	onMount(() => {
 		if (!parentNode) return;
 
 		const textContent = parentNode.textContent;
-		console.log('textContent: ', textContent);
 		// const words = textContent.split(/\s+/).filter((word) => word.trim() !== '');
 
 		// for (const word of words) {
@@ -34,7 +33,6 @@
 		// combine all words that are on the same visual line
 		const foo = words.reduce((haystag, needle) => {
 			const { y } = needle.getBoundingClientRect();
-			console.log('y: ', y);
 			// const needleRect = needle.getBoundingClientRect();
 			// if (haystagRect.top === needleRect.top) {
 			// 	haystag.textContent += ` ${needle.textContent}`;
@@ -42,8 +40,6 @@
 			// }
 			// return needle;
 		}, []);
-
-		console.log('foo: ', foo);
 
 		// --------------------------------------------
 

@@ -8,7 +8,9 @@
 	hljs.registerLanguage('xml', xml);
 	hljs.registerLanguage('css', css);
 
+	/** @type {string} */
 	export let code;
+	/** @type {string} */
 	export let language;
 
 	// const highlightedCode = hljs.highlight(code, { language: 'html' }).value;

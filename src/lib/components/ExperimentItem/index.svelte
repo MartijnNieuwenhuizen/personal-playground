@@ -1,10 +1,13 @@
-<script lang="ts">
+<script>
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import Constrain from '$lib/layout/Constrain/index.svelte';
 
-	export let title: string;
-	export let description: string;
+	/** @type {string} */
+	export let title;
+	/** @type {string} */
+	export let description;
+	/** @type {boolean} */
 	export let showPageEffect = false;
 </script>
 

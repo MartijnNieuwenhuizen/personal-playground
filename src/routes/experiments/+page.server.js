@@ -1,10 +1,6 @@
-import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
 import tags from './tags';
 
-import { readdir } from 'node:fs/promises';
-
-export const load: PageServerLoad = async () => {
+export async function load() {
 	// const filesToExclude = ['+page.server.ts', '+layout.svelte', '+page.svelte', 'style.css'];
 	// const files = await readdir(`src/routes/experiments`);
 
@@ -110,4 +106,4 @@ export const load: PageServerLoad = async () => {
 		links,
 		tags
 	};
-};
+}

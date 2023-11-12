@@ -21,7 +21,7 @@
 	</div>
 </ExperimentItem>
 
-<style type="scss">
+<style lang="scss">
 	:global(html) {
 		/* @TODO: Make this scoped to a component! */
 		scroll-timeline: --stage-timeline;

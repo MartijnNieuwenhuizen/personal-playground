@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 
@@ -110,7 +110,7 @@
 	</div>
 </ExperimentItem>
 
-<style type="scss">
+<style lang="scss">
 	@keyframes grow-on-scroll {
 		from {
 			transform: scale(1);

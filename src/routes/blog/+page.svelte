@@ -1,12 +1,10 @@
-<script lang="ts">
-	import type { PageData } from './$types';
-
+<script>
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	export let data: PageData;
+	export let data;
 
 	const posts = data.links;
 </script>

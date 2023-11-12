@@ -1,10 +1,11 @@
 import jsdom from 'jsdom';
 
-import type { PageServerLoad } from './$types';
-
 import displayDate from '$lib/utils/display-date';
 
-export const load: PageServerLoad = async () => {
+/**
+ * @returns {Promise<{links: {url: string, label: string, date: string, external: boolean}[]}>}
+ */
+export const load = async () => {
 	try {
 		// Get GRRR page with all of my blog posts.
 		const response = await fetch('https://grrr.tech/authors/martijn-nieuwenhuizen/');
@@ -23,9 +24,9 @@ export const load: PageServerLoad = async () => {
 			const date = grrrPageDates[index].getAttribute('datetime');
 
 			return {
-				url: link.getAttribute('href'),
-				label: link.getAttribute('title'),
-				date: displayDate(date),
+				url: link.getAttribute('href') || '',
+				label: link.getAttribute('title') || '',
+				date: date ? displayDate(date) : '',
 				external: true
 			};
 		});

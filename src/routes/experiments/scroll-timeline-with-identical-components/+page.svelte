@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import FadeInTest from '$lib/components/FadeInTest/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 

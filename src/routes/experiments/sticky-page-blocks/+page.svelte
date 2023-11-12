@@ -1,18 +1,27 @@
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
 	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import Constrain from '$lib/layout/Constrain/index.svelte';
 
-	let section1: any;
-	let section2: any;
-	let section3: any;
-	let section4: any;
-	let section5: any;
-	let section6: any;
-	let section7: any;
-	let section8: any;
-	let section9: any;
+	/** @type {any} */
+	let section1;
+	/** @type {any} */
+	let section2;
+	/** @type {any} */
+	let section3;
+	/** @type {any} */
+	let section4;
+	/** @type {any} */
+	let section5;
+	/** @type {any} */
+	let section6;
+	/** @type {any} */
+	let section7;
+	/** @type {any} */
+	let section8;
+	/** @type {any} */
+	let section9;
 
 	const title = 'This is a sticky page block';
 	const parag = `<p>

@@ -1,6 +1,4 @@
-<script lang="ts">
-	import type { PageData } from './$types';
-
+<script>
 	import tags from './tags';
 
 	import Block from '$lib/layout/Block/index.svelte';
@@ -9,7 +7,8 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	export let data: PageData;
+	/** @type {import('./$types').PageData} */
+	export let data;
 
 	let currentTag = 'all';
 
@@ -18,8 +17,13 @@
 		return link.tags.includes(currentTag);
 	});
 
-	function handleChange(event: Event) {
-		const target = event.target as HTMLInputElement;
+	// @param {import('svelte').Event<HTMLFormElement>} event
+	/**
+	 * @param {any} event
+	 */
+	function handleChange(event) {
+		/** @type {HTMLInputElement} */
+		const target = event.target;
 		currentTag = target.id;
 	}
 

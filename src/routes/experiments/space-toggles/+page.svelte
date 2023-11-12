@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Space toggles';

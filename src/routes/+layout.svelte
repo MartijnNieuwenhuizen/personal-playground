@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import SiteHeader from '$lib/components/SiteHeader/index.svelte';
 	import SiteFooter from '$lib/components/SiteFooter/index.svelte';
 
@@ -38,11 +38,7 @@
 </div>
 
 <style lang="scss">
-	@import '../../styles/base.scss';
-
-	:global {
-		@import '../styles/globals.scss';
-	}
+	@import '../../styles/globals.scss';
 
 	:global(html) {
 		scroll-timeline: --page-scroll;

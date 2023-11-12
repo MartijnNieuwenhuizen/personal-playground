@@ -8,7 +8,7 @@ import writeFileErrorHandler from './write-file-error-handler.js';
 import capitalizeFirstLetter from './capitalize-first-letter.js';
 
 const generatePage = (componentName, showPageEffect) => {
-	return `<script lang="ts">
+	return `<script>
     import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
     const title = '${capitalizeFirstLetter(toHumanReadableText(componentName))}';
@@ -19,7 +19,7 @@ const generatePage = (componentName, showPageEffect) => {
 	<h2>Code here</h2>
 </ExperimentItem>
 
-<style>
+<style lang="scss">
 	h2 {
 		color: red;
 	}

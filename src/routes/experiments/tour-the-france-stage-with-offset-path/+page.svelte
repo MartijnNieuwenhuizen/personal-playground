@@ -29,7 +29,7 @@
 	</div>
 </ExperimentItem>
 
-<style type="scss">
+<style lang="scss">
 	.stage-21 {
 		// --stage-dots: #{$test};
 		--stage-dots: 0% 63%, 3% 48%, 12% 76%, 15% 72%, 20% 81%, 21% 73%, 25% 72%, 27% 84%, 35% 80%,

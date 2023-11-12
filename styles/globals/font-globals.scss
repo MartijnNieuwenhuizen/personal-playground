@@ -46,31 +46,31 @@
 	}
 }
 
-html {
+:global(html) {
 	font-family: var(--sans-serif);
 	@include font-smoothing(true);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-body {
+:global(body) {
 	// @include regular-font;
 	@include body-3;
 }
 
-h1 {
+:global(h1) {
 	@include heading-2;
 }
-h2 {
+:global(h2) {
 	@include heading-3;
 }
-h3 {
+:global(h3) {
 	@include heading-4;
 }
-p {
+:global(p) {
 	margin-top: 0;
 }
-em,
-strong {
+:global(em),
+:global(strong) {
 	font-weight: var(--font-weight-bold);
 	font-style: normal;
 }
