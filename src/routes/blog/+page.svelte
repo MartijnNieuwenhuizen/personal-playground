@@ -1,5 +1,4 @@
 <script>
-	import Block from '$lib/layout/Block/index.svelte';
 	import Row from '$lib/layout/Row/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
@@ -15,26 +14,24 @@
 	</div>
 
 	<Row size="small">
-		<Block size="medium">
-			<p>
-				Most of my recent posts are written on the <a
-					href="https://grrr.tech/authors/martijn-nieuwenhuizen/">GRRR tech blog</a
-				>.
-			</p>
+		<p>
+			Most of my recent posts are written on the <a
+				href="https://grrr.tech/authors/martijn-nieuwenhuizen/">GRRR tech blog</a
+			>.
+		</p>
 
-			<HoverFadeList type="ol">
-				{#each posts as post}
-					<li>
-						<PreviewForList
-							url={post.url}
-							title={post.label}
-							date={post.date}
-							isExternal={post.external}
-						/>
-					</li>
-				{/each}
-			</HoverFadeList>
-		</Block>
+		<HoverFadeList type="ol">
+			{#each posts as post}
+				<li>
+					<PreviewForList
+						url={post.url}
+						title={post.label}
+						date={post.date}
+						isExternal={post.external}
+					/>
+				</li>
+			{/each}
+		</HoverFadeList>
 	</Row>
 </section>
 
