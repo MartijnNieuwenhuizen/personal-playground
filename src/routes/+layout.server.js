@@ -6,3 +6,5 @@ export async function load(foo) {
 		showNameScroller: foo.url.pathname === '/'
 	};
 }
+
+export const prerender = true;
