@@ -1,6 +1,6 @@
 <script>
-	import Row from '$lib/layout/Row/index.svelte';
-	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/components/layout/Row/index.svelte';
+	import Block from '$lib/components/layout/Block/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 	import Code from '$lib/components/Code/index.svelte';
 

@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import Row from '$lib/layout/Row/index.svelte';
-	import Block from '$lib/layout/Block/index.svelte';
+	import Row from '$lib/components/layout/Row/index.svelte';
+	import Block from '$lib/components/layout/Block/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Sentence highlighter';

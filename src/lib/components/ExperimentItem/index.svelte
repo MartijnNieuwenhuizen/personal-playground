@@ -1,7 +1,7 @@
 <script>
-	import Block from '$lib/layout/Block/index.svelte';
-	import Row from '$lib/layout/Row/index.svelte';
-	import Constrain from '$lib/layout/Constrain/index.svelte';
+	import Block from '$lib/components/layout/Block/index.svelte';
+	import Row from '$lib/components/layout/Row/index.svelte';
+	import Constrain from '$lib/components/layout/Constrain/index.svelte';
 
 	/** @type {string} */
 	export let title;

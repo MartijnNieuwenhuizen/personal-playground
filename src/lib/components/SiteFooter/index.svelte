@@ -1,5 +1,5 @@
 <script>
-	import Row from '$lib/layout/Row/index.svelte';
+	import Row from '$lib/components/layout/Row/index.svelte';
 </script>
 
 <Row size="small">
