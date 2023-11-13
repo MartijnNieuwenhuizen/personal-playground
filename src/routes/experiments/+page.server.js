@@ -16,12 +16,12 @@ export async function load() {
 	// @TODO: Run by default on machine
 
 	const links = [
-		{
-			url: '/experiments/arcs-in-css',
-			label: 'Arcs in css',
-			date: '07-11-2023',
-			tags: []
-		},
+		// {
+		// 	url: '/experiments/arcs-in-css',
+		// 	label: 'Arcs in css',
+		// 	date: '07-11-2023',
+		// 	tags: []
+		// },
 		// {
 		// 	url: '/experiments/sentence-highlighter',
 		// 	label: 'Sentence highlighter',
