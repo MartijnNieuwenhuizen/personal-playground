@@ -28,7 +28,7 @@
 						<PreviewForList
 							url={post.url}
 							title={post.label}
-							date={post.date}
+							date={post.displayDate}
 							isExternal={post.external}
 						/>
 					</li>
@@ -50,9 +50,9 @@
 		text-align: center;
 
 		font-family: var(--serif);
-		font-size: 61.18599999999993vw;
+		font-size: 61.18499999999996vw;
 		/* Pull title up based on the vw, because the font-size is based on the vw. */
-		margin-top: -10vw;
+		margin-top: -7vw;
 
 		/* font-family: var(--sans-serif);
 		font-weight: var(--font-weight-normal);
