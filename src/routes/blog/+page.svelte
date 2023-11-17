@@ -11,7 +11,7 @@
 
 <section>
 	<div class="container">
-		<h1>Blog</h1>
+		<h1>Blog posts</h1>
 	</div>
 
 	<Row size="small">
@@ -50,9 +50,9 @@
 		text-align: center;
 
 		font-family: var(--serif);
-		font-size: 61.18499999999996vw;
+		font-size: 27.803vw;
 		/* Pull title up based on the vw, because the font-size is based on the vw. */
-		margin-top: -7vw;
+		margin-top: -3vw;
 
 		/* font-family: var(--sans-serif);
 		font-weight: var(--font-weight-normal);
