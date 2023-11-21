@@ -16,6 +16,12 @@ export async function load() {
 	// @TODO: Run by default on machine
 
 	const links = [
+		{
+			url: '/experiments/card-to-header-page-transition',
+			label: 'Card to header page transition',
+			date: '17-11-2023',
+			tags: ['page-transition', 'css-only']
+		},
 		// {
 		// 	url: '/experiments/arcs-in-css',
 		// 	label: 'Arcs in css',
@@ -32,61 +38,61 @@ export async function load() {
 			url: '/experiments/rocket-progress-bar',
 			label: 'Rocket progress bar/scrollbar',
 			date: '03-11-2023',
-			tags: ['scroll-timeline', 'css']
+			tags: ['scroll-timeline', 'css-only']
 		},
 		{
 			url: '/experiments/opposite-scrollbar',
 			label: 'Opposite scrollbar',
 			date: '02-11-2023',
-			tags: ['scroll-timeline', 'css']
+			tags: ['scroll-timeline', 'css-only']
 		},
 		{
 			url: '/experiments/growing-header',
 			label: 'Growing header',
 			date: '02-11-2023',
-			tags: ['scroll-timeline', 'css']
+			tags: ['scroll-timeline', 'css-only']
 		},
 		{
 			url: '/experiments/scroll-timeline-with-identical-components',
 			label: 'Scroll timeline with identical components',
 			date: '30-10-2023',
-			tags: ['scroll-timeline', 'css', 'motion']
+			tags: ['scroll-timeline', 'css-only', 'motion']
 		},
 		{
 			url: '/experiments/calculate-full-screen-title',
 			label: 'Calculate full screen title',
 			date: '27-10-2023',
-			tags: ['typography', 'css', 'tool']
+			tags: ['typography', 'css-only', 'tool']
 		},
 		{
 			url: '/experiments/full-screen-title',
 			label: 'Full screen title',
 			date: '27-10-2023',
-			tags: ['typography', 'css']
+			tags: ['typography', 'css-only']
 		},
 		{
 			url: '/experiments/tour-the-france-stage-with-offset-path',
 			label: 'Tour the france stage with offset path',
 			date: '18-10-2023',
-			tags: ['scroll-timeline', 'clip-path', 'css-variables', 'css']
+			tags: ['scroll-timeline', 'clip-path', 'css-variables', 'css-only']
 		},
 		{
 			url: '/experiments/tour-the-france-stage-with-keyframe-animation',
 			label: 'Tour the france stage with keyframe animation',
 			date: '14-10-2023',
-			tags: ['scroll-timeline', 'clip-path', 'css']
+			tags: ['scroll-timeline', 'clip-path', 'css-only']
 		},
 		{
 			url: '/experiments/bauhaus',
 			label: 'Bauhaus',
 			date: '11-10-2023',
-			tags: ['css-grid', 'css', 'css-art']
+			tags: ['css-grid', 'css-only', 'css-art']
 		},
 		{
 			url: '/experiments/grrr-block-with-css-grid',
 			label: 'GRRR Block with CSS grid',
 			date: '03-10-2023',
-			tags: ['CSS-grid', 'layout', 'css']
+			tags: ['CSS-grid', 'layout', 'css-only']
 		},
 		{
 			url: '/experiments/sticky-page-blocks',
@@ -98,7 +104,7 @@ export async function load() {
 			url: '/experiments/space-toggles',
 			label: 'Space toggles',
 			date: '13-7-2023',
-			tags: ['css-variables', 'css']
+			tags: ['css-variables', 'css-only']
 		}
 	];
 

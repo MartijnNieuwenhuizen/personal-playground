@@ -31,8 +31,8 @@
 	--size: #{constrain('small')};
 }
 .block[data-size='small-medium'] {
-	--size-name: 'small';
-	--size: #{constrain('small')};
+	--size-name: 'small-medium';
+	--size: #{constrain('small-medium')};
 }
 .block[data-size='medium'] {
 	--size-name: 'medium';

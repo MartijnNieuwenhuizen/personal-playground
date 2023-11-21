@@ -40,7 +40,7 @@ const createFile = (componentName, showPageEffect) => {
 };
 
 const addFileToServerList = (componentName) => {
-	const experimentsListFile = `./src/routes/experiments/+page.server.ts`;
+	const experimentsListFile = `./src/routes/experiments/+page.server.js`;
 
 	fs.readFile(experimentsListFile, 'utf8', (err, data) => {
 		if (err) throw err;

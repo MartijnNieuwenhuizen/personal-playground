@@ -26,7 +26,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		--experiment-item-border-radius: 0px;
 		--experiment-item-padding: 0px;
@@ -41,14 +41,12 @@
 		background-color: white;
 	}
 
-	@media (min-width: 800px) {
-		section {
-			--experiment-item-border-radius: 60px;
-		}
-	}
-
 	section[data-show-page-effect='true'] {
 		--experiment-item-border-radius: 40px;
 		--experiment-item-padding: 40px;
+
+		@media (min-width: 800px) {
+			--experiment-item-border-radius: 60px;
+		}
 	}
 </style>
