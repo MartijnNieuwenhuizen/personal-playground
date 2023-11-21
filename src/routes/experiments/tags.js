@@ -1,5 +1,5 @@
 const tags = {
-	css: 'CSS',
+	'css-only': 'CSS only',
 	'css-grid': 'CSS Grid',
 	'css-variables': 'CSS Variables',
 	'css-art': 'CSS Art',
