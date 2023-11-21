@@ -9,7 +9,8 @@ const tags = {
 	'scroll-timeline': 'Scroll Timeline',
 	sticky: 'Sticky',
 	tool: 'Tool',
-	typography: 'Typography'
+	typography: 'Typography',
+	'page-transition': 'Page Transition'
 };
 
 export default tags;

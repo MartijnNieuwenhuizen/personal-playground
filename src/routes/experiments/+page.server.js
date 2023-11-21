@@ -19,7 +19,7 @@ export async function load() {
 		{
 			url: '/experiments/card-to-header-page-transition',
 			label: 'Card to header page transition',
-			date: '17-11-2023',
+			date: '21-11-2023',
 			tags: ['page-transition', 'css-only']
 		},
 		// {
