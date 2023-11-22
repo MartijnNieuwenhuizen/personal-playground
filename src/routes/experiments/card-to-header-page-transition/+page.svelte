@@ -80,13 +80,11 @@ h1 span:nth-of-type() {
 								alt="Page 1"
 								style={`view-transition-name: image-${card.title.toLowerCase()};`}
 							/>
-							<figcaption>
-								<h3>
-									<!-- <h3 style={`view-transition-name: title-${card.title.toLowerCase()};`}> -->
-									<a href={card.url}>{card.title}</a>
-								</h3>
+							<figcaption style={`view-transition-name: color-${card.title.toLowerCase()};`}>
+								<span>{card.title}</span>
 							</figcaption>
 						</figure>
+						<a href={card.url}><span class="sr-only">{card.title}</span></a>
 					</li>
 				{/each}
 			</ul>
@@ -228,11 +226,33 @@ h1 span:nth-of-type() {
 
 	.cards li {
 		position: relative;
-		border: 10px solid var(--background-color);
 	}
 
 	.cards img {
 		width: 100%;
+	}
+
+	.cards figcaption {
+		@include heading-3;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
+		background-color: var(--background-color);
+		transform: skewX(-10deg) rotate(-10deg) translateY(-2rem);
+	}
+	.cards span {
+		display: block;
+		transition: transform 0.2s ease-out;
+	}
+
+	.cards li:hover figcaption span {
+		transform: skewX(10deg);
+		text-decoration: underline;
+	}
+	.cards a {
+		z-index: 2;
 	}
 
 	.cards a::after {

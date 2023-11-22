@@ -20,7 +20,7 @@
 		</h1>
 		<img style={`view-transition-name: image-${title.toLowerCase()};`} src={image} alt="" />
 
-		<div class="background" />
+		<div class="background" style={`view-transition-name: color-${title.toLowerCase()};`} />
 	</header>
 </Row>
 
@@ -83,22 +83,9 @@
 		width: 100%;
 	}
 
-	@keyframes background-fade-in {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-	:global(html::view-transition-new(background-color)) {
-		animation: background-fade-in 0.3s ease-out forwards;
-	}
 	.background {
 		position: absolute;
 		inset: 0;
 		background-color: var(--background-color);
-
-		view-transition-name: background-color;
 	}
 </style>
