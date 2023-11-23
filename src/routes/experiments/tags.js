@@ -10,7 +10,8 @@ const tags = {
 	sticky: 'Sticky',
 	tool: 'Tool',
 	typography: 'Typography',
-	'page-transition': 'Page Transition'
+	'page-transition': 'Page Transition',
+	'trigonometric-functions': 'Trigonometric Functions'
 };
 
 export default tags;

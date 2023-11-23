@@ -16,18 +16,18 @@ export async function load() {
 	// @TODO: Run by default on machine
 
 	const links = [
+		// {
+		// 	url: '/experiments/arcs-in-css',
+		// 	label: 'Arcs in css',
+		// 	date: '22-11-2023',
+		// 	tags: ['trigonometric-functions', 'css-only']
+		// },
 		{
 			url: '/experiments/card-to-header-page-transition',
 			label: 'Card to header page transition',
 			date: '21-11-2023',
 			tags: ['page-transition', 'css-only']
 		},
-		// {
-		// 	url: '/experiments/arcs-in-css',
-		// 	label: 'Arcs in css',
-		// 	date: '07-11-2023',
-		// 	tags: []
-		// },
 		// {
 		// 	url: '/experiments/sentence-highlighter',
 		// 	label: 'Sentence highlighter',
