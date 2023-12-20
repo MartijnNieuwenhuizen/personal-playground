@@ -16,6 +16,30 @@ export async function load() {
 	// @TODO: Run by default on machine
 
 	const links = [
+		{
+			url: '/experiments/fluid-svg',
+			label: 'Fluid svg',
+			date: '20-12-2023',
+			tags: ['svg']
+		},
+		// {
+		// 	url: '/experiments/3dharry-potter-intro',
+		// 	label: '3D Harry Potter intro',
+		// 	date: '09-12-2023',
+		// 	tags: ['threejs', 'motion', '3d']
+		// },
+		// {
+		// 	url: '/experiments/simple-3d-scene-in-svelte',
+		// 	label: 'Simple 3D scene in Svelte',
+		// 	date: '09-12-2023',
+		// 	tags: ['threejs']
+		// },
+		{
+			url: '/experiments/loading-image-from-blurred-version',
+			label: 'Loading image from blurred version',
+			date: '23-11-2023',
+			tags: ['motion']
+		},
 		// {
 		// 	url: '/experiments/arcs-in-css',
 		// 	label: 'Arcs in css',

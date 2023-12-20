@@ -1,0 +1,123 @@
+{
+	"accessors": [
+		{
+			"bufferView": 1,
+			"componentType": 5126,
+			"count": 5277,
+			"max": [0.5837821960449219, 0.2498081922531128, 0.730696976184845],
+			"min": [-0.5704325437545776, 0.0, -0.6087287664413452],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 63324,
+			"componentType": 5126,
+			"count": 5277,
+			"max": [0.9999935030937195, 1.0, 0.9973031282424927],
+			"min": [-0.9999386668205261, -1.0, -0.9862608909606934],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 0,
+			"componentType": 5125,
+			"count": 10344,
+			"type": "SCALAR"
+		}
+	],
+	"asset": {
+		"extras": {
+			"author": "Chace1204 (https://sketchfab.com/Chace1204)",
+			"license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+			"source": "https://sketchfab.com/3d-models/warner-bros-logo-41e2d29aa8ec4681a11f91e9073c5eae",
+			"title": "Warner Bros Logo"
+		},
+		"generator": "Sketchfab-12.68.0",
+		"version": "2.0"
+	},
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 41376,
+			"name": "floatBufferViews",
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 126648,
+			"byteOffset": 41376,
+			"byteStride": 12,
+			"name": "floatBufferViews",
+			"target": 34962
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 168024,
+			"uri": "scene.bin"
+		}
+	],
+	"materials": [
+		{
+			"doubleSided": true,
+			"name": "Material.003"
+		}
+	],
+	"meshes": [
+		{
+			"name": "Object_0",
+			"primitives": [
+				{
+					"attributes": {
+						"NORMAL": 1,
+						"POSITION": 0
+					},
+					"indices": 2,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"children": [1],
+			"matrix": [
+				1.0, 0.0, 0.0, 0.0, 0.0, 2.220446049250313e-16, -1.0, 0.0, 0.0, 1.0, 2.220446049250313e-16,
+				0.0, 0.0, 0.0, 0.0, 1.0
+			],
+			"name": "Sketchfab_model"
+		},
+		{
+			"children": [2],
+			"name": "root"
+		},
+		{
+			"children": [3],
+			"matrix": [
+				1.0, 0.0, 0.0, 0.0, 0.0, 2.220446049250313e-16, 1.0, 0.0, 0.0, -1.0, 2.220446049250313e-16,
+				0.0, 0.0, 0.0, 0.0, 1.0
+			],
+			"name": "GLTF_SceneRootNode"
+		},
+		{
+			"children": [4],
+			"matrix": [
+				0.3988640010356903, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4058113992214203, 0.0, 0.0,
+				-0.4141359031200409, 0.0, 0.0, -0.025083519518375397, -0.07999999821186066,
+				1.3566330671310425, 1.0
+			],
+			"name": "BezierCurve_1"
+		},
+		{
+			"mesh": 0,
+			"name": "Object_4"
+		}
+	],
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "Sketchfab_Scene",
+			"nodes": [0]
+		}
+	]
+}

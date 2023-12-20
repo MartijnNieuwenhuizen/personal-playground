@@ -11,7 +11,8 @@ const tags = {
 	tool: 'Tool',
 	typography: 'Typography',
 	'page-transition': 'Page Transition',
-	'trigonometric-functions': 'Trigonometric Functions'
+	'trigonometric-functions': 'Trigonometric Functions',
+	svg: 'SVG'
 };
 
 export default tags;
