@@ -20,7 +20,7 @@ export async function load() {
 			url: '/experiments/layered-svg',
 			label: 'Layered svg',
 			date: '23-01-2024',
-			tags: ['3d']
+			tags: ['scroll-timeline', 'css-only', '3d']
 		},
 		{
 			url: '/experiments/appearing-footer',
