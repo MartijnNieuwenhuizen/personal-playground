@@ -122,7 +122,7 @@
 	}
 	.overflow-list {
 		display: flex;
-		padding: 0 var(--block-padding) 1rem var(--block-padding);
+		padding: 0 0.2rem 1rem;
 	}
 	legend {
 		font-size: 14px;
