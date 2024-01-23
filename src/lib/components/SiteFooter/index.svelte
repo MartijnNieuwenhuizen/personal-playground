@@ -2,7 +2,7 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 </script>
 
-<Row size="small">
+<!-- <Row size="small">
 	<ul>
 		<li>
 			<a href="https://github.com/MartijnNieuwenhuizen">
@@ -17,7 +17,7 @@
 			</a>
 		</li>
 	</ul>
-</Row>
+</Row> -->
 
 <style>
 	ul {

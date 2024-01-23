@@ -17,6 +17,19 @@ export async function load() {
 
 	const links = [
 		{
+			url: '/experiments/layered-svg',
+			label: 'Layered svg',
+			date: '23-01-2024',
+			tags: ['3d']
+		},
+		{
+			url: '/experiments/appearing-footer',
+			label: 'Appearing footer',
+			date: '25-12-2023',
+			// tags: ['css-only']
+			tags: []
+		},
+		{
 			url: '/experiments/fluid-svg',
 			label: 'Fluid svg',
 			date: '20-12-2023',
