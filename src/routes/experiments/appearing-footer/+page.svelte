@@ -7,7 +7,7 @@
 
 	const title = 'Appearing footer';
 	const description =
-		'The footer should appear when the main scrolls by. This is done, but with CSS at the moment. Would like to refactor this to CSS only!';
+		'The footer should appear when the main scrolls by. This is done, but with JS at the moment. Would like to refactor this to CSS only!';
 
 	/** @type {HTMLElement} */
 	let main;
