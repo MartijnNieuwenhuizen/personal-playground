@@ -11,9 +11,10 @@ const tags = {
 	tool: 'Tool',
 	typography: 'Typography',
 	'page-transition': 'Page Transition',
-	'trigonometric-functions': 'Trigonometric Functions',
+	// 'trigonometric-functions': 'Trigonometric Functions',
 	svg: 'SVG',
-	'3d': '3D'
+	'3d': '3D',
+	gradient: 'Gradient'
 };
 
 export default tags;

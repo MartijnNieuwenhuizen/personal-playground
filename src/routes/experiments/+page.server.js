@@ -1,26 +1,18 @@
 import tags from './tags';
 
 export async function load() {
-	// const filesToExclude = ['+page.server.ts', '+layout.svelte', '+page.svelte', 'style.css'];
-	// const files = await readdir(`src/routes/experiments`);
-
-	// if (!files) {
-	// 	throw error(404, 'Not found');
-	// }
-
-	// const links = files.filter((file) => !filesToExclude.includes(file));
-
-	// @TODO: Fix autoscroll namelist on mobile
-	// @TODO: Fix emoji list -> Maybe remove text?
-	// @TODO: Deploy to Portfolio
-	// @TODO: Run by default on machine
-
 	const links = [
+		{
+			url: '/experiments/gradient-text',
+			label: 'Gradient text',
+			date: '01-02-2024',
+			tags: ['css-only', 'gradient']
+		},
 		{
 			url: '/experiments/layered-svg',
 			label: 'Layered svg',
 			date: '23-01-2024',
-			tags: ['scroll-timeline', 'css-only', 'n ']
+			tags: ['scroll-timeline', 'css-only', 'motion']
 		},
 		{
 			url: '/experiments/appearing-footer',
@@ -45,7 +37,7 @@ export async function load() {
 			url: '/experiments/simple-3d-scene-in-svelte',
 			label: 'Simple 3D scene in Svelte',
 			date: '09-12-2023',
-			tags: ['threejs']
+			tags: ['threejs', '3d']
 		},
 		{
 			url: '/experiments/loading-image-from-blurred-version',
