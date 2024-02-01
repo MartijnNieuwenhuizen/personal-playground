@@ -159,7 +159,9 @@
 	.overflow-list:hover input:not([data-active='true']) + label {
 		opacity: 0.5;
 	}
-	.overflow-list:hover label:hover {
+	.overflow-list:hover label:hover,
+	.overflow-list:hover input:focus + label {
 		opacity: 1 !important;
+		box-shadow: inset 0 0 0px 1px black;
 	}
 </style>
