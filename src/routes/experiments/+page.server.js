@@ -20,7 +20,7 @@ export async function load() {
 			url: '/experiments/layered-svg',
 			label: 'Layered svg',
 			date: '23-01-2024',
-			tags: ['scroll-timeline', 'css-only', '3d']
+			tags: ['scroll-timeline', 'css-only', 'n ']
 		},
 		{
 			url: '/experiments/appearing-footer',
@@ -41,12 +41,12 @@ export async function load() {
 		// 	date: '09-12-2023',
 		// 	tags: ['threejs', 'motion', '3d']
 		// },
-		// {
-		// 	url: '/experiments/simple-3d-scene-in-svelte',
-		// 	label: 'Simple 3D scene in Svelte',
-		// 	date: '09-12-2023',
-		// 	tags: ['threejs']
-		// },
+		{
+			url: '/experiments/simple-3d-scene-in-svelte',
+			label: 'Simple 3D scene in Svelte',
+			date: '09-12-2023',
+			tags: ['threejs']
+		},
 		{
 			url: '/experiments/loading-image-from-blurred-version',
 			label: 'Loading image from blurred version',
