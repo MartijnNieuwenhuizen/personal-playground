@@ -40,10 +40,15 @@
  * Links
  */
 :global(a) {
-	color: inherit;
-	text-decoration: underline;
-	text-decoration-skip-ink: auto;
+	color: var(--expressive-color);
+	text-decoration: none;
+	// text-decoration: underline;
+	// text-decoration-skip-ink: auto;
 }
+:global(nav a) {
+	color: inherit;
+}
+
 :global(a:hover),
 :global(a:focus) {
 	text-decoration: none;

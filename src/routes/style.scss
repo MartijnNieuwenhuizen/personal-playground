@@ -36,6 +36,13 @@
 		line-height: 1;
 	}
 }
+.home-header a {
+	color: inherit;
+}
+.home-header a:hover,
+.home-header a:focus {
+	color: var(--expressive-color);
+}
 
 /**
  * About this site

@@ -36,4 +36,8 @@
 	:global(.hover-fade-list:hover li:hover) {
 		opacity: 1;
 	}
+
+	:global(.hover-fade-list a) {
+		color: inherit;
+	}
 </style>
