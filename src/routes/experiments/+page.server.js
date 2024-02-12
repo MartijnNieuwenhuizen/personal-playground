@@ -3,6 +3,12 @@ import tags from './tags';
 export async function load() {
 	const links = [
 		{
+			url: '/experiments/fixed-logo-change',
+			label: 'Fixed logo - change on scroll',
+			date: '07-02-2024',
+			tags: ['motion', 'scroll-timeline', 'css-only']
+		},
+		{
 			url: '/experiments/gradient-text',
 			label: 'Gradient text',
 			date: '01-02-2024',
