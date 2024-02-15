@@ -1,4 +1,5 @@
 const tags = {
+	js: 'JS',
 	'css-only': 'CSS only',
 	'css-grid': 'CSS Grid',
 	'css-variables': 'CSS Variables',

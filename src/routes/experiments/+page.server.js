@@ -3,6 +3,12 @@ import tags from './tags';
 export async function load() {
 	const links = [
 		{
+			url: '/experiments/haptic-feedback',
+			label: 'Haptic feedback',
+			date: '15-02-2024',
+			tags: ['js']
+		},
+		{
 			url: '/experiments/fixed-logo-change',
 			label: 'Fixed logo - change on scroll',
 			date: '07-02-2024',
