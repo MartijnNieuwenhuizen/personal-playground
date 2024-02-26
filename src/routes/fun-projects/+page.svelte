@@ -28,7 +28,7 @@
 					/>
 				</li> -->
 			</HoverFadeList>
-			<h2>Nice job for 2024 to add a view items here!</h2>
+			<h2>Nice job for 2024 to add a few items here!</h2>
 		</Block>
 	</Row>
 </section>
