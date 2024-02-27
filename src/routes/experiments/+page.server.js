@@ -2,6 +2,18 @@ import tags from './tags';
 
 export async function load() {
 	const links = [
+		// {
+		// 	url: '/experiments/css-scroll-timeline-with-intersection-observer',
+		// 	label: 'CSS scroll timeline with intersection observer',
+		// 	date: '27-02-2024',
+		// 	tags: ['scroll-timeline', 'motion']
+		// },
+		{
+			url: '/experiments/horizontal-scroll',
+			label: 'Horizontal scroll',
+			date: '26-02-2024',
+			tags: ['scroll-timeline', 'css-only']
+		},
 		{
 			url: '/experiments/haptic-feedback',
 			label: 'Haptic feedback',
