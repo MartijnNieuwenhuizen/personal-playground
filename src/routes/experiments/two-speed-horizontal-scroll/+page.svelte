@@ -11,6 +11,15 @@
 	/** @type {HTMLElement} */
 	let target;
 
+	/** @type {HTMLElement} */
+	let listItem1;
+	/** @type {HTMLElement} */
+	let listItem2;
+	/** @type {HTMLElement} */
+	let listItem3;
+	/** @type {HTMLElement} */
+	let listItem4;
+
 	onMount(() => {
 		if (!container) return;
 
@@ -20,6 +29,27 @@
 
 		window.addEventListener('resize', updateHeight);
 		updateHeight();
+
+		const items = [listItem1, listItem2, listItem3, listItem4];
+
+		const widths = items.map((element) => element.clientWidth);
+		const totalWidth = widths.reduce((acc, width) => acc + width, 0);
+
+		items.forEach((element, index) => {
+			console.dir(element.clientWidth);
+			// !! This is too late. Should be in the HTML on initial render. !!
+			// Remove the last child, which is the absolute-positioned h2.
+			// element.style.setProperty('--column-count', `${element.children.length - 1}`);
+
+			//  set animation-range: contain 75% contain 100%; with JS
+			const start =
+				(widths.slice(0, index).reduce((acc, width) => acc + width, 0) / totalWidth) * 100;
+			const end =
+				(widths.slice(0, index + 1).reduce((acc, width) => acc + width, 0) / totalWidth) * 100;
+
+			element.style.setProperty('--start', `${start}%`);
+			element.style.setProperty('--end', `${end}%`);
+		});
 	});
 
 	const bitOfText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`;
@@ -30,7 +60,7 @@
 		<div class="horizontal-scroll__sticky">
 			<div class="horizontal-scroll__inner" bind:this={target}>
 				<div class="horizontal-scroll__list">
-					<div class="horizontal-scroll__list-item" style="--column-count: 9">
+					<div class="horizontal-scroll__list-item" style="--column-count: 9" bind:this={listItem1}>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>
 						<img src="/images/page-transition/forrest.webp" alt="" />
@@ -43,7 +73,7 @@
 
 						<h2>1. This is the first section in the list</h2>
 					</div>
-					<div class="horizontal-scroll__list-item" style="--column-count: 9">
+					<div class="horizontal-scroll__list-item" style="--column-count: 9" bind:this={listItem2}>
 						<p>{bitOfText}</p>
 						<img src="/images/page-transition/forrest.webp" alt="" />
 						<p>{bitOfText}</p>
@@ -56,7 +86,11 @@
 
 						<h2>2. The second section</h2>
 					</div>
-					<div class="horizontal-scroll__list-item" style="--column-count: 10">
+					<div
+						class="horizontal-scroll__list-item"
+						style="--column-count: 10"
+						bind:this={listItem3}
+					>
 						<p>{bitOfText}</p>
 						<img src="/images/page-transition/forrest.webp" alt="" />
 						<img src="/images/page-transition/forrest.webp" alt="" />
@@ -70,7 +104,7 @@
 
 						<h2>3. You're now in the Third section that's quite far!</h2>
 					</div>
-					<div class="horizontal-scroll__list-item" style="--column-count: 8">
+					<div class="horizontal-scroll__list-item" style="--column-count: 8" bind:this={listItem4}>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>
@@ -226,17 +260,21 @@
 		animation-timeline: --section-timeline;
 	}
 
-	// Note: The percentages should be calculated with JS, not pretty!
+	// Note: The percentages are calculated with JS, not pretty!
 	.horizontal-scroll__list-item:nth-of-type(1) h2 {
-		animation-range: contain 0% contain 25%;
+		// animation-range: contain 0% contain 25%;
+		animation-range: contain var(--start) contain var(--end);
 	}
 	.horizontal-scroll__list-item:nth-of-type(2) h2 {
-		animation-range: contain 25% contain 50%;
+		// animation-range: contain 25% contain 50%;
+		animation-range: contain var(--start) contain var(--end);
 	}
 	.horizontal-scroll__list-item:nth-of-type(3) h2 {
-		animation-range: contain 50% contain 75%;
+		// animation-range: contain 50% contain 75%;
+		animation-range: contain var(--start) contain var(--end);
 	}
 	.horizontal-scroll__list-item:nth-of-type(4) h2 {
-		animation-range: contain 75% contain 100%;
+		// animation-range: contain 75% contain 100%;
+		animation-range: contain var(--start) contain var(--end);
 	}
 </style>
