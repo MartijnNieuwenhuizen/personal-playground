@@ -15,7 +15,8 @@ const tags = {
 	// 'trigonometric-functions': 'Trigonometric Functions',
 	svg: 'SVG',
 	'3d': '3D',
-	gradient: 'Gradient'
+	gradient: 'Gradient',
+	'container-queries': 'Container Queries'
 };
 
 export default tags;

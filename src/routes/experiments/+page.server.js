@@ -8,6 +8,18 @@ export async function load() {
 		// 	date: '27-02-2024',
 		// 	tags: ['scroll-timeline', 'motion']
 		// },
+		// {
+		// 	url: '/experiments/two-speed-horizontal-scroll',
+		// 	label: 'Two speed horizontal scroll',
+		// 	date: '27-02-2024',
+		// 	tags: []
+		// },
+		{
+			url: '/experiments/prevent-collapse-with-container-type',
+			label: 'Prevent collapse with container-type',
+			date: '28-02-2024',
+			tags: ['container-queries']
+		},
 		{
 			url: '/experiments/horizontal-scroll',
 			label: 'Horizontal scroll',
