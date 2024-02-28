@@ -30,62 +30,55 @@
 		<div class="horizontal-scroll__sticky">
 			<div class="horizontal-scroll__inner" bind:this={target}>
 				<div class="horizontal-scroll__list">
-					<div class="horizontal-scroll__list-item">
-						<div class="horizontal-scroll__text-container">
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-						</div>
+					<div class="horizontal-scroll__list-item" style="--column-count: 9">
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+
 						<h2>1. This is the first section in the list</h2>
 					</div>
-					<div class="horizontal-scroll__list-item">
-						<div class="horizontal-scroll__text-container">
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-						</div>
+					<div class="horizontal-scroll__list-item" style="--column-count: 9">
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
 
 						<h2>2. The second section</h2>
 					</div>
-					<div class="horizontal-scroll__list-item">
-						<div class="horizontal-scroll__text-container">
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-						</div>
+					<div class="horizontal-scroll__list-item" style="--column-count: 10">
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
 
 						<h2>3. You're now in the Third section that's quite far!</h2>
 					</div>
-					<div class="horizontal-scroll__list-item">
-						<div class="horizontal-scroll__text-container">
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-							<p>{bitOfText}</p>
-							<img src="/images/page-transition/forrest.webp" alt="" />
-							<p>{bitOfText}</p>
-						</div>
+					<div class="horizontal-scroll__list-item" style="--column-count: 8">
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
+						<p>{bitOfText}</p>
+						<img src="/images/page-transition/forrest.webp" alt="" />
+						<p>{bitOfText}</p>
 						<h2>4. Last but not least, the final section</h2>
 					</div>
 				</div>
@@ -109,7 +102,7 @@
 		view-timeline-axis: block;
 	}
 	.horizontal-scroll__sticky {
-		overflow-x: hidden;
+		overflow-x: clip;
 		position: sticky;
 		top: 0;
 		width: 100vw;
@@ -131,23 +124,21 @@
 		min-height: 100vh;
 	}
 	.horizontal-scroll__list-item {
-		// By enabling this, all items are collapsed :(.
-		// container-type: size;
+		container-type: size;
 
 		view-timeline-name: --section-timeline;
 		view-timeline-axis: block;
 		// view-timeline-axis: row;
 
 		position: relative;
-		// overflow: hidden;
-		// min-width: 100cqw;
-		// min-width: 100%;
+		overflow: hidden;
 		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 		flex-shrink: 0;
-		padding: 0 10rem;
+		padding: 6rem 10rem 2rem;
+
+		display: grid;
+		grid-template-columns: repeat(var(--column-count), 40rem);
+		gap: 5rem;
 	}
 
 	.horizontal-scroll__list-item:nth-of-type(1) {
@@ -170,17 +161,6 @@
 	}
 	.horizontal-scroll__list-item:nth-of-type(7) {
 		background-color: #1abc9c;
-	}
-
-	.horizontal-scroll__text-container {
-		// width: 100%;
-		padding: 6rem 10rem 2rem;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 5rem;
-
-		display: flex;
 	}
 
 	.horizontal-scroll__list-item p {
@@ -224,13 +204,10 @@
 
 	@keyframes scroll-section-horizontal {
 		from {
-			transform: translateY(6rem);
-			transform: translateX(0px);
+			transform: translateY(6rem) translateX(0px);
 		}
 		to {
-			transform: translateY(6rem);
-			// 	translateY(calc(#{nth($item, 2)}cqh - 50%)) rotate($rotate);
-			transform: translateX(calc(100qw - 100%));
+			transform: translateY(6rem) translateX(calc(100cqw - 100%));
 		}
 	}
 
@@ -247,6 +224,19 @@
 
 		animation: linear scroll-section-horizontal forwards;
 		animation-timeline: --section-timeline;
-		// animation-range: contain 0% contain 100%;
+	}
+
+	// Note: The percentages should be calculated with JS, not pretty!
+	.horizontal-scroll__list-item:nth-of-type(1) h2 {
+		animation-range: contain 0% contain 25%;
+	}
+	.horizontal-scroll__list-item:nth-of-type(2) h2 {
+		animation-range: contain 25% contain 50%;
+	}
+	.horizontal-scroll__list-item:nth-of-type(3) h2 {
+		animation-range: contain 50% contain 75%;
+	}
+	.horizontal-scroll__list-item:nth-of-type(4) h2 {
+		animation-range: contain 75% contain 100%;
 	}
 </style>
