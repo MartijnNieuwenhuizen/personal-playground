@@ -11,7 +11,7 @@
 					<span>Hi!</span>
 					<span>I'm Martijn Nieuwenhuizen</span>
 				</h1>
-				<p>Front-end developer @ <a href="http://fresk.digital/">Fresk.Digital</a>.</p>
+				<p>Front-end developer at <a href="http://fresk.digital/">Fresk.Digital</a>.</p>
 				<!-- <p>Front-end developer @ <a href="https://grrr.nl/">GRRR</a>.</p> -->
 				<!-- <p>Current blogposts are written for GRRR and use this as my personal playground.</p> -->
 			</header>
