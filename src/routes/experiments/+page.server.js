@@ -2,6 +2,12 @@ import tags from './tags';
 
 export async function load() {
 	const links = [
+		{
+			url: '/experiments/when-is-the-next-sunny-moment',
+			label: 'When is the next sunny moment',
+			date: '03-04-2024',
+			tags: ['tool']
+		},
 		// {
 		// 	url: '/experiments/css-scroll-timeline-with-intersection-observer',
 		// 	label: 'CSS scroll timeline with intersection observer',
