@@ -1,13 +1,9 @@
 name: Cron Job
 
-# on:
-#   schedule:
-#     # Run every 2 minutes
-#     - cron: '*/2 * * * *'
-
 on:
-  # Trigger manually from Github UI
-  workflow_dispatch:
+  schedule:
+    # Schedule deploy every 30 minutes, but not in the night.
+    - cron: '*/30 6-23 * * *'
 
 jobs:
   get_request:
