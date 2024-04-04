@@ -1,0 +1,13 @@
+name: Cron Job
+
+on:
+  schedule:
+    # Run every 2 minutes
+    - cron: '*/2 * * * *'
+
+jobs:
+  get_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform GET request
+        run: curl https://api.netlify.com/build_hooks/660ef9a7ddbbb740ac14d1a8
