@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Horizontal Scroll';
 	const description = 'Horizontal scroll with just CSS.';
@@ -21,6 +22,8 @@
 		updateHeight();
 	});
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description} showPageEffect={false}>
 	<div class="horizontal-scroll" bind:this={container}>

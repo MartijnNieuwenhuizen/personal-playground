@@ -2,10 +2,13 @@
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Opposite scrollbar';
 	const description = 'One that scrolls the other way, for half the time, and then back up again.';
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description} showPageEffect={true}>
 	<Row>

@@ -2,8 +2,8 @@ name: Cron Job
 
 on:
   schedule:
-    # Schedule deploy every 30 minutes, but not in the night.
-    - cron: '*/30 6-23 * * *'
+    # Schedule deploy every 2 hours, but not in the night.
+    - cron: '0 */2 6-23 * *'
 
 jobs:
   get_request:

@@ -2,10 +2,13 @@
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Block from '$lib/components/layout/Block/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Layered svg';
 	const description = `I want to separate the layers of an SVG and show them on top of each other.`;
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description} showPageEffect={true}>
 	<Row area="bottom">

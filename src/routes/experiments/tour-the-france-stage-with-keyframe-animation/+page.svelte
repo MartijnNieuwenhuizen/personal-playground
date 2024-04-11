@@ -4,10 +4,13 @@
 -->
 <script>
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	let title = 'Tour the france stage';
 	let description = `<p>A outline of the Tour the France. Made with CSS. The cyclist is moved with CSS scroll-timeline.</p>`;
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description}>
 	<div class="container">

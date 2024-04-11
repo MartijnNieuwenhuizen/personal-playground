@@ -2,11 +2,14 @@
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Rocket progress bar/scrollbar';
 	const description =
 		'A scrollbar that goes in the opposite direction of the page scroll. With a 🚀!';
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description} showPageEffect={true}>
 	<Row>

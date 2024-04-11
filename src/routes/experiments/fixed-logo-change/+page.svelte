@@ -1,9 +1,12 @@
 <script>
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Fixed logo - change on scoll';
 	const description = `Change the logo from a large to a small one when the user scrolls down the page. Note, the animations aren't very performant, it's all about the concept.`;
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description} showPageEffect={false}>
 	<div class="container">

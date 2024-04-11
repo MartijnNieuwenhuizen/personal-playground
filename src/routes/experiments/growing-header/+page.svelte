@@ -4,57 +4,60 @@
 
 	import Code from '$lib/components/Code/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
 	const title = 'Growing header';
 	const description = 'With the CSS Timeline API.';
 
 	const html = `<div class="container">
-  <h2>
-    This title will become HUGE when you're scrolling down!
-  </h2>
-  ... more content here.
-</div>`;
+		<h2>
+			This title will become HUGE when you're scrolling down!
+			</h2>
+			... more content here.
+			</div>`;
 
 	const cssCode1 = `@keyframes grow-on-scroll {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(12);
-  }
-}
-
-.animated-title {
-  animation: grow-on-scroll linear forwards;
-}`;
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(12);
+				}
+			}
+			
+			.animated-title {
+				animation: grow-on-scroll linear forwards;
+			}`;
 	const cssCode2 = `.container {
-  view-timeline-name: --growing-header;
-}`;
+				view-timeline-name: --growing-header;
+			}`;
 	const cssCode3 = `.animated-title {
-  animation-timeline: --growing-header;
-}`;
+				animation-timeline: --growing-header;
+			}`;
 	const cssCode4 = `.animated-title {
-  animation-range: 50vh 80vh;
-}`;
+				animation-range: 50vh 80vh;
+			}`;
 	const totalCss = `@keyframes grow-on-scroll {
-  from {
-    transform: scale(1);
-  }
-  to {
-	transform: scale(12);
-  }
-}
-
-.container {
-  view-timeline-name: --growing-header;
-}
-
-.animated-title {
-  animation: grow-on-scroll linear forwards;
-  animation-timeline: --growing-header;
-  animation-range: 50vh 80vh;
-}`;
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(12);
+				}
+			}
+			
+			.container {
+				view-timeline-name: --growing-header;
+			}
+			
+			.animated-title {
+				animation: grow-on-scroll linear forwards;
+				animation-timeline: --growing-header;
+				animation-range: 50vh 80vh;
+			}`;
 </script>
+
+<ScrollTimelineWarning />
 
 <ExperimentItem {title} {description}>
 	<div class="container">
