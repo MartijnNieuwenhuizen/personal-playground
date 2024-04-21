@@ -1,13 +1,13 @@
-name: Cron Job
+# name: Cron Job
 
-on:
-  schedule:
-    # Schedule deploy every 2 hours, but not in the night.
-    - cron: '0 */2 6-23 * *'
+# on:
+#   schedule:
+#     # Schedule deploy every 2 hours, but not in the night.
+#     - cron: '0 */2 6-23 * *'
 
-jobs:
-  get_request:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Perform POST request
-        run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/660ef9a7ddbbb740ac14d1a8
+# jobs:
+#   get_request:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Perform POST request
+#         run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/660ef9a7ddbbb740ac14d1a8
