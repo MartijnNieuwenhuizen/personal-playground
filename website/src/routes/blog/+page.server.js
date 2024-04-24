@@ -21,48 +21,48 @@ const sortByDate = (a, b) => {
 	return 0;
 };
 
-const getBlogsFromPastPortfolio = async () => {
-	const url = 'https://past.martijnnieuwenhuizen.nl';
+// const getBlogsFromPastPortfolio = async () => {
+// 	const url = 'https://past.martijnnieuwenhuizen.nl';
 
-	try {
-		const response = await fetch(`${url}/`);
-		const htmlPage = await response.text();
+// 	try {
+// 		const response = await fetch(`${url}/`);
+// 		const htmlPage = await response.text();
 
-		// Create a DOM from the HTML page.
-		const { JSDOM } = jsdom;
-		const dom = new JSDOM(htmlPage);
+// 		// Create a DOM from the HTML page.
+// 		const { JSDOM } = jsdom;
+// 		const dom = new JSDOM(htmlPage);
 
-		// Grab all elements.
-		const pastPageLinks = Array.from(dom.window.document.querySelectorAll('.article-prev__link'));
-		const pastPageTitles = Array.from(dom.window.document.querySelectorAll('.article-prev h2'));
-		const pastPageDates = Array.from(
-			dom.window.document.querySelectorAll('.article-prev__pub-date')
-		);
+// 		// Grab all elements.
+// 		const pastPageLinks = Array.from(dom.window.document.querySelectorAll('.article-prev__link'));
+// 		const pastPageTitles = Array.from(dom.window.document.querySelectorAll('.article-prev h2'));
+// 		const pastPageDates = Array.from(
+// 			dom.window.document.querySelectorAll('.article-prev__pub-date')
+// 		);
 
-		// Create a list of links.
-		const links = pastPageLinks.map((link, index) => {
-			const date = pastPageDates[index].innerHTML;
-			const title = pastPageTitles[index].innerHTML;
+// 		// Create a list of links.
+// 		const links = pastPageLinks.map((link, index) => {
+// 			const date = pastPageDates[index].innerHTML;
+// 			const title = pastPageTitles[index].innerHTML;
 
-			console.log('reverseDate(date): ', reverseDate(date));
+// 			console.log('reverseDate(date): ', reverseDate(date));
 
-			return {
-				url: `${url}${link.getAttribute('href')}` || '',
-				label: title || '',
-				displayDate: date ? displayDate(reverseDate(date)) : '',
-				date: date ? reverseDate(date) : '',
-				external: true
-			};
-		});
+// 			return {
+// 				url: `${url}${link.getAttribute('href')}` || '',
+// 				label: title || '',
+// 				displayDate: date ? displayDate(reverseDate(date)) : '',
+// 				date: date ? reverseDate(date) : '',
+// 				external: true
+// 			};
+// 		});
 
-		return links;
-	} catch (err) {
-		console.log('Could not fetch blog posts from past.martijnnieuwenhuizen.nl');
-		console.log('err: ', err);
+// 		return links;
+// 	} catch (err) {
+// 		console.log('Could not fetch blog posts from past.martijnnieuwenhuizen.nl');
+// 		console.log('err: ', err);
 
-		return [];
-	}
-};
+// 		return [];
+// 	}
+// };
 
 const getBlogsFromGrrr = async () => {
 	try {
@@ -104,10 +104,11 @@ const getBlogsFromGrrr = async () => {
  * @returns {Promise<{links: {url: string, label: string, date: string, external: boolean, displayDate: string}[]}>}
  */
 export const load = async () => {
-	const pastPortfolioBlogs = await getBlogsFromPastPortfolio();
+	// const pastPortfolioBlogs = await getBlogsFromPastPortfolio();
 	const grrrBlogs = await getBlogsFromGrrr();
 
-	const items = [...grrrBlogs, ...pastPortfolioBlogs];
+	// const items = [...grrrBlogs, ...pastPortfolioBlogs];
+	const items = [...grrrBlogs];
 	// sort by date
 	const sortedItems = items.sort(sortByDate);
 
