@@ -1,0 +1,9 @@
+{
+	"name": "test-api",
+	"version": "0.0.1",
+	"description": "A test API to ensure the monorepo works as expected on Vercel",
+	"main": "index.js",
+	"scripts": {},
+	"author": "Martijn Nieuwenhuizen",
+	"license": "ISC"
+}
