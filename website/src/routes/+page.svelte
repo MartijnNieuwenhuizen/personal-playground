@@ -22,7 +22,7 @@
 		<Row size="small">
 			<section class="about-this-site">
 				<!-- <h2>⚠️ Good to know</h2> -->
-				<h2>🚨 Good to know.</h2>
+				<h2>🚨 Good to know</h2>
 
 				<p>
 					<span>This site is <span>NOT</span> beautiful,</span>
