@@ -15,16 +15,16 @@
 			<HoverFadeList type="ol">
 				<li>
 					<PreviewForList
-						url={'https://chromewebstore.google.com/detail/duplicate-content/lelfnogjdcdgannnoddmgepkajiebpdg?pli=1'}
-						title={'Duplicate Content (Chrome extension)'}
-						date={'2017-2018'}
+						url={'https://www.narug.nl/'}
+						title={'Hoeveel dagen na rug (narug.nu)'}
+						date={'2022-2023'}
 					/>
 				</li>
 				<li>
 					<PreviewForList
-						url={'https://www.narug.nl/'}
-						title={'Hoeveel dagen na rug (narug.nu)'}
-						date={'2022-2023'}
+						url={'https://chromewebstore.google.com/detail/duplicate-content/lelfnogjdcdgannnoddmgepkajiebpdg?pli=1'}
+						title={'Duplicate Content (Chrome extension)'}
+						date={'2017-2018'}
 					/>
 				</li>
 				<!-- <li>
