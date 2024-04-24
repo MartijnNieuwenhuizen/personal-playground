@@ -20,6 +20,7 @@
 						date={'2022-2023'}
 					/>
 				</li>
+
 				<li>
 					<PreviewForList
 						url={'https://chromewebstore.google.com/detail/duplicate-content/lelfnogjdcdgannnoddmgepkajiebpdg?pli=1'}
@@ -50,15 +51,9 @@
 		line-height: 1.2;
 		margin: 0;
 		padding: 0;
-		/* text-align: center; */
 
 		font-size: 21.38700000000006vw;
 		font-family: var(--serif);
 		white-space: nowrap;
-
-		/* font-size: 18.16800000000002vw;
-		font-weight: var(--font-weight-normal);
-		font-family: var(--sans-serif);
-		transform: scale(1.05) translateX(-0.25%); */
 	}
 </style>
