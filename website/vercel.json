@@ -2,5 +2,5 @@
 	"buildCommand": "vite build",
 	"cleanUrls": true,
 	"framework": "svelte",
-	"output": "build"
+	"outputDirectory": "build"
 }
