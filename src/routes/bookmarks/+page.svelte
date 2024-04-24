@@ -6,39 +6,26 @@
 
 	export let data;
 
-	const posts = data.links;
+	const { bookmarks } = data;
 </script>
 
 <section>
 	<div class="container">
-		<h1>Blog posts</h1>
+		<h1>Bookmarks</h1>
 	</div>
 
 	<Row size="small">
 		<Block size="medium">
-			<p>
-				Most of my recent posts are written on the <a
-					href="https://grrr.tech/authors/martijn-nieuwenhuizen/">GRRR tech blog</a
-				>.
-			</p>
+			<p>A list of links I like, want to keep or share.</p>
 
 			<HoverFadeList type="ol">
-				<li>
-					<PreviewForList
-						url={'/blog/forced-css-property-order/'}
-						title={'Forced CSS property order'}
-						date={'2021-09-01'}
-						isExternal={false}
-					/>
-				</li>
-
-				{#each posts as post}
+				{#each bookmarks as bookmark}
 					<li>
 						<PreviewForList
-							url={post.url}
-							title={post.label}
-							date={post.displayDate}
-							isExternal={post.external}
+							url={bookmark.url}
+							title={bookmark.label}
+							date={bookmark.displayDate}
+							isExternal={true}
 						/>
 					</li>
 				{/each}
