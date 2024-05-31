@@ -77,7 +77,7 @@
 
 <Row size="small">
 	<Block size="medium">
-		<h2>Conlusion</h2>
+		<h2>Conclusion</h2>
 		<p>In short, no.</p>
 		<p>
 			The animation (especially the moving-away animation) is bad. I will stop the experiment here

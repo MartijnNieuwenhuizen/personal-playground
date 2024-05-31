@@ -19,7 +19,7 @@
 
 		// Create the gradient.
 		background: linear-gradient(90deg, var(--highlight-color) 0%, var(--expressive-color) 100%);
-		// Clip the text (so the gradient is visivle).
+		// Clip the text (so the gradient is visible).
 		background-clip: text;
 		// Set color to transparent so the gradient shows.
 		-webkit-text-fill-color: transparent;
