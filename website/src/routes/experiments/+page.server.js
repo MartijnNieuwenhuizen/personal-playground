@@ -3,6 +3,12 @@ import tags from './tags';
 export async function load() {
 	const links = [
 		{
+			url: '/experiments/screen-width-with-css',
+			label: 'Screen width with CSS',
+			date: '23-06-2024',
+			tags: ['css-only', 'trigonometric-functions']
+		},
+		{
 			url: '/experiments/when-is-the-next-sunny-moment',
 			label: 'When is the next sunny moment',
 			date: '03-04-2024',
