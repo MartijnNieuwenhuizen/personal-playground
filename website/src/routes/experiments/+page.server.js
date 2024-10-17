@@ -2,10 +2,16 @@ import tags from './tags';
 
 export async function load() {
 	const links = [
+		// {
+		// 	url: '/experiments/scroll-based-gradient-animation',
+		// 	label: 'Scroll based gradient animation',
+		// 	date: '30-09-2024',
+		// 	tags: ['scroll-timeline', 'css-only']
+		// },
 		{
 			url: '/experiments/screen-width-with-css',
 			label: 'Screen width with CSS',
-			date: '23-06-2024',
+			date: '09-08-2024',
 			tags: ['css-only', 'trigonometric-functions']
 		},
 		{
