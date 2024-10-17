@@ -1,5 +1,5 @@
 'use strict';
-import fs from 'fs';
+import fs, { mkdirSync } from 'fs';
 import { mkdir } from 'node:fs';
 
 import pascalCaseToDash from './pascal-case-to-dash.js';
@@ -30,9 +30,9 @@ const generatePage = (componentName, showPageEffect) => {
 const createFile = (componentName, showPageEffect) => {
 	const dir = `./src/routes/experiments/${pascalCaseToDash(componentName)}`;
 
-	mkdir(dir, { recursive: false }, writeFileErrorHandler);
+	mkdirSync(dir, { recursive: false }, writeFileErrorHandler);
 
-	fs.writeFile(
+	fs.writeFileSync(
 		`${dir}/+page.svelte`,
 		generatePage(componentName, showPageEffect),
 		writeFileErrorHandler
@@ -79,7 +79,7 @@ const addFileToServerList = (componentName) => {
 };
 
 export default ({ componentName, showPageEffect }) => {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		createFile(componentName, showPageEffect);
 		addFileToServerList(componentName, showPageEffect);
 
