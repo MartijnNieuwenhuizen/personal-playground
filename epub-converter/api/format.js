@@ -1,7 +1,7 @@
 // import JSZip from "jszip";
 // import fs from "fs-extra"; // fs-extra supports promises
 
-export async function GET(request) {
+export function GET(request) {
   console.log("request: ", request);
 
   //   try {
