@@ -17,6 +17,10 @@
 		{
 			url: '/experiments',
 			label: 'Experiments'
+		},
+		{
+			url: '/gists',
+			label: 'Gists'
 		}
 	];
 </script>
