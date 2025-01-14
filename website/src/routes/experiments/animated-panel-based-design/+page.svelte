@@ -6,7 +6,7 @@
 	import Code from '$lib/components/Code/index.svelte';
 
 	const title = 'Animated panel based design';
-	const description = 'Add a description';
+	const description = `See a full page solution <a href="/experiments/animated-panel-based-design/full-page-version">right here</a>`;
 
 	$: showFloatingPanelCssGrid = false;
 	$: showSidePanelCssGrid = false;
