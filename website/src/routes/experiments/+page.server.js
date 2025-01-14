@@ -2,6 +2,12 @@ import tags from './tags';
 
 export async function load() {
 	const links = [
+		{
+			url: '/experiments/animated-panel-based-design',
+			label: 'Animated panel based design',
+			date: '08-01-2025',
+			tags: ['animation', 'css-only']
+		},
 		// {
 		// 	url: '/experiments/epub-converter',
 		// 	label: 'Epub converter',
