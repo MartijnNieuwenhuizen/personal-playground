@@ -3,6 +3,12 @@ import tags from './tags';
 export async function load() {
 	const links = [
 		{
+			url: '/experiments/updates-to-the-box-model',
+			label: 'Updates to the box model',
+			date: '15-01-2025',
+			tags: ['css-only']
+		},
+		{
 			url: '/experiments/animated-panel-based-design',
 			label: 'Animated panel based design',
 			date: '08-01-2025',
