@@ -314,12 +314,25 @@ module.exports = {
                 "resize",
                 "interpolation-mode",
 
+                // View transitions
+                "view-timeline",
+                "view-timeline-axis",
+                "view-timeline-inset",
+                "view-timeline-name",
+                "view-transition-name",
+                
+
                 // Transforms
                 "transform",
+                "transform-box",
                 "transform-origin",
+                "transform-style",
+                "scale",
+                "rotate",
 
                 // Transitions
                 "transition",
+                "transition-behavior",
                 "transition-property",
                 "transition-duration",
                 "transition-delay",
