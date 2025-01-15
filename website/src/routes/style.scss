@@ -115,7 +115,7 @@
 }
 .details-scroller > div {
 	// animation: scroll-by linear forwards;
-	animation: scroll-by auto linear;
+	animation: scroll-by auto ease-in-out;
 	animation-timeline: --page-scroll;
 }
 .details-scroller ul {

@@ -1,6 +1,14 @@
 <script>
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
+	import experiments from '../routes/experiments/experiments.js';
+	import gists from '../routes/gists/gists.js';
+
+	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
+	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
+
+	$: latestExperiments = experiments.slice(0, 5);
+	$: latestGists = gists.slice(0, 5);
 </script>
 
 <article class="page">
@@ -36,38 +44,68 @@
 		</Row>
 	</Block>
 
-	<!-- <Block>
-		<Row size="small"> -->
-	<section class="details-scroller">
-		<h2 class="sr-only">More about me</h2>
-		<div>
-			<ul>
-				<li>📍 Bergen NH</li>
-				<li>🏃🏼 Runner</li>
-				<li>🚴🏻‍♂️ Cyclist</li>
-				<li>🧑🏼‍🌾 Gardener</li>
-				<li>👨🏼‍💻 Front-end developer</li>
-				<li>👨🏼‍🏫 Co-teacher</li>
-				<li>👨🏼‍🍳 Used to be a chef</li>
+	<section>
+		<Block size="medium">
+			<h2>Latest experiments</h2>
 
-				<!-- Just for the effect -->
-				<li aria-hidden="true">📍 Bergen NH</li>
-				<li aria-hidden="true">🏃🏼 Runner</li>
-				<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
-				<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
-				<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
-				<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
-				<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
+			<HoverFadeList>
+				{#each latestExperiments as experiment}
+					<li>
+						<PreviewForList url={experiment.url} title={experiment.label} date={experiment.date} />
+					</li>
+				{/each}
+			</HoverFadeList>
+		</Block>
+	</section>
 
-				<li aria-hidden="true">📍 Bergen NH</li>
-				<li aria-hidden="true">🏃🏼 Runner</li>
-				<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
-				<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
-				<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
-				<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
-				<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
-			</ul>
-		</div>
+	<Row size="medium" area="top">
+		<Row size="small" area="bottom">
+			<section class="details-scroller">
+				<h2 class="sr-only">More about me</h2>
+				<div>
+					<ul>
+						<li>📍 Bergen NH</li>
+						<li>🏃🏼 Runner</li>
+						<li>🚴🏻‍♂️ Cyclist</li>
+						<li>🧑🏼‍🌾 Gardener</li>
+						<li>👨🏼‍💻 Front-end developer</li>
+						<li>👨🏼‍🏫 Co-teacher</li>
+						<li>👨🏼‍🍳 Used to be a chef</li>
+
+						<!-- Just for the effect -->
+						<li aria-hidden="true">📍 Bergen NH</li>
+						<li aria-hidden="true">🏃🏼 Runner</li>
+						<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
+						<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
+						<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
+						<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
+						<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
+
+						<li aria-hidden="true">📍 Bergen NH</li>
+						<li aria-hidden="true">🏃🏼 Runner</li>
+						<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
+						<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
+						<li aria-hidden="true">👨🏼‍💻 Front-end developer</li>
+						<li aria-hidden="true">👨🏼‍🏫 Co-teacher</li>
+						<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
+					</ul>
+				</div>
+			</section>
+		</Row>
+	</Row>
+
+	<section>
+		<Block size="medium">
+			<h2>Latest gists</h2>
+
+			<HoverFadeList>
+				{#each latestGists as gist}
+					<li>
+						<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
+					</li>
+				{/each}
+			</HoverFadeList>
+		</Block>
 	</section>
 
 	<!-- <section>

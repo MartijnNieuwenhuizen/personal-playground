@@ -12,9 +12,9 @@
 
 	let currentTag = 'all';
 
-	$: filteredLinks = data.links.filter((link) => {
+	$: filteredExperiments = data.experiments.filter((experiment) => {
 		if (currentTag === 'all') return true;
-		return link.tags.includes(currentTag);
+		return experiment.tags.includes(currentTag);
 	});
 
 	// @param {import('svelte').Event<HTMLFormElement>} event
@@ -31,7 +31,7 @@
 		.map((tag) => ({
 			tag,
 			label: tags[tag],
-			count: data.links.filter((item) => item.tags.includes(tag)).length
+			count: data.experiments.filter((item) => item.tags.includes(tag)).length
 		}))
 		.sort((a, b) => b.count - a.count);
 </script>
@@ -60,7 +60,7 @@
 							<legend class="sr-only">Filter by category</legend>
 
 							<input type="radio" name="tag" id={'all'} data-active={currentTag === 'all'} />
-							<label for={'all'}>All ({data.links.length})</label>
+							<label for={'all'}>All ({data.experiments.length})</label>
 							{#each enrichedTags as tag}
 								<input
 									type="radio"
@@ -80,7 +80,7 @@
 			<h2 class="sr-only">Experiments</h2>
 
 			<HoverFadeList>
-				{#each filteredLinks as link}
+				{#each filteredExperiments as link}
 					<li>
 						<PreviewForList url={link.url} title={link.label} date={link.date} />
 					</li>

@@ -178,7 +178,7 @@ module.exports = {
                 "margin-bottom",
                 "margin-left",
                 "padding",
-				"padding-block",
+                "padding-block",
                 "padding-block-start",
                 "padding-block-end",
                 "padding-inline",

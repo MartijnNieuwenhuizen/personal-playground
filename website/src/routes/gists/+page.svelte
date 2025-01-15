@@ -3,27 +3,7 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
-
-	const pages = [
-		{
-			url: '/gists/stylelint-property-order',
-			label: 'Stylelint property order',
-			date: '15-01-2025',
-			tags: ['css', 'tooling']
-		},
-		{
-			url: '/gists/prettier-dependency-import-order',
-			label: 'Prettier - Dependency import order',
-			date: '15-01-2025',
-			tags: ['js', 'tooling']
-		},
-		{
-			url: '/gists/svelte-global-selector',
-			label: 'Svelte global selector',
-			date: '06-01-2025',
-			tags: ['css']
-		}
-	];
+	import gists from './gists.js';
 </script>
 
 <section>
@@ -34,9 +14,9 @@
 	<Row size="small">
 		<Block size="medium">
 			<HoverFadeList>
-				{#each pages as link}
+				{#each gists as gist}
 					<li>
-						<PreviewForList url={link.url} title={link.label} date={link.date} />
+						<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
 					</li>
 				{/each}
 			</HoverFadeList>
