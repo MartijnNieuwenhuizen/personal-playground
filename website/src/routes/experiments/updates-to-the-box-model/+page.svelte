@@ -3,7 +3,6 @@
 
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Block from '$lib/components/layout/Block/index.svelte';
-	import Code from '$lib/components/Code/index.svelte';
 
 	const title = 'Updates to the box model';
 	const description = '';

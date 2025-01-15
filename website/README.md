@@ -40,3 +40,4 @@ You can preview the production build with `npm run preview`.
 # Links to add
 
 - https://frontendmasters.com/blog/one-of-the-boss-battles-of-css-is-almost-won-transitioning-to-auto/
+- https://norday.tech/posts/2024/how-to-use-map-filter-and-reduce-in-javascript/
