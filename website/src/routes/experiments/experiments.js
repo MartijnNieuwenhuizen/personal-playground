@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/view-transitions-for-element-animation',
+		label: 'View transitions for element animation',
+		date: '16-01-2025',
+		tags: ['view-transitions', 'css-only']
+	},
+	{
 		url: '/experiments/updates-to-the-box-model',
 		label: 'Updates to the box model',
 		date: '15-01-2025',
@@ -124,7 +130,7 @@ const links = [
 		url: '/experiments/card-to-header-page-transition',
 		label: 'Card to header page transition',
 		date: '21-11-2023',
-		tags: ['page-transition', 'css-only']
+		tags: ['page-transition', 'view-transitions', 'css-only']
 	},
 	// {
 	// 	url: '/experiments/sentence-highlighter',

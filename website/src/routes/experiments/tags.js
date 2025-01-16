@@ -5,6 +5,7 @@ const tags = {
 	'css-variables': 'CSS Variables',
 	'css-art': 'CSS Art',
 	'clip-path': 'Clip Path',
+	'view-transitions': 'View Transitions',
 	layout: 'Layout',
 	motion: 'Motion',
 	'scroll-timeline': 'Scroll Timeline',
