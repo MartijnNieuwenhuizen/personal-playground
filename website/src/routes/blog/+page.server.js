@@ -109,8 +109,8 @@ export const load = async () => {
 
 	const items = [
 		{
-			url: '/blog/forced-property-order-in-css',
-			label: 'Forced property order in CSS',
+			url: '/blog/enforcing-a-consistent-css-property-order-with-stylelint',
+			label: 'Enforcing a Consistent CSS Property Order with Stylelint',
 			displayDate: '24-01-2025',
 			date: '2025-01-24',
 			external: false
