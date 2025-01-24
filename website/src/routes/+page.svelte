@@ -7,8 +7,25 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	$: latestExperiments = experiments.slice(0, 5);
-	$: latestGists = gists.slice(0, 5);
+	$: latestExperiments = experiments.slice(0, 3);
+	$: latestGists = gists.slice(0, 3);
+	const latestBlogPosts = [
+		{
+			url: '/blog/enforcing-a-consistent-css-property-order-with-stylelint',
+			label: 'Enforcing a Consistent CSS Property Order with Stylelint',
+			date: '24 Jan 2025'
+		},
+		{
+			url: 'https://norday.tech/posts/2023/automatically-sort-import-statements-with-prettier/',
+			label: 'Automatically sort import statements with Prettier',
+			date: '31 Jul 2023'
+		},
+		{
+			url: 'https://norday.tech/posts/2023/container-queries-make-the-most-important-lesson-i%27ve-ever-learned-a-reality/',
+			label: "Container Queries make the most important lesson I've ever learned, a reality",
+			date: '25 Apr 2023'
+		}
+	];
 </script>
 
 <article class="page">
@@ -96,17 +113,33 @@
 
 	<section>
 		<Block size="medium">
-			<h2>Latest gists</h2>
+			<h2>Latest blogs</h2>
 
 			<HoverFadeList>
-				{#each latestGists as gist}
+				{#each latestBlogPosts as post}
 					<li>
-						<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
+						<PreviewForList url={post.url} title={post.label} date={post.date} />
 					</li>
 				{/each}
 			</HoverFadeList>
 		</Block>
 	</section>
+
+	<Row area="top" size="medium">
+		<section>
+			<Block size="medium">
+				<h2>Latest gists</h2>
+
+				<HoverFadeList>
+					{#each latestGists as gist}
+						<li>
+							<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
+						</li>
+					{/each}
+				</HoverFadeList>
+			</Block>
+		</section>
+	</Row>
 
 	<!-- <section>
 		<h2>Fun projects</h2>

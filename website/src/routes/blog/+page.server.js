@@ -111,12 +111,13 @@ export const load = async () => {
 		{
 			url: '/blog/enforcing-a-consistent-css-property-order-with-stylelint',
 			label: 'Enforcing a Consistent CSS Property Order with Stylelint',
-			displayDate: '24-01-2025',
+			displayDate: '24 Jan 2025',
 			date: '2025-01-24',
 			external: false
 		},
 		...grrrBlogs
 	];
+
 	// sort by date
 	const sortedItems = items.sort(sortByDate);
 
