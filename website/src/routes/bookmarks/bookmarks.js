@@ -343,13 +343,13 @@ const bookmarks = [
 		date: 'Some time in the past'
 	},
 	{
-		label: 'http://Next.jes Preview mode',
+		label: 'Next.js Preview mode',
 		tags: ['Netlify', 'Next.js'],
 		url: 'https://youtu.be/UaWSboXn0-8',
 		date: 'Some time in the past'
 	},
 	{
-		label: 'MetLife Serverless functions tutorial',
+		label: 'Serverless functions tutorial',
 		tags: ['Netlify', 'Serverless functions'],
 		url: 'https://explorers.netlify.com/learn/up-and-running-with-serverless-functions?utm_campaign=devex-bh&utm_source=twitter&utm_medium=social&utm_content=explorers-serverless-course',
 		date: 'Some time in the past'
@@ -559,13 +559,13 @@ const bookmarks = [
 		date: 'Some time in the past'
 	},
 	{
-		label: 'Rhttps://www.instagram.com/ragged_edge/ - Agency',
+		label: 'Nice agency work',
 		tags: ['Agency', 'Cool Agency'],
 		url: 'https://www.instagram.com/ragged_edge/',
 		date: 'Some time in the past'
 	},
 	{
-		label: 'http://Edit.photo (from Rik Schennink)',
+		label: 'Edit.photo (from Rik Schennink)',
 		tags: ['Edit', 'Images', 'JPG', 'Photos'],
 		url: 'https://edit.photo/?ref=pqina',
 		date: 'Some time in the past'
@@ -601,7 +601,7 @@ const bookmarks = [
 		date: 'Some time in the past'
 	},
 	{
-		label: 'https://repl.it/.it',
+		label: 'repl',
 		tags: ['Browser', 'Code', 'JS'],
 		url: 'https://repl.it/',
 		date: 'Some time in the past'
@@ -619,13 +619,13 @@ const bookmarks = [
 		date: 'Some time in the past'
 	},
 	{
-		label: 'Phttps://www.photopea.com/ (Photoshop on the web)',
+		label: 'photopea.com (Photoshop on the web)',
 		tags: ['Application'],
 		url: 'https://www.photopea.com/',
 		date: 'Some time in the past'
 	},
 	{
-		label: 'Hhttps://www.hoverstat.es/ - Home of alternative web design',
+		label: 'Home of alternative web design',
 		tags: ['Art direction on the web', 'Design'],
 		url: 'https://www.hoverstat.es/',
 		date: 'Some time in the past'
@@ -640,42 +640,6 @@ const bookmarks = [
 		label: 'Design book recomandation by Anna Petrova',
 		tags: ['Art direction on the web', 'Design'],
 		url: 'https://readymag.com/repponen/designbooks/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Interview met Sjef du Jardin',
-		tags: ['Moestuin'],
-		url: 'https://www.oogstkoken.nl/moestuinieren/interview-met-moestuin-queen-sjef_du_jardin-ofwel-lonneke-verburg/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Moestuin kriebels',
-		tags: ['Moestuin'],
-		url: 'https://www.moestuinkriebels.nl/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Moestuin Hippie',
-		tags: ['Blog', 'Moestuin'],
-		url: 'https://moestuinhippie.com/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Moestuin weetjes',
-		tags: ['Moestuin'],
-		url: 'https://moestuinweetjes.com/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Makkelijke moestuin blog',
-		tags: ['Blog', 'Moestuin'],
-		url: 'https://www.makkelijkemoestuin.nl/blog',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Floors moestuin',
-		tags: ['Blog', 'Moestuin'],
-		url: 'https://www.floorsmoestuin.nl/blog-2',
 		date: 'Some time in the past'
 	},
 	{
@@ -811,18 +775,6 @@ const bookmarks = [
 		date: 'Some time in the past'
 	},
 	{
-		label: 'Oogstkoken blog',
-		tags: ['Blog', 'Moestuin'],
-		url: 'https://www.oogstkoken.nl/category/moestuinieren/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Makkelijk moestuin - Wiki',
-		tags: ['Moestuin'],
-		url: 'https://www.makkelijkemoestuin.nl/wiki',
-		date: 'Some time in the past'
-	},
-	{
 		label: 'Personal website - Kristopher van Sant',
 		tags: ['Art direction on the web', 'Design', 'Shapes'],
 		url: 'http://www.kristophervansant.com/',
@@ -832,12 +784,6 @@ const bookmarks = [
 		label: 'Shapes of text examples',
 		tags: ['Art direction on the web', 'Design', 'Typography'],
 		url: 'https://www.pinterest.co.uk/kisstafurr/shapes-of-text/',
-		date: 'Some time in the past'
-	},
-	{
-		label: 'Vreeken - zaden leverancier',
-		tags: ['Moestuin', 'Shop', 'Zaden'],
-		url: 'https://www.vreeken.nl/',
 		date: 'Some time in the past'
 	},
 	{
