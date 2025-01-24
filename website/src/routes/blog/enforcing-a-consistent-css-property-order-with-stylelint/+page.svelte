@@ -3,7 +3,7 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Code from '$lib/components/Code/index.svelte';
 
-	const cssExampleBad = `.language-toggle__toggle::after {
+	const cssExampleBad = `.some-element {
   background-color: var(--primary-color);
   top: 0;
   position: absolute;
@@ -20,7 +20,7 @@
     box-shadow: 0 0 0 1px var(--white);
   }
 }`;
-	const cssExampleGood = `.language-toggle__toggle::after {
+	const cssExampleGood = `.some-element {
   content: "";
   position: absolute;
   top: 0;
@@ -37,7 +37,7 @@
     box-shadow: 0 0 0 1px var(--white);
   }
 }`;
-	const cssExampleBest = `.language-toggle__toggle::after {
+	const cssExampleBest = `.some-element {
   content: "";
 
   position: absolute;
