@@ -107,8 +107,16 @@ export const load = async () => {
 	// const pastPortfolioBlogs = await getBlogsFromPastPortfolio();
 	const grrrBlogs = await getBlogsFromGrrr();
 
-	// const items = [...grrrBlogs, ...pastPortfolioBlogs];
-	const items = [...grrrBlogs];
+	const items = [
+		{
+			url: '/blog/forced-property-order-in-css',
+			label: 'Forced property order in CSS',
+			displayDate: '24-01-2025',
+			date: '2025-01-24',
+			external: false
+		},
+		...grrrBlogs
+	];
 	// sort by date
 	const sortedItems = items.sort(sortByDate);
 
