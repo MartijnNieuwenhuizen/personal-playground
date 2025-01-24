@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/cursor-positioned-variable-font-animation',
+		label: 'Cursor positioned variable font animation',
+		date: '24-01-2025',
+		tags: []
+	},
+	{
 		url: '/experiments/view-transitions-for-element-animation',
 		label: 'View transitions for element animation',
 		date: '16-01-2025',
