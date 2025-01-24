@@ -3,7 +3,7 @@ const links = [
 		url: '/experiments/cursor-positioned-variable-font-animation',
 		label: 'Cursor positioned variable font animation',
 		date: '24-01-2025',
-		tags: []
+		tags: ['motion', 'css-only']
 	},
 	{
 		url: '/experiments/view-transitions-for-element-animation',
