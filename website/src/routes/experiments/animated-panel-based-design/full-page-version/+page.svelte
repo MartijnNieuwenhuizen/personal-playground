@@ -155,7 +155,7 @@
 		grid-template-columns: var(--side-panel-size) 1fr var(--annotation-panel-size);
 		grid-template-areas: 'side-panel main-panel annotation-panel';
 
-		transition: grid-template-columns 0.2s ease-in-out;
+		transition: grid-template-columns 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 
 		border-radius: 1rem;
 		background-color: rgba(255, 255, 255, 0.1);
@@ -189,7 +189,7 @@
 		grid-area: side-panel;
 		background-color: #d78000;
 		color: white;
-		transition: transform ease-in-out 0.2s;
+		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 		border-radius: 1rem;
 	}
 	.main-panel {
@@ -201,7 +201,7 @@
 	.annotation-panel {
 		grid-area: annotation-panel;
 		background-color: white;
-		transition: transform ease-in-out 0.2s;
+		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 		border-radius: 1rem;
 	}
 
@@ -218,7 +218,7 @@
 		color: white;
 		border-radius: 16px;
 
-		transition: transform ease-in-out 0.2s;
+		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 	}
 
 	.floating-panel[data-visible='false'] {
@@ -307,7 +307,7 @@
 		// That's not what we want here. It should scale based on the container. Should be improved!
 		padding: 4rem 2rem;
 
-		transition: transform 0.2s ease-in-out;
+		transition: transform 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 	}
 	.side-panel-content {
 		// width: var(--side-panel-size);

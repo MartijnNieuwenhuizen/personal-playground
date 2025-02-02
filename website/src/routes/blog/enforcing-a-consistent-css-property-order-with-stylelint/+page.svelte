@@ -64,7 +64,6 @@
 	<Block size="medium">
 		<header>
 			<h1>Enforcing a Consistent CSS Property Order with Stylelint</h1>
-			<!-- <h1>Forced property order in CSS</h1> -->
 		</header>
 	</Block>
 	<Block size="small">
