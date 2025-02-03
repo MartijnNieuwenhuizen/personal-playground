@@ -4,14 +4,18 @@
 	/** @type {string} */
 	export let title;
 	/** @type {string} */
-	export let date;
+	export let date = '';
 	/** @type {boolean} */
 	export let isExternal = false;
 	/** @type {'h2' | 'h3' | 'h4'} */
 	export let headingType = 'h3';
+	/** @type {'box' | 'list' | 'clear'} */
+	export let type = 'box';
+	/** @type {boolean} */
+	export let noBottom = false;
 </script>
 
-<div>
+<div data-type={type} data-no-bottom={noBottom}>
 	<a href={url}>
 		{#if headingType === 'h2'}<h2>
 				{title}
@@ -27,7 +31,9 @@
 			</h4>{/if}
 	</a>
 
-	<span class="date">{date}</span>
+	{#if date}
+		<span class="date">{date}</span>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -37,7 +43,6 @@
 		grid-template-columns: subgrid;
 		align-items: center;
 		grid-column: 1 / -1;
-		border: 2px solid black;
 		margin-top: -2px;
 	}
 
@@ -47,7 +52,6 @@
 		@include heading-3;
 		margin: 0;
 		padding: 1rem;
-		border-right: 2px solid black;
 	}
 
 	a {
@@ -71,5 +75,18 @@
 		font-size: 1rem;
 		line-height: 1;
 		vertical-align: top;
+	}
+
+	[data-type='box'] {
+		border: 2px solid black;
+	}
+	[data-type='box'] h2,
+	[data-type='box'] h3,
+	[data-type='box'] h4 {
+		border-right: 2px solid black;
+	}
+
+	[data-type='list'][data-no-bottom='false'] {
+		border-bottom: 2px solid black;
 	}
 </style>

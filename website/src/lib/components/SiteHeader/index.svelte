@@ -1,37 +1,61 @@
 <script>
 	import { page } from '$app/stores';
 
-	const menuItems = [
+	const primaryMenuItems = [
 		{
 			url: '/',
-			label: 'Home'
-		},
-		{
-			url: '/blog',
-			label: 'Blog'
-		},
-		{
-			url: '/fun-projects',
-			label: 'Fun projects'
+			label: '🏠',
+			ariaLabel: 'Home'
 		},
 		{
 			url: '/experiments',
 			label: 'Experiments'
 		},
 		{
-			url: '/gists',
-			label: 'Gists'
+			url: '/blog',
+			label: 'Blog'
 		},
 		{
-			url: '/bookmarks',
-			label: 'Bookmarks'
+			url: '/gists',
+			label: 'Gists'
 		}
 	];
+
+	// const secondaryMenuItems = [
+	// 	{
+	// 		url: '/bookmarks',
+	// 		label: 'Bookmarks'
+	// 	},
+	// 	{
+	// 		url: '/fun-projects',
+	// 		label: 'Fun projects'
+	// 	}
+	// ];
 </script>
 
-<nav>
+<nav class="primary-menu">
 	<ul>
-		{#each menuItems as menuItem}
+		{#each primaryMenuItems as menuItem}
+			<li>
+				<a
+					href={menuItem.url}
+					data-active={menuItem.url === '/'
+						? $page.url.pathname === menuItem.url
+						: $page.url.pathname.includes(menuItem.url)}
+				>
+					{menuItem.label}
+					{#if menuItem.ariaLabel}
+						<span class="sr-only">{menuItem.ariaLabel}</span>
+					{/if}
+				</a>
+			</li>
+		{/each}
+	</ul>
+</nav>
+
+<!-- <nav class="secondary-menu">
+	<ul>
+		{#each secondaryMenuItems as menuItem}
 			<li>
 				<a
 					href={menuItem.url}
@@ -42,13 +66,13 @@
 			</li>
 		{/each}
 	</ul>
-</nav>
+</nav> -->
 
 <style lang="scss">
-	nav {
+	.primary-menu {
 		overflow-x: auto;
 	}
-	nav ul {
+	.primary-menu ul {
 		list-style: none;
 		display: flex;
 		align-items: center;

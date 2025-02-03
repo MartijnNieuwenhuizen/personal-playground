@@ -16,7 +16,7 @@
 			<HoverFadeList>
 				{#each gists as gist}
 					<li>
-						<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
+						<PreviewForList url={gist.url} title={gist.label} type="clear" date={gist.date} />
 					</li>
 				{/each}
 			</HoverFadeList>
@@ -31,7 +31,7 @@
 	}
 
 	h1 {
-		line-height: 1.2;
+		line-height: 0.8;
 		margin: 0;
 		padding: 0;
 

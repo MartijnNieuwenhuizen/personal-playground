@@ -116,9 +116,15 @@
 			<h2>Latest blogs</h2>
 
 			<HoverFadeList>
-				{#each latestBlogPosts as post}
+				{#each latestBlogPosts as post, index}
 					<li>
-						<PreviewForList url={post.url} title={post.label} date={post.date} />
+						<PreviewForList
+							type="list"
+							noBottom={index === latestBlogPosts.length - 1}
+							url={post.url}
+							title={post.label}
+							date={post.date}
+						/>
 					</li>
 				{/each}
 			</HoverFadeList>
@@ -133,7 +139,7 @@
 				<HoverFadeList>
 					{#each latestGists as gist}
 						<li>
-							<PreviewForList url={gist.url} title={gist.label} date={gist.date} />
+							<PreviewForList type="clear" url={gist.url} title={gist.label} date={gist.date} />
 						</li>
 					{/each}
 				</HoverFadeList>

@@ -47,7 +47,7 @@
 		</Block>
 	</Row>
 
-	<Row size="small" area="top">
+	<!-- <Row size="small" area="top">
 		<form action="">
 			<fieldset on:change={handleChange}>
 				<div class="overflow">
@@ -69,7 +69,7 @@
 				</div>
 			</fieldset>
 		</form>
-	</Row>
+	</Row> -->
 
 	<Row size="small">
 		<Block size="medium">
@@ -81,8 +81,8 @@
 						<PreviewForList
 							url={bookmark.url}
 							title={bookmark.label}
-							date={bookmark.date}
 							isExternal={true}
+							type="list"
 						/>
 					</li>
 				{/each}

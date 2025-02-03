@@ -23,13 +23,15 @@
 			</p>
 
 			<HoverFadeList type="ol">
-				{#each posts as post}
+				{#each posts as post, index}
 					<li>
 						<PreviewForList
+							type="list"
 							url={post.url}
 							title={post.label}
 							date={post.displayDate}
 							isExternal={post.external}
+							noBottom={index === posts.length - 1}
 						/>
 					</li>
 				{/each}
