@@ -4,8 +4,10 @@
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 	import ScrollTimelineWarning from '$lib/components/ScrollTimelineWarning/index.svelte';
 
-	const title = 'Opposite scrollbar';
-	const description = 'One that scrolls the other way, for half the time, and then back up again.';
+	const title = 'Scroll-based gradient animation';
+	const description = 'Animating a gradient based on scroll position.';
+
+	let options = 'rotate';
 </script>
 
 <ScrollTimelineWarning />
@@ -16,14 +18,31 @@
 			<form>
 				<h2>options</h2>
 				<label for="rotate">Rotate</label>
-				<input type="radio" name="option" id="rotate" checked />
+				<input type="radio" name="option" id="rotate" value="rotate" bind:group={options} />
 
-				<label for="colors">Move colors</label>
-				<input type="radio" name="option" id="colors" />
+				<label for="change-colors">Change colors</label>
+				<input
+					type="radio"
+					name="option"
+					id="change-colors"
+					value="change-colors"
+					bind:group={options}
+				/>
 			</form>
+
+			{#if options === 'change-colors'}
+				<Row size="small">
+					<p>
+						You cannot animate the values of a gradient (or background-color) with the
+						animation-timeline because the value can't be interpolated continuously along a
+						timeline.
+					</p>
+				</Row>
+			{/if}
+
 			<div class="scroll-hight">
 				<div class="container">
-					<div class="ball" />
+					<div class="ball" data-animation-variant={options} />
 				</div>
 			</div>
 		</Block>
@@ -47,12 +66,6 @@
 		width: 50vmin;
 		height: 50vmin;
 		border-radius: 50%;
-		/* Make a gradient that radius from the center with the following 4 colors. And the center should be in the top rigth */
-		/* #e3694e */
-		/* #b478c6 */
-		/* #ffffff */
-		/* #c8e6cf */
-
 		background: radial-gradient(
 			circle at 65% 25%,
 			#c8e6cf 0%,
@@ -61,5 +74,52 @@
 			#b478c6 70%,
 			#e3694e 80%
 		);
+	}
+
+	:global(body) {
+		view-timeline-name: --rotate-gradient;
+	}
+
+	@keyframes rotate-gradient {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.ball[data-animation-variant='rotate'] {
+		animation: rotate-gradient linear forwards;
+		animation-range: 100vh calc(100% - 100vh);
+		animation-timeline: --rotate-gradient;
+	}
+	@keyframes change-colors {
+		0% {
+			background: radial-gradient(
+				circle at 65% 25%,
+				#c8e6cf 0%,
+				#ffffff 45%,
+				#ffffff 60%,
+				#b478c6 70%,
+				#e3694e 80%
+			);
+		}
+		100% {
+			background: radial-gradient(
+				circle at 65% 25%,
+				#e3694e 0%,
+				#b478c6 45%,
+				#ffffff 60%,
+				#ffffff 70%,
+				#c8e6cf 80%
+			);
+		}
+	}
+
+	.ball[data-animation-variant='change-colors'] {
+		animation: change-colors linear forwards;
+		animation-range: 100vh calc(100% - 100vh);
+		animation-timeline: --rotate-gradient;
 	}
 </style>

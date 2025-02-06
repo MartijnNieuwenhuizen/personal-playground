@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/scroll-based-gradient-animation',
+		label: 'Scroll based gradient animation',
+		date: '06-02-2024',
+		tags: ['scroll-timeline', 'css-only']
+	},
+	{
 		url: '/experiments/cursor-positioned-variable-font-animation',
 		label: 'Cursor positioned variable font animation',
 		date: '24-01-2025',
@@ -28,12 +34,6 @@ const links = [
 	// 	label: 'Epub converter',
 	// 	date: '17-10-2024',
 	// 	tags: ['tool']
-	// },
-	// {
-	// 	url: '/experiments/scroll-based-gradient-animation',
-	// 	label: 'Scroll based gradient animation',
-	// 	date: '30-09-2024',
-	// 	tags: ['scroll-timeline', 'css-only']
 	// },
 	{
 		url: '/experiments/screen-width-with-css',
