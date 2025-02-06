@@ -2,7 +2,7 @@ const links = [
 	{
 		url: '/experiments/scroll-based-gradient-animation',
 		label: 'Scroll based gradient animation',
-		date: '06-02-2024',
+		date: '06-02-2025',
 		tags: ['scroll-timeline', 'css-only']
 	},
 	{
@@ -47,12 +47,6 @@ const links = [
 		date: '03-04-2024',
 		tags: ['tool']
 	},
-	// {
-	// 	url: '/experiments/css-scroll-timeline-with-intersection-observer',
-	// 	label: 'CSS scroll timeline with intersection observer',
-	// 	date: '27-02-2024',
-	// 	tags: ['scroll-timeline', 'motion']
-	// },
 	{
 		url: '/experiments/two-speed-horizontal-scroll',
 		label: 'Two speed horizontal scroll',
