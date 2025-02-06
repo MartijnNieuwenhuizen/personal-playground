@@ -1,8 +1,14 @@
 <script>
-	/** @type {string} */
-	export let title;
-	/** @type {number} */
-	export let totalDistance;
+	
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} title
+	 * @property {number} totalDistance
+	 */
+
+	/** @type {Props} */
+	let { title, totalDistance } = $props();
 	/** @type {number[]} */
 	let distanceIndicators = [];
 
@@ -17,7 +23,7 @@
 	<div class="sticky">
 		<h2 class="title">{title}</h2>
 		<div class="stage-outline">
-			<div class="stage-scroller" />
+			<div class="stage-scroller"></div>
 		</div>
 
 		<ul class="distance-container">

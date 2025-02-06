@@ -24,7 +24,7 @@
 	<p>This isn't possible, the user needs to interact with the page first. Makes sense!</p>
 
 	<h3>Experiment 2 - Haptic feedback on click</h3>
-	<button on:click={handleClick}>Click me for some Haptic's</button>
+	<button onclick={handleClick}>Click me for some Haptic's</button>
 
 	<p>This doesn't work, also not on a mobile phone. I don't get any error's though.</p>
 
@@ -45,7 +45,7 @@
 		It's not a Progressive Web App feature, it's simply not supported on iOS and OSX. Therefore, I
 		cannot test this feature myself.
 	</p>
-	<button on:click={downloadAsWebApp}>Download this site as WebApp</button>
+	<button onclick={downloadAsWebApp}>Download this site as WebApp</button>
 </ExperimentItem>
 
 <style lang="scss">

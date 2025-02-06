@@ -1,18 +1,32 @@
 <script>
-	/** @type {string} */
-	export let url;
-	/** @type {string} */
-	export let title;
-	/** @type {string} */
-	export let date = '';
-	/** @type {boolean} */
-	export let isExternal = false;
-	/** @type {'h2' | 'h3' | 'h4'} */
-	export let headingType = 'h3';
-	/** @type {'box' | 'list' | 'clear'} */
-	export let type = 'box';
-	/** @type {boolean} */
-	export let noBottom = false;
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} url
+	 * @property {string} title
+	 * @property {string} [date]
+	 * @property {boolean} [isExternal]
+	 * @property {'h2' | 'h3' | 'h4'} [headingType]
+	 * @property {'box' | 'list' | 'clear'} [type]
+	 * @property {boolean} [noBottom]
+	 */
+
+	/** @type {Props} */
+	let {
+		url,
+		title,
+		date = '',
+		isExternal = false,
+		headingType = 'h3',
+		type = 'box',
+		noBottom = false
+	} = $props();
 </script>
 
 <div data-type={type} data-no-bottom={noBottom}>

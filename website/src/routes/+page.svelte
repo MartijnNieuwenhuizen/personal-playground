@@ -7,8 +7,8 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	$: latestExperiments = experiments.slice(0, 3);
-	$: latestGists = gists.slice(0, 3);
+	let latestExperiments = $derived(experiments.slice(0, 3));
+	let latestGists = $derived(gists.slice(0, 3));
 	const latestBlogPosts = [
 		{
 			url: '/blog/enforcing-a-consistent-css-property-order-with-stylelint',

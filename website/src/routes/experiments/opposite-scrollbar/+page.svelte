@@ -151,8 +151,8 @@
 	</Row>
 </ExperimentItem>
 
-<div class="opposite-scrollbar opposite-scrollbar--1" />
-<div class="opposite-scrollbar opposite-scrollbar--2" />
+<div class="opposite-scrollbar opposite-scrollbar--1"></div>
+<div class="opposite-scrollbar opposite-scrollbar--2"></div>
 
 <style>
 	@keyframes opposite-scrollbar-half {

@@ -5,14 +5,16 @@
 	import { fade } from 'svelte/transition';
 	import { posterize } from 'three/examples/jsm/nodes/Nodes.js';
 
-	$: showFloatingPanelGrid2 = false;
-	$: showSidePanelGrid2 = false;
-	$: showAnnotationPanelGrid2 = false;
+	let showFloatingPanelGrid2 = $derived(false);
+	let showSidePanelGrid2 = $derived(false);
+	let showAnnotationPanelGrid2 = $derived(false);
 
 	// Panel visibility states
-	$: leftPanelVisible = false;
-	$: rightPanelVisible = false;
-	$: middlePanelVisible = true;
+	let leftPanelVisible = $state(false);
+	
+	let rightPanelVisible = $state(false);
+	
+	let middlePanelVisible = $derived(true);
 
 	// Spring animations with improved configuration for smoother motion
 	const springConfig = {
@@ -64,13 +66,13 @@
 		<!-- Right Panel -->
 		{#if rightPanelVisible}
 			<div class="panel-content">Right Panel Content</div>
-			<div class="panel right-panel" style="width: {$rightWidth}px" />
+			<div class="panel right-panel" style="width: {$rightWidth}px"></div>
 		{/if}
 
 		<!-- Control buttons -->
 		<div class="controls">
-			<button on:click={toggleLeftPanel}>Toggle Left Panel</button>
-			<button on:click={toggleRightPanel}>Toggle Right Panel</button>
+			<button onclick={toggleLeftPanel}>Toggle Left Panel</button>
+			<button onclick={toggleRightPanel}>Toggle Right Panel</button>
 		</div>
 	</div>
 </article>

@@ -164,8 +164,8 @@
 		margin-bottom: 1rem;
 	}
 
-	:is(pre + h2),
-	:is(pre + h3) {
+	:is(:global(pre + h2)),
+	:is(:global(pre + h3)) {
 		display: block;
 		margin-top: 6rem;
 	}

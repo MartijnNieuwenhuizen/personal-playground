@@ -59,9 +59,12 @@
 		}
 	];
 
-	$: showFloatingPanelCssGrid = false;
-	$: showSidePanelCssGrid = false;
-	$: showAnnotationPanelCssGrid = false;
+	let showFloatingPanelCssGrid = $state(false);
+	
+	let showSidePanelCssGrid = $state(false);
+	
+	let showAnnotationPanelCssGrid = $state(false);
+	
 </script>
 
 <div class="page-reset">
@@ -88,7 +91,7 @@
 		</div>
 
 		<div class="panels" data-grid={`${showSidePanelCssGrid}-${showAnnotationPanelCssGrid}`}>
-			<div class="side-panel" data-visible={showSidePanelCssGrid} />
+			<div class="side-panel" data-visible={showSidePanelCssGrid}></div>
 			<div class="main-panel">
 				<section class="main-panel-content">
 					<div class="main-panel-intro">
@@ -118,7 +121,7 @@
 			<div class="floating-panel" data-visible={showFloatingPanelCssGrid}>
 				<section><h2>Action panel</h2></section>
 			</div>
-			<div class="annotation-panel" data-visible={showAnnotationPanelCssGrid} />
+			<div class="annotation-panel" data-visible={showAnnotationPanelCssGrid}></div>
 		</div>
 
 		<div class="side-panel-content">

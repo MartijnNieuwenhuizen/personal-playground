@@ -2,9 +2,9 @@
 	import SiteHeader from '$lib/components/SiteHeader/index.svelte';
 	import SiteFooter from '$lib/components/SiteFooter/index.svelte';
 
-	export let data;
+	let { data, children } = $props();
 
-	$: showNameScroller = data.showNameScroller;
+	let showNameScroller = $derived(data.showNameScroller);
 </script>
 
 <div class="page" data-show-name-scroller={showNameScroller}>
@@ -29,7 +29,7 @@
 	</header>
 
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 
 	<footer>

@@ -1,22 +1,22 @@
 <div class="container">
 	<!-- Eye -->
-	<div />
-	<div />
-	<div />
+	<div></div>
+	<div></div>
+	<div></div>
 
 	<!-- Forehead -->
-	<div />
-	<div />
+	<div></div>
+	<div></div>
 
 	<!-- Nose -->
-	<div />
+	<div></div>
 
 	<!-- Mouth -->
-	<div />
+	<div></div>
 
 	<!-- Neck -->
-	<div />
-	<div />
+	<div></div>
+	<div></div>
 </div>
 
 <!-- 

@@ -1,4 +1,6 @@
 <script>
+	import { preventDefault } from 'svelte/legacy';
+
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
@@ -8,22 +10,27 @@
 	let description = `<p>The solution will output a <code>...vw</code> value.</p>`;
 
 	/** @type {HTMLHeadElement} */
-	let titleElement;
+	let titleElement = $state();
 	/** @type {HTMLDivElement} */
-	let containerElement;
+	let containerElement = $state();
 	/** @type {boolean} */
-	let showValue = false;
+	let showValue = $state(false);
 
 	/** @type {number} */
-	let value = 1;
+	let value = $state(1);
 	/** @type {number} */
 	let precision = 10;
 
-	$: title = '';
-	$: fontFamily = '';
-	$: fontWeight = '';
-	$: letterSpacing = '';
-	$: customFontSize = `1vw`;
+	let title = $state('');
+	
+	let fontFamily = $state('');
+	
+	let fontWeight = $state('');
+	
+	let letterSpacing = $state('');
+	
+	let customFontSize = $state(`1vw`);
+	
 
 	/**
 	 * @param {number} newValue
@@ -131,11 +138,11 @@
 		navigator.clipboard.writeText(customFontSize);
 	}
 
-	$: htmlCode = `<div class="title-container">
+	let htmlCode = $derived(`<div class="title-container">
   <h2 class="title">{title}</h2>
-</div>`;
+</div>`);
 
-	$: cssCode = `.title-container {
+	let cssCode = $derived(`.title-container {
   overflow: hidden;
   max-width: 100vw;
 }
@@ -147,11 +154,11 @@
   line-height: 1.2;
   white-space: nowrap;
 }
-`;
+`);
 
-	$: showCustomFontInput = fontFamily === 'customFont';
+	let showCustomFontInput = $derived(fontFamily === 'customFont');
 
-	$: customProperties = `--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`;
+	let customProperties = $derived(`--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`);
 
 	/**
 	 * @TODO: Fix this type!
@@ -168,7 +175,7 @@
 		<Block>
 			<h2>Select your options</h2>
 
-			<form on:submit|preventDefault={handleSubmit}>
+			<form onsubmit={preventDefault(handleSubmit)}>
 				<div>
 					<label for="title">Title</label>
 					<input type="text" id="title" value="My personal title" />
@@ -176,7 +183,7 @@
 
 				<div>
 					<label for="font">Font</label>
-					<select name="font" id="font" on:change={handleFontFamilyChange}>
+					<select name="font" id="font" onchange={handleFontFamilyChange}>
 						<option value="Crimson-Text">Crimson-Text</option>
 						<option value="Lato">Lato</option>
 						<option value="customFont">CustomFont</option>
@@ -214,7 +221,7 @@
 			{#if showValue}
 				<p>
 					Your font size should be: <strong>{maxThreeDecimals(value)}vw</strong>
-					<button type="button" on:click={copyToClipboard}>Copy value to clipboard</button>
+					<button type="button" onclick={copyToClipboard}>Copy value to clipboard</button>
 				</p>
 			{/if}
 		</Block>

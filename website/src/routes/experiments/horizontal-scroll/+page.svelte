@@ -7,9 +7,9 @@
 	const description = 'Horizontal scroll with just CSS.';
 
 	/** @type {HTMLElement} */
-	let container;
+	let container = $state();
 	/** @type {HTMLElement} */
-	let target;
+	let target = $state();
 
 	onMount(() => {
 		if (!container) return;
@@ -30,13 +30,13 @@
 		<div class="horizontal-scroll__sticky">
 			<div class="horizontal-scroll__inner" bind:this={target}>
 				<div class="horizontal-scroll__list">
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
-					<div class="horizontal-scroll__list-item" />
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
+					<div class="horizontal-scroll__list-item"></div>
 				</div>
 			</div>
 		</div>

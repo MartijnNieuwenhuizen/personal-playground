@@ -43,9 +43,9 @@
 	});
 
 	/** @type {HTMLVideoElement} */
-	let videoElementAttempt;
+	let videoElementAttempt = $state();
 	/** @type {HTMLVideoElement} */
-	let videoElementGoal;
+	let videoElementGoal = $state();
 
 	onMount(() => {
 		videoElementAttempt.playbackRate = 0.5;
@@ -145,7 +145,7 @@ h1 span:nth-of-type() {
 				loop={true}
 				src="/videos/page-transition/goal.mov"
 				bind:this={videoElementGoal}
-			/>
+			></video>
 			<p>The code would look something like this (and then repeat for every letter).</p>
 			<Code code={cssCodeGoal} language="css" />
 
@@ -164,7 +164,7 @@ h1 span:nth-of-type() {
 				loop={true}
 				src="/videos/page-transition/attempt.mov"
 				bind:this={videoElementAttempt}
-			/>
+			></video>
 			<p>
 				The letters in this animation don't appear from behind something, they just move up! But
 				why?

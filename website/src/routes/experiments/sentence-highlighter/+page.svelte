@@ -9,7 +9,7 @@
 	const description = 'Highlight each line of text.';
 
 	/** @type {HTMLElement | null} */
-	let parentNode = null;
+	let parentNode = $state(null);
 
 	/** @type {boolean} */
 	let isSupported = true;
