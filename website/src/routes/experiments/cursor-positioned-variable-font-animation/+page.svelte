@@ -4,9 +4,12 @@
 	const title = 'Variable font animation based on mouse position';
 	const description = '';
 
-	$: ytlc = 416;
-	$: ytuc = 528;
-	$: yopq = 25;
+	let ytlc = $state(416);
+	
+	let ytuc = $state(528);
+	
+	let yopq = $state(25);
+	
 
 	function handleMouseMove(event: MouseEvent) {
 		console.log('event: ', event);
@@ -21,7 +24,7 @@
 </script>
 
 <div
-	on:mousemove={handleMouseMove}
+	onmousemove={handleMouseMove}
 	role="presentation"
 	style="--ytlc: {ytlc}; --ytuc: {ytuc}; --yopq: {yopq};"
 >

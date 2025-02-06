@@ -8,18 +8,18 @@
 		'Use Horizontal Scroll for 2 elements with different sizes. But they should bot start and end at the end of both elements.';
 
 	/** @type {HTMLElement} */
-	let container;
+	let container = $state();
 	/** @type {HTMLElement} */
-	let target;
+	let target = $state();
 
 	/** @type {HTMLElement} */
-	let listItem1;
+	let listItem1 = $state();
 	/** @type {HTMLElement} */
-	let listItem2;
+	let listItem2 = $state();
 	/** @type {HTMLElement} */
-	let listItem3;
+	let listItem3 = $state();
 	/** @type {HTMLElement} */
-	let listItem4;
+	let listItem4 = $state();
 
 	onMount(() => {
 		if (!container) return;

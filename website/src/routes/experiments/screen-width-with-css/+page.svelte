@@ -7,7 +7,7 @@
 
 <ExperimentItem {title} {description}>
 	<section>
-		<h2>The screen width = <span /></h2>
+		<h2>The screen width = <span></span></h2>
 	</section>
 </ExperimentItem>
 

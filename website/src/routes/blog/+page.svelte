@@ -4,7 +4,7 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	export let data;
+	let { data } = $props();
 
 	const posts = data.links;
 </script>

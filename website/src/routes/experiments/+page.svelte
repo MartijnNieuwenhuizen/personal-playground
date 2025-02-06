@@ -7,15 +7,21 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 */
 
-	let currentTag = 'all';
+	/** @type {Props} */
+	let { data } = $props();
 
-	$: filteredExperiments = data.experiments.filter((experiment) => {
+	let currentTag = $state('all');
+
+	let filteredExperiments = $derived(data.experiments.filter((experiment) => {
 		if (currentTag === 'all') return true;
 		return experiment.tags.includes(currentTag);
-	});
+	}));
 
 	// @param {import('svelte').Event<HTMLFormElement>} event
 	/**
@@ -54,7 +60,7 @@
 
 		<Row size="small" area="top">
 			<form action="">
-				<fieldset on:change={handleChange}>
+				<fieldset onchange={handleChange}>
 					<div class="overflow">
 						<div class="overflow-list">
 							<legend class="sr-only">Filter by category</legend>

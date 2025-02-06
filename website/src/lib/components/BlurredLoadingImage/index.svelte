@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 
 	/** @type {HTMLElement} */
-	let trigger;
+	let trigger = $state();
 
 	/** @type {HTMLImageElement} */
-	let blurredImage;
+	let blurredImage = $state();
 	/** @type {HTMLImageElement} */
-	let sharpImage;
+	let sharpImage = $state();
 
 	let imageIsInView = false;
 	let sharpImageIsLoaded = false;
@@ -62,11 +62,17 @@
 		}
 	});
 
-	/** @type {string} */
-	export let sharpSrc;
+	
 
-	/** @type {string} */
-	export let blurredSrc;
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} sharpSrc
+	 * @property {string} blurredSrc
+	 */
+
+	/** @type {Props} */
+	let { sharpSrc, blurredSrc } = $props();
 </script>
 
 <figure bind:this={trigger}>
@@ -88,7 +94,7 @@
 		pointer-events: none;
 	}
 
-	:is(img[data-hidden='true']) {
+	:is(:global(img[data-hidden='true'])) {
 		opacity: 0;
 		transition: opacity 500ms ease 0s;
 	}

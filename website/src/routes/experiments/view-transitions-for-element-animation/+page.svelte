@@ -7,7 +7,7 @@
 	const description =
 		"Create an animation with view transitions. Don't apply any specific animations, just declare the view-transition.";
 
-	let showLargeVersion = false;
+	let showLargeVersion = $state(false);
 
 	function handleTransition() {
 		if (!document.startViewTransition) {
@@ -26,7 +26,7 @@
 		<input
 			type="checkbox"
 			id="margin-block"
-			on:change={handleTransition}
+			onchange={handleTransition}
 			checked={showLargeVersion}
 		/>
 		<label for="margin-block">Toggle</label>

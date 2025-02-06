@@ -1,14 +1,20 @@
 <script>
 	import Row from '$lib/components/layout/Row/index.svelte';
 
-	/** @type {string} */
-	export let title;
-	/** @type {string} */
-	export let image;
-	/** @type {string} */
-	export let color;
+	
+	
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} title
+	 * @property {string} image
+	 * @property {string} color
+	 */
 
-	$: titleLetters = title.split('');
+	/** @type {Props} */
+	let { title, image, color } = $props();
+
+	let titleLetters = $derived(title.split(''));
 </script>
 
 <Row size="small">
@@ -20,7 +26,7 @@
 		</h1>
 		<img style={`view-transition-name: image-${title.toLowerCase()};`} src={image} alt="" />
 
-		<div class="background" style={`view-transition-name: color-${title.toLowerCase()};`} />
+		<div class="background" style={`view-transition-name: color-${title.toLowerCase()};`}></div>
 	</header>
 </Row>
 

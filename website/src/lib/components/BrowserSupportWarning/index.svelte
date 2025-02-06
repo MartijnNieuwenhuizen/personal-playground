@@ -1,12 +1,18 @@
 <script>
-	/** @type {function} */
-	export let shouldShowWarning;
-	/** @type {string} */
-	export let link;
+	
+	
 
 	import { onMount } from 'svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {function} shouldShowWarning
+	 * @property {string} link
+	 */
 
-	let showWarning = false;
+	/** @type {Props} */
+	let { shouldShowWarning, link } = $props();
+
+	let showWarning = $state(false);
 
 	onMount(() => {
 		showWarning = shouldShowWarning();

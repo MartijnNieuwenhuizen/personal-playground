@@ -5,23 +5,23 @@
 	import Constrain from '$lib/components/layout/Constrain/index.svelte';
 
 	/** @type {any} */
-	let section1;
+	let section1 = $state();
 	/** @type {any} */
-	let section2;
+	let section2 = $state();
 	/** @type {any} */
-	let section3;
+	let section3 = $state();
 	/** @type {any} */
-	let section4;
+	let section4 = $state();
 	/** @type {any} */
-	let section5;
+	let section5 = $state();
 	/** @type {any} */
-	let section6;
+	let section6 = $state();
 	/** @type {any} */
-	let section7;
+	let section7 = $state();
 	/** @type {any} */
-	let section8;
+	let section8 = $state();
 	/** @type {any} */
-	let section9;
+	let section9 = $state();
 
 	const title = 'This is a sticky page block';
 	const parag = `<p>

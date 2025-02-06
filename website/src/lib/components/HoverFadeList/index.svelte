@@ -1,17 +1,24 @@
 <script>
-	/** @type {'ol' | 'ul'} */
-	export let type = 'ul';
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {'ol' | 'ul'} [type]
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { type = 'ul', children } = $props();
 </script>
 
 {#if type === 'ol'}
 	<ol class="hover-fade-list">
-		<slot />
+		{@render children?.()}
 	</ol>
 {/if}
 
 {#if type === 'ul'}
 	<ul class="hover-fade-list">
-		<slot />
+		{@render children?.()}
 	</ul>
 {/if}
 

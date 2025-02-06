@@ -12,10 +12,16 @@
 	hljs.registerLanguage('json', json);
 	hljs.registerLanguage('js', js);
 
-	/** @type {string} */
-	export let code;
-	/** @type {string} */
-	export let language;
+	
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} code
+	 * @property {string} language
+	 */
+
+	/** @type {Props} */
+	let { code, language } = $props();
 
 	// const highlightedCode = hljs.highlight(code, { language: 'html' }).value;
 	const highlightedCode = hljs.highlight(code, { language }).value;

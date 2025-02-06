@@ -10,7 +10,7 @@
 	<div>
 		<input type="checkbox" id="toggle" class="space-toggles__toggle" />
 		<label for="toggle">Toggle me</label>
-		<div class="space-toggles preview-box" />
+		<div class="space-toggles preview-box"></div>
 	</div>
 </ExperimentItem>
 

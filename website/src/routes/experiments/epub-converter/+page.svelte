@@ -7,9 +7,9 @@
 	const title = 'Epub converter';
 	const description = 'Add a description';
 
-	let waitingForResponse = false;
-	let errorMessage = '';
-	let successMessage = '';
+	let waitingForResponse = $state(false);
+	let errorMessage = $state('');
+	let successMessage = $state('');
 
 	const url = `${PUBLIC_EPUB_CONVERTER_URL}/api/format`;
 
@@ -68,7 +68,7 @@
 			<h1>{successMessage}</h1>
 		{/if}
 
-		<form action={url} method="post" on:submit={handleSubmit}>
+		<form action={url} method="post" onsubmit={handleSubmit}>
 			<!-- <form action="http://localhost:3000/api/format" method="post" on:submit={handleSubmit}> -->
 			<legend>Epub converter</legend>
 			<label for="file">File</label>

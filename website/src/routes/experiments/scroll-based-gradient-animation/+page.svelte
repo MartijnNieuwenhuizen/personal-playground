@@ -7,7 +7,7 @@
 	const title = 'Scroll-based gradient animation';
 	const description = 'Animating a gradient based on scroll position.';
 
-	let options = 'rotate';
+	let options = $state('rotate');
 </script>
 
 <ScrollTimelineWarning />
@@ -42,7 +42,7 @@
 
 			<div class="scroll-hight">
 				<div class="container">
-					<div class="ball" data-animation-variant={options} />
+					<div class="ball" data-animation-variant={options}></div>
 				</div>
 			</div>
 		</Block>

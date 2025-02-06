@@ -4,16 +4,16 @@
 	import Constrain from '$lib/components/layout/Constrain/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
-	export let data;
+	let { data } = $props();
 
-	let currentTag = 'all';
+	let currentTag = $state('all');
 
 	const { bookmarks, tags } = data;
 
-	$: filteredLinks = bookmarks.filter((link) => {
+	let filteredLinks = $derived(bookmarks.filter((link) => {
 		if (currentTag === 'all') return true;
 		return link.tags.includes(currentTag);
-	});
+	}));
 
 	// @param {import('svelte').Event<HTMLFormElement>} event
 	/**

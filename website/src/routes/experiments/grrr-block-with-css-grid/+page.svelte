@@ -25,7 +25,7 @@
 			</p>
 		</div>
 
-		<div class="overflowing-content" />
+		<div class="overflowing-content"></div>
 	</div>
 
 	<Block>
@@ -42,7 +42,7 @@
 				</p>
 			</div>
 
-			<div class="overflowing-content" />
+			<div class="overflowing-content"></div>
 		</div>
 	</Row>
 

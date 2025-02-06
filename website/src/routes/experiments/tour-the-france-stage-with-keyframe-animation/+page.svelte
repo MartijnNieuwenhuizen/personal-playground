@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="sticky">
 			<div class="stage-outline">
-				<div class="stage-scroller" />
+				<div class="stage-scroller"></div>
 			</div>
 
 			<div class="runner"><span>🚴🏻</span></div>

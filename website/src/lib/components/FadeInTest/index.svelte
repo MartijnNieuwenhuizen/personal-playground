@@ -2,11 +2,17 @@
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 
-	/** @type {string} */
-	export let id = '1';
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [id]
+	 */
 
-	$: keyFrameName = `fade-in-with-move-${id}`;
-	$: animation = `@keyframes ${keyFrameName} {
+	/** @type {Props} */
+	let { id = '1' } = $props();
+
+	let keyFrameName = $derived(`fade-in-with-move-${id}`);
+	let animation = $derived(`@keyframes ${keyFrameName} {
 		from {
 			opacity: 0;
 			transform: translateY(4rem);
@@ -15,7 +21,7 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
-	}`;
+	}`);
 </script>
 
 <Row>

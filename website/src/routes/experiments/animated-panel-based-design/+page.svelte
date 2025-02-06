@@ -8,13 +8,19 @@
 	const title = 'Animated panel based design';
 	const description = `See a full page solution <a href="/experiments/animated-panel-based-design/full-page-version">right here</a>`;
 
-	$: showFloatingPanelCssGrid = false;
-	$: showSidePanelCssGrid = false;
-	$: showAnnotationPanelCssGrid = false;
+	let showFloatingPanelCssGrid = $state(false);
+	
+	let showSidePanelCssGrid = $state(false);
+	
+	let showAnnotationPanelCssGrid = $state(false);
+	
 
-	$: showFloatingPanelFlexbox = false;
-	$: showSidePanelFlexbox = false;
-	$: showAnnotationPanelFlexbox = false;
+	let showFloatingPanelFlexbox = $state(false);
+	
+	let showSidePanelFlexbox = $state(false);
+	
+	let showAnnotationPanelFlexbox = $state(false);
+	
 
 	let cssSolutionOne = `.panels-grid {
 	// Use CSS Grid

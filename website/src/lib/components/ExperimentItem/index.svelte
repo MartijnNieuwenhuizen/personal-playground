@@ -3,12 +3,24 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Constrain from '$lib/components/layout/Constrain/index.svelte';
 
-	/** @type {string} */
-	export let title;
-	/** @type {string} */
-	export let description;
-	/** @type {boolean} */
-	export let showPageEffect = false;
+	
+	
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} title
+	 * @property {string} description
+	 * @property {boolean} [showPageEffect]
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let {
+		title,
+		description,
+		showPageEffect = false,
+		children
+	} = $props();
 </script>
 
 <section data-show-page-effect={showPageEffect}>
@@ -22,7 +34,7 @@
 	</Block>
 
 	<div class="new-content-part">
-		<slot />
+		{@render children?.()}
 	</div>
 </section>
 

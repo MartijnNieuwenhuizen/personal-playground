@@ -18,9 +18,9 @@
 
 			<div class="container">
 				<div class="version-1">
-					<div class="version-1__item" />
-					<div class="version-1__item" />
-					<div class="version-1__item" />
+					<div class="version-1__item"></div>
+					<div class="version-1__item"></div>
+					<div class="version-1__item"></div>
 				</div>
 			</div>
 		</Block>

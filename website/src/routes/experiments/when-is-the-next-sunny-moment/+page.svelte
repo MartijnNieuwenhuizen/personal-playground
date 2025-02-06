@@ -4,8 +4,14 @@
 	const title = `When is the next sunny moment?`;
 	const description = ``;
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 */
+
+	/** @type {Props} */
+	let { data } = $props();
 
 	const firstSunnyMoment = data.firstSunnyMoment;
 	const date = firstSunnyMoment ? new Date(firstSunnyMoment.dt * 1000) : null;

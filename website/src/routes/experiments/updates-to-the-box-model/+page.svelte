@@ -7,21 +7,33 @@
 	const title = 'Updates to the box model';
 	const description = '';
 
-	$: showPaddingInline = true;
-	$: showPaddingInlineStart = true;
-	$: showPaddingInlineEnd = true;
+	let showPaddingInline = $state(true);
+	
+	let showPaddingInlineStart = $state(true);
+	
+	let showPaddingInlineEnd = $state(true);
+	
 
-	$: showPaddingBlock = true;
-	$: showPaddingBlockStart = true;
-	$: showPaddingBlockEnd = true;
+	let showPaddingBlock = $state(true);
+	
+	let showPaddingBlockStart = $state(true);
+	
+	let showPaddingBlockEnd = $state(true);
+	
 
-	$: showMarginInline = true;
-	$: showMarginInlineStart = true;
-	$: showMarginInlineEnd = true;
+	let showMarginInline = $state(true);
+	
+	let showMarginInlineStart = $state(true);
+	
+	let showMarginInlineEnd = $state(true);
+	
 
-	$: showMarginBlock = true;
-	$: showMarginBlockStart = true;
-	$: showMarginBlockEnd = true;
+	let showMarginBlock = $state(true);
+	
+	let showMarginBlockStart = $state(true);
+	
+	let showMarginBlockEnd = $state(true);
+	
 </script>
 
 <ExperimentItem {title} {description} showPageEffect={true}>

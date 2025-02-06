@@ -7,7 +7,7 @@
 	const description = '';
 
 	/** @type {HTMLDivElement} */
-	let containerElement;
+	let containerElement = $state();
 
 	onMount(() => {
 		const width = window.innerWidth,
@@ -61,7 +61,7 @@
 
 <ExperimentItem {title} {description} showPageEffect={false}>
 	<div class="sticky">
-		<div class="container" bind:this={containerElement} />
+		<div class="container" bind:this={containerElement}></div>
 	</div>
 </ExperimentItem>
 

@@ -153,7 +153,7 @@
 </ExperimentItem>
 
 <span class="rocket-scrollbar">🚀</span>
-<div class="rocket-fumes" />
+<div class="rocket-fumes"></div>
 
 <style>
 	@keyframes rocket-scrollbar {
