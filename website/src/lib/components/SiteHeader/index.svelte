@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import SkipLink from '$lib/components/SkipLink/index.svelte';
 
 	const primaryMenuItems = [
 		{
@@ -32,6 +33,8 @@
 	// 	}
 	// ];
 </script>
+
+<SkipLink id="content" label="skip the main navigation" />
 
 <nav class="primary-menu">
 	<ul>
@@ -99,7 +102,9 @@
 		content: '👉';
 		opacity: 0;
 		transform: translateX(calc((100% + 1rem) * -1));
-		transition: opacity 0.2s, transform 0.2s;
+		transition:
+			opacity 0.2s,
+			transform 0.2s;
 	}
 
 	a:hover::before,
