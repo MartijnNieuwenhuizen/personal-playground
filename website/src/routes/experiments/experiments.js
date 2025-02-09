@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/window-and-container-sized-title',
+		label: 'Window and container sized title',
+		date: '09-02-2025',
+		tags: ['typography', 'css-only']
+	},
+	{
 		url: '/experiments/scroll-based-gradient-animation',
 		label: 'Scroll based gradient animation',
 		date: '06-02-2025',
