@@ -60,11 +60,10 @@
 	];
 
 	let showFloatingPanelCssGrid = $state(false);
-	
+
 	let showSidePanelCssGrid = $state(false);
-	
+
 	let showAnnotationPanelCssGrid = $state(false);
-	
 </script>
 
 <div class="page-reset">

@@ -3,9 +3,6 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import Constrain from '$lib/components/layout/Constrain/index.svelte';
 
-	
-	
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} title
@@ -15,12 +12,7 @@
 	 */
 
 	/** @type {Props} */
-	let {
-		title,
-		description,
-		showPageEffect = false,
-		children
-	} = $props();
+	let { title, description, showPageEffect = false, children } = $props();
 </script>
 
 <section data-show-page-effect={showPageEffect}>

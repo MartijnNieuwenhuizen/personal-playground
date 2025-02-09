@@ -2,7 +2,6 @@
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [id]

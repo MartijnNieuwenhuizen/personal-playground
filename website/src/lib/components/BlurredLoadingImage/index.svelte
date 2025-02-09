@@ -62,9 +62,6 @@
 		}
 	});
 
-	
-
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} sharpSrc

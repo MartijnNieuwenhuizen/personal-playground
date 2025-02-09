@@ -4,7 +4,6 @@
 	const title = `When is the next sunny moment?`;
 	const description = ``;
 
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('./$types').PageData} data
@@ -23,7 +22,7 @@
 				month: 'long',
 				hour: 'numeric',
 				minute: 'numeric'
-		  })
+			})
 		: null;
 
 	// const weerOnlineIdBergen = 4058244;

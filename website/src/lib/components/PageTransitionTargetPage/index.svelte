@@ -1,9 +1,6 @@
 <script>
 	import Row from '$lib/components/layout/Row/index.svelte';
 
-	
-	
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} title

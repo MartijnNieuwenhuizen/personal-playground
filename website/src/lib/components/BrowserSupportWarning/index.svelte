@@ -1,7 +1,4 @@
 <script>
-	
-	
-
 	import { onMount } from 'svelte';
 	/**
 	 * @typedef {Object} Props

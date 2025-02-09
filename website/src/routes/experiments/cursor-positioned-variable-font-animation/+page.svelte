@@ -5,11 +5,10 @@
 	const description = '';
 
 	let ytlc = $state(416);
-	
+
 	let ytuc = $state(528);
-	
+
 	let yopq = $state(25);
-	
 
 	function handleMouseMove(event: MouseEvent) {
 		console.log('event: ', event);
@@ -40,7 +39,10 @@
 		src: url('./Roboto Flex Font.ttf') format('truetype');
 		font-weight: 100 900;
 		font-style: normal;
-		font-variation-settings: 'YTLC' 416 570, 'YTUC' 528 760, 'YOPQ' 25 135;
+		font-variation-settings:
+			'YTLC' 416 570,
+			'YTUC' 528 760,
+			'YOPQ' 25 135;
 	}
 
 	h2 {
@@ -48,7 +50,9 @@
 		padding: 10vh;
 		font-family: 'Roboto flex';
 		font-size: 10vw;
-		font-variation-settings: 'YTLC' var(--ytlc, 416), 'YTUC' var(--ytuc, 528),
+		font-variation-settings:
+			'YTLC' var(--ytlc, 416),
+			'YTUC' var(--ytuc, 528),
 			'YOPQ' var(--yopq, 25);
 	}
 </style>

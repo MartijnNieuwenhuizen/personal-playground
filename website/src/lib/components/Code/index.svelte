@@ -12,8 +12,6 @@
 	hljs.registerLanguage('json', json);
 	hljs.registerLanguage('js', js);
 
-	
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} code

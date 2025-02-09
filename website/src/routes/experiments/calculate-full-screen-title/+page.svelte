@@ -22,15 +22,14 @@
 	let precision = 10;
 
 	let title = $state('');
-	
+
 	let fontFamily = $state('');
-	
+
 	let fontWeight = $state('');
-	
+
 	let letterSpacing = $state('');
-	
+
 	let customFontSize = $state(`1vw`);
-	
 
 	/**
 	 * @param {number} newValue
@@ -158,7 +157,9 @@
 
 	let showCustomFontInput = $derived(fontFamily === 'customFont');
 
-	let customProperties = $derived(`--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`);
+	let customProperties = $derived(
+		`--full-screen-tool-font-size: ${customFontSize}; --full-screen-tool-font-family: ${fontFamily}; --full-screen-tool-font-weight: ${fontWeight};  --full-screen-tool-letter-spacing: ${letterSpacing};`
+	);
 
 	/**
 	 * @TODO: Fix this type!

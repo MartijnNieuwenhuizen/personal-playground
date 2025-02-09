@@ -11,9 +11,9 @@
 
 	// Panel visibility states
 	let leftPanelVisible = $state(false);
-	
+
 	let rightPanelVisible = $state(false);
-	
+
 	let middlePanelVisible = $derived(true);
 
 	// Spring animations with improved configuration for smoother motion

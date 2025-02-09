@@ -1,5 +1,4 @@
 <script>
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {'tiny' | 'small' | 'small-medium' | 'medium' | 'large'} [size]

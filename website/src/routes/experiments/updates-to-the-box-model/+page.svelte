@@ -8,32 +8,28 @@
 	const description = '';
 
 	let showPaddingInline = $state(true);
-	
+
 	let showPaddingInlineStart = $state(true);
-	
+
 	let showPaddingInlineEnd = $state(true);
-	
 
 	let showPaddingBlock = $state(true);
-	
+
 	let showPaddingBlockStart = $state(true);
-	
+
 	let showPaddingBlockEnd = $state(true);
-	
 
 	let showMarginInline = $state(true);
-	
+
 	let showMarginInlineStart = $state(true);
-	
+
 	let showMarginInlineEnd = $state(true);
-	
 
 	let showMarginBlock = $state(true);
-	
+
 	let showMarginBlockStart = $state(true);
-	
+
 	let showMarginBlockEnd = $state(true);
-	
 </script>
 
 <ExperimentItem {title} {description} showPageEffect={true}>

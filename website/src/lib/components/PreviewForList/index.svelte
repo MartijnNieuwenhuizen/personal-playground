@@ -1,11 +1,4 @@
 <script>
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} url

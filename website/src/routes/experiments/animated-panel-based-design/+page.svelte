@@ -9,18 +9,16 @@
 	const description = `See a full page solution <a href="/experiments/animated-panel-based-design/full-page-version">right here</a>`;
 
 	let showFloatingPanelCssGrid = $state(false);
-	
+
 	let showSidePanelCssGrid = $state(false);
-	
+
 	let showAnnotationPanelCssGrid = $state(false);
-	
 
 	let showFloatingPanelFlexbox = $state(false);
-	
+
 	let showSidePanelFlexbox = $state(false);
-	
+
 	let showAnnotationPanelFlexbox = $state(false);
-	
 
 	let cssSolutionOne = `.panels-grid {
 	// Use CSS Grid
