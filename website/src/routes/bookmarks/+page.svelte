@@ -10,10 +10,12 @@
 
 	const { bookmarks, tags } = data;
 
-	let filteredLinks = $derived(bookmarks.filter((link) => {
-		if (currentTag === 'all') return true;
-		return link.tags.includes(currentTag);
-	}));
+	let filteredLinks = $derived(
+		bookmarks.filter((link) => {
+			if (currentTag === 'all') return true;
+			return link.tags.includes(currentTag);
+		})
+	);
 
 	// @param {import('svelte').Event<HTMLFormElement>} event
 	/**
@@ -103,6 +105,7 @@
 		text-align: center;
 		font-family: var(--serif);
 		font-size: 23.982vw;
+		font-size: 23.982cqw;
 		/* Pull title up based on the vw, because the font-size is based on the vw. */
 		margin-top: -3vw;
 		/* font-family: var(--sans-serif);

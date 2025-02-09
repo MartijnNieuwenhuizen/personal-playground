@@ -53,6 +53,7 @@
 
 		font-family: var(--serif);
 		font-size: 27.803vw;
+		font-size: 27.803cqw;
 		/* Pull title up based on the vw, because the font-size is based on the vw. */
 		margin-top: -3vw;
 

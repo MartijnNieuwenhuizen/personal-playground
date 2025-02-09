@@ -36,6 +36,7 @@
 		padding: 0;
 
 		font-size: 55.63599999999994vw;
+		font-size: 55.63599999999994cqw;
 		font-family: var(--serif);
 		white-space: nowrap;
 	}

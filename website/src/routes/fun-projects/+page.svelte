@@ -53,6 +53,7 @@
 		padding: 0;
 
 		font-size: 21.38700000000006vw;
+		font-size: 21.38700000000006cqw;
 		font-family: var(--serif);
 		white-space: nowrap;
 	}

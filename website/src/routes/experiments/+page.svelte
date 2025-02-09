@@ -7,7 +7,6 @@
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('./$types').PageData} data
@@ -18,10 +17,12 @@
 
 	let currentTag = $state('all');
 
-	let filteredExperiments = $derived(data.experiments.filter((experiment) => {
-		if (currentTag === 'all') return true;
-		return experiment.tags.includes(currentTag);
-	}));
+	let filteredExperiments = $derived(
+		data.experiments.filter((experiment) => {
+			if (currentTag === 'all') return true;
+			return experiment.tags.includes(currentTag);
+		})
+	);
 
 	// @param {import('svelte').Event<HTMLFormElement>} event
 	/**
@@ -110,6 +111,7 @@
 
 		font-family: var(--serif);
 		font-size: 20.982000000000056vw;
+		font-size: 20.982000000000056cqw;
 
 		/* font-family: var(--sans-serif);
 		font-size: 19.480000000000018vw;

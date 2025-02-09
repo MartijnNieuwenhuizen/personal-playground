@@ -1,80 +1,52 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import SkipLink from '$lib/components/SkipLink/index.svelte';
-
-	const primaryMenuItems = [
-		{
-			url: '/',
-			label: '🏠',
-			ariaLabel: 'Home'
-		},
-		{
-			url: '/experiments',
-			label: 'Experiments'
-		},
-		{
-			url: '/blog',
-			label: 'Blog'
-		},
-		{
-			url: '/gists',
-			label: 'Gists'
-		}
-	];
-
-	// const secondaryMenuItems = [
-	// 	{
-	// 		url: '/bookmarks',
-	// 		label: 'Bookmarks'
-	// 	},
-	// 	{
-	// 		url: '/fun-projects',
-	// 		label: 'Fun projects'
-	// 	}
-	// ];
+	import MenuToggleButton from '$lib/components/MenuToggleButton/index.svelte';
+	import { primaryMenu } from '$lib/config/menu';
 </script>
 
 <SkipLink id="content" label="skip the main navigation" />
 
-<nav class="primary-menu">
-	<ul>
-		{#each primaryMenuItems as menuItem}
+<div class="site-header">
+	<nav class="primary-menu">
+		<ul>
 			<li>
-				<a
-					href={menuItem.url}
-					data-active={menuItem.url === '/'
-						? $page.url.pathname === menuItem.url
-						: $page.url.pathname.includes(menuItem.url)}
-				>
-					{menuItem.label}
-					{#if menuItem.ariaLabel}
-						<span class="sr-only">{menuItem.ariaLabel}</span>
-					{/if}
+				<a href="/" data-active={page.url.pathname === '/'}>
+					🏠<span class="sr-only">Home</span>
 				</a>
 			</li>
-		{/each}
-	</ul>
-</nav>
 
-<!-- <nav class="secondary-menu">
-	<ul>
-		{#each secondaryMenuItems as menuItem}
-			<li>
-				<a
-					href={menuItem.url}
-					data-active={menuItem.url === '/'
-						? $page.url.pathname === menuItem.url
-						: $page.url.pathname.includes(menuItem.url)}>{menuItem.label}</a
-				>
-			</li>
-		{/each}
-	</ul>
-</nav> -->
+			{#each primaryMenu as menuItem}
+				<li class="hidden-on-smaller-screens">
+					<a
+						href={menuItem.url}
+						data-active={menuItem.url === '/'
+							? page.url.pathname === menuItem.url
+							: page.url.pathname.includes(menuItem.url)}
+					>
+						{menuItem.label}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+
+	<div class="menu-toggle">
+		<MenuToggleButton />
+	</div>
+</div>
 
 <style lang="scss">
-	.primary-menu {
-		overflow-x: auto;
+	.site-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
 	}
+	.menu-toggle {
+		z-index: 10;
+		position: relative;
+		padding: gap(5);
+	}
+
 	.primary-menu ul {
 		list-style: none;
 		display: flex;
@@ -83,7 +55,7 @@
 		margin: 0 auto;
 		padding: 1rem var(--block-padding);
 
-		@media screen and (min-width: 550px) {
+		@include bp-min(small) {
 			justify-content: center;
 			gap: 0.5rem 3rem;
 		}
@@ -112,5 +84,13 @@
 	a[data-active='true']::before {
 		opacity: 1;
 		transform: translateX(calc((100% + 0.3rem) * -1));
+	}
+
+	.hidden-on-smaller-screens {
+		display: none;
+
+		@include bp-min(small) {
+			display: block;
+		}
 	}
 </style>
