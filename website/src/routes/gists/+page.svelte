@@ -3,7 +3,9 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
-	import gists from './gists.js';
+
+	let { data } = $props();
+	const gists = data.gists;
 </script>
 
 <section>
@@ -16,7 +18,12 @@
 			<HoverFadeList>
 				{#each gists as gist}
 					<li>
-						<PreviewForList url={gist.url} title={gist.label} type="clear" date={gist.date} />
+						<PreviewForList
+							url={`/gists/${gist.url}`}
+							title={gist.title}
+							type="clear"
+							date={gist.date}
+						/>
 					</li>
 				{/each}
 			</HoverFadeList>

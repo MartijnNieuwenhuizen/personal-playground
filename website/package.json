@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "yarn run read-gists && vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -14,7 +14,8 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"format-silent": "prettier --loglevel silent --plugin-search-dir . --write .",
-		"experiment": "node ./generator/index && yarn run format-silent"
+		"experiment": "node ./generator/index && yarn run format-silent",
+		"read-gists": "node read-gists.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -27,6 +28,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.45.1",
+		"gray-matter": "^4.0.3",
 		"inquirer": "^9.2.12",
 		"prettier": "^3.1.0",
 		"prettier-plugin-svelte": "^3.2.6",
@@ -42,6 +44,7 @@
 		"highlight.js": "^11.9.0",
 		"jsdom": "^22.1.0",
 		"mdsvex": "^0.11.0",
+		"svelte-markdown": "^0.4.1",
 		"three": "^0.159.0"
 	},
 	"packageManager": "yarn@4.6.0+sha256.eaf1eeabc164a44ca0b65dbdccd54af7e55f3ff9294b3ff318d5aaec92f2b20b"
