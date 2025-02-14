@@ -1,5 +1,11 @@
 const bookmarks = [
 	{
+		label: 'Regex tester',
+		tags: ['regex'],
+		url: 'https://regex101.com/',
+		date: '11-02-2025'
+	},
+	{
 		label:
 			'Use attribute in CSS selector to prevent specific CSS selectors for View Transition names',
 		tags: ['CSS', 'Front-end', 'view transitions'],
