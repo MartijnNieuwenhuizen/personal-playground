@@ -1,0 +1,31 @@
+{
+	"name": "Martijn Nieuwenhuizen",
+	"short_name": "Martijn",
+	"theme_color": "#ff7535",
+	"background_color": "#ffffff",
+	"display": "fullscreen",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "/favicon/android-chrome-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/favicon/android-chrome-512x512.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "/favicon/android-chrome-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"id": "martijn-nieuwenhuizen",
+	"description": "Personal playground of Martijn Nieuwenhuizen",
+	"dir": "ltr",
+	"scope": "/",
+	"lang": "en",
+	"orientation": "any"
+}
