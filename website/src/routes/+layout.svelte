@@ -164,7 +164,6 @@
 	}
 
 	.layout-test {
-		overflow-x: hidden;
 		display: grid;
 		grid-template-columns: 1fr var(--menu-size);
 		transition: grid-template-columns 0.2s cubic-bezier(0.83, 0, 0.17, 1);
