@@ -1,15 +1,15 @@
 export const primaryMenu = [
 	{
-		url: '/experiments',
-		label: 'Experiments'
-	},
-	{
 		url: '/blog',
 		label: 'Blog'
 	},
 	{
 		url: '/gists',
 		label: 'Gists'
+	},
+	{
+		url: '/experiments',
+		label: 'Experiments'
 	}
 ];
 

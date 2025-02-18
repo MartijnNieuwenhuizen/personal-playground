@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/transparent-title-with-image',
+		label: 'Transparent title with image',
+		date: '15-02-2025',
+		tags: []
+	},
+	{
 		url: '/experiments/badging-api',
 		label: 'Badging api',
 		date: '14-02-2025',
