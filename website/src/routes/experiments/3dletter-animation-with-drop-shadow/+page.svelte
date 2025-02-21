@@ -31,7 +31,7 @@
 			const x = clientX / innerWidth;
 			const y = clientY / innerHeight;
 			rotationX = (y - 0.5) * 20; // Increase the range of rotation
-			rotationY = (0.5 - x) * 20; // Increase the range of rotation
+			rotationY = (x - 0.5) * 20; // Increase the range of rotation
 		}
 		window.onmousemove = handleMouseMove;
 	});
