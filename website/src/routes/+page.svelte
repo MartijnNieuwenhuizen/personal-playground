@@ -1,9 +1,9 @@
 <script>
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
+	import FontAnimationBasedOnCursorPosition from '$lib/components/font-animation-based-on-cursor-position/index.svelte';
 	import experiments from '../routes/experiments/experiments.js';
 	import gists from '../routes/gists/gists.js';
-	import FontAnimationBasedOnCursorPosition from '../routes/experiments/cursor-positioned-variable-font-animation/font-animation-based-on-cursor-position/index.svelte';
 
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';

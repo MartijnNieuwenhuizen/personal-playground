@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import PrefersReduceMotionWarning from '$lib/components/PrefersReduceMotionWarning/index.svelte';
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 
@@ -35,6 +36,8 @@
 		window.onmousemove = handleMouseMove;
 	});
 </script>
+
+<PrefersReduceMotionWarning />
 
 <ExperimentItem {title} {description} showPageEffect={true}>
 	<Block size="medium">
