@@ -100,7 +100,7 @@
 		grid-column: 1;
 		grid-row: 3;
 		box-shadow:
-			0rem -20rem 0 0 var(--expressive-color),
+			0rem -30rem 0 0 var(--expressive-color),
 			0rem 1.45ch 0 0 var(--expressive-color) inset;
 	}
 	.background-image {

@@ -3,11 +3,12 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import experiments from '../routes/experiments/experiments.js';
 	import gists from '../routes/gists/gists.js';
+	import FontAnimationBasedOnCursorPosition from '../routes/experiments/cursor-positioned-variable-font-animation/font-animation-based-on-cursor-position/index.svelte';
 
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
-	let latestExperiments = $derived(experiments.slice(0, 3));
+	let latestExperiments = $derived(experiments.slice(0, 5));
 	let latestGists = $derived(gists.slice(0, 3));
 	const latestBlogPosts = [
 		{
@@ -33,47 +34,57 @@
 		<Row size="small">
 			<header class="home-header">
 				<h1>
-					<span>Hi!</span>
+					<FontAnimationBasedOnCursorPosition>Hi!</FontAnimationBasedOnCursorPosition>
 					<span>I'm Martijn Nieuwenhuizen</span>
 				</h1>
-				<p>Front-end developer at <a href="http://fresk.digital/">fresk.digital</a>.</p>
-				<!-- <p>Front-end developer @ <a href="https://grrr.nl/">GRRR</a>.</p> -->
-				<!-- <p>Current blogposts are written for GRRR and use this as my personal playground.</p> -->
+				<p>
+					Front-end developer at <a class="fresk" href="http://fresk.digital/">fresk.digital</a>.
+				</p>
 			</header>
 		</Row>
 	</Block>
 
-	<Block size="medium">
-		<Row size="small">
-			<section class="about-this-site">
-				<!-- <h2>⚠️ Good to know</h2> -->
-				<h2>🚨 Good to know</h2>
+	<Row size="medium" area="top">
+		<section>
+			<Block size="medium">
+				<h2>Latest experiments</h2>
 
-				<p>
-					<span>This site is <span>NOT</span> beautiful,</span>
-					<span>This site is <span>NOT</span> good,</span>
-					<span>This site does <span>NOT</span> reflect my day to day work,</span>
-					<span>This site will <span>NOT</span> always work on any browser,</span>
-					<!-- <span>This site will <span>NOT</span> be up-to-date,</span> -->
-					<span>But I <span>DID</span> try a lot of unnecessary, fun, dumb and cool stuff!</span>
-				</p>
-			</section>
-		</Row>
-	</Block>
+				<HoverFadeList>
+					{#each latestExperiments as experiment}
+						<li>
+							<PreviewForList
+								url={experiment.url}
+								title={experiment.label}
+								date={experiment.date}
+							/>
+						</li>
+					{/each}
+				</HoverFadeList>
+			</Block>
+		</section>
+	</Row>
 
-	<section>
-		<Block size="medium">
-			<h2>Latest experiments</h2>
+	<Row size="medium" area="top">
+		<section>
+			<Block size="medium">
+				<h2>Latest blogs</h2>
 
-			<HoverFadeList>
-				{#each latestExperiments as experiment}
-					<li>
-						<PreviewForList url={experiment.url} title={experiment.label} date={experiment.date} />
-					</li>
-				{/each}
-			</HoverFadeList>
-		</Block>
-	</section>
+				<HoverFadeList>
+					{#each latestBlogPosts as post, index}
+						<li>
+							<PreviewForList
+								type="list"
+								noBottom={index === latestBlogPosts.length - 1}
+								url={post.url}
+								title={post.label}
+								date={post.date}
+							/>
+						</li>
+					{/each}
+				</HoverFadeList>
+			</Block>
+		</section>
+	</Row>
 
 	<Row size="medium" area="top">
 		<Row size="small" area="bottom">
@@ -111,27 +122,7 @@
 		</Row>
 	</Row>
 
-	<section>
-		<Block size="medium">
-			<h2>Latest blogs</h2>
-
-			<HoverFadeList>
-				{#each latestBlogPosts as post, index}
-					<li>
-						<PreviewForList
-							type="list"
-							noBottom={index === latestBlogPosts.length - 1}
-							url={post.url}
-							title={post.label}
-							date={post.date}
-						/>
-					</li>
-				{/each}
-			</HoverFadeList>
-		</Block>
-	</section>
-
-	<Row area="top" size="medium">
+	<Row area="top" size="small">
 		<section>
 			<Block size="medium">
 				<h2>Latest gists</h2>
@@ -146,6 +137,22 @@
 			</Block>
 		</section>
 	</Row>
+
+	<Block size="medium">
+		<Row size="large">
+			<section class="about-this-site">
+				<h2>🚨 Good to know</h2>
+
+				<p>
+					<span>This site is <span>NOT</span> beautiful,</span>
+					<span>This site is <span>NOT</span> good,</span>
+					<span>This site does <span>NOT</span> reflect my day to day work,</span>
+					<span>This site will <span>NOT</span> always work on any browser,</span>
+					<span>But I <span>DID</span> try a lot of unnecessary, fun, dumb and cool stuff!</span>
+				</p>
+			</section>
+		</Row>
+	</Block>
 
 	<!-- <section>
 		<h2>Fun projects</h2>

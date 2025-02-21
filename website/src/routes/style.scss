@@ -50,7 +50,6 @@
 .about-this-site h2 {
 	@include heading-3;
 	margin: 0 0 0.2em;
-	// text-align: end;
 }
 .about-this-site p {
 	@include body-4;
@@ -84,10 +83,6 @@
 	font-family: 'Nico Moji';
 	font-weight: 900;
 }
-// .about-this-site p > span:nth-of-type(5) span {
-// 	font-family: 'Crimson-Text';
-// 	font-weight: 700;
-// }
 .about-this-site p > span:nth-of-type(5) span {
 	font-family: 'Notable';
 	font-weight: 400;
@@ -121,12 +116,28 @@
 .details-scroller ul {
 	display: flex;
 	gap: 1.5em;
-	// margin: 0;
-	// padding: 0;
 	list-style: none;
 }
 
 .details-scroller li {
 	flex-grow: 1;
 	flex-shrink: 0;
+}
+
+/**
+ * Fresk
+ */
+.fresk {
+	// Create the gradient.
+	background: linear-gradient(90deg, #5e43ff 0%, #ff7535 100%);
+	// Clip the text (so the gradient is visible).
+	background-clip: text;
+	// Set color to transparent so the gradient shows.
+	-webkit-text-fill-color: transparent;
+}
+.fresk:hover,
+.fresk:focus {
+	background: linear-gradient(90deg, #ff7535 0%, #5e43ff 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
