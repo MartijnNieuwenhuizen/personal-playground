@@ -1,9 +1,15 @@
 const links = [
 	{
+		url: '/experiments/3dletter-animation-with-drop-shadow',
+		label: '3dletter animation with drop shadow',
+		date: '21-02-2025',
+		tags: ['css-only', '3d']
+	},
+	{
 		url: '/experiments/transparent-title-with-image',
 		label: 'Transparent title with image',
 		date: '15-02-2025',
-		tags: []
+		tags: ['css-only', 'typography']
 	},
 	{
 		url: '/experiments/badging-api',

@@ -93,6 +93,7 @@
 				<div>
 					<ul>
 						<li>📍 Bergen NH</li>
+						<li>👂🏻 Development lead</li>
 						<li>🏃🏼 Runner</li>
 						<li>🚴🏻‍♂️ Cyclist</li>
 						<li>🧑🏼‍🌾 Gardener</li>
@@ -102,6 +103,7 @@
 
 						<!-- Just for the effect -->
 						<li aria-hidden="true">📍 Bergen NH</li>
+						<li aria-hidden="true">👂🏻 Development lead</li>
 						<li aria-hidden="true">🏃🏼 Runner</li>
 						<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
 						<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
@@ -110,6 +112,7 @@
 						<li aria-hidden="true">👨🏼‍🍳 Used to be a chef</li>
 
 						<li aria-hidden="true">📍 Bergen NH</li>
+						<li aria-hidden="true">👂🏻 Development lead</li>
 						<li aria-hidden="true">🏃🏼 Runner</li>
 						<li aria-hidden="true">🚴🏻‍♂️ Cyclist</li>
 						<li aria-hidden="true">🧑🏼‍🌾 Gardener</li>
