@@ -47,7 +47,7 @@
 	<Row size="medium" area="top">
 		<section>
 			<Block size="medium">
-				<h2>Latest experiments</h2>
+				<h2 class="list-title">Latest experiments</h2>
 
 				<HoverFadeList>
 					{#each latestExperiments as experiment}
@@ -67,7 +67,7 @@
 	<Row size="medium" area="top">
 		<section>
 			<Block size="medium">
-				<h2>Latest blogs</h2>
+				<h2 class="list-title">Latest blogs</h2>
 
 				<HoverFadeList>
 					{#each latestBlogPosts as post, index}
@@ -128,7 +128,7 @@
 	<Row area="top" size="small">
 		<section>
 			<Block size="medium">
-				<h2>Latest gists</h2>
+				<h2 class="list-title">Latest gists</h2>
 
 				<HoverFadeList>
 					{#each latestGists as gist}

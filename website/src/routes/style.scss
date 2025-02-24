@@ -45,6 +45,11 @@ body {
 	}
 }
 
+.list-title {
+	@include heading-2;
+	margin: 0;
+}
+
 /**
  * Home header
  */

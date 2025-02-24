@@ -17,33 +17,18 @@
 	--line-height-read: 1.7;
 
 	// Font sizes
-	--body-1: 32px;
-	--body-2: 24px;
-	--body-3: 18px;
-	--body-4: 16px;
-	--body-5: 14px;
+	--body-1: clamp(#{rem(32)}, 4vw, #{rem(36)});
+	--body-2: clamp(#{rem(18)}, 4vw, #{rem(24)});
+	--body-3: clamp(#{rem(16)}, 4vw, #{rem(18)});
+	--body-4: clamp(#{rem(14)}, 4vw, #{rem(16)});
+	--body-5: #{rem(14)};
 
-	--heading-1: 100px;
-	--heading-2: 45px;
-	--heading-3: 31px;
-	--heading-4: 22px;
+	--heading-1: clamp(#{rem(100)}, 4vw, #{rem(200)});
+	--heading-2: clamp(#{rem(30)}, 4vw, #{rem(64)});
+	--heading-3: clamp(#{rem(22)}, 4vw, #{rem(36)});
+	--heading-4: clamp(#{rem(18)}, 4vw, #{rem(24)});
 	--heading-5: var(--font-size-base);
 	--heading-6: var(--font-size-base);
-
-	@media (min-width: 950px) {
-		--heading-1: 200px;
-		--heading-2: 64px;
-		--heading-3: 36px;
-		--heading-4: 24px;
-		--heading-5: var(--font-size-base);
-		--heading-6: var(--font-size-base);
-
-		--body-1: 36px;
-		--body-2: 24px;
-		--body-3: 18px;
-		--body-4: 16px;
-		--body-5: 14px;
-	}
 }
 
 :global(html) {

@@ -45,6 +45,7 @@
 
 <style lang="scss">
 	div {
+		container-type: block;
 		position: relative;
 		display: grid;
 		grid-template-columns: subgrid;
@@ -58,7 +59,7 @@
 	h4 {
 		@include heading-3;
 		margin: 0;
-		padding: 1rem;
+		padding: 1rem 0;
 	}
 
 	a {
@@ -72,7 +73,14 @@
 	}
 
 	.date {
+		@include body-4;
 		padding: 0 1rem;
+
+		display: none;
+
+		@container (min-width: 500px) {
+			display: block;
+		}
 	}
 
 	a span {
@@ -90,10 +98,20 @@
 	[data-type='box'] h2,
 	[data-type='box'] h3,
 	[data-type='box'] h4 {
-		border-right: 2px solid black;
+		padding: 1rem;
+
+		@container (min-width: 500px) {
+			border-right: 2px solid black;
+		}
 	}
 
 	[data-type='list'][data-no-bottom='false'] {
 		border-bottom: 2px solid black;
+	}
+
+	[data-type='clear'] h2,
+	[data-type='clear'] h3,
+	[data-type='clear'] h4 {
+		padding: 0.5rem 0;
 	}
 </style>
