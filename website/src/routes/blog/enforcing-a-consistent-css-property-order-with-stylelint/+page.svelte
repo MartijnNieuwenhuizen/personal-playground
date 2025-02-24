@@ -66,7 +66,7 @@
 			<h1>Enforcing a Consistent CSS Property Order with Stylelint</h1>
 		</header>
 	</Block>
-	<Block size="small">
+	<Block size="small-medium">
 		<Row area="bottom" size="small">
 			<section>
 				<p>
