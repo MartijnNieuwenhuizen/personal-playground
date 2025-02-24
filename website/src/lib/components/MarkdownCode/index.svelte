@@ -15,10 +15,20 @@
 	let all = $props();
 	const { text } = all;
 
-	const language = 'js';
+	const getLanguage = () => {
+		if (text.includes('</')) {
+			return 'html';
+		}
+		if (text.includes('div {') || text.includes('span {') || text.includes(':global(')) {
+			return 'css';
+		}
+		return 'js';
+	};
+
+	console.log('getLanguage(): ', getLanguage());
 
 	// const highlightedCode = hljs.highlight(code, { language: 'html' }).value;
-	const highlightedCode = hljs.highlight(text, { language }).value;
+	const highlightedCode = hljs.highlight(text, { language: getLanguage() }).value;
 </script>
 
 <link

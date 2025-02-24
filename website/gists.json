@@ -1,5 +1,19 @@
 [
   {
+    "title": "How to use cqw",
+    "url": "how-to-use-cqw",
+    "date": "24-02-2025",
+    "metaData": {
+      "date-added": "2025-02-24T00:00:00.000Z",
+      "tags": [
+        "CSS",
+        "Containers"
+      ],
+      "private": false
+    },
+    "content": "If you just want to make something a container so you can use `cqw` instead of `vw`\n\n```html\n<div>\n\t<span>Hi</span>\n</div>\n```\n\n```CSS\ndiv {\n\tcontainer-type: block;\n\t// OR\n\tcontainer-type: inline-size;\n}\nspan {\n\tmax-width: 50cqw\n}\n```"
+  },
+  {
     "title": "Nullish and logical OR operator",
     "url": "nullish-and-logical-or-operator",
     "date": "09-02-2025",
