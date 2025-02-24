@@ -30,8 +30,8 @@
 			const { innerWidth, innerHeight } = view as Window;
 			const x = clientX / innerWidth;
 			const y = clientY / innerHeight;
-			rotationX = (y - 0.5) * 20; // Increase the range of rotation
-			rotationY = (x - 0.5) * 20; // Increase the range of rotation
+			rotationX = (x - 0.5) * 20; // Increase the range of rotation
+			rotationY = (y - 0.5) * 20; // Increase the range of rotation
 		}
 		window.onmousemove = handleMouseMove;
 	});
