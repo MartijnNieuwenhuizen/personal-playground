@@ -1,5 +1,17 @@
 const links = [
 	{
+		url: '/experiments/grid-auto-fit-and-auto-fill',
+		label: 'Grid auto fit and auto fill',
+		date: '28-02-2025',
+		tags: ['css-grid', 'css-only']
+	},
+	{
+		url: '/experiments/utopia-design-system',
+		label: 'Utopia design system',
+		date: '27-02-2025',
+		tags: ['design-system', 'css-only']
+	},
+	{
 		url: '/experiments/3dletter-animation-with-drop-shadow',
 		label: '3dletter animation with drop shadow',
 		date: '21-02-2025',

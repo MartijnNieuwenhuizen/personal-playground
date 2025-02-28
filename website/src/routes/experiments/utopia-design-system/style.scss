@@ -1,0 +1,37 @@
+@use './styles/utopia-reset';
+@use './styles/utopia-colors';
+@use './styles/utopia-spacing';
+@use './styles/utopia-typography';
+
+@layer base;
+
+.experiment-body {
+	background-color: var(--snow);
+}
+
+.experiment-body .flow > * + * {
+	margin-top: var(--flow-space, 1rem);
+}
+.experiment-body .region {
+	padding-top: var(--region-space, var(--space-l-2xl));
+	padding-bottom: var(--region-space, var(--space-l-2xl));
+}
+.experiment-body .wrapper {
+	--gutter: var(--space-l);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--wrapper-max-width, 65rem);
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+	position: relative;
+}
+.experiment-body .grid {
+	display: grid;
+	grid-template-columns: repeat(
+		var(--grid-placement, auto-fit),
+		minmax(var(--grid-min-item-size, 16rem), 1fr)
+	);
+	gap: var(--gutter, var(--space-s-l));
+
+	list-style: none;
+}
