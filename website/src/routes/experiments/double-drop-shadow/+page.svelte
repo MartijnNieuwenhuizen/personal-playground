@@ -1,5 +1,6 @@
 <script>
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
+	import Code from '$lib/components/Code/index.svelte';
 	import Block from '$lib/components/layout/Block/index.svelte';
 	import Row from '$lib/components/layout/Row/index.svelte';
 
@@ -51,6 +52,39 @@
 	<Row>
 		<h3>Attempt 6: Add the shadow effect</h3>
 		<p>This crashes the browser, so pro tip: don't use this!</p>
+
+		<Code
+			language="css"
+			code={`.try-6 {
+	color: white;
+	filter: drop-shadow(1px 1px 0 var(--experiment-color))
+		drop-shadow(1.5px 1.5px 0 var(--experiment-color))
+		drop-shadow(2px 2px 0 var(--experiment-color))
+		drop-shadow(2.5px 2.5px 0 var(--experiment-color))
+		drop-shadow(3px 3px 0 var(--experiment-color))
+		drop-shadow(3.5px 3.5px 0 var(--experiment-color))
+		drop-shadow(4px 4px 0 var(--experiment-color))
+		drop-shadow(4.5px 4.5px 0 var(--experiment-color))
+		drop-shadow(5px 5px 0 var(--experiment-color)) 
+		drop-shadow(-1px 1px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-1.5px 1.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-2px 2px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-2.5px 2.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-3px 3px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-3.5px 3.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-4px 4px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-4.5px 4.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-6px 6px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-6.5px 6.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-7px 7px 0 rgba(0, 0, 0, 0.2))
+		drop-shadow(-7.5px 7.5px 0 rgba(0, 0, 0, 0.2)) 
+		drop-shadow(-8px 8px 0 rgba(0, 0, 0, 0.2));
+
+	-webkit-text-stroke: 0.05rem var(--experiment-color);
+}
+`}
+		></Code>
+
 		<p class="charlie try-6">Charlie</p>
 	</Row>
 </ExperimentItem>
@@ -97,24 +131,4 @@
 			drop-shadow(5px 5px 0 var(--experiment-color));
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
-	// .try-6 {
-	// 	color: white;
-	// 	filter: drop-shadow(1px 1px 0 var(--experiment-color))
-	// 		drop-shadow(1.5px 1.5px 0 var(--experiment-color))
-	// 		drop-shadow(2px 2px 0 var(--experiment-color))
-	// 		drop-shadow(2.5px 2.5px 0 var(--experiment-color))
-	// 		drop-shadow(3px 3px 0 var(--experiment-color))
-	// 		drop-shadow(3.5px 3.5px 0 var(--experiment-color))
-	// 		drop-shadow(4px 4px 0 var(--experiment-color))
-	// 		drop-shadow(4.5px 4.5px 0 var(--experiment-color))
-	// 		drop-shadow(5px 5px 0 var(--experiment-color)) drop-shadow(-1px 1px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-1.5px 1.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-2px 2px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-2.5px 2.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-3px 3px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-3.5px 3.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-4px 4px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-4.5px 4.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-6px 6px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-6.5px 6.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-7px 7px 0 rgba(0, 0, 0, 0.2))
-	// 		drop-shadow(-7.5px 7.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-8px 8px 0 rgba(0, 0, 0, 0.2));
-
-	// 	-webkit-text-stroke: 0.05rem var(--experiment-color);
-	// }
 </style>
