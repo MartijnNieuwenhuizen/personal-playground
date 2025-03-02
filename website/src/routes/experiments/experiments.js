@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/double-drop-shadow',
+		label: 'Double drop shadow',
+		date: '02-03-2025',
+		tags: ['css-only', 'drop-shadow']
+	},
+	{
 		url: '/experiments/grid-auto-fit-and-auto-fill',
 		label: 'Grid auto fit and auto fill',
 		date: '28-02-2025',
@@ -15,7 +21,7 @@ const links = [
 		url: '/experiments/3dletter-animation-with-drop-shadow',
 		label: '3dletter animation with drop shadow',
 		date: '21-02-2025',
-		tags: ['css-only', '3d']
+		tags: ['css-only', '3d', 'drop-shadow']
 	},
 	{
 		url: '/experiments/transparent-title-with-image',
