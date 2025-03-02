@@ -45,7 +45,7 @@
 	// Include variable font on this page
 	@font-face {
 		font-family: 'Roboto flex';
-		src: url('./Roboto Flex Font.ttf') format('truetype');
+		src: url('/fonts/Roboto Flex Font.ttf') format('truetype');
 		font-weight: 100 900;
 		font-style: normal;
 		font-variation-settings:
