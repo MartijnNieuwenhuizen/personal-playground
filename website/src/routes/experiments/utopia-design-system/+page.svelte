@@ -6,7 +6,7 @@
 
 	const title = 'Utopia design system';
 	const description =
-		'<p>A copy (sort of) of the <a href="https://fresk.digital">fresk.digital</a> website with <a href="https://utopia.fyi/">Utopia</a> and the <a href="https://cube.fyi/">Cube CSS</a> methodology. Inspired by <a href="Andy Bell">this talk</a> of Andy Bell.</p> <p>All styles in the page below are first reset, then applied to ensure there are no project related styles.</p>';
+		'<p>A copy (sort of) of the <a href="https://fresk.digital">fresk.digital</a> website with <a href="https://utopia.fyi/">Utopia</a> and the <a href="https://cube.fyi/">Cube CSS</a> methodology. Inspired by <a href="https://www.youtube.com/watch?v=5uhIiI9Ld5M&t=1860s">this talk</a> of Andy Bell.</p> <p>All styles in the page below are first reset, then applied to ensure there are no project related styles.</p>';
 </script>
 
 <ExperimentItem {title} {description} showPageEffect={false}>
