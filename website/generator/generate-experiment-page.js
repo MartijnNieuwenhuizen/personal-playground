@@ -1,6 +1,5 @@
 'use strict';
 import fs, { mkdirSync } from 'fs';
-import { mkdir } from 'node:fs';
 
 import pascalCaseToDash from './pascal-case-to-dash.js';
 import toHumanReadableText from './to-human-readable-text.js';
