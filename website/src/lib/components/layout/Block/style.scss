@@ -4,19 +4,21 @@
 	margin-left: auto;
 	padding-right: gap(5);
 	padding-left: gap(5);
+
 	@include bp-min(small) {
 		padding-right: gap(8);
 		padding-left: gap(8);
 
-		@if ((var(--size) != full)) {
+		@if var(--size) != full {
 			max-width: calc(#{var(--size)} + (#{gap(8)} * 2));
 		}
 	}
+
 	@include bp-min(medium) {
 		padding-right: gap(13);
 		padding-left: gap(13);
 
-		@if ((var(--size) != full)) {
+		@if var(--size) != full {
 			max-width: calc(#{var(--size)} + (#{gap(13)} * 2));
 		}
 	}
@@ -26,22 +28,27 @@
 	--size-name: 'tiny';
 	--size: #{constrain('tiny')};
 }
+
 .block[data-size='small'] {
 	--size-name: 'small';
 	--size: #{constrain('small')};
 }
+
 .block[data-size='small-medium'] {
 	--size-name: 'small-medium';
 	--size: #{constrain('small-medium')};
 }
+
 .block[data-size='medium'] {
 	--size-name: 'medium';
 	--size: #{constrain('medium')};
 }
+
 .block[data-size='large'] {
 	--size-name: 'large';
 	--size: #{constrain('large')};
 }
+
 .block[data-size='full'] {
 	--size-name: 'full';
 	--size: #{constrain('full')};

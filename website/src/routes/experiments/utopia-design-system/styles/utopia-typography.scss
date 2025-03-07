@@ -13,43 +13,47 @@
 }
 
 .experiment-body {
-	font-size: var(--step-0);
 	font-family: sans-serif;
 	font-weight: 400;
+	font-size: var(--step-0);
 	line-height: 1.4;
 
 	// h1 is out of scope for this experiment as it's the page title.
 	h2,
 	.h2 {
-		font-size: var(--step-5);
+		max-width: 25ch;
 		font-family: sans-serif;
 		font-weight: 500;
+		font-size: var(--step-5);
 		line-height: 1;
-		max-width: 25ch;
 	}
+
 	h3,
 	.h3 {
-		font-size: var(--step-4);
+		max-width: 25ch;
 		font-family: sans-serif;
 		font-weight: 500;
+		font-size: var(--step-4);
 		line-height: 1;
-		max-width: 25ch;
 	}
+
 	h4,
 	.h4 {
-		font-size: var(--step-3);
+		max-width: 25ch;
 		font-family: sans-serif;
 		font-weight: 500;
+		font-size: var(--step-3);
 		line-height: 1;
-		max-width: 25ch;
 	}
+
 	h5,
 	.h5 {
-		font-size: var(--step-2);
+		max-width: 25ch;
 		font-family: sans-serif;
 		font-weight: 500;
-		max-width: 25ch;
+		font-size: var(--step-2);
 	}
+
 	p {
 		max-width: 50ch;
 	}

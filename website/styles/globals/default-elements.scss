@@ -1,13 +1,15 @@
 /* stylelint-disable selector-max-universal */
-@import '../base.scss';
+@import '../base';
 
 :root {
 	--block-padding: #{gap(5)};
 	--border-radius: #{$border-radius-small-screens};
+
 	@include bp-min(small) {
 		--block-padding: #{gap(10)};
 		--border-radius: #{$border-radius-large-screens};
 	}
+
 	@include bp-min(medium) {
 		--block-padding: #{gap(15)};
 	}
@@ -42,9 +44,11 @@
 :global(a) {
 	color: var(--expressive-color);
 	text-decoration: none;
+
 	// text-decoration: underline;
 	// text-decoration-skip-ink: auto;
 }
+
 :global(nav a) {
 	color: inherit;
 }
@@ -60,6 +64,7 @@
 :global(figure) {
 	margin: 0;
 }
+
 :global(img),
 :global(video),
 :global(canvas),
@@ -70,6 +75,7 @@
 	display: block;
 	vertical-align: middle;
 }
+
 :global(img),
 :global(object),
 :global(video) {

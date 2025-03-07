@@ -1,10 +1,9 @@
 @use 'sass:math';
-
-@import './base/functions.scss';
-@import './base/mixins.scss';
-@import './base/breakpoints.scss';
-@import './base/colors.scss';
-@import './base/font-mixins.scss';
-@import './base/layout.scss';
-@import './base/motion.scss';
-@import './base/variables.scss';
+@import './base/functions';
+@import './base/mixins';
+@import './base/breakpoints';
+@import './base/colors';
+@import './base/font-mixins';
+@import './base/layout';
+@import './base/motion';
+@import './base/variables';

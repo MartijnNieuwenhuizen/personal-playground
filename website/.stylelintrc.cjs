@@ -1,8 +1,10 @@
 module.exports = {
-	extends: ['stylelint-config-prettier'],
-	plugins: ['stylelint-order', 'stylelint-prettier'],
+	plugins: ['stylelint-prettier', 'stylelint-order'],
+	extends: ['stylelint-prettier/recommended', 'stylelint-config-standard-scss'],
+	ignoreFiles: ['build/**/*'],
+
 	rules: {
-		'prettier/prettier': true,
+		'custom-property-pattern': null,
 		'order/order': [
 			[
 				'dollar-variables',
@@ -71,51 +73,21 @@ module.exports = {
 		],
 		'order/properties-order': [
 			[
-				// Content
+				//
 				'content',
 
-				// Visibility
+				//
 				'visibility',
 				'opacity',
 				'overflow',
-				'overflow-block',
-				'overflow-inline',
 				'overflow-x',
 				'overflow-y',
 				'overflow-scrolling',
-				'overscroll',
-				'overscroll-block',
-				'overscroll-inline',
-				'overscroll-x',
-				'overscroll-y',
+				'pointer-events',
 
-				// Scrolling
-				'scroll-behavior',
-				'scroll-margin',
-				'scroll-margin-block',
-				'scroll-margin-inline',
-				'scroll-margin-top',
-				'scroll-margin-right',
-				'scroll-margin-bottom',
-				'scroll-margin-left',
-				'scroll-padding',
-				'scroll-padding-block',
-				'scroll-padding-inline',
-				'scroll-padding-top',
-				'scroll-padding-right',
-				'scroll-padding-bottom',
-				'scroll-padding-left',
-
-				// Positioning
+				//
 				'z-index',
 				'position',
-				'inset',
-				'inset-block',
-				'inset-block-start',
-				'inset-block-end',
-				'inset-inline',
-				'inset-inline-start',
-				'inset-inline-end',
 				'top',
 				'right',
 				'bottom',
@@ -123,14 +95,9 @@ module.exports = {
 				'float',
 				'clear',
 
-				// Display and Box Model
-				'display',
+				//
 				'box-sizing',
-				'box-shadow',
-				'box-decoration-break',
-				'resize',
-
-				// Flexbox and Grid
+				'display',
 				'flex',
 				'flex-grow',
 				'flex-shrink',
@@ -168,7 +135,7 @@ module.exports = {
 				'vertical-align',
 				'order',
 
-				// Columns
+				//
 				'columns',
 				'column-span',
 				'column-width',
@@ -182,45 +149,27 @@ module.exports = {
 				'orphans',
 				'widows',
 
-				// Width and height
+				//
 				'width',
 				'min-width',
 				'max-width',
-				'inline-size',
-				'min-inline-size',
-				'max-inline-size',
 				'height',
 				'min-height',
 				'max-height',
-				'block-size',
-				'min-block-size',
-				'max-block-size',
 
-				// Margin and padding
+				//
 				'margin',
-				'margin-block',
-				'margin-block-start',
-				'margin-block-end',
-				'margin-inline',
-				'margin-inline-start',
-				'margin-inline-end',
 				'margin-top',
 				'margin-right',
 				'margin-bottom',
 				'margin-left',
 				'padding',
-				'padding-block',
-				'padding-block-start',
-				'padding-block-end',
-				'padding-inline',
-				'padding-inline-start',
-				'padding-inline-end',
 				'padding-top',
 				'padding-right',
 				'padding-bottom',
 				'padding-left',
 
-				// List
+				//
 				'list-style',
 				'list-style-position',
 				'list-style-type',
@@ -228,7 +177,7 @@ module.exports = {
 				'counter-increment',
 				'counter-reset',
 
-				// Background and colors
+				//
 				'background',
 				'background-color',
 				'background-image',
@@ -244,22 +193,11 @@ module.exports = {
 				'fill',
 				'stroke',
 
-				// Images
-				'object-fit',
-				'interpolation-mode',
-
-				// Effects
-				'filter',
-
-				// Clipping
-				'clip',
-
-				// Cursors and User Interaction
+				//
 				'cursor',
-				'pointer-events',
 				'user-select',
 
-				// Typography
+				//
 				'font',
 				'font-family',
 				'src',
@@ -273,13 +211,13 @@ module.exports = {
 				'letter-spacing',
 				'text-align',
 				'text-align-last',
-				'text-justify',
 				'text-decoration',
 				'text-emphasis',
 				'text-emphasis-position',
 				'text-emphasis-style',
 				'text-emphasis-color',
 				'text-indent',
+				'text-justify',
 				'text-outline',
 				'text-transform',
 				'text-wrap',
@@ -293,35 +231,14 @@ module.exports = {
 				'word-break',
 				'overflow-wrap',
 				'hyphens',
-				'quotes',
-				'-ms-writing-mode',
-				'direction',
-				'unicode-bidi',
-				'tab-size',
 
-				// Borders
+				//
 				'border',
 				'border-spacing',
 				'border-collapse',
 				'border-width',
 				'border-style',
 				'border-color',
-				'border-block',
-				'border-block-color',
-				'border-block-style',
-				'border-block-width',
-				'border-block-start',
-				'border-block-start-color',
-				'border-block-start-style',
-				'border-block-start-width',
-				'border-block-end',
-				'border-block-end-color',
-				'border-block-end-style',
-				'border-block-end-width',
-				'border-inline',
-				'border-inline-color',
-				'border-inline-style',
-				'border-inline-width',
 				'border-top',
 				'border-top-width',
 				'border-top-style',
@@ -339,10 +256,6 @@ module.exports = {
 				'border-left-style',
 				'border-left-color',
 				'border-radius',
-				'border-start-start-radius',
-				'border-start-end-radius',
-				'border-end-start-radius',
-				'border-end-end-radius',
 				'border-top-left-radius',
 				'border-top-right-radius',
 				'border-bottom-right-radius',
@@ -363,37 +276,36 @@ module.exports = {
 				'border-bottom-right-image',
 				'border-bottom-left-image',
 
-				// Outline
+				//
+				'box-shadow',
+				'box-decoration-break',
+
+				//
 				'outline',
 				'outline-width',
 				'outline-style',
 				'outline-color',
 				'outline-offset',
 
-				// View transitions
-				'view-timeline',
-				'view-timeline-axis',
-				'view-timeline-inset',
-				'view-timeline-name',
-				'view-transition-name',
+				//
+				'object-fit',
+				'clip',
+				'filter',
+				'resize',
+				'interpolation-mode',
 
-				// Transforms
+				//
 				'transform',
-				'transform-box',
 				'transform-origin',
-				'transform-style',
-				'scale',
-				'rotate',
 
-				// Transitions
+				//
 				'transition',
-				'transition-behavior',
 				'transition-property',
 				'transition-duration',
 				'transition-delay',
 				'transition-timing-function',
 
-				// Animations
+				//
 				'animation',
 				'animation-name',
 				'animation-duration',
@@ -404,12 +316,18 @@ module.exports = {
 				'animation-direction',
 				'animation-fill-mode',
 
-				// Tables
+				//
+				'quotes',
+				'-ms-writing-mode',
+				'tab-size',
 				'table-layout',
 				'caption-side',
 				'empty-cells',
 
-				// Page Breaks
+				//
+				'unicode-bidi',
+				'direction',
+
 				'break-before',
 				'break-inside',
 				'break-after',
@@ -417,7 +335,6 @@ module.exports = {
 				'page-break-inside',
 				'page-break-after',
 
-				// Zoom
 				'zoom',
 				'max-zoom',
 				'min-zoom',

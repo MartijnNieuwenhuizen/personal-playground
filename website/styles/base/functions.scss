@@ -5,10 +5,11 @@
  * Needed until Webpack transforms px values to rem automatically
  */
 @function em($value) {
-	@return math.div($value, 16) + 0em;
+	@return math.div($value, 16) + 0;
 }
+
 @function rem($value) {
-	@return math.div($value, 16) + 0rem;
+	@return math.div($value, 16) + 0;
 }
 
 /*
@@ -16,10 +17,11 @@
  * Needed until Webpack transforms px values to rem automatically
  */
 @function em($value) {
-	@return math.div($value, 16) + 0em;
+	@return math.div($value, 16) + 0;
 }
+
 @function px-to-rem($value) {
-	@return math.div($value, 16) + 0rem;
+	@return math.div($value, 16) + 0;
 }
 
 /**
@@ -38,5 +40,6 @@
 	@each $key in $keys {
 		$map: map-get($map, $key);
 	}
+
 	@return $map;
 }

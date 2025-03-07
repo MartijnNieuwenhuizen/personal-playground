@@ -1,4 +1,5 @@
 // Load fonts for just the homepage
+
 /**
  * Subsetted fonts
  */
@@ -11,6 +12,7 @@ body {
 		font-weight: 900;
 		font-style: normal;
 	}
+
 	@font-face {
 		font-family: 'Luckiest Guy';
 		src:
@@ -19,14 +21,16 @@ body {
 		font-weight: 900;
 		font-style: normal;
 	}
+
 	@font-face {
-		font-family: 'McLaren';
+		font-family: McLaren;
 		src:
 			url('/fonts/subset/mclaren-regular-webfont.woff2') format('woff2'),
 			url('/fonts/subset/mclaren-regular-webfont.woff') format('woff');
 		font-weight: 900;
 		font-style: normal;
 	}
+
 	@font-face {
 		font-family: 'Nico Moji';
 		src:
@@ -35,8 +39,9 @@ body {
 		font-weight: 900;
 		font-style: normal;
 	}
+
 	@font-face {
-		font-family: 'Notable';
+		font-family: Notable;
 		src:
 			url('/fonts/subset/notable-regular-webfont.woff2') format('woff2'),
 			url('/fonts/subset/notable-regular-webfont.woff') format('woff');
@@ -47,6 +52,7 @@ body {
 
 .list-title {
 	@include heading-4;
+
 	margin: 0;
 }
 
@@ -58,39 +64,50 @@ body {
 	flex-direction: column;
 	gap: 0.5em;
 }
+
 .home-header h1 {
-	font-family: var(--sans-serif);
 	display: flex;
 	flex-direction: column;
-	line-height: 1;
 	margin: 0;
+	font-family: var(--sans-serif);
+	line-height: 1;
 }
+
 .home-header h1 span:first-of-type {
 	@include heading-1;
+
 	line-height: 1;
 }
+
 .home-header h1 span:last-of-type {
 	@include body-3;
+
 	line-height: 1;
 
 	@include bp-min(small) {
 		@include body-2;
+
 		line-height: 1;
 	}
 }
+
 .home-header p {
 	@include body-3;
+
 	margin: 0;
 	line-height: 1;
 
 	@include bp-min(small) {
 		@include body-2;
+
 		line-height: 1;
 	}
 }
+
 .home-header a {
 	color: inherit;
 }
+
 .home-header a:hover,
 .home-header a:focus {
 	color: var(--expressive-color);
@@ -101,20 +118,24 @@ body {
  */
 .about-this-site h2 {
 	@include heading-3;
+
 	margin: 0 0 0.2em;
 }
+
 .about-this-site p {
 	@include body-4;
 
 	@include bp-min(450) {
 		@include body-2;
 	}
+
 	@include bp-min(small) {
 		@include body-1;
 	}
 
 	// text-align: end;
 }
+
 .about-this-site p > span {
 	display: block;
 }
@@ -123,20 +144,24 @@ body {
 	font-family: 'Lexend Deca';
 	font-weight: 900;
 }
+
 .about-this-site p > span:nth-of-type(2) span {
-	font-family: 'McLaren';
+	font-family: McLaren;
 	font-weight: 900;
 }
+
 .about-this-site p > span:nth-of-type(3) span {
 	font-family: 'Luckiest Guy';
 	font-weight: 900;
 }
+
 .about-this-site p > span:nth-of-type(4) span {
 	font-family: 'Nico Moji';
 	font-weight: 900;
 }
+
 .about-this-site p > span:nth-of-type(5) span {
-	font-family: 'Notable';
+	font-family: Notable;
 	font-weight: 400;
 }
 
@@ -144,6 +169,7 @@ body {
 	from {
 		transform: translateX(0);
 	}
+
 	to {
 		transform: translateX(-75%);
 	}
@@ -160,11 +186,13 @@ body {
 		max-width: calc(100vw - var(--name-slider-height));
 	}
 }
+
 .details-scroller > div {
 	// animation: scroll-by linear forwards;
 	animation: scroll-by auto ease-in-out;
 	animation-timeline: --page-scroll;
 }
+
 .details-scroller ul {
 	display: flex;
 	gap: 1.5em;
@@ -182,11 +210,14 @@ body {
 .fresk {
 	// Create the gradient.
 	background: linear-gradient(90deg, #5e43ff 0%, #ff7535 100%);
+
 	// Clip the text (so the gradient is visible).
 	background-clip: text;
+
 	// Set color to transparent so the gradient shows.
 	-webkit-text-fill-color: transparent;
 }
+
 .fresk:hover,
 .fresk:focus {
 	background: linear-gradient(90deg, #ff7535 0%, #5e43ff 100%);

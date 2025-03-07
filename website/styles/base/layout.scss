@@ -37,9 +37,11 @@ $constrains: (
 	medium: rem(979),
 	large: rem(1264)
 );
+
 @function constrain($size) {
 	@return map-get($constrains, $size);
 }
+
 @mixin constrain($size) {
 	max-width: constrain($size);
 }
@@ -62,15 +64,20 @@ $z-index: (
 // Off grid alignment
 @mixin off-grid-parent-medium {
 	@include block(small-medium);
+
 	> * {
 		@include constrain(small);
+
 		margin-left: auto;
 	}
 }
+
 @mixin off-grid-parent-large {
 	@include block(large);
+
 	> * {
 		@include constrain(small-medium);
+
 		margin-left: auto;
 	}
 }
