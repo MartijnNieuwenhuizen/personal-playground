@@ -4,7 +4,14 @@ module.exports = {
 	ignoreFiles: ['build/**/*'],
 
 	rules: {
+		// Ensure I can use variables like --step--2.
 		'custom-property-pattern': null,
+		// Ensure I can use pseudo-classes like :global.
+		'selector-pseudo-class-no-unknown': null,
+		'selector-pseudo-element-no-unknown': null,
+		'selector-class-pattern': null,
+		'custom-property-no-missing-var-function': null,
+
 		'order/order': [
 			[
 				'dollar-variables',

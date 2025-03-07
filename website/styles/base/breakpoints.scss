@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 /**
  * Breakpoints
  */
@@ -22,8 +24,8 @@ $breakpoints: (
 @mixin bp-min($points: 0) {
 	$width: $points;
 
-	@if map-get($breakpoints, $points) {
-		$width: map-get($breakpoints, $points);
+	@if map.get($breakpoints, $points) {
+		$width: map.get($breakpoints, $points);
 	}
 
 	@media (width >= rem($width)) {
@@ -34,8 +36,8 @@ $breakpoints: (
 @mixin bp-max($points: 0) {
 	$width: $points;
 
-	@if map-get($breakpoints, $points) {
-		$width: map-get($breakpoints, $points);
+	@if map.get($breakpoints, $points) {
+		$width: map.get($breakpoints, $points);
 	}
 
 	@media (max-width: (rem($width) - 0.0625rem)) {
@@ -47,12 +49,12 @@ $breakpoints: (
 	$min-width: $min-points;
 	$max-width: $max-points;
 
-	@if map-get($breakpoints, $min-points) {
-		$min-width: map-get($breakpoints, $min-points);
+	@if map.get($breakpoints, $min-points) {
+		$min-width: map.get($breakpoints, $min-points);
 	}
 
-	@if map-get($breakpoints, $max-points) {
-		$max-width: map-get($breakpoints, $max-points);
+	@if map.get($breakpoints, $max-points) {
+		$max-width: map.get($breakpoints, $max-points);
 	}
 
 	@media (width >= rem($min-width)) and (max-width: (rem($max-width) - 0.0625rem)) {

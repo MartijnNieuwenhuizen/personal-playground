@@ -1,4 +1,5 @@
 /* stylelint-disable selector-max-universal */
+@use 'sass:map';
 
 /*
  * Gaps.
@@ -23,7 +24,7 @@ $gaps: (
 );
 
 @function gap($size) {
-	@return map-get($gaps, $size);
+	@return map.get($gaps, $size);
 }
 
 /*
@@ -39,7 +40,7 @@ $constrains: (
 );
 
 @function constrain($size) {
-	@return map-get($constrains, $size);
+	@return map.get($constrains, $size);
 }
 
 @mixin constrain($size) {

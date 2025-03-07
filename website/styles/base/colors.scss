@@ -1,12 +1,14 @@
+@use 'sass:color';
+
 // Base colors
 $white: #fff;
 $grey-light: #f7f5f5;
 $grey: #eae6e4;
 $black: #1a1a1a;
-$black-lighter: lighten($black, 10%);
+$black-lighter: color.adjust($black, $lightness: 10%);
 $black-transparent: rgba($black, 0.2);
 
 // Brand colors
 $primary-color: #f0c645;
-$primary-color-lighter: lighten($primary-color, 10%);
+$primary-color-lighter: color.adjust($primary-color, $lightness: 10%);
 $primary-color-transparent: rgba($primary-color, 0.2);
