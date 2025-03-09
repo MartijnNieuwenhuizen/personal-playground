@@ -12,6 +12,13 @@ The code output is shit. I didn't provide any examples that should have set the 
 
 But the big surprise here is that the AI understands the generated code very well. And is able to modify this without any issues. Therefore, this is a very powerful tool if the code isn't doesn't have to be changed by a developer.
 
+### Approach
+
+- Write prompt
+- Accept all suggestion without review
+- Validate the changes work
+- If not, send errormessage as prompt and repeat
+
 (AI is taking over again).
 
 ## Introduction
