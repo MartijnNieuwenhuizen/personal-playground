@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchTasks, updateTask, Task } from "../domains/tasks/task.client";
+import { fetchTasks, Task } from "../domains/tasks/task.client";
 import TaskReview from "../components/TaskReview";
 
 export default function Page() {
@@ -11,72 +11,33 @@ export default function Page() {
   const [updateMessage, setUpdateMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadTasks = async () => {
-      setIsLoading(true);
-      try {
-        const results = await fetchTasks();
-        setTasks(results);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     loadTasks();
   }, []);
 
-  const handleTaskReviewComplete = async (
-    keptTasks: Task[],
-    changedTasks: {
-      original: Task;
-      enhanced: string;
-      addRobotLabel?: boolean;
-    }[]
-  ) => {
-    if (changedTasks.length === 0) {
-      setUpdateMessage("No tasks were changed.");
-      setTimeout(() => setUpdateMessage(null), 3000);
-      return;
-    }
-
+  const loadTasks = async () => {
     setIsLoading(true);
     try {
-      // Update each changed task
-      const updatePromises = changedTasks.map(
-        ({ original, enhanced, addRobotLabel }) => {
-          const updates: { content?: string; labels?: string[] } = {};
-
-          // Update content if it's different from the original
-          if (enhanced !== original.content) {
-            updates.content = enhanced;
-          }
-
-          // Add robot label if specified
-          if (addRobotLabel) {
-            const existingLabels = original.labels || [];
-            if (!existingLabels.includes("🤖")) {
-              updates.labels = [...existingLabels, "🤖"];
-            }
-          }
-
-          return updateTask(original.id, updates);
-        }
-      );
-
-      await Promise.all(updatePromises);
-
-      // Refresh the task list
-      const updatedTasks = await fetchTasks();
-      setTasks(updatedTasks);
-
-      setUpdateMessage(`Successfully updated ${changedTasks.length} task(s).`);
-      setTimeout(() => setUpdateMessage(null), 3000);
+      const results = await fetchTasks();
+      setTasks(results);
     } catch (err) {
-      setError(`Failed to update tasks: ${(err as Error).message}`);
+      setError((err as Error).message);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleTaskUpdated = (updatedTask: Task) => {
+    // Update the task in the local state
+    setTasks((currentTasks) =>
+      currentTasks.map((task) =>
+        task.id === updatedTask.id ? updatedTask : task
+      )
+    );
+  };
+
+  const handleReviewComplete = () => {
+    setUpdateMessage("Task review completed!");
+    setTimeout(() => setUpdateMessage(null), 3000);
   };
 
   if (isLoading) {
@@ -132,12 +93,19 @@ export default function Page() {
 
       {updateMessage && <div className="update-message">{updateMessage}</div>}
 
-      <TaskReview tasks={tasks} onComplete={handleTaskReviewComplete} />
+      <TaskReview
+        tasks={tasks}
+        onTaskUpdated={handleTaskUpdated}
+        onReviewComplete={handleReviewComplete}
+      />
 
       <ul className="task-list">
         {tasks.map((task) => (
           <li key={task.id} className="task-item">
             {task.content}
+            {task.labels && task.labels.includes("🤖") && (
+              <span className="robot-label">🤖</span>
+            )}
           </li>
         ))}
       </ul>
@@ -182,9 +150,16 @@ export default function Page() {
           padding: 15px;
           border-bottom: 1px solid #eee;
           transition: background-color 0.2s;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
         .task-item:hover {
           background-color: #f8f9fa;
+        }
+        .robot-label {
+          margin-left: 10px;
+          font-size: 18px;
         }
       `}</style>
     </div>

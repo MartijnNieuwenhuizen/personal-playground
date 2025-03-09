@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import { enhanceTaskDescription } from "../domains/openai/openai.client";
+import { updateTask } from "../domains/tasks/task.client";
 
 interface Task {
   id: string;
   content: string;
+  labels?: string[];
 }
 
 interface TaskReviewProps {
   tasks: Task[];
-  onComplete: (
-    keptTasks: Task[],
-    changedTasks: {
-      original: Task;
-      enhanced: string;
-      addRobotLabel?: boolean;
-    }[]
-  ) => void;
+  onTaskUpdated: (updatedTask: Task) => void;
+  onReviewComplete: () => void;
 }
 
-export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
+export default function TaskReview({
+  tasks,
+  onTaskUpdated,
+  onReviewComplete,
+}: TaskReviewProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [enhancedTask, setEnhancedTask] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [keptTasks, setKeptTasks] = useState<Task[]>([]);
-  const [changedTasks, setChangedTasks] = useState<
-    { original: Task; enhanced: string; addRobotLabel?: boolean }[]
-  >([]);
+  const [updateMessage, setUpdateMessage] = useState<string | null>(null);
 
   const currentTask = tasks[currentTaskIndex];
 
@@ -52,28 +49,56 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
     }
   };
 
-  const handleKeep = () => {
-    setChangedTasks([
-      ...changedTasks,
-      {
-        original: currentTask,
-        enhanced: currentTask.content,
-        addRobotLabel: true,
-      },
-    ]);
-    moveToNextTask();
+  const handleKeep = async () => {
+    if (!currentTask) return;
+
+    setIsLoading(true);
+    try {
+      // Add robot label to indicate it was reviewed
+      const existingLabels = currentTask.labels || [];
+      if (!existingLabels.includes("🤖")) {
+        const updatedTask = await updateTask(currentTask.id, {
+          labels: [...existingLabels, "🤖"],
+        });
+        onTaskUpdated(updatedTask);
+        setUpdateMessage("Task marked as reviewed");
+      }
+    } catch (error) {
+      console.error("Error updating task:", error);
+      setUpdateMessage("Failed to update task");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setUpdateMessage(null), 2000);
+      moveToNextTask();
+    }
   };
 
-  const handleChange = () => {
-    setChangedTasks([
-      ...changedTasks,
-      {
-        original: currentTask,
-        enhanced: enhancedTask,
-        addRobotLabel: true,
-      },
-    ]);
-    moveToNextTask();
+  const handleChange = async () => {
+    if (!currentTask) return;
+
+    setIsLoading(true);
+    try {
+      // Update content and add robot label
+      const existingLabels = currentTask.labels || [];
+      const updates: { content: string; labels?: string[] } = {
+        content: enhancedTask,
+      };
+
+      if (!existingLabels.includes("🤖")) {
+        updates.labels = [...existingLabels, "🤖"];
+      }
+
+      const updatedTask = await updateTask(currentTask.id, updates);
+      onTaskUpdated(updatedTask);
+      setUpdateMessage("Task updated successfully");
+    } catch (error) {
+      console.error("Error updating task:", error);
+      setUpdateMessage("Failed to update task");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setUpdateMessage(null), 2000);
+      moveToNextTask();
+    }
   };
 
   const moveToNextTask = () => {
@@ -81,14 +106,12 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
       setCurrentTaskIndex(currentTaskIndex + 1);
     } else {
       setIsOpen(false);
-      onComplete(keptTasks, changedTasks);
+      onReviewComplete();
     }
   };
 
   const startReview = () => {
     setCurrentTaskIndex(0);
-    setKeptTasks([]);
-    setChangedTasks([]);
     setIsOpen(true);
   };
 
@@ -104,6 +127,10 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
             <h2>
               Task Review ({currentTaskIndex + 1}/{tasks.length})
             </h2>
+
+            {updateMessage && (
+              <div className="update-message">{updateMessage}</div>
+            )}
 
             <div className="task-container">
               <div className="task-box original">
@@ -162,6 +189,14 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
           display: flex;
           flex-direction: column;
           gap: 20px;
+        }
+        .update-message {
+          background-color: #d4edda;
+          color: #155724;
+          padding: 10px 15px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          text-align: center;
         }
         .task-container {
           display: flex;
