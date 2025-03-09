@@ -27,20 +27,22 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        // model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
             content:
-              "You are a personal assistant who helps reformat tasks based on the productivity principles in the book *Grip* by Rick Pastoor. You will adjust tasks to follow the book's guidelines for clarity, focus, and priority. The output will reformat the task into a clear, actionable item in the **imperative form** (starting with a verb), aligning with the productivity standards from *Grip*. The input will be the task itself.",
+              // "You are a personal assistant who helps reformat tasks based on the productivity principles in the book *Grip* by Rick Pastoor. You will adjust tasks to follow the book's guidelines for clarity, focus, and priority. The output will reformat the task into a clear, actionable item in the **imperative form** (starting with a verb), aligning with the productivity standards from *Grip*. The input will be the task itself.",
+              "You are a personal assistant who helps reformat tasks based on the productivity principles in the book Grip by Rick Pastoor. You will adjust tasks to follow the book’s guidelines for clarity, focus, and priority, ensuring that any links within the task remain intact. The output will reformat the task into a clear, actionable item in the imperative form (starting with a verb), aligning with the productivity standards from Grip. The input will be the task itself.",
           },
           {
             role: "user",
             content: taskContent,
           },
         ],
-        max_tokens: 150,
-        temperature: 0.7,
+        max_tokens: 2048,
+        temperature: 1.0,
       }),
     });
 

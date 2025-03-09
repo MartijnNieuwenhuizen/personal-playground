@@ -29,8 +29,8 @@ export async function GET() {
 
   const allTasks = await fetchAllTasks();
 
-  const cappedTasks = allTasks.slice(0, 3);
+  // const cappedTasks = allTasks.slice(0, 3);
 
-  // return NextResponse.json({ results: allTasks });
-  return NextResponse.json({ results: cappedTasks });
+  return NextResponse.json({ results: allTasks });
+  // return NextResponse.json({ results: cappedTasks });
 }

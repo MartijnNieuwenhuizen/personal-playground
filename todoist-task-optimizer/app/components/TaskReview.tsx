@@ -26,7 +26,13 @@ export default function TaskReview({
   const [isLoading, setIsLoading] = useState(false);
   const [updateMessage, setUpdateMessage] = useState<string | null>(null);
 
-  const currentTask = tasks[currentTaskIndex];
+  // Filter out tasks that already have the 🤖 label
+  const tasksToReview = tasks.filter((task) => {
+    const labels = task.labels || [];
+    return !labels.includes("🤖");
+  });
+
+  const currentTask = tasksToReview[currentTaskIndex];
 
   useEffect(() => {
     if (isOpen && currentTask) {
@@ -102,7 +108,7 @@ export default function TaskReview({
   };
 
   const moveToNextTask = () => {
-    if (currentTaskIndex < tasks.length - 1) {
+    if (currentTaskIndex < tasksToReview.length - 1) {
       setCurrentTaskIndex(currentTaskIndex + 1);
     } else {
       setIsOpen(false);
@@ -117,15 +123,22 @@ export default function TaskReview({
 
   return (
     <>
-      <button onClick={startReview} className="review-button">
-        Review Tasks
+      <button
+        onClick={startReview}
+        className="review-button"
+        disabled={tasksToReview.length === 0}
+      >
+        Review Tasks{" "}
+        {tasksToReview.length > 0
+          ? `(${tasksToReview.length})`
+          : "(No tasks to review)"}
       </button>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {currentTask ? (
           <div className="task-review">
             <h2>
-              Task Review ({currentTaskIndex + 1}/{tasks.length})
+              Task Review ({currentTaskIndex + 1}/{tasksToReview.length})
             </h2>
 
             {updateMessage && (
@@ -184,6 +197,10 @@ export default function TaskReview({
         }
         .review-button:hover {
           background-color: #2980b9;
+        }
+        .review-button:disabled {
+          background-color: #bdc3c7;
+          cursor: not-allowed;
         }
         .task-review {
           display: flex;
