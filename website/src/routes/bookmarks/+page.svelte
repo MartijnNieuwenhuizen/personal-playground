@@ -98,16 +98,19 @@
 		overflow: hidden;
 		max-width: 100vw;
 	}
+
 	h1 {
-		line-height: 1.2;
 		margin: 0;
+
+		/* Pull title up based on the vw, because the font-size is based on the vw. */
+		margin-top: -3vw;
 		padding: 0;
-		text-align: center;
 		font-family: var(--serif);
 		font-size: 23.982vw;
 		font-size: 23.982cqw;
-		/* Pull title up based on the vw, because the font-size is based on the vw. */
-		margin-top: -3vw;
+		line-height: 1.2;
+		text-align: center;
+
 		/* font-family: var(--sans-serif);
 		font-weight: var(--font-weight-normal);
 		font-size: 49.816999999999986vw;
@@ -119,33 +122,38 @@
 		padding: 0;
 		border: 0;
 	}
+
 	.overflow {
 		overflow-x: auto;
 		max-width: 100vw;
 	}
+
 	.overflow-list {
 		display: flex;
 		padding: 0 0.2rem 1rem;
 	}
+
 	legend {
 		font-size: 14px;
 	}
 
 	input {
-		position: absolute;
 		opacity: 0;
+		position: absolute;
 	}
+
 	label {
-		white-space: nowrap;
 		position: relative;
 		display: inline-block;
+		margin-left: -2px;
 		padding: 1em 1.1em;
 		font-size: 14px;
 		line-height: 1;
 		text-decoration: none;
+		white-space: nowrap;
 		border: 2px solid black;
-		margin-left: -2px;
 	}
+
 	label:hover {
 		cursor: pointer;
 	}
@@ -153,12 +161,15 @@
 	input[data-active='false'] + label {
 		opacity: 0.5;
 	}
+
 	input[data-active='true'] + label {
 		text-decoration: underline;
 	}
+
 	[data-current-tag='all'] input[data-active='true'] + label {
 		text-decoration: none;
 	}
+
 	.overflow-list:hover input:not([data-active='true']) + label {
 		opacity: 0.5;
 	}

@@ -28,6 +28,3 @@
 	<FadeInTest />
 	<FadeInTest />
 </ExperimentItem>
-
-<style>
-</style>

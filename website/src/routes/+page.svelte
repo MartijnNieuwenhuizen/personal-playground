@@ -234,5 +234,5 @@
 </article>
 
 <style lang="scss">
-	@import './style.scss';
+	@import './style';
 </style>

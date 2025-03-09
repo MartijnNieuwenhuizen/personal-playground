@@ -60,21 +60,21 @@
      */
 	.menu-toggle-button {
 		position: relative;
-		border: none;
 		background-color: transparent;
 		color: $black;
+		border: none;
 		transition: color 0.2s;
 	}
 
 	// Ensure the click target of at least 44x44px
-	.menu-toggle-button:after {
+	.menu-toggle-button::after {
 		content: '';
-		width: 44px;
-		height: 44px;
-		display: block;
 		position: absolute;
 		top: 50%;
 		left: 50%;
+		display: block;
+		width: 44px;
+		height: 44px;
 		transform: translate(-50%, -50%);
 	}
 
@@ -83,6 +83,7 @@
 		color: var(--expressive-color);
 		cursor: pointer;
 	}
+
 	:global([data-show-menu='true']) .menu-toggle-button:hover,
 	:global([data-show-menu='true']) .menu-toggle-button:focus-visible {
 		color: var(--white);
@@ -104,10 +105,12 @@
 		transform-origin: 2px 4px;
 		transition: 0.3s ease-in-out transform;
 	}
+
 	.hamburger__bottom {
 		transform-origin: 2px 12px;
 		transition: 0.3s ease-in-out transform;
 	}
+
 	.hamburger__center {
 		transition: 0.3s ease-in-out opacity;
 	}
@@ -119,10 +122,12 @@
 		transform: rotate(45deg);
 		transition: 0.3s ease-in-out transform;
 	}
+
 	.hamburger[data-is-cross='true'] .hamburger__bottom {
 		transform: rotate(-45deg);
 		transition: 0.3s ease-in-out transform;
 	}
+
 	.hamburger[data-is-cross='true'] .hamburger__center {
 		opacity: 0;
 		transition: 0.15s ease-in-out opacity;

@@ -101,12 +101,15 @@
 	img {
 		min-width: 10rem;
 	}
+
 	h2 {
 		@include body-5;
-		font-size: 5rem;
+
 		font-family: var(--sans-serif);
+		font-size: 5rem;
 		text-align: center;
 	}
+
 	p {
 		font-size: 2rem;
 	}

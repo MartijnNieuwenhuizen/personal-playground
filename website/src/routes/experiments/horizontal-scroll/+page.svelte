@@ -53,10 +53,10 @@
 	.horizontal-scroll {
 		overflow: visible;
 		height: var(--container-width);
-
 		view-timeline-name: --horizontal-scroll-timeline;
 		view-timeline-axis: block;
 	}
+
 	.horizontal-scroll__sticky {
 		overflow-x: hidden;
 		position: sticky;
@@ -64,43 +64,51 @@
 		width: 100vw;
 		height: 100vh;
 	}
+
 	.horizontal-scroll__inner {
 		width: var(--container-width);
 		height: 100vh;
-
 		animation: linear scroll-horizontal forwards;
 		animation-timeline: --horizontal-scroll-timeline;
 		animation-range: contain 0% contain 100%;
-
 		will-change: transform;
 	}
+
 	.horizontal-scroll__list {
 		display: flex;
 		flex-direction: row;
 	}
+
 	.horizontal-scroll__list-item {
+		flex-shrink: 0;
 		width: 80vw;
 		height: 100vh;
-		flex-shrink: 0;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(1) {
 		background-color: #f1c40f;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(2) {
 		background-color: #e67e22;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(3) {
 		background-color: #e74c3c;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(4) {
 		background-color: #9b59b6;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(5) {
 		background-color: #3498db;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(6) {
 		background-color: #2ecc71;
 	}
+
 	.horizontal-scroll__list-item:nth-of-type(7) {
 		background-color: #1abc9c;
 	}

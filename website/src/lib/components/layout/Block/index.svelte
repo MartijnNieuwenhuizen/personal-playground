@@ -12,5 +12,5 @@
 <div class="block" data-size={size}>{@render children?.()}</div>
 
 <style lang="scss">
-	@import './style.scss';
+	@import './style';
 </style>

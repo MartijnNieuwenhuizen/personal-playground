@@ -51,29 +51,31 @@
 
 <style>
 	.scroll-hight {
-		display: block;
 		position: relative;
+		display: block;
 		min-height: 400vh;
 	}
+
 	.container {
 		position: sticky;
 		top: calc((100vh - 50vmin) - 25%);
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 	}
+
 	.ball {
 		width: 50vmin;
 		height: 50vmin;
-		border-radius: 50%;
 		background: radial-gradient(
 			circle at 65% 25%,
 			#c8e6cf 0%,
-			#ffffff 45%,
-			#ffffff 60%,
+			#fff 45%,
+			#fff 60%,
 			#b478c6 70%,
 			#e3694e 80%
 		);
+		border-radius: 50%;
 	}
 
 	:global(body) {
@@ -84,6 +86,7 @@
 		0% {
 			transform: rotate(0deg);
 		}
+
 		100% {
 			transform: rotate(360deg);
 		}
@@ -94,24 +97,26 @@
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --rotate-gradient;
 	}
+
 	@keyframes change-colors {
 		0% {
 			background: radial-gradient(
 				circle at 65% 25%,
 				#c8e6cf 0%,
-				#ffffff 45%,
-				#ffffff 60%,
+				#fff 45%,
+				#fff 60%,
 				#b478c6 70%,
 				#e3694e 80%
 			);
 		}
+
 		100% {
 			background: radial-gradient(
 				circle at 65% 25%,
 				#e3694e 0%,
 				#b478c6 45%,
-				#ffffff 60%,
-				#ffffff 70%,
+				#fff 60%,
+				#fff 70%,
 				#c8e6cf 80%
 			);
 		}

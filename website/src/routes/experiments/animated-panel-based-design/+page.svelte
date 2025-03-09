@@ -233,12 +233,10 @@
 
 	.panels-grid {
 		display: grid;
-		grid-template-columns: auto 1fr auto;
-		grid-template-rows: auto 1fr;
+		grid-template: auto 1fr / auto 1fr auto;
 		grid-template-areas:
 			'control-panel control-panel control-panel'
 			'side-panel main-panel annotation-panel';
-
 		transition: grid-template-columns 0.2s;
 	}
 
@@ -255,6 +253,7 @@
 	.control-panel {
 		grid-area: control-panel;
 	}
+
 	.control-panel form {
 		display: flex;
 		gap: 2rem;
@@ -265,20 +264,23 @@
 	.main-panel,
 	.annotation-panel {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 	}
+
 	.side-panel {
 		grid-area: side-panel;
 		background-color: #d78000;
 		color: white;
 		transition: transform ease-in-out 0.2s;
 	}
+
 	.main-panel {
 		grid-area: main-panel;
 		background-color: #003770;
 		color: white;
 	}
+
 	.annotation-panel {
 		grid-area: annotation-panel;
 		background-color: white;
@@ -289,15 +291,13 @@
 		position: fixed;
 		bottom: var(--floating-panel-offset);
 		left: 50vw;
+		grid-area: action-panel;
 		min-width: 60vw;
 		padding: 1rem;
-
-		transform: translate(-50%, 0);
-		grid-area: action-panel;
 		background-color: #23a1be;
 		color: white;
 		border-radius: 16px;
-
+		transform: translate(-50%, 0);
 		transition: transform ease-in-out 0.2s;
 	}
 
@@ -308,22 +308,26 @@
 	.animate-with-css-grid[data-grid='false-false'] {
 		grid-template-columns: 0 1fr 0;
 	}
+
 	.animate-with-css-grid[data-grid='true-false'] {
 		grid-template-columns: 20vw 1fr 0;
 	}
+
 	.animate-with-css-grid[data-grid='false-true'] {
 		grid-template-columns: 0 1fr 20vw;
 	}
+
 	.animate-with-css-grid[data-grid='true-true'] {
 		grid-template-columns: 20vw 1fr 20vw;
 	}
 
 	.panels-flexbox-container {
-		width: 100%;
 		display: flex;
 		flex-direction: row;
+		width: 100%;
 		background: lime;
 	}
+
 	.panels-flexbox-container > div {
 		min-height: 100vh;
 	}
@@ -334,11 +338,13 @@
 		color: white;
 		transition: width ease-in-out 0.2s;
 	}
+
 	.panels-flexbox-container .annotation-panel {
 		width: 0;
 		background-color: white;
 		transition: width ease-in-out 0.2s;
 	}
+
 	.panels-flexbox-container .main-panel {
 		flex: 1;
 		background-color: #003770;
@@ -349,6 +355,7 @@
 	.panels-flexbox-container .annotation-panel[data-visible='true'] {
 		width: calc-size(auto, size);
 	}
+
 	.panels-flexbox-container .side-panel[data-visible='true'] {
 		width: calc-size(auto, size);
 	}
@@ -356,15 +363,17 @@
 	// panels-grid-with-child-sizes
 	.panels-grid-with-child-sizes-container {
 		display: grid;
-		grid-template-columns: max-content 1fr max-content;
 		grid-template-areas: 'side-panel main-panel annotation-panel';
+		grid-template-columns: max-content 1fr max-content;
 		transition: grid-template-columns 0.2s;
 		transition-behavior: allow-discrete;
 	}
+
 	.panels-grid-with-child-sizes-container [data-grow] {
 		transition: width ease-in-out 0.2s;
 		transition-behavior: allow-discrete;
 	}
+
 	.panels-grid-with-child-sizes-container [data-grow='true'] {
 		width: 20vw;
 	}

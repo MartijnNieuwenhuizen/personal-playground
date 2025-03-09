@@ -19,10 +19,12 @@
 		border: 3px solid #fff;
 		border-radius: rem(30);
 		transform: translateY(-200%);
+
 		@include bp-min(small) {
 			margin-top: gap(4);
 		}
 	}
+
 	.skip-link:focus,
 	.skip-link:active {
 		opacity: 1;

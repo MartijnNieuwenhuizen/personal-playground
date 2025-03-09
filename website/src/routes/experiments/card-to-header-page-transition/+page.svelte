@@ -214,8 +214,8 @@ h1 span:nth-of-type() {
 	.cards {
 		display: grid;
 		grid-gap: 1rem;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 		list-style: none;
 		text-align: center;
 
@@ -234,6 +234,7 @@ h1 span:nth-of-type() {
 
 	.cards figcaption {
 		@include heading-3;
+
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -242,15 +243,17 @@ h1 span:nth-of-type() {
 		background-color: var(--background-color);
 		transform: skewX(-10deg) rotate(-10deg) translateY(-2rem);
 	}
+
 	.cards span {
 		display: block;
 		transition: transform 0.2s ease-out;
 	}
 
 	.cards li:hover figcaption span {
-		transform: skewX(10deg);
 		text-decoration: underline;
+		transform: skewX(10deg);
 	}
+
 	.cards a {
 		z-index: 2;
 	}

@@ -23,12 +23,13 @@
 
 <style>
 	.hover-fade-list {
-		list-style: none;
-		padding: 0;
-		margin: 2rem 0 0;
 		display: grid;
 		grid-template-columns: 1fr auto;
+		margin: 2rem 0 0;
+		padding: 0;
+		list-style: none;
 	}
+
 	:global(.hover-fade-list li) {
 		display: grid;
 		grid-template-columns: subgrid;

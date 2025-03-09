@@ -37,7 +37,12 @@
 	});
 </script>
 
-<span role="presentation" style="--ytlc: {ytlc}; --ytuc: {ytuc}; --yopq: {yopq};">
+<span
+	role="presentation"
+	style="
+
+--ytlc: {ytlc}; --ytuc: {ytuc}; --yopq: {yopq};"
+>
 	<span class="animation-element">{@render children()}</span>
 </span>
 
@@ -55,9 +60,8 @@
 	}
 
 	.animation-element {
-		font-family: 'Roboto flex';
+		font-family: 'Roboto flex', sans-serif;
 		font-size: 10vw;
-
 		font-variation-settings:
 			'YTLC' var(--ytlc, 416),
 			'YTUC' var(--ytuc, 528),

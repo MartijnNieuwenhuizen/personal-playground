@@ -1,6 +1,10 @@
 module.exports = {
 	plugins: ['stylelint-prettier', 'stylelint-order'],
-	extends: ['stylelint-prettier/recommended', 'stylelint-config-standard-scss'],
+	extends: [
+		'stylelint-prettier/recommended',
+		'stylelint-config-standard-scss',
+		'stylelint-config-html/svelte'
+	],
 	ignoreFiles: ['build/**/*'],
 
 	rules: {
@@ -11,6 +15,9 @@ module.exports = {
 		'selector-pseudo-element-no-unknown': null,
 		'selector-class-pattern': null,
 		'custom-property-no-missing-var-function': null,
+		'number-max-precision': null,
+		'scss/no-global-function-names': null,
+		'scss/dollar-variable-pattern': null,
 
 		'order/order': [
 			[

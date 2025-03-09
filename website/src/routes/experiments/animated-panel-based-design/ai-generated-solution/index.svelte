@@ -92,16 +92,18 @@
 	article {
 		position: relative;
 	}
+
 	.layout {
+		overflow: hidden;
+		position: relative;
 		display: flex;
 		width: 100%;
 		height: 100vh;
-		position: relative;
-		overflow: hidden;
 	}
 
 	.panel {
 		height: 100%;
+
 		/* Removed the CSS transition since we're using spring animation */
 	}
 
@@ -113,8 +115,8 @@
 
 	.middle-panel {
 		flex: 1;
-		container-type: inline-size;
 		background-color: white;
+		container-type: inline-size;
 	}
 
 	.panel-content {
@@ -141,18 +143,18 @@
 		position: absolute;
 		top: 1rem;
 		left: 50%;
-		transform: translateX(-50%);
 		display: flex;
 		gap: 1rem;
+		transform: translateX(-50%);
 	}
 
 	button {
 		padding: 0.5rem 1rem;
 		background-color: #333;
 		color: white;
+		cursor: pointer;
 		border: none;
 		border-radius: 4px;
-		cursor: pointer;
 	}
 
 	button:hover {

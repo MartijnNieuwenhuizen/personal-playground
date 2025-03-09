@@ -35,11 +35,13 @@
 <style lang="scss">
 	ul {
 		@include bare-list;
+
 		display: flex;
 		flex-direction: column;
 		gap: gap(2);
 		color: white;
 	}
+
 	nav + nav {
 		margin-top: gap(8);
 	}
@@ -48,6 +50,7 @@
 		position: relative;
 		text-decoration: none;
 	}
+
 	a::before {
 		content: '👉🏻';
 		opacity: 0;

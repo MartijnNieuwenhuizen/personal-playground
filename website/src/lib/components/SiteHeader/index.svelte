@@ -41,6 +41,7 @@
 		display: grid;
 		grid-template-columns: 1fr auto;
 	}
+
 	.menu-toggle {
 		z-index: 10;
 		position: relative;
@@ -48,28 +49,29 @@
 	}
 
 	.primary-menu ul {
-		list-style: none;
 		display: flex;
-		align-items: center;
 		gap: 0.5rem 2rem;
+		align-items: center;
 		margin: 0 auto;
 		padding: 1rem var(--block-padding);
+		list-style: none;
 
 		@include bp-min(small) {
-			justify-content: center;
 			gap: 0.5rem 3rem;
+			justify-content: center;
 		}
 	}
 
 	li {
-		flex-shrink: 0;
 		flex-grow: 0;
+		flex-shrink: 0;
 	}
 
 	a {
 		position: relative;
 		text-decoration: none;
 	}
+
 	a::before {
 		content: '👉';
 		opacity: 0;

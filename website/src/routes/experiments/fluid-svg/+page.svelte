@@ -129,21 +129,23 @@
 
 	.container h2 {
 		@include heading-2;
+
 		margin: 0;
 		padding: 0;
 	}
 
 	.container .content {
 		z-index: 2;
+		align-self: center;
 		max-width: 40rem;
 		padding: var(--block-padding);
-		align-self: center;
 		color: black;
 	}
+
 	.container .content,
 	.container svg {
-		grid-column: 1;
 		grid-row: 1;
+		grid-column: 1;
 	}
 
 	.container svg {

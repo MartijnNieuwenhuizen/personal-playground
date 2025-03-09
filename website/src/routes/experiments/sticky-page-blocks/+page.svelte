@@ -248,5 +248,5 @@ translation by H. Rackham.
 </Block>
 
 <style lang="scss">
-	@import './style.scss';
+	@import './style';
 </style>

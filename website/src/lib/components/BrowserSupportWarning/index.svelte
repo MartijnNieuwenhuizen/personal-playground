@@ -30,15 +30,15 @@
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		display: none;
 		padding: gap(6);
 		background-color: $white;
-		box-shadow: 0 0 10px rgba($black, 0.1);
-		border-radius: 5px;
 		text-align: center;
-
-		display: none;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba($black, 0.1);
+		transform: translate(-50%, -50%);
 	}
+
 	aside[data-visible='true'] {
 		display: block;
 	}

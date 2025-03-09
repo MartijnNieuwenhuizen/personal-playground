@@ -165,6 +165,7 @@
 			translate: 0 -100vh;
 		}
 	}
+
 	@keyframes rocket-fumes {
 		0% {
 			scale: 1 0;
@@ -183,12 +184,10 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
-
 		display: inline-block;
-		rotate: -45deg;
 		font-size: 3rem;
-
 		animation: rocket-scrollbar linear forwards;
+		rotate: -45deg;
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --opposite-scrollbar;
 	}
@@ -198,11 +197,10 @@
 		position: fixed;
 		bottom: 0;
 		left: 1rem;
-		height: 100vh;
 		width: 1rem;
+		height: 100vh;
 		background-color: black;
 		transform-origin: bottom center;
-
 		animation: rocket-fumes linear forwards;
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --opposite-scrollbar;

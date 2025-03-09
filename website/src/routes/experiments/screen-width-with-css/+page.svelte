@@ -19,6 +19,7 @@
 		inherits: true;
 		initial-value: 100vw;
 	}
+
 	@property --container-width {
 		syntax: '<length>';
 		inherits: true;
@@ -28,27 +29,28 @@
 	h2 {
 		text-align: center;
 	}
+
 	section {
 		--final-screen-width: tan(atan2(var(--screen-width), 1px));
 		--final-container-width: tan(atan2(var(--container-width), 1px));
 
-		container-type: inline-size;
-
-		min-height: 40vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		min-height: 40vh;
+		container-type: inline-size;
 	}
 
-	.screen-width:after {
+	.screen-width::after {
 		content: "Sorry, your browser doesn't support CSS functions";
-		counter-reset: screen-width var(--final-screen-width);
 		content: counter(screen-width);
+		counter-reset: screen-width var(--final-screen-width);
 	}
-	.container-width:after {
+
+	.container-width::after {
 		content: "Sorry, your browser doesn't support CSS functions";
-		counter-reset: container-width var(--final-container-width);
 		content: counter(container-width);
+		counter-reset: container-width var(--final-container-width);
 	}
 </style>

@@ -52,11 +52,50 @@
 </ExperimentItem>
 
 <style lang="scss">
+
+
+	@keyframes version-1-top {
+		to {
+			transform: var(--skew) translate(var(--offset), var(--offset));
+		}
+	}
+
+	@keyframes version-1-middle {
+		to {
+			transform: var(--skew) translate(0, 0);
+		}
+	}
+
+	@keyframes version-1-bottom {
+		to {
+			transform: var(--skew) translate(calc(var(--offset) * -1), calc(var(--offset) * -1));
+		}
+	}
+
+	@keyframes version-2-top {
+		to {
+			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(var(--offset));
+		}
+	}
+
+	@keyframes version-2-middle {
+		to {
+			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(0);
+		}
+	}
+
+	@keyframes version-2-bottom {
+		to {
+			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(calc(var(--offset) * -1));
+		}
+	}
+
 	.container {
 		position: relative;
 		height: 200vh;
 		view-timeline-name: --container-scrollbar;
 	}
+
 	.version-1 {
 		// --skew: skew(-35deg, -15deg);
 		--skew: skew(-40deg, -10deg);
@@ -65,7 +104,6 @@
 
 		position: sticky;
 		top: 4rem;
-
 		display: grid;
 		grid-template-rows: var(--size);
 		grid-template-columns: var(--size);
@@ -74,28 +112,13 @@
 		// Ensure we can use container sizes.
 		container-type: inline-size;
 	}
+
 	.version-1__item {
-		// Ensure they are all on the same position.
-		grid-column: 1;
 		grid-row: 1;
 
+		// Ensure they are all on the same position.
+		grid-column: 1;
 		transform: skew(0) translate(0, 0);
-	}
-
-	@keyframes version-1-top {
-		to {
-			transform: var(--skew) translate(var(--offset), var(--offset));
-		}
-	}
-	@keyframes version-1-middle {
-		to {
-			transform: var(--skew) translate(0, 0);
-		}
-	}
-	@keyframes version-1-bottom {
-		to {
-			transform: var(--skew) translate(calc(var(--offset) * -1), calc(var(--offset) * -1));
-		}
 	}
 
 	.version-1__item:nth-of-type(1) {
@@ -106,6 +129,7 @@
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --container-scrollbar;
 	}
+
 	.version-1__item:nth-of-type(2) {
 		background-color: lime;
 		animation: version-1-middle linear forwards;
@@ -114,6 +138,7 @@
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --container-scrollbar;
 	}
+
 	.version-1__item:nth-of-type(3) {
 		background-color: blueviolet;
 		animation: version-1-bottom linear forwards;
@@ -134,7 +159,6 @@
 
 		position: sticky;
 		top: 4rem;
-
 		display: grid;
 		grid-template-rows: var(--size);
 		grid-template-columns: var(--size);
@@ -143,30 +167,16 @@
 		// Ensure we can use container sizes.
 		container-type: inline-size;
 	}
-	@keyframes version-2-top {
-		to {
-			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(var(--offset));
-		}
-	}
-	@keyframes version-2-middle {
-		to {
-			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(0);
-		}
-	}
-	@keyframes version-2-bottom {
-		to {
-			transform: rotateX(var(--rotate)) skew(var(--skew)) translateY(calc(var(--offset) * -1));
-		}
-	}
 
 	.version-2__item {
-		// Ensure they are all on the same position.
-		grid-column: 1;
 		grid-row: 1;
 
-		transform-style: preserve-3d;
+		// Ensure they are all on the same position.
+		grid-column: 1;
 		transform: rotateX(0deg) skew(0deg) translateY(0);
+		transform-style: preserve-3d;
 	}
+
 	.version-2__item:nth-of-type(1) {
 		animation: version-2-top linear forwards;
 
@@ -174,6 +184,7 @@
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --container-scrollbar;
 	}
+
 	.version-2__item:nth-of-type(2) {
 		animation: version-2-middle linear forwards;
 
@@ -181,6 +192,7 @@
 		animation-range: 100vh calc(100% - 100vh);
 		animation-timeline: --container-scrollbar;
 	}
+
 	.version-2__item:nth-of-type(3) {
 		animation: version-2-bottom linear forwards;
 

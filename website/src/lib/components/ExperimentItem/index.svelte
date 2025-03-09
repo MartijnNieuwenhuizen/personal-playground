@@ -35,21 +35,22 @@
 		--experiment-item-border-radius: 0px;
 		--experiment-item-padding: 0px;
 
-		height: 100%;
 		display: grid;
 		grid-template-rows: auto 1fr;
+		height: 100%;
 	}
+
 	.new-content-part {
-		border-radius: var(--experiment-item-border-radius) var(--experiment-item-border-radius) 0 0;
 		padding: var(--experiment-item-padding);
 		background-color: white;
+		border-radius: var(--experiment-item-border-radius) var(--experiment-item-border-radius) 0 0;
 	}
 
 	section[data-show-page-effect='true'] {
 		--experiment-item-border-radius: 40px;
 		--experiment-item-padding: 40px;
 
-		@media (min-width: 800px) {
+		@media (width >= 800px) {
 			--experiment-item-border-radius: 60px;
 		}
 	}

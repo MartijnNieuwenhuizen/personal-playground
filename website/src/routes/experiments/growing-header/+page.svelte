@@ -118,15 +118,18 @@
 		from {
 			transform: scale(1);
 		}
+
 		to {
 			transform: scale(8);
 		}
 	}
-	@media screen and (min-width: 768px) {
+
+	@media screen and (width >= 768px) {
 		@keyframes grow-on-scroll {
 			from {
 				transform: scale(1);
 			}
+
 			to {
 				transform: scale(12);
 			}
@@ -135,7 +138,6 @@
 
 	.container {
 		overflow: hidden;
-
 		view-timeline-name: --growing-header;
 	}
 
@@ -144,24 +146,24 @@
 		font-size: 1.2rem;
 		text-align: center;
 		transform-origin: 43% center;
-
 		animation: grow-on-scroll linear forwards;
 		animation-timeline: --growing-header;
 		animation-range: 80vh 100vh;
 
-		@media screen and (min-width: 768px) {
+		@media screen and (width >= 768px) {
 			font-size: 2rem;
 			transform-origin: 47% center;
 			animation-range: 50vh 80vh;
 		}
 	}
 
-	ol ol li {
-		font-size: 80%;
-		margin-bottom: 0;
-	}
 	ol li {
 		margin-bottom: 1rem;
+	}
+
+	ol ol li {
+		margin-bottom: 0;
+		font-size: 80%;
 	}
 
 	:is(:global(pre + h2)),
@@ -171,9 +173,10 @@
 	}
 
 	:global(pre code) {
+		overflow-x: auto;
+
 		// @TODO: Improve this, this is not the way to solve this issue!
 		// And it doesn't work with the scrollbar.
 		max-width: calc(100vw - (var(--block-padding) * 2));
-		overflow-x: auto;
 	}
 </style>

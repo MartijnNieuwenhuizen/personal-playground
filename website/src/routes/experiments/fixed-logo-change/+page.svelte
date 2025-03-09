@@ -57,23 +57,96 @@
 </ExperimentItem>
 
 <style lang="scss">
+
+
+	/**
+	 * Custom logo 1
+	 */
+	@keyframes fade-on-scroll {
+		0% {
+			opacity: 1;
+			max-width: 5rem;
+		}
+
+		80% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 0;
+			max-width: 0;
+		}
+	}
+
+	/**
+	 * Custom logo 2
+	 */
+	@keyframes top-change {
+		0% {
+			top: 0;
+			left: 0;
+		}
+
+		100% {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	@keyframes middle-change {
+		0% {
+			top: 2.5rem;
+			left: 0;
+		}
+
+		100% {
+			top: 0;
+			left: 2rem;
+		}
+	}
+
+	@keyframes bottom-change {
+		0% {
+			top: 5rem;
+			left: 0;
+		}
+
+		100% {
+			top: 0;
+			left: 4rem;
+		}
+	}
+
+	@keyframes height-change {
+		from {
+			min-height: 8rem;
+		}
+
+		to {
+			min-height: 3rem;
+		}
+	}
+
 	.container {
 		position: relative;
 		min-height: 300vh;
 		view-timeline-name: --header-logo-timeline;
 	}
+
 	.sticky {
 		position: sticky;
 		top: 0;
 	}
+
 	nav {
-		width: 100%;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		justify-content: space-between;
+		width: 100%;
 		padding: 1rem;
 		background-color: #f4f4f4;
 	}
+
 	ul {
 		display: flex;
 		gap: 1rem;
@@ -85,30 +158,15 @@
 	 */
 	.custom-logo {
 		font-size: 3.5rem;
-		letter-spacing: -0.05em;
 		line-height: 1;
+		letter-spacing: -0.05em;
 	}
+
 	.custom-logo span {
 		color: transparent;
 		-webkit-text-stroke: 1.5px var(--expressive-color);
 	}
 
-	/**
-	 * Custom logo 1
-	 */
-	@keyframes fade-on-scroll {
-		0% {
-			opacity: 1;
-			max-width: 5rem;
-		}
-		80% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 0;
-			max-width: 0;
-		}
-	}
 	.custom-logo-1__fade {
 		display: inline-block;
 		animation: fade-on-scroll linear forwards;
@@ -116,47 +174,6 @@
 		animation-range: 100vh 130vh;
 	}
 
-	/**
-	 * Custom logo 2
-	 */
-	@keyframes top-change {
-		0% {
-			top: 0;
-			left: 0;
-		}
-		100% {
-			top: 0;
-			left: 0;
-		}
-	}
-	@keyframes middle-change {
-		0% {
-			top: 2.5rem;
-			left: 0;
-		}
-		100% {
-			top: 0;
-			left: 2rem;
-		}
-	}
-	@keyframes bottom-change {
-		0% {
-			top: 5rem;
-			left: 0rem;
-		}
-		100% {
-			top: 0rem;
-			left: 4rem;
-		}
-	}
-	@keyframes height-change {
-		from {
-			min-height: 8rem;
-		}
-		to {
-			min-height: 3rem;
-		}
-	}
 	.custom-logo-2 {
 		position: relative;
 		min-height: 8rem;
@@ -164,10 +181,12 @@
 		animation-range: 100vh 130vh;
 		animation-timeline: --header-logo-timeline;
 	}
+
 	.custom-logo-2 > span {
 		position: absolute;
 		left: 0;
 	}
+
 	.custom-logo-2 > span:nth-of-type(1) {
 		top: 0;
 
@@ -176,12 +195,14 @@
 		animation-range: 100vh 130vh;
 		animation-timeline: --header-logo-timeline;
 	}
+
 	.custom-logo-2 > span:nth-of-type(2) {
 		top: 2.5rem;
 		animation: middle-change linear forwards;
 		animation-range: 100vh 130vh;
 		animation-timeline: --header-logo-timeline;
 	}
+
 	.custom-logo-2 > span:nth-of-type(3) {
 		top: 5rem;
 		animation: bottom-change linear forwards;

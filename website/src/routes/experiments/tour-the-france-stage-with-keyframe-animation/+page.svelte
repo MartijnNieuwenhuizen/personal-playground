@@ -25,24 +25,6 @@
 </ExperimentItem>
 
 <style lang="scss">
-	:global(html) {
-		/* @TODO: Make this scoped to a component! */
-		scroll-timeline: --stage-timeline;
-	}
-
-	.container {
-		position: relative;
-		min-height: 600vh;
-	}
-	.sticky {
-		position: sticky;
-		top: 30%;
-
-		/* Create container so we can use container-relative units */
-		container-type: size;
-		aspect-ratio: 4 / 1;
-	}
-
 	$stage-dots: (
 		(0, 63),
 		(3, 48),
@@ -70,41 +52,24 @@
 	// Create a new list with percentages.
 	// Outcome: 0%, 63%, 3%, 48%, 12%, 76% etc.
 	$test: ();
-	@for $i from 1 through length($stage-dots) {
-		$item: nth($stage-dots, $i);
-		$test: append($test, calc(#{nth($item, 1)} * 1%) calc(#{nth($item, 2)} * 1%), comma);
-	}
+
 	// Append the two missing shapes for the clip-path (bottom-right and bottom-left).
 	$test: append($test, 100% 100%, comma);
 	$test: append($test, 0% 100%, comma);
 
-	.stage-outline {
-		width: 100%;
-		height: 100%;
-		background-color: hsla(64, 80%, 77%);
-		opacity: 0.5;
-		aspect-ratio: 4 / 1;
-
-		clip-path: polygon($test);
+	@for $i from 1 through length($stage-dots) {
+		$item: nth($stage-dots, $i);
+		$test: append($test, calc(#{nth($item, 1)} * 1%) calc(#{nth($item, 2)} * 1%), comma);
 	}
 
 	@keyframes stage-scroller {
 		from {
 			transform: scaleX(0);
 		}
+
 		to {
 			transform: scaleX(100%);
 		}
-	}
-
-	.stage-scroller {
-		background-color: lime;
-		width: 100%;
-		height: 100%;
-
-		transform-origin: left;
-		animation: stage-scroller auto linear;
-		animation-timeline: --stage-timeline;
 	}
 
 	@keyframes runner-path {
@@ -113,9 +78,12 @@
 
 			// Prevent getting the item after the last item.
 			$nextItemIndex: $i + 1;
+
 			@if $nextItemIndex > length($stage-dots) {
 				$nextItemIndex: $i;
 			}
+
+			// stylelint-disable-next-line order/order
 			$nextItem: nth($stage-dots, $nextItemIndex);
 
 			// Correct calculation, but wrong result.
@@ -129,11 +97,13 @@
 			// Check if the cyclist is going up-hil, downhill or flat.
 			$orientation: 'flat';
 			$rotate: 0deg;
+
 			@if $i < length($stage-dots) {
 				@if nth($nextItem, 2) > nth($item, 2) {
 					$orientation: 'uphill';
 					$rotate: 45deg;
 				}
+
 				@if nth($nextItem, 2) < nth($item, 2) {
 					$orientation: 'downhill';
 					$rotate: -45deg;
@@ -142,21 +112,59 @@
 
 			// Create as many keyframes as there are items in the list.
 			#{$keyframePercentage} {
-				transform-origin: center;
 				transform: translateX(calc(#{nth($item, 1)}cqw - 50%))
 					translateY(calc(#{nth($item, 2)}cqh - 50%))
 					rotate($rotate);
+				transform-origin: center;
 			}
+
 			// Create a next keyframe that's almost the same as the next item in the loop.
 			// But the orientation is the one of the current item in the loop.
 			// This ensures the cyclist is keeping the correct rotation throughout the entire part of the animation.
 			#{$nextKeyframePercentage} {
-				transform-origin: center;
 				transform: translateX(calc(#{nth($nextItem, 1)}cqw - 50%))
 					translateY(calc(#{nth($nextItem, 2)}cqh - 50%))
 					rotate($rotate);
+				transform-origin: center;
 			}
 		}
+	}
+
+	:global(html) {
+		/* @TODO: Make this scoped to a component! */
+		scroll-timeline: --stage-timeline;
+	}
+
+	.container {
+		position: relative;
+		min-height: 600vh;
+	}
+
+	.sticky {
+		position: sticky;
+		top: 30%;
+
+		/* Create container so we can use container-relative units */
+		container-type: size;
+		aspect-ratio: 4 / 1;
+	}
+
+	.stage-outline {
+		opacity: 0.5;
+		width: 100%;
+		height: 100%;
+		background-color: hsl(64deg 80% 77%);
+		aspect-ratio: 4 / 1;
+		clip-path: polygon($test);
+	}
+
+	.stage-scroller {
+		width: 100%;
+		height: 100%;
+		background-color: lime;
+		transform-origin: left;
+		animation: stage-scroller auto linear;
+		animation-timeline: --stage-timeline;
 	}
 
 	/* 
@@ -170,11 +178,10 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-
+		font-size: 1.5rem;
 		transform-origin: left;
 		animation: runner-path auto linear;
 		animation-timeline: --stage-timeline;
-		font-size: 1.5rem;
 	}
 
 	.runner span {

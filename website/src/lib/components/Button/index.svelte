@@ -15,12 +15,13 @@
 <style lang="scss">
 	button {
 		@include body-2;
+
+		padding: gap(3) gap(6);
 		background-color: var(--expressive-color);
 		color: var(--white);
-		padding: gap(3) gap(6);
+		cursor: pointer;
 		border: none;
 		border-radius: 5px;
-		cursor: pointer;
 	}
 
 	button:hover,

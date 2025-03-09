@@ -39,17 +39,18 @@
 
 <style>
 	div {
-		/* Create View Timeline */
-		view-timeline-name: --revealing-component;
-		view-timeline-axis: block;
-
 		/* Attach animation, linked to the  View Timeline */
+
 		/* animation: linear fade-in-with-move both; */
 
 		animation: linear fade-in-with-move-1 both;
+
+		/* Create View Timeline */
+		view-timeline-name: --revealing-component;
+		view-timeline-axis: block;
 		animation-timeline: --revealing-component;
 
-		/* Tweak range when effect should run*/
+		/* Tweak range when effect should run */
 		animation-range: entry 15% cover 25%;
 	}
 </style>

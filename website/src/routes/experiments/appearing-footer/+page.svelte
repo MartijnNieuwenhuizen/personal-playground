@@ -81,22 +81,23 @@
 		position: relative;
 		background-color: gainsboro;
 	}
+
 	main {
 		--footer-margin: 0px;
 
 		z-index: 2;
 		position: relative;
-		background-color: white;
 		margin-bottom: var(--footer-margin);
+		background-color: white;
 	}
+
 	footer {
 		--position: relative;
 
 		position: var(--position);
+		right: 0;
 		bottom: 0;
 		left: 0;
-		right: 0;
-
 		background-color: goldenrod;
 	}
 </style>

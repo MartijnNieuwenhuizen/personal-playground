@@ -38,13 +38,12 @@
 	}
 
 	h1 {
-		line-height: 0.8;
 		margin: 0;
 		padding: 0;
-
+		font-family: var(--serif);
 		font-size: 55.63599999999994vw;
 		font-size: 55.63599999999994cqw;
-		font-family: var(--serif);
+		line-height: 0.8;
 		white-space: nowrap;
 	}
 </style>

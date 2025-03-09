@@ -53,7 +53,7 @@
 </div>
 
 <style lang="scss">
-	@import '../../styles/globals.scss';
+	@import '../../styles/globals';
 
 	:global(html) {
 		scroll-timeline: --page-scroll;
@@ -78,8 +78,7 @@
 
 		@include bp-min(medium) {
 			display: grid;
-			grid-template-columns: var(--name-slider-height) 1fr;
-			grid-template-rows: auto 1fr auto;
+			grid-template: auto 1fr auto / var(--name-slider-height) 1fr;
 			grid-template-areas:
 				'header header'
 				'. main'
@@ -91,23 +90,26 @@
 		from {
 			transform: translateX(0);
 		}
+
 		to {
 			transform: translateX(-50%);
 		}
 	}
+
 	@keyframes scroll-other-direction-vertical {
 		from {
 			transform: translateY(calc(-50% - 100vh));
 		}
+
 		to {
 			transform: translateY(0%);
 		}
 	}
-	.name-slider {
-		font-size: calc((var(--name-slider-height) / 100) * 90);
-		font-weight: 400;
-		line-height: 1;
 
+	.name-slider {
+		font-weight: 400;
+		font-size: calc((var(--name-slider-height) / 100) * 90);
+		line-height: 1;
 		animation: scroll-other-direction-horizontal auto linear;
 		animation-timeline: --page-scroll;
 
@@ -116,6 +118,7 @@
 			animation-timeline: --page-scroll;
 		}
 	}
+
 	.name-slider-inner {
 		display: flex;
 		flex-direction: row;
@@ -126,19 +129,23 @@
 			transform-origin: top left;
 		}
 	}
+
 	.name-slider span {
-		white-space: nowrap;
 		color: transparent;
+		white-space: nowrap;
 		-webkit-text-stroke: 1px black;
 	}
+
 	header {
 		grid-area: header;
 	}
+
 	main {
 		grid-area: main;
-		container-type: inline-size;
 		width: 100%;
+		container-type: inline-size;
 	}
+
 	footer {
 		grid-area: footer;
 	}
@@ -151,12 +158,12 @@
 		bottom: 0;
 		width: calc(var(--open-menu-size) - gap(4));
 		padding: gap(13) gap(10);
-		background-color: var(--expressive-color);
 		background: linear-gradient(-45deg, var(--expressive-color-dark), var(--expressive-color));
-		transition: transform 0.2s cubic-bezier(0.83, 0, 0.17, 1);
-		transform: translateX(100%);
+		background-color: var(--expressive-color);
 		border-top-left-radius: 2rem;
 		border-bottom-left-radius: 2rem;
+		transform: translateX(100%);
+		transition: transform 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 	}
 
 	[data-show-menu='true'] aside {

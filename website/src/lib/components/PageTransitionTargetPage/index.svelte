@@ -32,20 +32,22 @@
 		0% {
 			transform: translateY(100%) rotate(3deg);
 		}
+
 		100% {
-			transform: translateY(0rem) rotate(0deg);
+			transform: translateY(0) rotate(0deg);
 		}
 	}
 
 	h1 {
 		@include heading-1;
+
+		overflow: hidden;
 		z-index: 1;
 		position: relative;
-		overflow: hidden;
 		margin: 0;
 		padding-left: var(--block-padding);
-		text-align: center;
 		line-height: 1;
+		text-align: center;
 	}
 
 	h1 span {
@@ -81,6 +83,7 @@
 			align-items: center;
 		}
 	}
+
 	img {
 		z-index: 1;
 		width: 100%;
@@ -88,7 +91,7 @@
 
 	.background {
 		position: absolute;
-		inset: 0;
 		background-color: var(--background-color);
+		inset: 0;
 	}
 </style>

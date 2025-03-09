@@ -270,6 +270,3 @@
 		</footer>
 	</Block>
 </article>
-
-<style lang="scss">
-</style>

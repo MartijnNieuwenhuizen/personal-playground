@@ -71,13 +71,13 @@
 	 */
 	.grrr-container {
 		--padding: 2rem;
-		max-width: calc(60rem + (var(--padding) * 2));
-		margin: 0 auto;
-		padding: 0 var(--padding);
 
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
+		max-width: calc(60rem + (var(--padding) * 2));
+		margin: 0 auto;
+		padding: 0 var(--padding);
 	}
 
 	/**
@@ -86,23 +86,25 @@
 	.css-grid-container {
 		--padding: 2rem;
 		--gap: 1rem;
-		display: grid;
 
+		display: grid;
+		grid-template-areas: '. . content-left  . content-right content-right content-right';
 		grid-template-columns:
 			var(--padding) auto 1fr var(--gap)
 			auto 1fr var(--padding);
-		grid-template-areas: '. . content-left  . content-right content-right content-right';
 
 		// The moment that the container reaches it's max-width.
-		@media screen and (min-width: 1024px) {
+		@media screen and (width >= 1024px) {
 			grid-template-columns:
 				var(--padding) 1fr 30rem var(--gap)
 				30rem 1fr var(--padding);
 		}
 	}
+
 	.css-grid-container > div:first-of-type {
 		grid-area: content-left;
 	}
+
 	.css-grid-container > div:last-of-type {
 		grid-area: content-right;
 	}
@@ -113,24 +115,25 @@
 	.css-grid-container-one-column {
 		--padding: 2rem;
 		--gap: 1rem;
-		padding: 0 var(--padding);
 
 		display: grid;
+		grid-template:
+			' . label .'
+			' . content .'
+			/ auto 1fr auto;
 		gap: 1rem;
-		grid-template-columns: auto 1fr auto;
-		grid-template-rows: auto auto;
-		grid-template-areas:
-			'. label .'
-			'. content .';
+		padding: 0 var(--padding);
 
-		@media screen and (min-width: 1270px) {
+		@media screen and (width >= 1270px) {
 			grid-template-areas: 'label content .';
 			grid-template-columns: 1fr 60rem 1fr;
 		}
 	}
+
 	.css-grid-container-one-column > div:first-of-type {
 		grid-area: label;
 	}
+
 	.css-grid-container-one-column > div:last-of-type {
 		grid-area: content;
 		max-width: 40rem;

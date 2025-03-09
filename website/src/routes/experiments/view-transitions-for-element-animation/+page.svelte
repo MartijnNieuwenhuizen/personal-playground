@@ -63,43 +63,44 @@
 <style lang="scss">
 	.container {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 	}
-	.flexible-panel {
-		width: max-content;
 
+	.flexible-panel {
 		display: flex;
 		gap: 2rem;
-
+		width: max-content;
 		padding: 2rem;
-		border-radius: 1.25rem;
 		background-color: lightseagreen;
+		border-radius: 1.25rem;
 	}
 
 	button {
 		@include body-2;
+
 		display: flex;
+		gap: 1rem;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
 		padding: 1rem 2rem;
 		background-color: white;
-		border-radius: 1rem;
 		border: none;
+		border-radius: 1rem;
 	}
 
 	button span:last-child {
-		position: absolute;
 		opacity: 0;
+		position: absolute;
 	}
 
 	.flexible-panel[data-show-large-version='true'] {
 		padding: 8rem 2rem;
 	}
+
 	.flexible-panel[data-show-large-version='true'] button span:last-child {
-		position: relative;
 		opacity: 1;
+		position: relative;
 	}
 
 	:global(html::view-transition-old(*)),

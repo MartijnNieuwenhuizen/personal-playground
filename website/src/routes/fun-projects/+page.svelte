@@ -48,13 +48,12 @@
 	}
 
 	h1 {
-		line-height: 1.2;
 		margin: 0;
 		padding: 0;
-
+		font-family: var(--serif);
 		font-size: 21.38700000000006vw;
 		font-size: 21.38700000000006cqw;
-		font-family: var(--serif);
+		line-height: 1.2;
 		white-space: nowrap;
 	}
 </style>

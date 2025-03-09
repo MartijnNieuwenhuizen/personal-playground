@@ -28,17 +28,13 @@ asin() : can be used to rotate elements.
 acos() : can be used to rotate elements. -->
 
 <style lang="scss">
-	.round-balls-container {
-	}
-	.round-balls-container div {
-	}
 	.round-balls-container span {
+		display: block;
 		width: 2rem;
 		height: 2rem;
-		display: block;
-		border-radius: 50%;
 		background-color: lime;
 		text-align: center;
+		border-radius: 50%;
 	}
 
 	.round-balls-container span:nth-of-type(1) {

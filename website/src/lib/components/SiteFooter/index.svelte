@@ -32,6 +32,7 @@
 	a {
 		color: inherit;
 	}
+
 	a:hover,
 	a:focus {
 		color: var(--expressive-color);

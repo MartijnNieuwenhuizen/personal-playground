@@ -99,7 +99,7 @@
 	}
 
 	button {
-		padding: 0.3rem;
 		margin-top: 3rem;
+		padding: 0.3rem;
 	}
 </style>

@@ -184,36 +184,42 @@
 		display: flex;
 		max-width: 100vw;
 	}
+
 	.container-item {
-		min-height: 60vh;
-		flex-shrink: 0;
 		display: grid;
+		flex-shrink: 0;
 		grid-auto-flow: column;
 		gap: 4rem;
-
+		min-height: 60vh;
 		padding: 5rem;
 	}
 
 	.container-item p {
+		flex-shrink: 0;
 		width: 100%;
 		max-width: 40rem;
-		flex-shrink: 0;
 	}
+
 	.container-item:nth-of-type(1) {
 		background-color: red;
 	}
+
 	.container-item:nth-of-type(2) {
 		background-color: blue;
 	}
+
 	.container-item:nth-of-type(3) {
 		background-color: green;
 	}
+
 	.container-item:nth-of-type(4) {
 		background-color: yellow;
 	}
+
 	.container-item:nth-of-type(5) {
 		background-color: purple;
 	}
+
 	.container-item:nth-of-type(6) {
 		background-color: pink;
 	}

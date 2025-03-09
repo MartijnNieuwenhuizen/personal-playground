@@ -82,9 +82,11 @@
 	.attempt-1 {
 		font-size: calc((100vw / 30) * 1ch);
 	}
+
 	.attempt-2 {
 		font-size: 4vw;
 	}
+
 	.attempt-3 {
 		font-size: 5.64vw;
 		text-align: center;

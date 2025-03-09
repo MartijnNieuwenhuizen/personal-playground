@@ -139,29 +139,27 @@
 
 <style lang="scss">
 	.page-reset {
+		--floating-panel-offset: 4vh;
+		--side-panel-size: 0vw;
+		--annotation-panel-size: 0vw;
+
 		/* Ensure the pabels are overflowing the default UI (no way to remove this with the svelte layout files) */
 		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
-		background-color: #172635;
 		padding: 2rem;
-
-		--floating-panel-offset: 4vh;
-		--side-panel-size: 0vw;
-		--annotation-panel-size: 0vw;
+		background-color: #172635;
 	}
 
 	.panels {
 		display: grid;
-		grid-template-columns: var(--side-panel-size) 1fr var(--annotation-panel-size);
 		grid-template-areas: 'side-panel main-panel annotation-panel';
-
-		transition: grid-template-columns 0.2s cubic-bezier(0.83, 0, 0.17, 1);
-
-		border-radius: 1rem;
-		background-color: rgba(255, 255, 255, 0.1);
+		grid-template-columns: var(--side-panel-size) 1fr var(--annotation-panel-size);
+		background-color: rgb(255 255 255 / 10%);
 		color: white;
+		border-radius: 1rem;
+		transition: grid-template-columns 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 	}
 
 	.panels * {
@@ -178,12 +176,13 @@
 		grid-area: control-panel;
 		margin-bottom: 2rem;
 	}
+
 	.control-panel form {
-		position: relative;
 		z-index: 99;
+		position: relative;
 		display: flex;
-		justify-content: center;
 		gap: 2rem;
+		justify-content: center;
 		color: white;
 	}
 
@@ -191,35 +190,36 @@
 		grid-area: side-panel;
 		background-color: #d78000;
 		color: white;
-		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 		border-radius: 1rem;
+		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 	}
+
 	.main-panel {
 		grid-area: main-panel;
 	}
+
 	.main-panel-intro {
 		padding-bottom: 2rem;
 	}
+
 	.annotation-panel {
 		grid-area: annotation-panel;
 		background-color: white;
-		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 		border-radius: 1rem;
+		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 	}
 
 	.floating-panel {
 		position: fixed;
 		bottom: var(--floating-panel-offset);
 		left: 50vw;
+		grid-area: action-panel;
 		min-width: 60vw;
 		padding: 1rem;
-
-		transform: translate(-50%, 0);
-		grid-area: action-panel;
 		background-color: #23a1be;
 		color: white;
 		border-radius: 16px;
-
+		transform: translate(-50%, 0);
 		transition: transform cubic-bezier(0.83, 0, 0.17, 1) 0.2s;
 	}
 
@@ -231,10 +231,12 @@
 		--side-panel-size: 20vw;
 		--annotation-panel-size: 0vw;
 	}
+
 	.panels[data-grid='false-true'] {
 		--side-panel-size: 0vw;
 		--annotation-panel-size: 40vw;
 	}
+
 	.panels[data-grid='true-true'] {
 		--side-panel-size: 20vw;
 		--annotation-panel-size: 40vw;
@@ -244,8 +246,8 @@
 	.cards {
 		display: grid;
 		grid-gap: 1rem;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 		list-style: none;
 		text-align: center;
 
@@ -264,6 +266,7 @@
 
 	.cards figcaption {
 		@include heading-3;
+
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -272,15 +275,17 @@
 		background-color: var(--background-color);
 		transform: skewX(-10deg) rotate(-10deg) translateY(-2rem);
 	}
+
 	.cards span {
 		display: block;
 		transition: transform 0.2s ease-out;
 	}
 
 	.cards li:hover figcaption span {
-		transform: skewX(10deg);
 		text-decoration: underline;
+		transform: skewX(10deg);
 	}
+
 	.cards a {
 		z-index: 2;
 	}
@@ -297,31 +302,34 @@
 
 	// Side panels content
 	.container {
-		position: relative;
 		overflow: hidden;
+		position: relative;
 	}
 
 	.side-panel-content,
 	.annotation-panel-content {
 		position: absolute;
 		top: 0;
+
 		// This 4 is calculated based on the bottom-padding of the form and the padding of the main panel.
 		// That's not what we want here. It should scale based on the container. Should be improved!
 		padding: 4rem 2rem;
-
 		transition: transform 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 	}
+
 	.side-panel-content {
+		left: 0;
+
 		// width: var(--side-panel-size);
 		width: 20vw;
-		left: 0;
 		transform: translateX(-100%);
 	}
 
 	.annotation-panel-content {
+		right: 0;
+
 		// width: var(--annotation-panel-size);
 		width: 40vw;
-		right: 0;
 		transform: translateX(100%);
 	}
 

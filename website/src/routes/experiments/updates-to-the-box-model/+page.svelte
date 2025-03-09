@@ -216,6 +216,11 @@
 </ExperimentItem>
 
 <style lang="scss">
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
 	/**
 	 * Old way
 	 */
@@ -223,33 +228,32 @@
 		--padding: 1rem 3rem 3rem 3rem;
 		--border-radius: 15px;
 
+		padding: var(--padding);
 		background-color: #f7cca1;
-		padding: var(--padding);
 		border-radius: var(--border-radius);
 	}
+
 	.old-way-border {
+		padding: var(--padding);
 		background-color: #fbdc9e;
-		padding: var(--padding);
 		border-radius: var(--border-radius);
 	}
+
 	.old-way-padding {
-		background-color: #c4ce8d;
 		padding: var(--padding);
+		background-color: #c4ce8d;
 		border-radius: var(--border-radius);
 	}
+
 	.old-way-content {
+		padding: 1rem 1rem 0;
 		background-color: #8db6c1;
-		padding: 1rem 1rem 0 1rem;
 		border-radius: var(--border-radius);
 	}
+
 	.old-way p {
 		text-align: center;
 		transform: translateY(-25%);
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
 	}
 
 	/**
@@ -257,10 +261,11 @@
 	 */
 	.padding-inline {
 		--theme-color: #f7cca1;
+
 		padding-bottom: 1rem;
 	}
+
 	.padding-inline-inner {
-		border: 5px solid darkslategrey;
 		background: repeating-linear-gradient(
 			45deg,
 			var(--theme-color),
@@ -268,17 +273,22 @@
 			white 10px,
 			white 20px
 		);
+		border: 5px solid darkslategrey;
 	}
+
 	.padding-inline-inner p {
 		padding: 0.5rem 1rem;
 		background-color: #8db6c1;
 	}
+
 	.padding-inline[data-enable='true'][data-location='both'] .padding-inline-inner {
 		padding-inline: 2rem;
 	}
+
 	.padding-inline[data-enable='true'][data-location='start'] .padding-inline-inner {
 		padding-inline-start: 2rem;
 	}
+
 	.padding-inline[data-enable='true'][data-location='end'] .padding-inline-inner {
 		padding-inline-end: 2rem;
 	}
@@ -288,10 +298,11 @@
 	 */
 	.padding-block {
 		--theme-color: #f7cca1;
+
 		padding-bottom: 1rem;
 	}
+
 	.padding-block-inner {
-		border: 5px solid darkslategrey;
 		background: repeating-linear-gradient(
 			45deg,
 			var(--theme-color),
@@ -299,17 +310,22 @@
 			white 10px,
 			white 20px
 		);
+		border: 5px solid darkslategrey;
 	}
+
 	.padding-block-inner p {
 		padding: 0.5rem 1rem;
 		background-color: #8db6c1;
 	}
+
 	.padding-block[data-enable='true'][data-location='both'] .padding-block-inner {
 		padding-block: 2rem;
 	}
+
 	.padding-block[data-enable='true'][data-location='start'] .padding-block-inner {
 		padding-block-start: 2rem;
 	}
+
 	.padding-block[data-enable='true'][data-location='end'] .padding-block-inner {
 		padding-block-end: 2rem;
 	}
@@ -319,6 +335,7 @@
 	 */
 	.margin-inline {
 		--theme-color: #f7cca1;
+
 		margin-bottom: 1rem;
 		background: repeating-linear-gradient(
 			45deg,
@@ -328,19 +345,24 @@
 			white 20px
 		);
 	}
+
 	.margin-inline-inner {
 		border: 5px solid darkslategrey;
 	}
+
 	.margin-inline-inner p {
 		padding: 0.5rem 1rem;
 		background-color: #8db6c1;
 	}
+
 	.margin-inline[data-enable='true'][data-location='both'] .margin-inline-inner {
 		margin-inline: 2rem;
 	}
+
 	.margin-inline[data-enable='true'][data-location='start'] .margin-inline-inner {
 		margin-inline-start: 2rem;
 	}
+
 	.margin-inline[data-enable='true'][data-location='end'] .margin-inline-inner {
 		margin-inline-end: 2rem;
 	}
@@ -350,8 +372,8 @@
 	 */
 	.margin-block {
 		--theme-color: #f7cca1;
+
 		margin-bottom: 1rem;
-		border: 1px solid white;
 		background: repeating-linear-gradient(
 			45deg,
 			var(--theme-color),
@@ -359,20 +381,26 @@
 			white 10px,
 			white 20px
 		);
+		border: 1px solid white;
 	}
+
 	.margin-block-inner {
 		border: 5px solid darkslategrey;
 	}
+
 	.margin-block-inner p {
 		padding: 0.5rem 1rem;
 		background-color: #8db6c1;
 	}
+
 	.margin-block[data-enable='true'][data-location='both'] .margin-block-inner {
 		margin-block: 2rem;
 	}
+
 	.margin-block[data-enable='true'][data-location='start'] .margin-block-inner {
 		margin-block-start: 2rem;
 	}
+
 	.margin-block[data-enable='true'][data-location='end'] .margin-block-inner {
 		margin-block-end: 2rem;
 	}

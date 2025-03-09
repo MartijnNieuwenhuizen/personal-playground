@@ -47,6 +47,3 @@
 	</p>
 	<button onclick={downloadAsWebApp}>Download this site as WebApp</button>
 </ExperimentItem>
-
-<style lang="scss">
-</style>

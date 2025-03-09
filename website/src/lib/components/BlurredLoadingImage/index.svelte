@@ -83,12 +83,12 @@
 	}
 
 	figure img[aria-hidden='true'] {
+		pointer-events: none;
 		position: absolute;
-		inset: 0;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		pointer-events: none;
+		inset: 0;
 	}
 
 	:is(:global(img[data-hidden='true'])) {

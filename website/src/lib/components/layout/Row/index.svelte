@@ -13,5 +13,5 @@
 <div class="row" data-size={size} data-area={area}>{@render children?.()}</div>
 
 <style lang="scss">
-	@import './style.scss';
+	@import './style';
 </style>

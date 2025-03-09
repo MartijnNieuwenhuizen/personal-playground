@@ -230,7 +230,10 @@
 
 	<Row area="bottom">
 		<div class="container">
-			<style bind:this={containerElement}></style>
+			<!-- stylelint-disable-next-line no-empty-source -->
+			<style bind:this={containerElement}>
+				/* stylelint-disable no-empty-source */
+			</style>
 			<h2 class="output" bind:this={titleElement} style={customProperties}>
 				{title}
 			</h2>
@@ -250,21 +253,20 @@
 
 <style>
 	.container {
-		font-size: var(--full-screen-tool-font-size);
-
-		overflow-x: auto;
-		overflow-y: visible;
+		overflow: auto visible;
 		max-width: 100vw;
+		font-size: var(--full-screen-tool-font-size);
 	}
+
 	.output {
-		white-space: nowrap;
 		margin: 0;
 		padding: 0;
 		font-family: var(--full-screen-tool-font-family);
-		font-size: var(--full-screen-tool-font-size);
 		font-weight: var(--full-screen-tool-font-weight);
+		font-size: var(--full-screen-tool-font-size);
+		line-height: 1;
 		letter-spacing: var(--full-screen-tool-letter-spacing);
 		text-align: center;
-		line-height: 1;
+		white-space: nowrap;
 	}
 </style>

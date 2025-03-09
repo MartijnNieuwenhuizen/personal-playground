@@ -83,23 +83,28 @@
 	.flow > * {
 		margin-bottom: 0;
 	}
+
 	.flow > * + * {
 		margin-top: var(--flow-space, 1rem);
 		margin-bottom: 0;
 	}
+
 	.region {
 		padding-top: var(--region-space, var(--space-l-2xl));
 		padding-bottom: var(--region-space, var(--space-l-2xl));
 	}
+
 	.wrapper {
 		--gutter: var(--space-l);
-		margin-left: auto;
-		margin-right: auto;
-		max-width: var(--wrapper-max-width, 65rem);
-		padding-left: var(--gutter);
-		padding-right: var(--gutter);
+
 		position: relative;
+		max-width: var(--wrapper-max-width, 65rem);
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: var(--gutter);
+		padding-left: var(--gutter);
 	}
+
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(
@@ -107,12 +112,13 @@
 			minmax(var(--grid-min-item-size, 16rem), 1fr)
 		);
 		gap: var(--gutter, var(--space-s-l));
-
 		list-style: none;
 	}
+
 	.grid-auto-fit {
 		--grid-placement: auto-fit;
 	}
+
 	.grid-auto-fill {
 		--grid-placement: auto-fill;
 	}

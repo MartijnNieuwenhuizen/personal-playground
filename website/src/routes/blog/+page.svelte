@@ -45,17 +45,18 @@
 		overflow: hidden;
 		max-width: 100vw;
 	}
-	h1 {
-		line-height: 1.2;
-		margin: 0;
-		padding: 0;
-		text-align: center;
 
+	h1 {
+		margin: 0;
+
+		/* Pull title up based on the vw, because the font-size is based on the vw. */
+		margin-top: -3vw;
+		padding: 0;
 		font-family: var(--serif);
 		font-size: 27.803vw;
 		font-size: 27.803cqw;
-		/* Pull title up based on the vw, because the font-size is based on the vw. */
-		margin-top: -3vw;
+		line-height: 1.2;
+		text-align: center;
 
 		/* font-family: var(--sans-serif);
 		font-weight: var(--font-weight-normal);

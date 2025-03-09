@@ -20,10 +20,13 @@
 
 		/* prettier-ignore */
 		--level--default: var(--level,);
+
 		/* prettier-ignore */
 		--level--success: var(--level,);
+
 		/* prettier-ignore */
 		--level--warning: var(--level,);
+
 		/* prettier-ignore */
 		--level--error:   var(--level,);
 
@@ -31,14 +34,12 @@
 			var(--level--warning, khaki) var(--level--error, lightpink);
 	}
 
-	.space-toggles__toggle:checked ~ .space-toggles {
-		--level: var(--level--success);
-	}
-	.space-toggles {
-		--level: var(--level--default);
-	}
 	.space-toggles:hover {
 		--level: var(--level--warning);
+	}
+
+	.space-toggles__toggle:checked ~ .space-toggles {
+		--level: var(--level--success);
 	}
 
 	.preview-box {

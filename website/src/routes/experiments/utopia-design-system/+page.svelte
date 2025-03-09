@@ -89,7 +89,9 @@
 			</p>
 		</section>
 
-		<section class="flow region wrapper" style="--wrapper-max-width: 80rem;">
+		<section class="flow region wrapper" style="
+
+--wrapper-max-width: 80rem;">
 			<h3>How we create meaningful digital products</h3>
 
 			<div class="grid">
@@ -172,5 +174,5 @@
 </Row>
 
 <style lang="scss">
-	@import './style.scss';
+	@import './style';
 </style>

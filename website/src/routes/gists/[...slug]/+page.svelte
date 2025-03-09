@@ -13,6 +13,3 @@
 		<SvelteMarkdown source={data.content} renderers={{ code: MarkdownCode }} />
 	</Block>
 </ExperimentItem>
-
-<style>
-</style>

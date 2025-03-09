@@ -139,15 +139,17 @@
 <style lang="scss">
 	h3 {
 		@include heading-3;
-		margin: 0 0 gap(4);
+
 		max-width: 25ch;
+		margin: 0 0 gap(4);
 	}
+
 	p:not(.charlie) {
 		max-width: 60ch;
 	}
 
 	@font-face {
-		font-family: 'Roboto flex';
+		font-family: 'Roboto flex' sans-serif;
 		src: url('/fonts/Roboto Flex Font.ttf') format('truetype');
 		font-weight: 100 900;
 		font-style: normal;
@@ -159,24 +161,28 @@
 
 	.charlie {
 		--experiment-color: #f75b43;
-		font-family: sans-serif;
-		font-size: 16vw;
-		text-align: center;
+
 		margin: 0;
-		text-transform: uppercase;
-		font-family: 'Roboto flex';
+		font-family: sans-serif;
+		font-family: 'Roboto flex', sans-serif;
+		font-size: 16vw;
 		letter-spacing: 1vw;
+		text-align: center;
+		text-transform: uppercase;
 	}
+
 	.try-1 {
 		color: white;
 		filter: drop-shadow(0.5rem 0.5rem 0 var(--experiment-color));
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
+
 	.try-2 {
 		color: white;
 		box-shadow: 0.5rem 0.5rem 0 var(--experiment-color);
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
+
 	.try-3 {
 		color: white;
 		filter: drop-shadow(1px 1px 0 var(--experiment-color))
@@ -184,11 +190,13 @@
 			drop-shadow(4px 4px 0 var(--experiment-color)) drop-shadow(5px 5px 0 var(--experiment-color));
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
+
 	.try-4 {
 		color: white;
 		filter: drop-shadow(1px 1px 0.5rem var(--experiment-color));
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
+
 	.try-5 {
 		color: white;
 		filter: drop-shadow(1px 1px 0 var(--experiment-color))
@@ -202,6 +210,7 @@
 			drop-shadow(5px 5px 0 var(--experiment-color));
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
+
 	.try-8 {
 		position: relative;
 		color: white;
@@ -214,39 +223,43 @@
 			drop-shadow(4px 4px 0 var(--experiment-color))
 			drop-shadow(4.5px 4.5px 0 var(--experiment-color))
 			drop-shadow(5px 5px 0 var(--experiment-color));
-
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
 	}
-	.try-8:before {
-		z-index: -1;
+
+	.try-8::before {
 		content: 'Charlie';
+		z-index: -1;
 		position: absolute;
 		top: 0;
 		left: 50%;
-		transform: translateX(-50%);
 		color: white;
-		filter: drop-shadow(-1px 1px 0 rgba(0, 0, 0, 0.2))
-			drop-shadow(-1.5px 1.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-2px 2px 0 rgba(0, 0, 0, 0.2))
-			drop-shadow(-2.5px 2.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-3px 3px 0 rgba(0, 0, 0, 0.2))
-			drop-shadow(-3.5px 3.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-4px 4px 0 rgba(0, 0, 0, 0.2))
-			drop-shadow(-4.5px 4.5px 0 rgba(0, 0, 0, 0.2)) drop-shadow(-5px 5px 0 rgba(0, 0, 0, 0.2));
+		filter: drop-shadow(-1px 1px 0 rgb(0 0 0 / 20%)) drop-shadow(-1.5px 1.5px 0 rgb(0 0 0 / 20%))
+			drop-shadow(-2px 2px 0 rgb(0 0 0 / 20%)) drop-shadow(-2.5px 2.5px 0 rgb(0 0 0 / 20%))
+			drop-shadow(-3px 3px 0 rgb(0 0 0 / 20%)) drop-shadow(-3.5px 3.5px 0 rgb(0 0 0 / 20%))
+			drop-shadow(-4px 4px 0 rgb(0 0 0 / 20%)) drop-shadow(-4.5px 4.5px 0 rgb(0 0 0 / 20%))
+			drop-shadow(-5px 5px 0 rgb(0 0 0 / 20%));
+		transform: translateX(-50%);
 	}
+
 	.try-9-container {
 		display: grid;
-		grid-template-columns: auto 1fr auto;
 		grid-template-rows: 1fr;
+		grid-template-columns: auto 1fr auto;
 		background-color: #c5dad9;
 	}
+
 	.try-9-a {
+		grid-row: 1;
+		grid-column: 2;
 		filter: drop-shadow(-0.025rem 0.1rem 0 #90b3ad) drop-shadow(-0.05rem 0.2rem 0 #90b3ad)
 			drop-shadow(-0.075rem 0.3rem 0 #90b3ad) drop-shadow(-0.1rem 0.4rem 0 #90b3ad)
 			drop-shadow(-0.125rem 0.5rem 0 #90b3ad) drop-shadow(-0.15rem 0.6rem 0 #90b3ad)
 			drop-shadow(-0.175rem 0.7rem 0 #90b3ad);
-
-		grid-column: 2;
-		grid-row: 1;
 	}
+
 	.try-9-b {
+		grid-row: 1;
+		grid-column: 2;
 		color: white;
 		filter: drop-shadow(1px 1px 0 var(--experiment-color))
 			drop-shadow(1.5px 1.5px 0 var(--experiment-color))
@@ -257,10 +270,6 @@
 			drop-shadow(4px 4px 0 var(--experiment-color))
 			drop-shadow(4.5px 4.5px 0 var(--experiment-color))
 			drop-shadow(5px 5px 0 var(--experiment-color));
-
 		-webkit-text-stroke: 0.05rem var(--experiment-color);
-
-		grid-column: 2;
-		grid-row: 1;
 	}
 </style>

@@ -165,6 +165,7 @@
 			transform: translateY(-50vh);
 		}
 	}
+
 	@keyframes opposite-scrollbar-full {
 		0% {
 			transform: translateY(0);
@@ -183,13 +184,13 @@
 	.opposite-scrollbar {
 		--scrollbar-height: 10vh;
 
+		z-index: 1000;
 		position: fixed;
 		bottom: 2px;
 		left: 2px;
 		width: 0.5rem;
 		height: var(--scrollbar-height);
 		background-color: #f0c645;
-		z-index: 1000;
 		border-radius: 50px;
 	}
 
@@ -205,6 +206,7 @@
 		*/
 		animation-timeline: --opposite-scrollbar;
 	}
+
 	.opposite-scrollbar--2 {
 		animation: opposite-scrollbar-full linear forwards;
 

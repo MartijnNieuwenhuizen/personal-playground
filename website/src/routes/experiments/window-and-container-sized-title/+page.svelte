@@ -24,16 +24,19 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 	div {
-		container-type: inline-size;
 		width: 100vw;
 		padding: gap(5) 0;
 		background-color: var(--expressive-color-dark);
 		color: var(--white);
+		container-type: inline-size;
 	}
+
 	div[data-show-full-size='false'] {
 		width: 65vw;
 	}
+
 	h2 {
 		margin: 0;
 		padding: 0;
@@ -47,19 +50,21 @@
 	.container-size {
 		font-size: 16.784000000000052cqw;
 	}
+
 	button {
 		margin: gap(10) 0;
-		border: 0;
+		padding: gap(8);
 		background-color: var(--expressive-color-dark);
 		color: var(--white);
 		font-size: 1.5rem;
-		padding: gap(8);
+		border: 0;
 		border-radius: gap(2);
 		box-shadow: 0 0 gap(2) 0 var(--expressive-color);
 	}
+
 	button:hover,
 	button:focus-visible {
-		cursor: pointer;
 		background-color: var(--expressive-color);
+		cursor: pointer;
 	}
 </style>

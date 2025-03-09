@@ -15,12 +15,14 @@
 <style lang="scss">
 	h2 {
 		@include heading-1;
-		line-height: 1;
 
 		// Create the gradient.
 		background: linear-gradient(90deg, var(--highlight-color) 0%, var(--expressive-color) 100%);
+
 		// Clip the text (so the gradient is visible).
 		background-clip: text;
+		line-height: 1;
+
 		// Set color to transparent so the gradient shows.
 		-webkit-text-fill-color: transparent;
 	}

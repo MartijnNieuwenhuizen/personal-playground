@@ -53,17 +53,31 @@
 		<p>There are 3 steps to this experiment. Move your mouse to see them in actions</p>
 	</Block>
 	<Row size="medium">
-		<h3 class="rotate" style="--rotation-x: {rotationX}; --rotation-y: {rotationY};">Rotate me!</h3>
+		<h3
+			class="rotate"
+			style="
+
+--rotation-x: {rotationX}; --rotation-y: {rotationY};"
+		>
+			Rotate me!
+		</h3>
 	</Row>
 	<Row size="medium">
-		<h3 class="rotate drop-shadow" style="--rotation-x: {rotationX}; --rotation-y: {rotationY};">
+		<h3
+			class="rotate drop-shadow"
+			style="
+
+--rotation-x: {rotationX}; --rotation-y: {rotationY};"
+		>
 			Drop shadow
 		</h3>
 	</Row>
 	<Row size="medium">
 		<h3
 			class="rotate drop-shadow rotate-drop-shadow"
-			style="--rotation-x: {rotationX}; --rotation-y: {rotationY};"
+			style="
+
+--rotation-x: {rotationX}; --rotation-y: {rotationY};"
 		>
 			Rotate all
 		</h3>
@@ -85,19 +99,20 @@
 			transform: none;
 		}
 	}
-	.drop-shadow {
-		color: white;
 
+	.drop-shadow {
 		--drop-shadow-color: var(--expressive-color);
-		-webkit-text-stroke: 0.05rem var(--expressive-color);
+
+		color: white;
 		filter: drop-shadow(0.25rem 0.25rem 0 var(--drop-shadow-color))
 			drop-shadow(0.5rem 0.5rem 0 var(--drop-shadow-color))
 			drop-shadow(0.75rem 0.75rem 0 var(--drop-shadow-color));
+		-webkit-text-stroke: 0.05rem var(--expressive-color);
 	}
+
 	.rotate-drop-shadow {
 		--perspective-x: calc(var(--rotation-x) / 4);
 		--perspective-y: calc(var(--rotation-y) / 4);
-
 		--offset-1: 0.1rem;
 		--offset-2: 0.2rem;
 		--offset-3: 0.3rem;
