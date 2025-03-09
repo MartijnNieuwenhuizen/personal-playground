@@ -23,6 +23,8 @@ export default function TaskReview({
   const [isOpen, setIsOpen] = useState(false);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [enhancedTask, setEnhancedTask] = useState("");
+  const [previousSuggestions, setPreviousSuggestions] = useState<string[]>([]);
+  const [currentSuggestionIndex, setCurrentSuggestionIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [updateMessage, setUpdateMessage] = useState<string | null>(null);
 
@@ -36,6 +38,9 @@ export default function TaskReview({
 
   useEffect(() => {
     if (isOpen && currentTask) {
+      // Clear previous suggestions when moving to a new task
+      setPreviousSuggestions([]);
+      setCurrentSuggestionIndex(0);
       enhanceCurrentTask();
     }
   }, [currentTaskIndex, isOpen]);
@@ -47,11 +52,70 @@ export default function TaskReview({
     try {
       const enhanced = await enhanceTaskDescription(currentTask.content);
       setEnhancedTask(enhanced);
+
+      // Store the current suggestion in the history
+      if (enhanced !== "Failed to enhance task. Please try again.") {
+        setPreviousSuggestions([enhanced]);
+        setCurrentSuggestionIndex(0);
+      }
     } catch (error) {
       console.error("Error enhancing task:", error);
       setEnhancedTask("Failed to enhance task. Please try again.");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const requestAnotherSuggestion = async () => {
+    setIsLoading(true);
+    setUpdateMessage("Generating new suggestion...");
+
+    try {
+      // Request a new enhancement
+      const enhanced = await enhanceTaskDescription(currentTask.content);
+
+      // Check if this suggestion is the same as any previous ones
+      if (previousSuggestions.includes(enhanced)) {
+        setUpdateMessage("Received a duplicate suggestion. Trying again...");
+        // Try one more time to get a unique suggestion
+        const secondAttempt = await enhanceTaskDescription(
+          `${
+            currentTask.content
+          } (please provide a different suggestion than: ${enhanced.substring(
+            0,
+            50
+          )}...)`
+        );
+        setEnhancedTask(secondAttempt);
+        setPreviousSuggestions((prev) => [...prev, secondAttempt]);
+        setCurrentSuggestionIndex(previousSuggestions.length);
+      } else {
+        setEnhancedTask(enhanced);
+        setPreviousSuggestions((prev) => [...prev, enhanced]);
+        setCurrentSuggestionIndex(previousSuggestions.length);
+      }
+    } catch (error) {
+      console.error("Error getting new suggestion:", error);
+      setUpdateMessage("Failed to get a new suggestion. Please try again.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setUpdateMessage(null), 2000);
+    }
+  };
+
+  const showPreviousSuggestion = () => {
+    if (currentSuggestionIndex > 0) {
+      const newIndex = currentSuggestionIndex - 1;
+      setCurrentSuggestionIndex(newIndex);
+      setEnhancedTask(previousSuggestions[newIndex]);
+    }
+  };
+
+  const showNextSuggestion = () => {
+    if (currentSuggestionIndex < previousSuggestions.length - 1) {
+      const newIndex = currentSuggestionIndex + 1;
+      setCurrentSuggestionIndex(newIndex);
+      setEnhancedTask(previousSuggestions[newIndex]);
     }
   };
 
@@ -158,6 +222,44 @@ export default function TaskReview({
                 ) : (
                   <p>{enhancedTask}</p>
                 )}
+                <button
+                  onClick={requestAnotherSuggestion}
+                  className="refresh-button"
+                  disabled={isLoading}
+                  title="Get another suggestion"
+                >
+                  ↻ New Suggestion
+                </button>
+
+                {previousSuggestions.length > 1 && (
+                  <div className="suggestion-navigation">
+                    <div className="suggestion-count">
+                      Suggestion {currentSuggestionIndex + 1} of{" "}
+                      {previousSuggestions.length}
+                    </div>
+                    <div className="navigation-buttons">
+                      <button
+                        onClick={showPreviousSuggestion}
+                        disabled={currentSuggestionIndex === 0 || isLoading}
+                        className="nav-button"
+                        title="Previous suggestion"
+                      >
+                        ←
+                      </button>
+                      <button
+                        onClick={showNextSuggestion}
+                        disabled={
+                          currentSuggestionIndex ===
+                            previousSuggestions.length - 1 || isLoading
+                        }
+                        className="nav-button"
+                        title="Next suggestion"
+                      >
+                        →
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -224,6 +326,7 @@ export default function TaskReview({
           padding: 15px;
           border-radius: 6px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          position: relative;
         }
         .original {
           background-color: #f8f9fa;
@@ -233,10 +336,67 @@ export default function TaskReview({
           background-color: #e3f2fd;
           border-left: 4px solid #2196f3;
         }
+        .refresh-button {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background-color: #f1f1f1;
+          border: none;
+          border-radius: 4px;
+          padding: 5px 10px;
+          font-size: 12px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          transition: background-color 0.2s;
+        }
+        .refresh-button:hover {
+          background-color: #e0e0e0;
+        }
+        .refresh-button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        .suggestion-navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 15px;
+          border-top: 1px solid #e0e0e0;
+          padding-top: 10px;
+        }
+        .suggestion-count {
+          font-size: 12px;
+          color: #666;
+        }
+        .navigation-buttons {
+          display: flex;
+          gap: 5px;
+        }
+        .nav-button {
+          background-color: #f1f1f1;
+          border: none;
+          border-radius: 4px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        .nav-button:hover:not(:disabled) {
+          background-color: #e0e0e0;
+        }
+        .nav-button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
         h3 {
           margin-top: 0;
           color: #333;
           font-size: 18px;
+          padding-right: 100px;
         }
         .button-container {
           display: flex;
