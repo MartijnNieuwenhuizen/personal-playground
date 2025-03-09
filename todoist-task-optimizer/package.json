@@ -1,0 +1,32 @@
+{
+  "name": "my-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@doist/todoist-api-typescript": "^4.0.0-alpha.4",
+    "axios": "^1.8.2",
+    "iron-session": "^8.0.4",
+    "next": "15.2.1",
+    "next-session": "^4.0.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20.17.24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.1",
+    "typescript": "^5",
+    "vitest": "^3.0.8"
+  },
+  "packageManager": "yarn@4.6.0+sha256.eaf1eeabc164a44ca0b65dbdccd54af7e55f3ff9294b3ff318d5aaec92f2b20b"
+}
