@@ -15,7 +15,10 @@ export async function GET() {
   const fetchAllTasks = async (
     cursor: string | null = ""
   ): Promise<{ id: string; content: string }[]> => {
-    const { results, nextCursor } = await api.getTasks({ cursor });
+    const { results, nextCursor } = await api.getTasks({
+      cursor,
+      filter: "!label:🤖",
+    });
 
     if (!nextCursor) {
       return results;
