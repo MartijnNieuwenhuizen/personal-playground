@@ -28,7 +28,11 @@ export default function Page() {
 
   const handleTaskReviewComplete = async (
     keptTasks: Task[],
-    changedTasks: { original: Task; enhanced: string }[]
+    changedTasks: {
+      original: Task;
+      enhanced: string;
+      addRobotLabel?: boolean;
+    }[]
   ) => {
     if (changedTasks.length === 0) {
       setUpdateMessage("No tasks were changed.");
@@ -39,9 +43,27 @@ export default function Page() {
     setIsLoading(true);
     try {
       // Update each changed task
-      const updatePromises = changedTasks.map(({ original, enhanced }) =>
-        updateTask(original.id, enhanced)
+      const updatePromises = changedTasks.map(
+        ({ original, enhanced, addRobotLabel }) => {
+          const updates: { content?: string; labels?: string[] } = {};
+
+          // Update content if it's different from the original
+          if (enhanced !== original.content) {
+            updates.content = enhanced;
+          }
+
+          // Add robot label if specified
+          if (addRobotLabel) {
+            const existingLabels = original.labels || [];
+            if (!existingLabels.includes("🤖")) {
+              updates.labels = [...existingLabels, "🤖"];
+            }
+          }
+
+          return updateTask(original.id, updates);
+        }
       );
+
       await Promise.all(updatePromises);
 
       // Refresh the task list

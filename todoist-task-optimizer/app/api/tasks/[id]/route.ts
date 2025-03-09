@@ -19,16 +19,35 @@ export async function PUT(
   }
 
   try {
-    const { content } = await req.json();
-    if (!content) {
-      return NextResponse.json(
-        { error: "Task content is required" },
-        { status: 400 }
-      );
+    const updates = await req.json();
+    const api = new TodoistApi(apiToken);
+
+    // First, get the current task to preserve existing properties
+    const currentTask = await api.getTask(taskId);
+
+    // Prepare the update object
+    const updateData: {
+      content?: string;
+      labels?: string[];
+    } = {};
+
+    // If content is provided, update it
+    if (updates.content) {
+      updateData.content = updates.content;
     }
 
-    const api = new TodoistApi(apiToken);
-    await api.updateTask(taskId, { content });
+    // Handle labels - merge existing labels with new ones
+    if (updates.labels) {
+      // Get existing labels and add new ones without duplicates
+      const existingLabels = currentTask.labels || [];
+      const uniqueLabels = [...new Set([...existingLabels, ...updates.labels])];
+      updateData.labels = uniqueLabels;
+    }
+
+    console.log("Update data:", JSON.stringify(updateData));
+
+    // Update the task
+    await api.updateTask(taskId, updateData);
 
     // Fetch the updated task to return
     const updatedTask = await api.getTask(taskId);

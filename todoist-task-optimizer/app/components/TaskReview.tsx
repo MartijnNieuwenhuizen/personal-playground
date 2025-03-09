@@ -11,7 +11,11 @@ interface TaskReviewProps {
   tasks: Task[];
   onComplete: (
     keptTasks: Task[],
-    changedTasks: { original: Task; enhanced: string }[]
+    changedTasks: {
+      original: Task;
+      enhanced: string;
+      addRobotLabel?: boolean;
+    }[]
   ) => void;
 }
 
@@ -22,7 +26,7 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [keptTasks, setKeptTasks] = useState<Task[]>([]);
   const [changedTasks, setChangedTasks] = useState<
-    { original: Task; enhanced: string }[]
+    { original: Task; enhanced: string; addRobotLabel?: boolean }[]
   >([]);
 
   const currentTask = tasks[currentTaskIndex];
@@ -49,14 +53,25 @@ export default function TaskReview({ tasks, onComplete }: TaskReviewProps) {
   };
 
   const handleKeep = () => {
-    setKeptTasks([...keptTasks, currentTask]);
+    setChangedTasks([
+      ...changedTasks,
+      {
+        original: currentTask,
+        enhanced: currentTask.content,
+        addRobotLabel: true,
+      },
+    ]);
     moveToNextTask();
   };
 
   const handleChange = () => {
     setChangedTasks([
       ...changedTasks,
-      { original: currentTask, enhanced: enhancedTask },
+      {
+        original: currentTask,
+        enhanced: enhancedTask,
+        addRobotLabel: true,
+      },
     ]);
     moveToNextTask();
   };

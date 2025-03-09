@@ -15,16 +15,21 @@ export async function GET() {
   const fetchAllTasks = async (
     cursor: string | null = ""
   ): Promise<{ id: string; content: string }[]> => {
-    const { results, nextCursor } = await api.getTasks({ cursor });
+    // const { results, nextCursor } = await api.getTasks({ cursor });
+    const { results } = await api.getTasks({ cursor });
 
-    if (!nextCursor) {
-      return results;
-    }
+    // if (!nextCursor) {
+    //   return results;
+    // }
 
-    return [...results, ...(await fetchAllTasks(nextCursor))];
+    // return [...results, ...(await fetchAllTasks(nextCursor))];
+    return results;
   };
 
   const allTasks = await fetchAllTasks();
 
-  return NextResponse.json({ results: allTasks });
+  const cappedTasks = allTasks.slice(0, 2);
+
+  // return NextResponse.json({ results: allTasks });
+  return NextResponse.json({ results: cappedTasks });
 }
