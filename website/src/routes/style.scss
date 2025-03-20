@@ -141,28 +141,43 @@ body {
 }
 
 .about-this-site p > span:nth-of-type(1) span {
+	background: linear-gradient(180deg, #ff4d4d 0%, #fa3 100%);
+	background-clip: text;
 	font-family: 'Lexend Deca', sans-serif;
 	font-weight: 900;
+	-webkit-text-fill-color: transparent;
 }
 
 .about-this-site p > span:nth-of-type(2) span {
+	background: linear-gradient(180deg, #fa3 0%, #fe6 100%);
+	background-clip: text;
 	font-family: McLaren, sans-serif;
 	font-weight: 900;
+	-webkit-text-fill-color: transparent;
 }
 
 .about-this-site p > span:nth-of-type(3) span {
+	background: linear-gradient(180deg, #fe6 0%, #7d7 100%);
+	background-clip: text;
 	font-family: 'Luckiest Guy', sans-serif;
 	font-weight: 900;
+	-webkit-text-fill-color: transparent;
 }
 
 .about-this-site p > span:nth-of-type(4) span {
+	background: linear-gradient(180deg, #7d7 0%, #66b2ff 100%);
+	background-clip: text;
 	font-family: 'Nico Moji', sans-serif;
 	font-weight: 900;
+	-webkit-text-fill-color: transparent;
 }
 
 .about-this-site p > span:nth-of-type(5) span {
+	background: linear-gradient(180deg, #66b2ff 0%, #7a5cfa 100%);
+	background-clip: text;
 	font-family: Notable, sans-serif;
 	font-weight: 400;
+	-webkit-text-fill-color: transparent;
 }
 
 @keyframes scroll-by {
