@@ -57,8 +57,6 @@
 </ExperimentItem>
 
 <style lang="scss">
-
-
 	/**
 	 * Custom logo 1
 	 */

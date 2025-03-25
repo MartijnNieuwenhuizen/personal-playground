@@ -63,9 +63,13 @@
 		<div class="horizontal-scroll__sticky">
 			<div class="horizontal-scroll__inner" bind:this={target}>
 				<div class="horizontal-scroll__list">
-					<div class="horizontal-scroll__list-item" style="
+					<div
+						class="horizontal-scroll__list-item"
+						style="
 
---column-count: 9" bind:this={listItem1}>
+--column-count: 9"
+						bind:this={listItem1}
+					>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>
 						<img src="/images/page-transition/forrest.webp" alt="" />
@@ -78,9 +82,13 @@
 
 						<h2>1. This is the first section in the list</h2>
 					</div>
-					<div class="horizontal-scroll__list-item" style="
+					<div
+						class="horizontal-scroll__list-item"
+						style="
 
---column-count: 9" bind:this={listItem2}>
+--column-count: 9"
+						bind:this={listItem2}
+					>
 						<p>{bitOfText}</p>
 						<img src="/images/page-transition/forrest.webp" alt="" />
 						<p>{bitOfText}</p>
@@ -113,9 +121,13 @@
 
 						<h2>3. You're now in the Third section that's quite far!</h2>
 					</div>
-					<div class="horizontal-scroll__list-item" style="
+					<div
+						class="horizontal-scroll__list-item"
+						style="
 
---column-count: 8" bind:this={listItem4}>
+--column-count: 8"
+						bind:this={listItem4}
+					>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>
 						<p>{bitOfText}</p>

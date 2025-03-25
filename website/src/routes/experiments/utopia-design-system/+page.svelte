@@ -89,9 +89,12 @@
 			</p>
 		</section>
 
-		<section class="flow region wrapper" style="
+		<section
+			class="flow region wrapper"
+			style="
 
---wrapper-max-width: 80rem;">
+--wrapper-max-width: 80rem;"
+		>
 			<h3>How we create meaningful digital products</h3>
 
 			<div class="grid">

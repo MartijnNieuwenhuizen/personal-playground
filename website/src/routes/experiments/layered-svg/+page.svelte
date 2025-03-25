@@ -52,8 +52,6 @@
 </ExperimentItem>
 
 <style lang="scss">
-
-
 	@keyframes version-1-top {
 		to {
 			transform: var(--skew) translate(var(--offset), var(--offset));
