@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/apple-wwdc2025animation',
+		label: `Apple's WWDC 2025 Animation`,
+		date: '25-03-2025',
+		tags: ['motion', 'css-only']
+	},
+	{
 		url: '/experiments/double-drop-shadow',
 		label: 'Double drop shadow',
 		date: '02-03-2025',
