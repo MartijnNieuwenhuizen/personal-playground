@@ -120,11 +120,12 @@
 	}
 
 	.name-slider-inner {
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
+		display: none;
 
 		@include bp-min(medium) {
+			display: flex;
+			flex-direction: row;
+			gap: 1rem;
 			transform: rotate(90deg) translateY(-100%);
 			transform-origin: top left;
 		}
