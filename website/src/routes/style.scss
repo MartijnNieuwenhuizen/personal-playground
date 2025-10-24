@@ -3,51 +3,49 @@
 /**
  * Subsetted fonts
  */
-body {
-	@font-face {
-		font-family: 'Lexend Deca';
-		src:
-			url('/fonts/subset/lexend-deca-v21-latin-900-webfont.woff2') format('woff2'),
-			url('/fonts/subset/lexend-deca-v21-latin-900-webfont.woff') format('woff');
-		font-weight: 900;
-		font-style: normal;
-	}
+@font-face {
+	font-family: 'Lexend Deca';
+	src:
+		url('/fonts/subset/lexend-deca-v21-latin-900-webfont.woff2') format('woff2'),
+		url('/fonts/subset/lexend-deca-v21-latin-900-webfont.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
 
-	@font-face {
-		font-family: 'Luckiest Guy';
-		src:
-			url('/fonts/subset/luckiestguy-regular-webfont.woff2') format('woff2'),
-			url('/fonts/subset/luckiestguy-regular-webfont.woff') format('woff');
-		font-weight: 900;
-		font-style: normal;
-	}
+@font-face {
+	font-family: 'Luckiest Guy';
+	src:
+		url('/fonts/subset/luckiestguy-regular-webfont.woff2') format('woff2'),
+		url('/fonts/subset/luckiestguy-regular-webfont.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
 
-	@font-face {
-		font-family: McLaren;
-		src:
-			url('/fonts/subset/mclaren-regular-webfont.woff2') format('woff2'),
-			url('/fonts/subset/mclaren-regular-webfont.woff') format('woff');
-		font-weight: 900;
-		font-style: normal;
-	}
+@font-face {
+	font-family: McLaren;
+	src:
+		url('/fonts/subset/mclaren-regular-webfont.woff2') format('woff2'),
+		url('/fonts/subset/mclaren-regular-webfont.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
 
-	@font-face {
-		font-family: 'Nico Moji';
-		src:
-			url('/fonts/subset/nicomoji-regular-webfont.woff2') format('woff2'),
-			url('/fonts/subset/nicomoji-regular-webfont.woff') format('woff');
-		font-weight: 900;
-		font-style: normal;
-	}
+@font-face {
+	font-family: 'Nico Moji';
+	src:
+		url('/fonts/subset/nicomoji-regular-webfont.woff2') format('woff2'),
+		url('/fonts/subset/nicomoji-regular-webfont.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
 
-	@font-face {
-		font-family: Notable;
-		src:
-			url('/fonts/subset/notable-regular-webfont.woff2') format('woff2'),
-			url('/fonts/subset/notable-regular-webfont.woff') format('woff');
-		font-weight: 400;
-		font-style: normal;
-	}
+@font-face {
+	font-family: Notable;
+	src:
+		url('/fonts/subset/notable-regular-webfont.woff2') format('woff2'),
+		url('/fonts/subset/notable-regular-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
 }
 
 .list-title {
