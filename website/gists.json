@@ -2,7 +2,8 @@
   {
     "title": "How to use cqw",
     "url": "how-to-use-cqw",
-    "date": "24-02-2025",
+    "humanDate": "24-02-2025",
+    "date": "2025-02-24T00:00:00.000Z",
     "metaData": {
       "date-added": "2025-02-24T00:00:00.000Z",
       "tags": [
@@ -16,7 +17,8 @@
   {
     "title": "Nullish and logical OR operator",
     "url": "nullish-and-logical-or-operator",
-    "date": "09-02-2025",
+    "humanDate": "09-02-2025",
+    "date": "2025-02-09T00:00:00.000Z",
     "metaData": {
       "date-added": "2025-02-09T00:00:00.000Z",
       "tags": [
@@ -29,7 +31,8 @@
   {
     "title": "Prettier - Dependency import order",
     "url": "prettier--dependency-import-order",
-    "date": "15-01-2025",
+    "humanDate": "15-01-2025",
+    "date": "2025-01-15T00:00:00.000Z",
     "metaData": {
       "date-added": "2025-01-15T00:00:00.000Z",
       "tags": [
@@ -42,7 +45,8 @@
   {
     "title": "Stylelint property order",
     "url": "stylelint-property-order",
-    "date": "15-01-2025",
+    "humanDate": "15-01-2025",
+    "date": "2025-01-15T00:00:00.000Z",
     "metaData": {
       "date-added": "2025-01-15T00:00:00.000Z",
       "tags": [
@@ -55,7 +59,8 @@
   {
     "title": "Svelte Global Selector",
     "url": "svelte-global-selector",
-    "date": "06-01-2025",
+    "humanDate": "06-01-2025",
+    "date": "2025-01-06T00:00:00.000Z",
     "metaData": {
       "date-added": "2025-01-06T00:00:00.000Z",
       "tags": [
@@ -64,5 +69,19 @@
       "private": false
     },
     "content": "```\n// Styling the a element globally from a random file. \n:global(a) {} \n\n// You can also use classes \n:global(.hover-fade-list li) {}\n```"
+  },
+  {
+    "title": "playwright",
+    "url": "playwright",
+    "humanDate": "24-10-2025",
+    "date": "2025-10-24T00:00:00.000Z",
+    "metaData": {
+      "date-added": "2025-10-24T00:00:00.000Z",
+      "tags": [
+        "playwright"
+      ],
+      "private": false
+    },
+    "content": "# Useful tips when using Playwright\n## Visually see the browser used for the tests\n\n```JS\n// .playwright.config.ts\nuse: {\n\t\tbaseURL: \"...\",\n\t\theadless: false, // <-- This enables the browser to show\n\t\t....\n\t},\n```\n## Pausing a test \nWhy? So you can inspect a specific moment in the test-flow.\n``` js\nawait logPanel.page.pause();\n```\n## Run within the Playwright App\nNot just the browser, also the Playwright App where you can start/stop/pause tests and inspect the steps\n```cli\nyarn [your-test-command] --ui\n```\n"
   }
 ]

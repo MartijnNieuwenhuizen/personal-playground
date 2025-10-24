@@ -22,7 +22,8 @@ const formatGist = (gist, title) => {
 	return {
 		title: title.replace('.md', ''),
 		url: createUrlFromTitle(title),
-		date: formatDate(data['date-added']),
+		humanDate: formatDate(data['date-added']),
+		date: data['date-added'],
 		metaData: data,
 		content
 	};

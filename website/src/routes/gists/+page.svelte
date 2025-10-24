@@ -22,7 +22,7 @@
 							url={`/gists/${gist.url}`}
 							title={gist.title}
 							type="clear"
-							date={gist.date}
+							date={gist.humanDate}
 						/>
 					</li>
 				{/each}
