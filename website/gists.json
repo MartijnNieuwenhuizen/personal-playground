@@ -43,6 +43,18 @@
     "content": "Enforce a consistent order for import statements in JS/TS files with Prettier.\n\nTo enable this you need to add the following dependencies\n- [prettier](https://www.npmjs.com/package/prettier)\n- [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)\n\n```\n// .prettierrc\n{\n    \"importOrder\": [\n        \"<THIRD_PARTY_MODULES>\",\n        \"interface\",\n        \"(?=content|api)\",\n        \"data/translations/\",\n        \"context/\",\n        \"mock/\",\n        \"config\",\n        \"utils/\",\n        \"hooks/\",\n        \"(components/|./index)\",\n        \".svg\",\n        \"^../(.*)$\",\n        \"(?=./prepare|./styles.module.scss)\"\n    ],\n    \"importOrderSeparation\": true\n}\n```"
   },
   {
+    "title": "Setup cloudflared tunnel",
+    "url": "setup-cloudflared-tunnel",
+    "humanDate": "01-01-1970",
+    "date": null,
+    "metaData": {
+      "date-added": null,
+      "tags": null,
+      "private": false
+    },
+    "content": "Create a remote URL for http://localhost:3000, so others, on another network, can use this.\n```cli\ncloudflared tunnel --url http://localhost:3000\n```\n\nNote, to use this, first run\n```cli\nbrew install cloudflare/cloudflare/cloudflared\n```"
+  },
+  {
     "title": "Stylelint property order",
     "url": "stylelint-property-order",
     "humanDate": "15-01-2025",
