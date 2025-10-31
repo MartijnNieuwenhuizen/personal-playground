@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/popover-animations',
+		label: 'Popover animations',
+		date: '31-10-2025',
+		tags: ['animation', 'css-only', 'popover']
+	},
+	{
 		url: '/experiments/apple-wwdc2025animation',
 		label: `Apple's WWDC 2025 Animation`,
 		date: '25-03-2025',
