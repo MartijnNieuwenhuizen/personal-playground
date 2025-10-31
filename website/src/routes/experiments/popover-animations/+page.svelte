@@ -22,6 +22,7 @@
 		</Row>
 		<Row size="medium" area="bottom">
 			<h2>Tips</h2>
+			<p>Look Ma, no JavaScript!</p>
 			<Code
 				code={`
 ✅ Apply allow-discrete.
@@ -50,6 +51,20 @@ With transition-behavior: allow-discrete; you can animate the display property.
 	...
 }`}
 				language="css"
+			/>
+
+			<Code
+				code={`
+✅ Use button attributes to open and close the popover instead of JavaScript.
+
+<div popover="auto" id="popover-id" aria-labelledby="popover-id">
+...
+</div>
+
+<button popovertarget="popover-id" popovertargetaction="show">Open popover</button>
+<button popovertarget="popover-id" popovertargetaction="hide">Close popover</button>
+`}
+				language="html"
 			/>
 
 			<Code
