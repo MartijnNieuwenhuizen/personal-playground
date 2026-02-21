@@ -13,6 +13,16 @@
 <ExperimentItem {title} {description} showPageEffect={true}>
 	<Block size="medium">
 		<Row size="medium">
+			<h2>Popover</h2>
+			<p>This experiment shows a popover with a fade-in and fade-out animation.</p>
+			<p>
+				The fade-out animation, with just CSS, is great! But do note that an element with a popover
+				attribute (and opened/closed with the current methods), will not be a modal with (with focus
+				trap). For that, you need to use <strong>dialog</strong> element and use the
+				<code>showModal()</code> method.
+			</p>
+		</Row>
+		<Row size="medium" area="bottom">
 			<div popover="auto" id="popover-id" aria-labelledby="popover-id">
 				<h2>Popover content</h2>
 				<Button popovertarget="popover-id" popovertargetaction="hide">Close popover</Button>
