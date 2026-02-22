@@ -1,5 +1,5 @@
 /* stylelint-disable selector-max-universal */
-@import '../base';
+@use '../base' as *;
 
 :root {
 	--block-padding: #{gap(5)};

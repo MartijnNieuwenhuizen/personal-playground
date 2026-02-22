@@ -1,4 +1,4 @@
-@import '../base';
+@use '../base' as *;
 
 :root {
 	--system-font: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, helvetica, arial,

@@ -1,4 +1,8 @@
 /* stylelint-disable selector-max-universal */
+@use 'sass:math';
+@use './colors' as *;
+@use './variables' as *;
+@use './motion' as *;
 
 /**
  * Screen reader only
@@ -19,7 +23,7 @@
 /**
  * Styled scrollbar
  */
-@mixin styled-scrollbar($color: $blackish) {
+@mixin styled-scrollbar($color: $black) {
 	// Standardized (currently only Firefox, plus on macOS only when system
 	// preferences are set to always show scrollbars).
 	scrollbar-color: $color transparent;
@@ -110,7 +114,7 @@
  *
  * Usage:
  * body {
- *     @include dark-mode { background: $blackish; }
+ *     @include dark-mode { background: $black; }
  * }
  */
 @mixin dark-mode {
