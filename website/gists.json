@@ -1,5 +1,19 @@
 [
   {
+    "title": "Cleaning up your commits with Interactive rebase",
+    "url": "cleaning-up-your-commits-with-interactive-rebase",
+    "humanDate": "19-02-2026",
+    "date": "2026-02-19T00:00:00.000Z",
+    "metaData": {
+      "date-added": "2026-02-19T00:00:00.000Z",
+      "tags": [
+        "Git"
+      ],
+      "private": false
+    },
+    "content": "# Interactive Rebase Guide\n\nInteractive rebasing is an effective approach for modifying your commits, such as squashing them together or renaming them.\n\n## Configuration\n\n### TIP\nAdd the following setting and alias to your `.gitconfig`. You can open your `.gitconfig` with `vi ~/.gitconfig` in VIM mode.\n\n`abbreviateCommands = true`\nThis ensures that keys like pick are displayed as p, which will speed up your workflow.\n\n`rbi = !sh -c \\\"git rebase -i $(git merge-base $1 HEAD)\\\" -`\nThis alias helps you avoid thinking about the rebase range.\n\n## Steps for Interactive Rebasing\n\n1. Prepare Your Branch\n- Make commits on a branch that is not main.\n2. Start Interactive Rebase\n- Use git rbi main where main is the branch you want to compare your changes with.\n- Enter the interactive rebase dialog.\n3. Interactive Rebase Options\n- pick/p: Keep the commit as is.\n- rename/r: Renames the commit. Note that you cannot rename commits in this initial screen.\n- squash/s: Squashes the commit into the one above.\n- drop/d: Removes the commit.\n- Change the words/letters before the commit hash to indicate what you want to do with this commit. You can also shuffle the commit order here.\n4. Execute the Rebase Plan\n- After planning, start the rebase with esc key + :wq + enter key.\n- Depending on your actions, either pick the commit name/description to keep (when squashing) or rename your commit.\n- After each step, continue with esc key + :wq + enter key.\n\nRepeat this process until you have completed your modifications."
+  },
+  {
     "title": "How to use cqw",
     "url": "how-to-use-cqw",
     "humanDate": "24-02-2025",
@@ -29,6 +43,20 @@
     "content": "```\n// Nullish operator**\nlet a = null;\nlet b = a ?? \"default\"; // \"default\"\n\nlet c = 0;\nlet d = c ?? \"default\"; // 0 (because 0 is not null or undefined)\n\n// Logical OR operator\nlet a = null;\nlet b = a || \"default\"; // \"default\"\n\nlet c = 0;\nlet d = c || \"default\"; // \"default\" (because 0 is falsy)\n```\n\nUse ?? when you only want to replace null or undefined values.\n\nUse || when you want to replace any falsy value.\n"
   },
   {
+    "title": "Playwright tips",
+    "url": "playwright-tips",
+    "humanDate": "24-10-2025",
+    "date": "2025-10-24T00:00:00.000Z",
+    "metaData": {
+      "date-added": "2025-10-24T00:00:00.000Z",
+      "tags": [
+        "playwright"
+      ],
+      "private": false
+    },
+    "content": "# Useful tips when using Playwright\n## Visually see the browser used for the tests\n\n```JS\n// .playwright.config.ts\nuse: {\n\t\tbaseURL: \"...\",\n\t\theadless: false, // <-- This enables the browser to show\n\t\t....\n\t},\n```\n## Pausing a test \nWhy? So you can inspect a specific moment in the test-flow.\n``` js\nawait logPanel.page.pause();\n```\n## Run within the Playwright App\nNot just the browser, also the Playwright App where you can start/stop/pause tests and inspect the steps\n```cli\nyarn [your-test-command] --ui\n```\n"
+  },
+  {
     "title": "Prettier - Dependency import order",
     "url": "prettier--dependency-import-order",
     "humanDate": "15-01-2025",
@@ -45,10 +73,10 @@
   {
     "title": "Setup cloudflared tunnel",
     "url": "setup-cloudflared-tunnel",
-    "humanDate": "01-01-1970",
-    "date": null,
+    "humanDate": "04-12-2025",
+    "date": "2025-12-04T00:00:00.000Z",
     "metaData": {
-      "date-added": null,
+      "date-added": "2025-12-04T00:00:00.000Z",
       "tags": null,
       "private": false
     },
@@ -83,17 +111,17 @@
     "content": "```\n// Styling the a element globally from a random file. \n:global(a) {} \n\n// You can also use classes \n:global(.hover-fade-list li) {}\n```"
   },
   {
-    "title": "playwright",
-    "url": "playwright",
-    "humanDate": "24-10-2025",
-    "date": "2025-10-24T00:00:00.000Z",
+    "title": "markdown note or warning",
+    "url": "markdown-note-or-warning",
+    "humanDate": "02-02-2026",
+    "date": "2026-02-02T00:00:00.000Z",
     "metaData": {
-      "date-added": "2025-10-24T00:00:00.000Z",
+      "date-added": "2026-02-02T00:00:00.000Z",
       "tags": [
-        "playwright"
+        "markdown"
       ],
       "private": false
     },
-    "content": "# Useful tips when using Playwright\n## Visually see the browser used for the tests\n\n```JS\n// .playwright.config.ts\nuse: {\n\t\tbaseURL: \"...\",\n\t\theadless: false, // <-- This enables the browser to show\n\t\t....\n\t},\n```\n## Pausing a test \nWhy? So you can inspect a specific moment in the test-flow.\n``` js\nawait logPanel.page.pause();\n```\n## Run within the Playwright App\nNot just the browser, also the Playwright App where you can start/stop/pause tests and inspect the steps\n```cli\nyarn [your-test-command] --ui\n```\n"
+    "content": "## Markdown\n```\n> [!NOTE]  \n> Highlights information that users should take into account, even when skimming.\n\n> [!TIP]\n> Optional information to help a user be more successful.\n\n> [!IMPORTANT]  \n> Crucial information necessary for users to succeed.\n\n> [!WARNING]  \n> Critical content demanding immediate user attention due to potential risks.\n\n> [!CAUTION]\n> Negative potential consequences of an action.\n```\n## Output\n> [!NOTE]  \n> Highlights information that users should take into account, even when skimming.\n\n> [!TIP]\n> Optional information to help a user be more successful.\n\n> [!IMPORTANT]  \n> Crucial information necessary for users to succeed.\n\n> [!WARNING]  \n> Critical content demanding immediate user attention due to potential risks.\n\n> [!CAUTION]\n> Negative potential consequences of an action."
   }
 ]

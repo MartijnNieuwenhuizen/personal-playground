@@ -57,6 +57,5 @@
 		"mdsvex": "^0.11.0",
 		"svelte-markdown": "^0.4.1",
 		"three": "^0.159.0"
-	},
-	"packageManager": "yarn@4.6.0+sha256.eaf1eeabc164a44ca0b65dbdccd54af7e55f3ff9294b3ff318d5aaec92f2b20b"
+	}
 }
