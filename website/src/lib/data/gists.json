@@ -43,8 +43,8 @@
     "content": "```\n// Nullish operator**\nlet a = null;\nlet b = a ?? \"default\"; // \"default\"\n\nlet c = 0;\nlet d = c ?? \"default\"; // 0 (because 0 is not null or undefined)\n\n// Logical OR operator\nlet a = null;\nlet b = a || \"default\"; // \"default\"\n\nlet c = 0;\nlet d = c || \"default\"; // \"default\" (because 0 is falsy)\n```\n\nUse ?? when you only want to replace null or undefined values.\n\nUse || when you want to replace any falsy value.\n"
   },
   {
-    "title": "Playwright tips",
-    "url": "playwright-tips",
+    "title": "Playwright",
+    "url": "playwright",
     "humanDate": "24-10-2025",
     "date": "2025-10-24T00:00:00.000Z",
     "metaData": {

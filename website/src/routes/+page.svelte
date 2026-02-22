@@ -3,13 +3,15 @@
 	import Row from '$lib/components/layout/Row/index.svelte';
 	import FontAnimationBasedOnCursorPosition from '$lib/components/font-animation-based-on-cursor-position/index.svelte';
 	import experiments from '../routes/experiments/experiments.js';
-	import gists from '../routes/gists/gists.js';
+	import gists from '$lib/data/gists.json';
+
+	import { sortGistsByDate } from '$lib/utils/sort-gists-by-date';
 
 	import PreviewForList from '$lib/components/PreviewForList/index.svelte';
 	import HoverFadeList from '$lib/components/HoverFadeList/index.svelte';
 
 	let latestExperiments = $derived(experiments.slice(0, 5));
-	let latestGists = $derived(gists.slice(0, 3));
+	let latestGists = $derived(sortGistsByDate(gists).slice(0, 3));
 	const latestBlogPosts = [
 		{
 			url: '/blog/enforcing-a-consistent-css-property-order-with-stylelint',
@@ -133,7 +135,12 @@
 				<HoverFadeList>
 					{#each latestGists as gist}
 						<li>
-							<PreviewForList type="clear" url={gist.url} title={gist.label} date={gist.date} />
+							<PreviewForList
+								type="clear"
+								url={gist.url}
+								title={gist.title}
+								date={gist.humanDate}
+							/>
 						</li>
 					{/each}
 				</HoverFadeList>

@@ -49,5 +49,5 @@ const getGistsFromObsidian = () => {
 	const gists = getGistsFromObsidian(formatGist);
 	const publicGists = gists.filter((gist) => !gist.metaData.private);
 
-	fs.writeFileSync('gists.json', JSON.stringify(publicGists, null, 2));
+	fs.writeFileSync('src/lib/data/gists.json', JSON.stringify(publicGists, null, 2));
 })();

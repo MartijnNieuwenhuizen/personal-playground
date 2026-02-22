@@ -1,4 +1,4 @@
-import gists from '../../../../gists.json';
+import gists from '$lib/data/gists.json';
 import type { PageServerLoad } from './$types';
 
 // Enable prerendering for dynamic pages within [...slug]

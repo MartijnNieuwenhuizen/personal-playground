@@ -1,10 +1,8 @@
-import gists from '../../../gists.json';
+import gists from '$lib/data/gists.json';
+import { sortGistsByDate } from '$lib/utils/sort-gists-by-date';
 
 export const load = async () => {
 	return {
 		gists: sortGistsByDate(gists)
 	};
 };
-
-const sortGistsByDate = (gists: any[]) =>
-	gists.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
