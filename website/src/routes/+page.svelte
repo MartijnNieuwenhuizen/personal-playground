@@ -137,7 +137,7 @@
 						<li>
 							<PreviewForList
 								type="clear"
-								url={gist.url}
+								url={`/gists/${gist.url}`}
 								title={gist.title}
 								date={gist.humanDate}
 							/>

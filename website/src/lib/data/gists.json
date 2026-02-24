@@ -25,7 +25,7 @@
       ],
       "private": false
     },
-    "content": "```css\n.container {\n\tcontainer: container-name / inline-size;\n}\n\n.inner-element {\n\tcolor: red;\n\n\t@container container-name (min-width: 25rem) {\n\t\tcolor: lime;\n\t}\n}\n```"
+    "content": "```css we\n.container {\n\tcontainer: container-name / inline-size;\n}\n\n.inner-element {\n\tcolor: red;\n\n\t@container container-name (min-width: 25rem) {\n\t\tcolor: lime;\n\t}\n}\n```"
   },
   {
     "title": "How to use cqw",
