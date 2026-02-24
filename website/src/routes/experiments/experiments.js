@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/hand-drawn-lines-and-squiggles',
+		label: 'Hand drawn lines and squiggles',
+		date: '22-02-2026',
+		tags: ['css-only', 'svg']
+	},
+	{
 		url: '/experiments/popover-animations',
 		label: 'Popover animations',
 		date: '31-10-2025',

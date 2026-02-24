@@ -14,6 +14,20 @@
     "content": "# Interactive Rebase Guide\n\nInteractive rebasing is an effective approach for modifying your commits, such as squashing them together or renaming them.\n\n## Configuration\n\n### TIP\nAdd the following setting and alias to your `.gitconfig`. You can open your `.gitconfig` with `vi ~/.gitconfig` in VIM mode.\n\n`abbreviateCommands = true`\nThis ensures that keys like pick are displayed as p, which will speed up your workflow.\n\n`rbi = !sh -c \\\"git rebase -i $(git merge-base $1 HEAD)\\\" -`\nThis alias helps you avoid thinking about the rebase range.\n\n## Steps for Interactive Rebasing\n\n1. Prepare Your Branch\n- Make commits on a branch that is not main.\n2. Start Interactive Rebase\n- Use git rbi main where main is the branch you want to compare your changes with.\n- Enter the interactive rebase dialog.\n3. Interactive Rebase Options\n- pick/p: Keep the commit as is.\n- rename/r: Renames the commit. Note that you cannot rename commits in this initial screen.\n- squash/s: Squashes the commit into the one above.\n- drop/d: Removes the commit.\n- Change the words/letters before the commit hash to indicate what you want to do with this commit. You can also shuffle the commit order here.\n4. Execute the Rebase Plan\n- After planning, start the rebase with esc key + :wq + enter key.\n- Depending on your actions, either pick the commit name/description to keep (when squashing) or rename your commit.\n- After each step, continue with esc key + :wq + enter key.\n\nRepeat this process until you have completed your modifications."
   },
   {
+    "title": "Container queries",
+    "url": "container-queries",
+    "humanDate": "24-02-2026",
+    "date": "2026-02-24T00:00:00.000Z",
+    "metaData": {
+      "date-added": "2026-02-24T00:00:00.000Z",
+      "tags": [
+        "CSS"
+      ],
+      "private": false
+    },
+    "content": "```css\n.container {\n\tcontainer: container-name / inline-size;\n}\n\n.inner-element {\n\tcolor: red;\n\n\t@container container-name (min-width: 25rem) {\n\t\tcolor: lime;\n\t}\n}\n```"
+  },
+  {
     "title": "How to use cqw",
     "url": "how-to-use-cqw",
     "humanDate": "24-02-2025",
