@@ -1,5 +1,17 @@
 const bookmarks = [
 	{
+		label: 'Modern CSS',
+		tags: ['CSS'],
+		url: 'https://modern-css.com/',
+		date: '24-02-2026'
+	},
+	{
+		label: 'An in depth guide to customising lists with CSS',
+		tags: ['CSS'],
+		url: 'https://piccalil.li/blog/an-in-depth-guide-to-customising-lists-with-css/',
+		date: '24-02-2026'
+	},
+	{
 		label: 'Regex tester',
 		tags: ['regex'],
 		url: 'https://regex101.com/',
