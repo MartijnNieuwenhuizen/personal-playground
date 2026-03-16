@@ -2,7 +2,8 @@
 	import ExperimentItem from '$lib/components/ExperimentItem/index.svelte';
 
 	const title = 'Dialog with input';
-	const description = 'Add a description';
+	const description =
+		'Will the input of this dialog be above the keyboard? And will the dialog be scrollable? On mobile?';
 </script>
 
 <ExperimentItem {title} {description} showPageEffect={true}>
