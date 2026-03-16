@@ -1,5 +1,11 @@
 const links = [
 	{
+		url: '/experiments/dialog-with-input',
+		label: 'Dialog with input',
+		date: '16-03-2026',
+		tags: ['dialog', 'input', 'mobile']
+	},
+	{
 		url: '/experiments/hand-drawn-lines-and-squiggles',
 		label: 'Hand drawn lines and squiggles',
 		date: '22-02-2026',
