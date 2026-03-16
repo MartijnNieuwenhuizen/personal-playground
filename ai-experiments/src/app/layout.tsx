@@ -1,13 +1,15 @@
+import SiteHeader from "@/components/SiteHeader/SiteHeader";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Nunito } from "next/font/google";
+import styles from "./layout.module.scss";
 import "./globals.css";
 
-const geistSans = Geist({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const nunito = Nunito({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -24,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${spaceGrotesk.variable} ${nunito.variable} ${styles.layout}`}
+      >
+        <SiteHeader />
         {children}
       </body>
     </html>
